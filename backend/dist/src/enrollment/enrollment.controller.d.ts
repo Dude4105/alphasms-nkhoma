@@ -1,0 +1,65 @@
+import { EnrollmentService } from './enrollment.service';
+export declare class EnrollmentController {
+    private readonly enrollmentService;
+    constructor(enrollmentService: EnrollmentService);
+    submit(body: any): Promise<{
+        id: number;
+        firstName: string;
+        phone: string;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string | null;
+        gender: string;
+        dob: string | null;
+        guardianName: string;
+        guardianRelation: string | null;
+        guardianAddress: string | null;
+        status: string;
+        surname: string;
+        targetClass: string;
+        boardingStatus: string;
+        previousSchool: string | null;
+        guardianTitle: string;
+        whatsapp: string | null;
+    }>;
+    findAll(): Promise<{
+        id: number;
+        firstName: string;
+        phone: string;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string | null;
+        gender: string;
+        dob: string | null;
+        guardianName: string;
+        guardianRelation: string | null;
+        guardianAddress: string | null;
+        status: string;
+        surname: string;
+        targetClass: string;
+        boardingStatus: string;
+        previousSchool: string | null;
+        guardianTitle: string;
+        whatsapp: string | null;
+    }[]>;
+    updateStatus(id: string, status: string): Promise<{
+        id: number;
+        firstName: string;
+        phone: string;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string | null;
+        gender: string;
+        dob: string | null;
+        guardianName: string;
+        guardianRelation: string | null;
+        guardianAddress: string | null;
+        status: string;
+        surname: string;
+        targetClass: string;
+        boardingStatus: string;
+        previousSchool: string | null;
+        guardianTitle: string;
+        whatsapp: string | null;
+    }>;
+}

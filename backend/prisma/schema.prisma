@@ -1,0 +1,336 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  ADMIN
+  TEACHER
+  STUDENT
+  HOSTEL_OWNER
+}
+
+model User {
+  id                 Int       @id @default(autoincrement())
+  email              String    @unique
+  passwordHash       String
+  role               Role
+  hashedRefreshToken String?
+  
+  student            Student?
+  hostelOwner        HostelOwner?
+  teacher            Teacher?
+  adminProfile       AdminProfile?
+
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+}
+
+model Student {
+  id         Int       @id @default(autoincrement())
+  student_id String    @unique
+  firstName  String
+  lastName   String
+  email      String?   @unique
+  
+  gender         String?
+  dob            String?
+  enrollmentDate String?
+  scholarType    String?
+  
+  guardianName     String?
+  guardianRelation String?
+  guardianPhone    String?
+  guardianEmail    String?
+  guardianAddress  String?
+  
+  userId     Int       @unique
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  classId    Int?
+  class      Class?    @relation(fields: [classId], references: [id])
+  
+  hostelId   Int?
+  hostel     Hostel?   @relation(fields: [hostelId], references: [id])
+  
+  payments   Payment[]
+  results    Result[]
+  termAssessmentScores TermAssessmentScore[]
+  attendances Attendance[]
+  classHistory String?   @db.Text
+  
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@index([student_id])
+  @@index([classId])
+  @@index([hostelId])
+  @@index([firstName, lastName])
+  @@index([email])
+}
+
+model Class {
+  id         Int       @id @default(autoincrement())
+  class_id   String    @unique
+  name       String
+  
+  level      String?
+  track      String?
+  room       String?
+  classTeacher String?
+  schedule   String?
+  capacity   Int?
+  subjects   Json?
+  timetable  Json?
+  
+  students   Student[]
+  
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@index([class_id])
+  @@index([name])
+}
+
+model HostelOwner {
+  id        Int       @id @default(autoincrement())
+  userId    Int       @unique
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  hostels   Hostel[]
+}
+
+model Hostel {
+  id        Int       @id @default(autoincrement())
+  hostel_id String    @unique
+  name      String
+  type      String?   // "Boys" or "Girls"
+  warden    String?
+  capacity  Int
+  
+  ownerId   Int
+  owner     HostelOwner @relation(fields: [ownerId], references: [id])
+  
+  students  Student[]
+  
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@index([hostel_id])
+  @@index([ownerId])
+}
+
+model Teacher {
+  id         Int       @id @default(autoincrement())
+  teacher_id String    @unique
+  firstName  String
+  lastName   String
+  email      String?   @unique
+  phone      String?
+  qualification String?
+  
+  subjects   Json?
+  classes    Json?
+
+  userId     Int       @unique
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@index([teacher_id])
+  @@index([firstName, lastName])
+  @@index([email])
+}
+
+model Subject {
+  id           Int       @id @default(autoincrement())
+  subject_code String    @unique
+  name         String
+  department   String?
+  description  String?
+  
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([subject_code])
+  @@index([name])
+}
+
+model Application {
+  id               Int      @id @default(autoincrement())
+  firstName        String
+  surname          String
+  gender           String
+  targetClass      String
+  boardingStatus   String
+  previousSchool   String?
+  dob              String?
+  guardianTitle    String
+  guardianName     String
+  guardianRelation String?
+  guardianAddress  String?
+  whatsapp         String?
+  phone            String
+  email            String?
+  status           String   @default("PENDING") // PENDING, APPROVED, REJECTED
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model FeeStructure {
+  id              Int      @id @default(autoincrement())
+  scholarType     String   // "Day", "Boarding"
+  totalAmount     Float
+  installments    Json?    // Array of amounts
+  academicYear    String
+  term            Int
+  updatedAt       DateTime @updatedAt
+
+  @@unique([scholarType, academicYear, term])
+}
+
+model Payment {
+  id              Int      @id @default(autoincrement())
+  studentId       Int
+  student         Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  amount          Float
+  date            DateTime @default(now())
+  method          String   // "Cash", "Bank Transfer", "Check"
+  reference       String?  @unique
+  status          String   @default("VERIFIED") // PENDING, VERIFIED
+  academicYear    String
+  term            Int
+  
+  createdAt       DateTime @default(now())
+}
+
+model Expense {
+  id              Int      @id @default(autoincrement())
+  category        String
+  description     String
+  amount          Float
+  date            DateTime @default(now())
+  status          String   @default("COMPLETED") // PENDING, COMPLETED
+  attachmentUrl   String?
+  
+  createdAt       DateTime @default(now())
+}
+
+model SystemSetting {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique
+  value     String   @db.Text
+  updatedAt DateTime @updatedAt
+}
+
+model AdminProfile {
+  id          Int      @id @default(autoincrement())
+  firstName   String
+  lastName    String
+  phone       String?
+  permissions Json?
+  userId      Int      @unique
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Result {
+  id           Int      @id @default(autoincrement())
+  studentId    Int
+  student      Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  subjectKey   String   // e.g. "bio", "math", "eng", "chi", "phys"
+  score        Float
+  assessmentScores Json? // Record<assessmentId, score>
+  term         Int
+  academicYear String
+  
+  updatedAt    DateTime @updatedAt
+  createdAt    DateTime @default(now())
+
+  @@unique([studentId, subjectKey, term, academicYear])
+  @@index([studentId])
+}
+
+model GradeConfig {
+  id           Int      @id @default(autoincrement())
+  classId      Int
+  subjectKey   String
+  term         Int
+  academicYear String
+  config       Json     // Array of {id, name, weight, maxScore}
+  
+  updatedAt    DateTime @updatedAt
+  createdAt    DateTime @default(now())
+
+  @@unique([classId, subjectKey, term, academicYear])
+}
+
+model TermAssessmentScore {
+  id             Int      @id @default(autoincrement())
+  studentId      Int
+  student        Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  subjectKey     String
+  assessmentId   String   // the internal ID, e.g., 'test12345'
+  assessmentName String   // e.g. "Test 1"
+  score          Float
+  maxScore       Int
+  term           Int
+  academicYear   String
+  
+  updatedAt      DateTime @updatedAt
+  createdAt      DateTime @default(now())
+
+  @@unique([studentId, subjectKey, assessmentId, term, academicYear])
+  @@index([studentId])
+}
+model PasswordResetRequest {
+  id         Int      @id @default(autoincrement())
+  email      String
+  status     String   @default("PENDING") // PENDING, RESOLVED
+  createdAt  DateTime @default(now())
+  resolvedAt DateTime?
+
+  @@index([email])
+  @@index([status])
+}
+
+model SchoolFeed {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String   @db.Text
+  images    Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SchoolGallery {
+  id          Int      @id @default(autoincrement())
+  title       String?
+  description String?  @db.Text
+  imageUrl    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Attendance {
+  id           Int      @id @default(autoincrement())
+  studentId    Int
+  student      Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  date         String   // format: YYYY-MM-DD
+  status       String   // "present", "absent", "late"
+  term         Int
+  academicYear String
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([studentId, date])
+  @@index([studentId])
+  @@index([date])
+}

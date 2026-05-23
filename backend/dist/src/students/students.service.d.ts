@@ -1,0 +1,216 @@
+import { PrismaService } from '../prisma/prisma.service';
+import { PaginationDto } from '../common/dto/pagination.dto';
+export declare class StudentsService {
+    private prisma;
+    constructor(prisma: PrismaService);
+    create(data: any): Promise<{
+        id: number;
+        firstName: string;
+        lastName: string;
+        userId: number;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string | null;
+        student_id: string;
+        gender: string | null;
+        dob: string | null;
+        enrollmentDate: string | null;
+        scholarType: string | null;
+        guardianName: string | null;
+        guardianRelation: string | null;
+        guardianPhone: string | null;
+        guardianEmail: string | null;
+        guardianAddress: string | null;
+        classHistory: string | null;
+        classId: number | null;
+        hostelId: number | null;
+    }>;
+    findAll(query: PaginationDto): Promise<{
+        data: ({
+            user: {
+                email: string;
+                role: import(".prisma/client").$Enums.Role;
+            };
+            class: {
+                id: number;
+                createdAt: Date;
+                updatedAt: Date;
+                name: string;
+                class_id: string;
+                level: string | null;
+                track: string | null;
+                room: string | null;
+                classTeacher: string | null;
+                schedule: string | null;
+                capacity: number | null;
+                subjects: import("@prisma/client/runtime/library").JsonValue | null;
+                timetable: import("@prisma/client/runtime/library").JsonValue | null;
+            } | null;
+            hostel: {
+                id: number;
+                createdAt: Date;
+                updatedAt: Date;
+                name: string;
+                capacity: number;
+                hostel_id: string;
+                type: string | null;
+                warden: string | null;
+                ownerId: number;
+            } | null;
+        } & {
+            id: number;
+            firstName: string;
+            lastName: string;
+            userId: number;
+            createdAt: Date;
+            updatedAt: Date;
+            email: string | null;
+            student_id: string;
+            gender: string | null;
+            dob: string | null;
+            enrollmentDate: string | null;
+            scholarType: string | null;
+            guardianName: string | null;
+            guardianRelation: string | null;
+            guardianPhone: string | null;
+            guardianEmail: string | null;
+            guardianAddress: string | null;
+            classHistory: string | null;
+            classId: number | null;
+            hostelId: number | null;
+        })[];
+        meta: {
+            total: number;
+            page: number;
+            lastPage: number;
+            limit: number;
+        };
+    }>;
+    findOne(studentId: string, term?: number, year?: string): Promise<{
+        schoolInfo: any;
+        class: {
+            name: string;
+        };
+        academic: {
+            term: number;
+            year: string;
+            average: number;
+            points: number;
+            rank: number;
+            totalStudents: number;
+            attendance: number;
+            topSubjects: string[];
+            grades: any[];
+        };
+        hostel: {
+            id: number;
+            createdAt: Date;
+            updatedAt: Date;
+            name: string;
+            capacity: number;
+            hostel_id: string;
+            type: string | null;
+            warden: string | null;
+            ownerId: number;
+        } | null;
+        id: number;
+        firstName: string;
+        lastName: string;
+        userId: number;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string | null;
+        student_id: string;
+        gender: string | null;
+        dob: string | null;
+        enrollmentDate: string | null;
+        scholarType: string | null;
+        guardianName: string | null;
+        guardianRelation: string | null;
+        guardianPhone: string | null;
+        guardianEmail: string | null;
+        guardianAddress: string | null;
+        classHistory: string | null;
+        classId: number | null;
+        hostelId: number | null;
+    } | null>;
+    update(studentId: string, data: any): Promise<{
+        id: number;
+        firstName: string;
+        lastName: string;
+        userId: number;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string | null;
+        student_id: string;
+        gender: string | null;
+        dob: string | null;
+        enrollmentDate: string | null;
+        scholarType: string | null;
+        guardianName: string | null;
+        guardianRelation: string | null;
+        guardianPhone: string | null;
+        guardianEmail: string | null;
+        guardianAddress: string | null;
+        classHistory: string | null;
+        classId: number | null;
+        hostelId: number | null;
+    }>;
+    remove(studentId: string): Promise<{
+        id: number;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string;
+        passwordHash: string;
+        role: import(".prisma/client").$Enums.Role;
+        hashedRefreshToken: string | null;
+    }>;
+    findByDetails(firstName: string, lastName: string, dob: string): Promise<{
+        schoolInfo: any;
+        class: {
+            name: string;
+        };
+        academic: {
+            term: number;
+            year: string;
+            average: number;
+            points: number;
+            rank: number;
+            totalStudents: number;
+            attendance: number;
+            topSubjects: string[];
+            grades: any[];
+        };
+        hostel: {
+            id: number;
+            createdAt: Date;
+            updatedAt: Date;
+            name: string;
+            capacity: number;
+            hostel_id: string;
+            type: string | null;
+            warden: string | null;
+            ownerId: number;
+        } | null;
+        id: number;
+        firstName: string;
+        lastName: string;
+        userId: number;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string | null;
+        student_id: string;
+        gender: string | null;
+        dob: string | null;
+        enrollmentDate: string | null;
+        scholarType: string | null;
+        guardianName: string | null;
+        guardianRelation: string | null;
+        guardianPhone: string | null;
+        guardianEmail: string | null;
+        guardianAddress: string | null;
+        classHistory: string | null;
+        classId: number | null;
+        hostelId: number | null;
+    } | null>;
+}

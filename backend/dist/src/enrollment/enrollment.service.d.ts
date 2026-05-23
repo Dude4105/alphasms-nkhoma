@@ -1,0 +1,65 @@
+import { PrismaService } from '../prisma/prisma.service';
+export declare class EnrollmentService {
+    private prisma;
+    constructor(prisma: PrismaService);
+    submit(data: any): Promise<{
+        id: number;
+        firstName: string;
+        phone: string;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string | null;
+        gender: string;
+        dob: string | null;
+        guardianName: string;
+        guardianRelation: string | null;
+        guardianAddress: string | null;
+        status: string;
+        surname: string;
+        targetClass: string;
+        boardingStatus: string;
+        previousSchool: string | null;
+        guardianTitle: string;
+        whatsapp: string | null;
+    }>;
+    findAll(): Promise<{
+        id: number;
+        firstName: string;
+        phone: string;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string | null;
+        gender: string;
+        dob: string | null;
+        guardianName: string;
+        guardianRelation: string | null;
+        guardianAddress: string | null;
+        status: string;
+        surname: string;
+        targetClass: string;
+        boardingStatus: string;
+        previousSchool: string | null;
+        guardianTitle: string;
+        whatsapp: string | null;
+    }[]>;
+    updateStatus(id: number, status: string): Promise<{
+        id: number;
+        firstName: string;
+        phone: string;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string | null;
+        gender: string;
+        dob: string | null;
+        guardianName: string;
+        guardianRelation: string | null;
+        guardianAddress: string | null;
+        status: string;
+        surname: string;
+        targetClass: string;
+        boardingStatus: string;
+        previousSchool: string | null;
+        guardianTitle: string;
+        whatsapp: string | null;
+    }>;
+}

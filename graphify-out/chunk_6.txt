@@ -1,0 +1,22 @@
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\backend\src\students\students.controller.ts
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\backend\src\students\students.module.ts
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\backend\src\students\students.service.ts
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\backend\src\subjects\subjects.controller.ts
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\backend\src\subjects\subjects.module.ts
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\backend\src\subjects\subjects.service.ts
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\backend\src\teachers\teachers.controller.ts
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\backend\src\teachers\teachers.module.ts
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\backend\src\teachers\teachers.service.ts
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\backend\test\app.e2e-spec.ts
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\backend\test\jest-e2e.json
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\.agents\rules\graphify.md
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\.agents\workflows\graphify.md
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\alphabet-Smis\index.html
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\alphabet-Smis\README.md
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\alphabet-Smis\.agent\skills\ui-ux-pro-max\SKILL.md
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\alphabet-Smis\design-system\heroes-academy-exam-results\MASTER.md
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\alphabet-Smis\public\location.txt
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\backend\README.md
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\alphabet-Smis\public\Jane Banda resuilt.pdf
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\alphabet-Smis\public\timetable.pdf
+C:\Users\dude\Desktop\41\Project\alphabetsmis-II\alphabet-Smis\public\social\terials\jane 4444.pdf
