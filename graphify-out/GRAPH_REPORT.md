@@ -1,13 +1,18 @@
-# Graph Report - alphabetsmis-II  (2026-05-22)
+# Graph Report - alphabetsmis-II  (2026-05-27)
 
 ## Corpus Check
-- 133 files · ~1,235,520 words
+- 140 files · ~1,244,711 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 864 nodes · 1044 edges · 93 communities (50 shown, 43 thin omitted)
+- 967 nodes · 1142 edges · 105 communities (58 shown, 47 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 20 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `c34799fb`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - [[_COMMUNITY_Community 0|Community 0]]
@@ -15,6 +20,7 @@
 - [[_COMMUNITY_Community 2|Community 2]]
 - [[_COMMUNITY_Community 3|Community 3]]
 - [[_COMMUNITY_Community 4|Community 4]]
+- [[_COMMUNITY_Community 5|Community 5]]
 - [[_COMMUNITY_Community 6|Community 6]]
 - [[_COMMUNITY_Community 7|Community 7]]
 - [[_COMMUNITY_Community 8|Community 8]]
@@ -72,16 +78,26 @@
 - [[_COMMUNITY_Community 60|Community 60]]
 - [[_COMMUNITY_Community 61|Community 61]]
 - [[_COMMUNITY_Community 63|Community 63]]
+- [[_COMMUNITY_Community 64|Community 64]]
 - [[_COMMUNITY_Community 66|Community 66]]
+- [[_COMMUNITY_Community 67|Community 67]]
 - [[_COMMUNITY_Community 68|Community 68]]
+- [[_COMMUNITY_Community 69|Community 69]]
+- [[_COMMUNITY_Community 70|Community 70]]
+- [[_COMMUNITY_Community 71|Community 71]]
 - [[_COMMUNITY_Community 72|Community 72]]
+- [[_COMMUNITY_Community 75|Community 75]]
 - [[_COMMUNITY_Community 76|Community 76]]
+- [[_COMMUNITY_Community 78|Community 78]]
 - [[_COMMUNITY_Community 83|Community 83]]
 - [[_COMMUNITY_Community 84|Community 84]]
 - [[_COMMUNITY_Community 85|Community 85]]
 - [[_COMMUNITY_Community 86|Community 86]]
 - [[_COMMUNITY_Community 89|Community 89]]
 - [[_COMMUNITY_Community 90|Community 90]]
+- [[_COMMUNITY_Community 91|Community 91]]
+- [[_COMMUNITY_Community 92|Community 92]]
+- [[_COMMUNITY_Community 94|Community 94]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `TeachersService` - 27 edges
@@ -112,15 +128,15 @@
 - **Public Portal Navigation Flow** — home_tsx, apply_tsx, explore_campus_tsx, campus_gallery_tsx [INFERRED 0.85]
 - **UI/UX Pro Max Tooling** — core_py, design_system_py, search_py [EXTRACTED 1.00]
 
-## Communities (93 total, 43 thin omitted)
+## Communities (105 total, 47 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.22
-Nodes (8): AdminModule, AttendanceModule, ClassesModule, FinanceModule, PrismaModule, AppModule, StudentsModule, TeachersModule
+Cohesion: 0.23
+Nodes (7): AdminModule, ClassesModule, FeedsModule, GalleryModule, PrismaModule, AppModule, TeachersModule
 
 ### Community 1 - "Community 1"
-Cohesion: 0.04
-Nodes (48): author, dependencies, bcrypt, class-transformer, class-validator, dotenv, @nestjs/common, @nestjs/core (+40 more)
+Cohesion: 0.11
+Nodes (18): dependencies, bcrypt, class-transformer, class-validator, dotenv, @nestjs/common, @nestjs/core, @nestjs/jwt (+10 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.06
@@ -131,7 +147,7 @@ Cohesion: 0.06
 Nodes (32): dependencies, leaflet, lucide-react, react, react-dom, react-leaflet, react-router-dom, devDependencies (+24 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.10
+Cohesion: 0.11
 Nodes (5): AuthController, AuthModule, AuthService, JwtStrategy, RefreshTokenStrategy
 
 ### Community 8 - "Community 8"
@@ -154,41 +170,29 @@ Nodes (18): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx
 Cohesion: 0.11
 Nodes (17): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+9 more)
 
-### Community 14 - "Community 14"
-Cohesion: 0.14
-Nodes (3): SubjectsController, SubjectsModule, SubjectsService
-
 ### Community 15 - "Community 15"
-Cohesion: 0.07
-Nodes (3): FinanceController, randomName, FinanceService
+Cohesion: 0.06
+Nodes (7): FinanceController, randomName, FinanceModule, FinanceService, payments, res, structures
 
 ### Community 16 - "Community 16"
 Cohesion: 0.09
 Nodes (21): Additional Forbidden Patterns, Anti-Patterns (Do NOT Use), Buttons, Cards, code:css (@import url('https://fonts.googleapis.com/css2?family=Atkins), code:css (/* Primary Button */), code:css (.card {), code:css (.input {) (+13 more)
 
-### Community 17 - "Community 17"
-Cohesion: 0.12
-Nodes (4): ext, FeedsController, FeedsModule, FeedsService
-
-### Community 18 - "Community 18"
-Cohesion: 0.16
-Nodes (3): HostelsController, HostelsModule, HostelsService
-
 ### Community 19 - "Community 19"
-Cohesion: 0.24
-Nodes (3): ext, GalleryModule, GalleryService
+Cohesion: 0.14
+Nodes (3): ext, GalleryController, GalleryService
 
 ### Community 20 - "Community 20"
 Cohesion: 0.30
 Nodes (14): Admin Portal Layout, React App Router, Admissions Form, Campus Gallery Page, Examination Results Page, Explore Campus Feed Detail Page, Explore Campus Feeds Page, Generate Assets Script (+6 more)
 
-### Community 21 - "Community 21"
-Cohesion: 0.27
-Nodes (4): payments, res, structures, PrismaService
-
 ### Community 22 - "Community 22"
 Cohesion: 0.17
 Nodes (4): SubjectEntry, Slot, SubjectEntry, SearchableSelectProps
+
+### Community 24 - "Community 24"
+Cohesion: 0.30
+Nodes (3): normalizeSubjectKey(), PaginationDto, HostelsModule
 
 ### Community 29 - "Community 29"
 Cohesion: 0.29
@@ -210,6 +214,14 @@ Nodes (3): InTermData, ResultItem, SubjectItem
 Cohesion: 0.83
 Nodes (3): Home(), useCountUp(), useReveal()
 
+### Community 46 - "Community 46"
+Cohesion: 0.15
+Nodes (13): scripts, build, format, lint, start, start:debug, start:dev, start:prod (+5 more)
+
+### Community 56 - "Community 56"
+Cohesion: 0.05
+Nodes (43): 1. Global Conventions, 2. API Communication Flow, 3. Endpoint Reference, A. Authentication & User Management (`/auth`), Alphabet-SMIS: Complete API Specification, B. Students Domain (`/students`), C. Classes & Timetables (`/classes`), code:json ({) (+35 more)
+
 ### Community 60 - "Community 60"
 Cohesion: 1.00
 Nodes (3): UI/UX Pro Max Core, Design System Generator, UI/UX Pro Max Search
@@ -222,32 +234,64 @@ Nodes (3): App TypeScript Config, Root TypeScript Config, Node TypeScript Config
 Cohesion: 0.14
 Nodes (13): code:bash ($ npm install), code:bash (# development), code:bash (# unit tests), code:bash ($ npm install -g @nestjs/mau), Compile and run the project, Deployment, Description, License (+5 more)
 
+### Community 64 - "Community 64"
+Cohesion: 0.14
+Nodes (13): 1. Database Technology, 2. Entity-Relationship Diagram, 3. Data Model Definitions, 4. Migration and Seeding Strategy, 5. Audit Trails, Soft Deletes, and Conventions, 6. Common Query Patterns and Optimizations, Academic Domain, Alphabet-SMIS: Database and Data Models (+5 more)
+
 ### Community 66 - "Community 66"
 Cohesion: 0.19
 Nodes (3): EnrollmentController, EnrollmentModule, EnrollmentService
+
+### Community 67 - "Community 67"
+Cohesion: 0.15
+Nodes (12): 1. Authentication Mechanism, 2. Authorization Model, 3. Input Validation and Sanitization, 4. Data Protection, 5. API Security and Edge Protections, Alphabet-SMIS: Security Implementation, Authentication Flow Diagram, code:mermaid (sequenceDiagram) (+4 more)
+
+### Community 68 - "Community 68"
+Cohesion: 0.23
+Nodes (3): AttendanceController, AttendanceModule, AttendanceService
+
+### Community 69 - "Community 69"
+Cohesion: 0.17
+Nodes (11): 1. Architectural Pattern, 2. System Architecture Diagram, 3. Request Lifecycle Walkthrough, 4. Module and Service Breakdown, 5. Infrastructure and Deployment Layout, 6. Scalability Considerations, 7. Background Jobs and Workers, Alphabet-SMIS: Architecture and System Design (+3 more)
+
+### Community 70 - "Community 70"
+Cohesion: 0.20
+Nodes (9): 1. System Overview and Problem Statement, 2. Technology Stack and Architecture Rationale, 3. High-Level Feature List, 4. Core Strengths and Competitive Advantages, 5. Known Trade-offs and Design Constraints, 6. System Context Diagram, Alphabet-SMIS: Project Overview, code:mermaid (flowchart TD) (+1 more)
+
+### Community 71 - "Community 71"
+Cohesion: 0.25
+Nodes (4): authIdx, modifiedInit, options, token
+
+### Community 78 - "Community 78"
+Cohesion: 0.22
+Nodes (8): author, description, license, name, prisma, seed, private, version
 
 ### Community 86 - "Community 86"
 Cohesion: 0.33
 Nodes (5): code:js (export default defineConfig([), code:js (// eslint.config.js), Expanding the ESLint configuration, React Compiler, React + TypeScript + Vite
 
+### Community 91 - "Community 91"
+Cohesion: 0.22
+Nodes (9): jest, collectCoverageFrom, coverageDirectory, moduleFileExtensions, rootDir, testEnvironment, testRegex, transform (+1 more)
+
 ## Knowledge Gaps
-- **268 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+263 more)
+- **324 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+319 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **43 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **47 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `TeachersService` connect `Community 7` to `Community 24`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **Why does `TeachersController` connect `Community 10` to `Community 24`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
-- **Why does `AdminService` connect `Community 2` to `Community 0`, `Community 27`, `Community 21`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `AdminService` connect `Community 2` to `Community 0`, `Community 21`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _294 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _350 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**

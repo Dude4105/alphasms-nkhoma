@@ -19,6 +19,37 @@ export class PublicResultsController {
     return this.studentsService.findOne(id, parsedTerm, academicYear);
   }
 
+  @Get('history/:studentId')
+  async getPublicHistory(
+    @Param('studentId') studentId: string,
+    @Query('academicYear') academicYear?: string,
+  ) {
+    const [base, term1, term2, term3] = await Promise.all([
+      this.studentsService.findOne(studentId, undefined, academicYear),
+      this.studentsService.findOne(studentId, 1, academicYear),
+      this.studentsService.findOne(studentId, 2, academicYear),
+      this.studentsService.findOne(studentId, 3, academicYear),
+    ]);
+
+    if (!base) return null;
+
+    return {
+      student: {
+        student_id: base.student_id,
+        firstName: base.firstName,
+        lastName: base.lastName,
+        className: base.class?.name || null,
+        classHistory: base.classHistory || null,
+      },
+      history: {
+        term1: term1?.academic || null,
+        term2: term2?.academic || null,
+        term3: term3?.academic || null,
+      },
+      activeYear: base.academic?.year || academicYear || '2027',
+    };
+  }
+
   @Get('status')
   async getStatus() {
     const setting = await this.prisma.systemSetting.findUnique({

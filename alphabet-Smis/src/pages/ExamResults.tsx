@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   Users, Calendar, ChevronRight, Search, AlertCircle, FileText, Trophy, 
-  ArrowLeft, CheckCircle2, Home as HomeIcon, Sun, Moon, ExternalLink
+  ArrowLeft, CheckCircle2, Home as HomeIcon, Sun, Moon, ExternalLink,
+  TrendingUp
 } from 'lucide-react';
 import '../App.css';
 
@@ -425,13 +426,22 @@ export default function ExamResults() {
                     <Search size={20} style={{ marginRight: '0.5rem' }} /> Search Another Student
                   </button>
                   {searchResponse?.found && (
-                    <button
-                      className="btn"
-                      style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', background: 'rgba(200, 169, 81, 0.12)', color: 'var(--primary-gold)', border: '1px solid rgba(200, 169, 81, 0.35)', fontWeight: 700 }}
-                      onClick={() => window.open(`/reports/${searchResponse.student.id}?term=${searchResponse.student.academic.term}&year=${searchResponse.student.academic.year}`, '_blank')}
-                    >
-                      <ExternalLink size={20} /> View Official Report
-                    </button>
+                    <>
+                      <button
+                        className="btn"
+                        style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', background: 'rgba(200, 169, 81, 0.12)', color: 'var(--primary-gold)', border: '1px solid rgba(200, 169, 81, 0.35)', fontWeight: 700 }}
+                        onClick={() => window.open(`/reports/${searchResponse.student.id}?term=${searchResponse.student.academic.term}&year=${searchResponse.student.academic.year}`, '_blank')}
+                      >
+                        <ExternalLink size={20} /> View Official Report
+                      </button>
+                      <button
+                        className="btn btn-outline"
+                        style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', fontWeight: 700 }}
+                        onClick={() => window.open(`/students/${searchResponse.student.student_id}/history?year=${searchResponse.student.academic.year}`, '_blank')}
+                      >
+                        <TrendingUp size={20} /> Academic History
+                      </button>
+                    </>
                   )}
                   <button className="btn btn-primary" style={{ flex: 1 }} onClick={() => navigate('/')}>
                     <HomeIcon size={20} style={{ marginRight: '0.5rem' }} /> Exit to Landing Page

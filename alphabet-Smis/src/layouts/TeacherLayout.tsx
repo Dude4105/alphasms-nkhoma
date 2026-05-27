@@ -80,7 +80,7 @@ export default function TeacherLayout() {
     try {
       const token = localStorage.getItem('accessToken');
       if (!token) {
-        console.warn('No access token found in localStorage');
+        navigate('/login');
         return;
       }
       const res = await fetch('http://localhost:3000/teachers/me/profile', {
@@ -90,6 +90,10 @@ export default function TeacherLayout() {
         const data = await res.json();
         console.log('Teacher profile fetched:', data);
         setTeacherProfile(data);
+      } else if (res.status === 401) {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('user');
+        navigate('/login');
       } else {
         const errorData = await res.json();
         console.error('Failed to fetch teacher profile:', errorData);
@@ -107,8 +111,24 @@ export default function TeacherLayout() {
     }
   }, [isLightMode]);
 
-  const handleLogout = () => {
-    navigate('/');
+  const handleLogout = async () => {
+    try {
+      const token = localStorage.getItem('accessToken');
+      await fetch('http://localhost:3000/auth/logout', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+      });
+    } catch (err) {
+      console.error('Failed to logout on backend', err);
+    } finally {
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('user');
+      navigate('/login');
+    }
   };
 
   const navItems = [

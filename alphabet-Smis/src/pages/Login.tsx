@@ -16,13 +16,13 @@ export default function Login() {
     e.preventDefault();
     setIsLoading(true);
     setError('');
-    
     try {
       const response = await fetch('http://localhost:3000/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
         body: JSON.stringify({ email, password }),
       });
 
@@ -33,10 +33,8 @@ export default function Login() {
 
       const data = await response.json();
       
-      // Store tokens
+      // Store token and user
       localStorage.setItem('accessToken', data.accessToken);
-      localStorage.setItem('refreshToken', data.refreshToken);
-      // Optional: Store user info
       localStorage.setItem('user', JSON.stringify(data.user));
 
       // Navigate based on role from backend

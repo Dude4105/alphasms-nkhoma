@@ -16,13 +16,44 @@ const common_1 = require("@nestjs/common");
 let RefreshTokenStrategy = class RefreshTokenStrategy extends (0, passport_1.PassportStrategy)(passport_jwt_1.Strategy, 'jwt-refresh') {
     constructor() {
         super({
-            jwtFromRequest: passport_jwt_1.ExtractJwt.fromAuthHeaderAsBearerToken(),
+            jwtFromRequest: passport_jwt_1.ExtractJwt.fromExtractors([
+                (req) => {
+                    let token = null;
+                    if (req && req.cookies) {
+                        token = req.cookies['refreshToken'];
+                    }
+                    if (!token && req && req.headers && req.headers.cookie) {
+                        const cookies = req.headers.cookie.split(';');
+                        for (const cookie of cookies) {
+                            const [name, value] = cookie.trim().split('=');
+                            if (name === 'refreshToken') {
+                                token = value;
+                                break;
+                            }
+                        }
+                    }
+                    return token;
+                },
+            ]),
             secretOrKey: process.env.JWT_REFRESH_SECRET || 'super-secret-refresh-key',
             passReqToCallback: true,
         });
     }
     validate(req, payload) {
-        const refreshToken = req.get('Authorization')?.replace('Bearer', '').trim();
+        let refreshToken = null;
+        if (req && req.cookies) {
+            refreshToken = req.cookies['refreshToken'];
+        }
+        if (!refreshToken && req && req.headers && req.headers.cookie) {
+            const cookies = req.headers.cookie.split(';');
+            for (const cookie of cookies) {
+                const [name, value] = cookie.trim().split('=');
+                if (name === 'refreshToken') {
+                    refreshToken = value;
+                    break;
+                }
+            }
+        }
         return { ...payload, refreshToken };
     }
 };

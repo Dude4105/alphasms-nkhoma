@@ -1283,10 +1283,73 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "alphabet-Smis/src/App.tsx",
-      "source_location": "L57",
+      "source_location": "L58",
       "id": "src_app_app",
       "community": 5,
       "norm_label": "app()"
+    },
+    {
+      "label": "auth-interceptor.ts",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L1",
+      "id": "alphabet_smis_src_auth_interceptor_ts",
+      "community": 71,
+      "norm_label": "auth-interceptor.ts"
+    },
+    {
+      "label": "isTokenExpired()",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L6",
+      "id": "src_auth_interceptor_istokenexpired",
+      "community": 71,
+      "norm_label": "istokenexpired()"
+    },
+    {
+      "label": "refreshAccessToken()",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L35",
+      "id": "src_auth_interceptor_refreshaccesstoken",
+      "community": 71,
+      "norm_label": "refreshaccesstoken()"
+    },
+    {
+      "label": "modifiedInit",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L90",
+      "id": "src_auth_interceptor_modifiedinit",
+      "community": 71,
+      "norm_label": "modifiedinit"
+    },
+    {
+      "label": "options",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L98",
+      "id": "src_auth_interceptor_options",
+      "community": 71,
+      "norm_label": "options"
+    },
+    {
+      "label": "token",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L101",
+      "id": "src_auth_interceptor_token",
+      "community": 71,
+      "norm_label": "token"
+    },
+    {
+      "label": "authIdx",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L128",
+      "id": "src_auth_interceptor_authidx",
+      "community": 71,
+      "norm_label": "authidx"
     },
     {
       "label": "main.tsx",
@@ -1294,7 +1357,7 @@
       "source_file": "alphabet-Smis/src/main.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_main_tsx",
-      "community": 5,
+      "community": 71,
       "norm_label": "main.tsx"
     },
     {
@@ -1366,7 +1429,7 @@
       "source_file": "alphabet-Smis/src/pages/Apply.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_apply_tsx",
-      "community": 5,
+      "community": 97,
       "norm_label": "apply.tsx"
     },
     {
@@ -1375,7 +1438,7 @@
       "source_file": "alphabet-Smis/src/pages/Apply.tsx",
       "source_location": "L15",
       "id": "pages_apply_apply",
-      "community": 5,
+      "community": 97,
       "norm_label": "apply()"
     },
     {
@@ -1418,7 +1481,7 @@
       "label": "ExamResults()",
       "file_type": "code",
       "source_file": "alphabet-Smis/src/pages/ExamResults.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "id": "pages_examresults_examresults",
       "community": 73,
       "norm_label": "examresults()"
@@ -1528,7 +1591,7 @@
       "source_file": "alphabet-Smis/src/pages/Login.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_login_tsx",
-      "community": 5,
+      "community": 98,
       "norm_label": "login.tsx"
     },
     {
@@ -1537,8 +1600,26 @@
       "source_file": "alphabet-Smis/src/pages/Login.tsx",
       "source_location": "L6",
       "id": "pages_login_login",
-      "community": 5,
+      "community": 98,
       "norm_label": "login()"
+    },
+    {
+      "label": "PublicStudentHistory.tsx",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/pages/PublicStudentHistory.tsx",
+      "source_location": "L1",
+      "id": "alphabet_smis_src_pages_publicstudenthistory_tsx",
+      "community": 101,
+      "norm_label": "publicstudenthistory.tsx"
+    },
+    {
+      "label": "PublicStudentHistory()",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/pages/PublicStudentHistory.tsx",
+      "source_location": "L9",
+      "id": "pages_publicstudenthistory_publicstudenthistory",
+      "community": 101,
+      "norm_label": "publicstudenthistory()"
     },
     {
       "label": "PublicStudentReport.tsx",
@@ -1546,7 +1627,7 @@
       "source_file": "alphabet-Smis/src/pages/PublicStudentReport.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_publicstudentreport_tsx",
-      "community": 91,
+      "community": 102,
       "norm_label": "publicstudentreport.tsx"
     },
     {
@@ -1555,7 +1636,7 @@
       "source_file": "alphabet-Smis/src/pages/PublicStudentReport.tsx",
       "source_location": "L5",
       "id": "pages_publicstudentreport_publicstudentreport",
-      "community": 91,
+      "community": 102,
       "norm_label": "publicstudentreport()"
     },
     {
@@ -1600,7 +1681,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/AdminClasses.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_adminclasses_tsx",
-      "community": 87,
+      "community": 5,
       "norm_label": "adminclasses.tsx"
     },
     {
@@ -1609,7 +1690,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/AdminClasses.tsx",
       "source_location": "L5",
       "id": "admin_adminclasses_adminclasses",
-      "community": 87,
+      "community": 5,
       "norm_label": "adminclasses()"
     },
     {
@@ -1618,7 +1699,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/AdminDetail.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_admindetail_tsx",
-      "community": 46,
+      "community": 5,
       "norm_label": "admindetail.tsx"
     },
     {
@@ -1627,7 +1708,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/AdminDetail.tsx",
       "source_location": "L7",
       "id": "admin_admindetail_available_tabs",
-      "community": 46,
+      "community": 5,
       "norm_label": "available_tabs"
     },
     {
@@ -1636,7 +1717,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/AdminDetail.tsx",
       "source_location": "L12",
       "id": "admin_admindetail_admindetail",
-      "community": 46,
+      "community": 5,
       "norm_label": "admindetail()"
     },
     {
@@ -1645,7 +1726,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Boarding.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_boarding_tsx",
-      "community": 5,
+      "community": 77,
       "norm_label": "boarding.tsx"
     },
     {
@@ -1654,7 +1735,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Boarding.tsx",
       "source_location": "L20",
       "id": "admin_boarding_boarding",
-      "community": 5,
+      "community": 77,
       "norm_label": "boarding()"
     },
     {
@@ -1663,7 +1744,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/ClassDetail.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_classdetail_tsx",
-      "community": 5,
+      "community": 87,
       "norm_label": "classdetail.tsx"
     },
     {
@@ -1672,7 +1753,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/ClassDetail.tsx",
       "source_location": "L8",
       "id": "admin_classdetail_classdetail",
-      "community": 5,
+      "community": 87,
       "norm_label": "classdetail()"
     },
     {
@@ -1735,7 +1816,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Dashboard.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_dashboard_tsx",
-      "community": 69,
+      "community": 5,
       "norm_label": "dashboard.tsx"
     },
     {
@@ -1744,7 +1825,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Dashboard.tsx",
       "source_location": "L5",
       "id": "admin_dashboard_admindashboard",
-      "community": 69,
+      "community": 5,
       "norm_label": "admindashboard()"
     },
     {
@@ -1780,7 +1861,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/EditStudent.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_editstudent_tsx",
-      "community": 70,
+      "community": 95,
       "norm_label": "editstudent.tsx"
     },
     {
@@ -1789,7 +1870,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/EditStudent.tsx",
       "source_location": "L9",
       "id": "admin_editstudent_editstudent",
-      "community": 70,
+      "community": 95,
       "norm_label": "editstudent()"
     },
     {
@@ -1816,7 +1897,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Enrollment.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_enrollment_tsx",
-      "community": 64,
+      "community": 96,
       "norm_label": "enrollment.tsx"
     },
     {
@@ -1825,7 +1906,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Enrollment.tsx",
       "source_location": "L5",
       "id": "admin_enrollment_enrollment",
-      "community": 64,
+      "community": 96,
       "norm_label": "enrollment()"
     },
     {
@@ -1897,7 +1978,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/SchoolFeedForm.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_schoolfeedform_tsx",
-      "community": 5,
+      "community": 99,
       "norm_label": "schoolfeedform.tsx"
     },
     {
@@ -1906,7 +1987,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/SchoolFeedForm.tsx",
       "source_location": "L5",
       "id": "admin_schoolfeedform_schoolfeedform",
-      "community": 5,
+      "community": 99,
       "norm_label": "schoolfeedform()"
     },
     {
@@ -1969,7 +2050,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/SchoolGalleryForm.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_schoolgalleryform_tsx",
-      "community": 71,
+      "community": 100,
       "norm_label": "schoolgalleryform.tsx"
     },
     {
@@ -1978,7 +2059,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/SchoolGalleryForm.tsx",
       "source_location": "L6",
       "id": "admin_schoolgalleryform_schoolgalleryform",
-      "community": 71,
+      "community": 100,
       "norm_label": "schoolgalleryform()"
     },
     {
@@ -2032,7 +2113,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/StudentHistory.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_studenthistory_tsx",
-      "community": 5,
+      "community": 93,
       "norm_label": "studenthistory.tsx"
     },
     {
@@ -2041,7 +2122,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/StudentHistory.tsx",
       "source_location": "L7",
       "id": "admin_studenthistory_studenthistory",
-      "community": 5,
+      "community": 93,
       "norm_label": "studenthistory()"
     },
     {
@@ -2050,7 +2131,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Students.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_students_tsx",
-      "community": 67,
+      "community": 5,
       "norm_label": "students.tsx"
     },
     {
@@ -2059,7 +2140,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Students.tsx",
       "source_location": "L5",
       "id": "admin_students_students",
-      "community": 67,
+      "community": 5,
       "norm_label": "students()"
     },
     {
@@ -2221,7 +2302,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/AttendanceTracker.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_teacher_attendancetracker_tsx",
-      "community": 56,
+      "community": 94,
       "norm_label": "attendancetracker.tsx"
     },
     {
@@ -2230,7 +2311,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/AttendanceTracker.tsx",
       "source_location": "L9",
       "id": "teacher_attendancetracker_studentattendance",
-      "community": 56,
+      "community": 94,
       "norm_label": "studentattendance"
     },
     {
@@ -2239,7 +2320,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/AttendanceTracker.tsx",
       "source_location": "L15",
       "id": "teacher_attendancetracker_attendancetracker",
-      "community": 56,
+      "community": 94,
       "norm_label": "attendancetracker()"
     },
     {
@@ -2338,7 +2419,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/Dashboard.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_teacher_dashboard_tsx",
-      "community": 92,
+      "community": 5,
       "norm_label": "dashboard.tsx"
     },
     {
@@ -2347,7 +2428,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/Dashboard.tsx",
       "source_location": "L4",
       "id": "teacher_dashboard_dashboard",
-      "community": 92,
+      "community": 5,
       "norm_label": "dashboard()"
     },
     {
@@ -2356,7 +2437,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/FinalResults.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_teacher_finalresults_tsx",
-      "community": 75,
+      "community": 103,
       "norm_label": "finalresults.tsx"
     },
     {
@@ -2365,7 +2446,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/FinalResults.tsx",
       "source_location": "L10",
       "id": "teacher_finalresults_finalresults",
-      "community": 75,
+      "community": 103,
       "norm_label": "finalresults()"
     },
     {
@@ -2509,7 +2590,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/Profile.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_teacher_profile_tsx",
-      "community": 77,
+      "community": 104,
       "norm_label": "profile.tsx"
     },
     {
@@ -2518,7 +2599,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/Profile.tsx",
       "source_location": "L7",
       "id": "teacher_profile_profile",
-      "community": 77,
+      "community": 104,
       "norm_label": "profile()"
     },
     {
@@ -2527,7 +2608,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/StudentReport.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_teacher_studentreport_tsx",
-      "community": 78,
+      "community": 5,
       "norm_label": "studentreport.tsx"
     },
     {
@@ -2536,7 +2617,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/StudentReport.tsx",
       "source_location": "L5",
       "id": "teacher_studentreport_studentreport",
-      "community": 78,
+      "community": 5,
       "norm_label": "studentreport()"
     },
     {
@@ -2716,7 +2797,7 @@
       "source_file": "backend/package.json",
       "source_location": "L1",
       "id": "backend_package_json",
-      "community": 1,
+      "community": 78,
       "norm_label": "package.json"
     },
     {
@@ -2725,7 +2806,7 @@
       "source_file": "backend/package.json",
       "source_location": "L2",
       "id": "backend_package_name",
-      "community": 1,
+      "community": 78,
       "norm_label": "name"
     },
     {
@@ -2734,7 +2815,7 @@
       "source_file": "backend/package.json",
       "source_location": "L3",
       "id": "backend_package_version",
-      "community": 1,
+      "community": 78,
       "norm_label": "version"
     },
     {
@@ -2743,7 +2824,7 @@
       "source_file": "backend/package.json",
       "source_location": "L4",
       "id": "backend_package_description",
-      "community": 1,
+      "community": 78,
       "norm_label": "description"
     },
     {
@@ -2752,7 +2833,7 @@
       "source_file": "backend/package.json",
       "source_location": "L5",
       "id": "backend_package_author",
-      "community": 1,
+      "community": 78,
       "norm_label": "author"
     },
     {
@@ -2761,7 +2842,7 @@
       "source_file": "backend/package.json",
       "source_location": "L6",
       "id": "backend_package_private",
-      "community": 1,
+      "community": 78,
       "norm_label": "private"
     },
     {
@@ -2770,7 +2851,7 @@
       "source_file": "backend/package.json",
       "source_location": "L7",
       "id": "backend_package_license",
-      "community": 1,
+      "community": 78,
       "norm_label": "license"
     },
     {
@@ -2779,7 +2860,7 @@
       "source_file": "backend/package.json",
       "source_location": "L8",
       "id": "backend_package_scripts",
-      "community": 1,
+      "community": 46,
       "norm_label": "scripts"
     },
     {
@@ -2788,7 +2869,7 @@
       "source_file": "backend/package.json",
       "source_location": "L9",
       "id": "backend_package_scripts_build",
-      "community": 1,
+      "community": 46,
       "norm_label": "build"
     },
     {
@@ -2797,7 +2878,7 @@
       "source_file": "backend/package.json",
       "source_location": "L10",
       "id": "backend_package_scripts_format",
-      "community": 1,
+      "community": 46,
       "norm_label": "format"
     },
     {
@@ -2806,7 +2887,7 @@
       "source_file": "backend/package.json",
       "source_location": "L11",
       "id": "backend_package_scripts_start",
-      "community": 1,
+      "community": 46,
       "norm_label": "start"
     },
     {
@@ -2815,7 +2896,7 @@
       "source_file": "backend/package.json",
       "source_location": "L12",
       "id": "backend_package_scripts_start_dev",
-      "community": 1,
+      "community": 46,
       "norm_label": "start:dev"
     },
     {
@@ -2824,7 +2905,7 @@
       "source_file": "backend/package.json",
       "source_location": "L13",
       "id": "backend_package_scripts_start_debug",
-      "community": 1,
+      "community": 46,
       "norm_label": "start:debug"
     },
     {
@@ -2833,7 +2914,7 @@
       "source_file": "backend/package.json",
       "source_location": "L14",
       "id": "backend_package_scripts_start_prod",
-      "community": 1,
+      "community": 46,
       "norm_label": "start:prod"
     },
     {
@@ -2842,7 +2923,7 @@
       "source_file": "backend/package.json",
       "source_location": "L15",
       "id": "backend_package_scripts_lint",
-      "community": 1,
+      "community": 46,
       "norm_label": "lint"
     },
     {
@@ -2851,7 +2932,7 @@
       "source_file": "backend/package.json",
       "source_location": "L16",
       "id": "backend_package_scripts_test",
-      "community": 1,
+      "community": 46,
       "norm_label": "test"
     },
     {
@@ -2860,7 +2941,7 @@
       "source_file": "backend/package.json",
       "source_location": "L17",
       "id": "backend_package_scripts_test_watch",
-      "community": 1,
+      "community": 46,
       "norm_label": "test:watch"
     },
     {
@@ -2869,7 +2950,7 @@
       "source_file": "backend/package.json",
       "source_location": "L18",
       "id": "backend_package_scripts_test_cov",
-      "community": 1,
+      "community": 46,
       "norm_label": "test:cov"
     },
     {
@@ -2878,7 +2959,7 @@
       "source_file": "backend/package.json",
       "source_location": "L19",
       "id": "backend_package_scripts_test_debug",
-      "community": 1,
+      "community": 46,
       "norm_label": "test:debug"
     },
     {
@@ -2887,7 +2968,7 @@
       "source_file": "backend/package.json",
       "source_location": "L20",
       "id": "backend_package_scripts_test_e2e",
-      "community": 1,
+      "community": 46,
       "norm_label": "test:e2e"
     },
     {
@@ -3274,7 +3355,7 @@
       "source_file": "backend/package.json",
       "source_location": "L66",
       "id": "backend_package_jest",
-      "community": 1,
+      "community": 91,
       "norm_label": "jest"
     },
     {
@@ -3283,7 +3364,7 @@
       "source_file": "backend/package.json",
       "source_location": "L67",
       "id": "backend_package_jest_modulefileextensions",
-      "community": 1,
+      "community": 91,
       "norm_label": "modulefileextensions"
     },
     {
@@ -3292,7 +3373,7 @@
       "source_file": "backend/package.json",
       "source_location": "L72",
       "id": "backend_package_jest_rootdir",
-      "community": 1,
+      "community": 91,
       "norm_label": "rootdir"
     },
     {
@@ -3301,7 +3382,7 @@
       "source_file": "backend/package.json",
       "source_location": "L73",
       "id": "backend_package_jest_testregex",
-      "community": 1,
+      "community": 91,
       "norm_label": "testregex"
     },
     {
@@ -3310,7 +3391,7 @@
       "source_file": "backend/package.json",
       "source_location": "L74",
       "id": "backend_package_jest_transform",
-      "community": 1,
+      "community": 91,
       "norm_label": "transform"
     },
     {
@@ -3319,7 +3400,7 @@
       "source_file": "backend/package.json",
       "source_location": "L75",
       "id": "backend_package_transform_t_j_s",
-      "community": 1,
+      "community": 91,
       "norm_label": "^.+\\\\.(t|j)s$"
     },
     {
@@ -3328,7 +3409,7 @@
       "source_file": "backend/package.json",
       "source_location": "L77",
       "id": "backend_package_jest_collectcoveragefrom",
-      "community": 1,
+      "community": 91,
       "norm_label": "collectcoveragefrom"
     },
     {
@@ -3337,7 +3418,7 @@
       "source_file": "backend/package.json",
       "source_location": "L80",
       "id": "backend_package_jest_coveragedirectory",
-      "community": 1,
+      "community": 91,
       "norm_label": "coveragedirectory"
     },
     {
@@ -3346,7 +3427,7 @@
       "source_file": "backend/package.json",
       "source_location": "L81",
       "id": "backend_package_jest_testenvironment",
-      "community": 1,
+      "community": 91,
       "norm_label": "testenvironment"
     },
     {
@@ -3355,7 +3436,7 @@
       "source_file": "backend/package.json",
       "source_location": "L83",
       "id": "backend_package_prisma",
-      "community": 1,
+      "community": 78,
       "norm_label": "prisma"
     },
     {
@@ -3364,7 +3445,7 @@
       "source_file": "backend/package.json",
       "source_location": "L84",
       "id": "backend_package_prisma_seed",
-      "community": 1,
+      "community": 78,
       "norm_label": "seed"
     },
     {
@@ -4273,7 +4354,7 @@
       "source_file": "backend/src/attendance/attendance.module.ts",
       "source_location": "L12",
       "id": "attendance_attendance_module_attendancemodule",
-      "community": 0,
+      "community": 68,
       "norm_label": "attendancemodule"
     },
     {
@@ -4334,7 +4415,7 @@
       "label": "AuthController",
       "file_type": "code",
       "source_file": "backend/src/auth/auth.controller.ts",
-      "source_location": "L15",
+      "source_location": "L17",
       "id": "auth_auth_controller_authcontroller",
       "community": 6,
       "norm_label": "authcontroller"
@@ -4343,7 +4424,7 @@
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/auth/auth.controller.ts",
-      "source_location": "L16",
+      "source_location": "L18",
       "id": "auth_auth_controller_authcontroller_constructor",
       "community": 6,
       "norm_label": ".constructor()"
@@ -4352,7 +4433,7 @@
       "label": ".signup()",
       "file_type": "code",
       "source_file": "backend/src/auth/auth.controller.ts",
-      "source_location": "L19",
+      "source_location": "L21",
       "id": "auth_auth_controller_authcontroller_signup",
       "community": 6,
       "norm_label": ".signup()"
@@ -4361,7 +4442,7 @@
       "label": ".signin()",
       "file_type": "code",
       "source_file": "backend/src/auth/auth.controller.ts",
-      "source_location": "L29",
+      "source_location": "L42",
       "id": "auth_auth_controller_authcontroller_signin",
       "community": 6,
       "norm_label": ".signin()"
@@ -4370,7 +4451,7 @@
       "label": ".logout()",
       "file_type": "code",
       "source_file": "backend/src/auth/auth.controller.ts",
-      "source_location": "L36",
+      "source_location": "L63",
       "id": "auth_auth_controller_authcontroller_logout",
       "community": 6,
       "norm_label": ".logout()"
@@ -4379,7 +4460,7 @@
       "label": ".refreshTokens()",
       "file_type": "code",
       "source_file": "backend/src/auth/auth.controller.ts",
-      "source_location": "L43",
+      "source_location": "L80",
       "id": "auth_auth_controller_authcontroller_refreshtokens",
       "community": 6,
       "norm_label": ".refreshtokens()"
@@ -4388,7 +4469,7 @@
       "label": ".forgotPassword()",
       "file_type": "code",
       "source_file": "backend/src/auth/auth.controller.ts",
-      "source_location": "L51",
+      "source_location": "L99",
       "id": "auth_auth_controller_authcontroller_forgotpassword",
       "community": 6,
       "norm_label": ".forgotpassword()"
@@ -4516,7 +4597,7 @@
       "source_file": "backend/src/auth/jwt.strategy.ts",
       "source_location": "L1",
       "id": "backend_src_auth_jwt_strategy_ts",
-      "community": 6,
+      "community": 21,
       "norm_label": "jwt.strategy.ts"
     },
     {
@@ -4577,7 +4658,7 @@
       "label": ".validate()",
       "file_type": "code",
       "source_file": "backend/src/auth/refresh.strategy.ts",
-      "source_location": "L19",
+      "source_location": "L38",
       "id": "auth_refresh_strategy_refreshtokenstrategy_validate",
       "community": 6,
       "norm_label": ".validate()"
@@ -4678,7 +4759,7 @@
       "source_file": "backend/src/classes/classes.module.ts",
       "source_location": "L1",
       "id": "backend_src_classes_classes_module_ts",
-      "community": 24,
+      "community": 0,
       "norm_label": "classes.module.ts"
     },
     {
@@ -4966,7 +5047,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L9",
       "id": "feeds_feeds_controller_feedscontroller",
-      "community": 17,
+      "community": 92,
       "norm_label": "feedscontroller"
     },
     {
@@ -4975,7 +5056,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L10",
       "id": "feeds_feeds_controller_feedscontroller_constructor",
-      "community": 17,
+      "community": 92,
       "norm_label": ".constructor()"
     },
     {
@@ -4984,7 +5065,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L13",
       "id": "feeds_feeds_controller_feedscontroller_findallpublic",
-      "community": 17,
+      "community": 92,
       "norm_label": ".findallpublic()"
     },
     {
@@ -4993,7 +5074,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L19",
       "id": "feeds_feeds_controller_feedscontroller_findalladmin",
-      "community": 17,
+      "community": 92,
       "norm_label": ".findalladmin()"
     },
     {
@@ -5002,7 +5083,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L24",
       "id": "feeds_feeds_controller_feedscontroller_findone",
-      "community": 17,
+      "community": 92,
       "norm_label": ".findone()"
     },
     {
@@ -5020,7 +5101,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L40",
       "id": "feeds_feeds_controller_feedscontroller_create",
-      "community": 17,
+      "community": 92,
       "norm_label": ".create()"
     },
     {
@@ -5029,7 +5110,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L60",
       "id": "feeds_feeds_controller_feedscontroller_update",
-      "community": 17,
+      "community": 92,
       "norm_label": ".update()"
     },
     {
@@ -5038,7 +5119,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L81",
       "id": "feeds_feeds_controller_feedscontroller_remove",
-      "community": 17,
+      "community": 92,
       "norm_label": ".remove()"
     },
     {
@@ -5047,7 +5128,7 @@
       "source_file": "backend/src/feeds/feeds.module.ts",
       "source_location": "L1",
       "id": "backend_src_feeds_feeds_module_ts",
-      "community": 17,
+      "community": 0,
       "norm_label": "feeds.module.ts"
     },
     {
@@ -5056,7 +5137,7 @@
       "source_file": "backend/src/feeds/feeds.module.ts",
       "source_location": "L11",
       "id": "feeds_feeds_module_feedsmodule",
-      "community": 17,
+      "community": 0,
       "norm_label": "feedsmodule"
     },
     {
@@ -5065,7 +5146,7 @@
       "source_file": "backend/src/feeds/feeds.service.ts",
       "source_location": "L1",
       "id": "backend_src_feeds_feeds_service_ts",
-      "community": 17,
+      "community": 21,
       "norm_label": "feeds.service.ts"
     },
     {
@@ -5299,7 +5380,7 @@
       "source_file": "backend/src/finance/finance.module.ts",
       "source_location": "L1",
       "id": "backend_src_finance_finance_module_ts",
-      "community": 0,
+      "community": 15,
       "norm_label": "finance.module.ts"
     },
     {
@@ -5308,7 +5389,7 @@
       "source_file": "backend/src/finance/finance.module.ts",
       "source_location": "L11",
       "id": "finance_finance_module_financemodule",
-      "community": 0,
+      "community": 15,
       "norm_label": "financemodule"
     },
     {
@@ -5317,7 +5398,7 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L1",
       "id": "backend_src_finance_finance_service_spec_ts",
-      "community": 21,
+      "community": 15,
       "norm_label": "finance.service.spec.ts"
     },
     {
@@ -5326,7 +5407,7 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L57",
       "id": "finance_finance_service_spec_structures",
-      "community": 21,
+      "community": 15,
       "norm_label": "structures"
     },
     {
@@ -5335,7 +5416,7 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L63",
       "id": "finance_finance_service_spec_payments",
-      "community": 21,
+      "community": 15,
       "norm_label": "payments"
     },
     {
@@ -5344,7 +5425,7 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L68",
       "id": "finance_finance_service_spec_res",
-      "community": 21,
+      "community": 15,
       "norm_label": "res"
     },
     {
@@ -5353,7 +5434,7 @@
       "source_file": "backend/src/finance/finance.service.ts",
       "source_location": "L1",
       "id": "backend_src_finance_finance_service_ts",
-      "community": 21,
+      "community": 15,
       "norm_label": "finance.service.ts"
     },
     {
@@ -5524,7 +5605,7 @@
       "source_file": "backend/src/gallery/gallery.controller.ts",
       "source_location": "L9",
       "id": "gallery_gallery_controller_gallerycontroller",
-      "community": 76,
+      "community": 19,
       "norm_label": "gallerycontroller"
     },
     {
@@ -5533,7 +5614,7 @@
       "source_file": "backend/src/gallery/gallery.controller.ts",
       "source_location": "L10",
       "id": "gallery_gallery_controller_gallerycontroller_constructor",
-      "community": 76,
+      "community": 19,
       "norm_label": ".constructor()"
     },
     {
@@ -5542,7 +5623,7 @@
       "source_file": "backend/src/gallery/gallery.controller.ts",
       "source_location": "L13",
       "id": "gallery_gallery_controller_gallerycontroller_findall",
-      "community": 76,
+      "community": 19,
       "norm_label": ".findall()"
     },
     {
@@ -5551,7 +5632,7 @@
       "source_file": "backend/src/gallery/gallery.controller.ts",
       "source_location": "L18",
       "id": "gallery_gallery_controller_gallerycontroller_findone",
-      "community": 76,
+      "community": 19,
       "norm_label": ".findone()"
     },
     {
@@ -5569,7 +5650,7 @@
       "source_file": "backend/src/gallery/gallery.controller.ts",
       "source_location": "L34",
       "id": "gallery_gallery_controller_gallerycontroller_create",
-      "community": 76,
+      "community": 19,
       "norm_label": ".create()"
     },
     {
@@ -5578,7 +5659,7 @@
       "source_file": "backend/src/gallery/gallery.controller.ts",
       "source_location": "L54",
       "id": "gallery_gallery_controller_gallerycontroller_update",
-      "community": 76,
+      "community": 19,
       "norm_label": ".update()"
     },
     {
@@ -5587,7 +5668,7 @@
       "source_file": "backend/src/gallery/gallery.controller.ts",
       "source_location": "L68",
       "id": "gallery_gallery_controller_gallerycontroller_remove",
-      "community": 76,
+      "community": 19,
       "norm_label": ".remove()"
     },
     {
@@ -5596,7 +5677,7 @@
       "source_file": "backend/src/gallery/gallery.module.ts",
       "source_location": "L1",
       "id": "backend_src_gallery_gallery_module_ts",
-      "community": 19,
+      "community": 0,
       "norm_label": "gallery.module.ts"
     },
     {
@@ -5605,7 +5686,7 @@
       "source_file": "backend/src/gallery/gallery.module.ts",
       "source_location": "L11",
       "id": "gallery_gallery_module_gallerymodule",
-      "community": 19,
+      "community": 0,
       "norm_label": "gallerymodule"
     },
     {
@@ -5614,7 +5695,7 @@
       "source_file": "backend/src/gallery/gallery.service.ts",
       "source_location": "L1",
       "id": "backend_src_gallery_gallery_service_ts",
-      "community": 19,
+      "community": 21,
       "norm_label": "gallery.service.ts"
     },
     {
@@ -5686,7 +5767,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L1",
       "id": "backend_src_hostels_hostels_controller_ts",
-      "community": 18,
+      "community": 24,
       "norm_label": "hostels.controller.ts"
     },
     {
@@ -5695,7 +5776,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L16",
       "id": "hostels_hostels_controller_hostelscontroller",
-      "community": 18,
+      "community": 76,
       "norm_label": "hostelscontroller"
     },
     {
@@ -5704,7 +5785,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L17",
       "id": "hostels_hostels_controller_hostelscontroller_constructor",
-      "community": 18,
+      "community": 76,
       "norm_label": ".constructor()"
     },
     {
@@ -5713,7 +5794,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L20",
       "id": "hostels_hostels_controller_hostelscontroller_findall",
-      "community": 18,
+      "community": 76,
       "norm_label": ".findall()"
     },
     {
@@ -5722,7 +5803,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L25",
       "id": "hostels_hostels_controller_hostelscontroller_create",
-      "community": 18,
+      "community": 76,
       "norm_label": ".create()"
     },
     {
@@ -5731,7 +5812,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L30",
       "id": "hostels_hostels_controller_hostelscontroller_getstats",
-      "community": 18,
+      "community": 76,
       "norm_label": ".getstats()"
     },
     {
@@ -5740,7 +5821,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L35",
       "id": "hostels_hostels_controller_hostelscontroller_findone",
-      "community": 18,
+      "community": 76,
       "norm_label": ".findone()"
     },
     {
@@ -5749,7 +5830,7 @@
       "source_file": "backend/src/hostels/hostels.module.ts",
       "source_location": "L1",
       "id": "backend_src_hostels_hostels_module_ts",
-      "community": 18,
+      "community": 24,
       "norm_label": "hostels.module.ts"
     },
     {
@@ -5758,7 +5839,7 @@
       "source_file": "backend/src/hostels/hostels.module.ts",
       "source_location": "L9",
       "id": "hostels_hostels_module_hostelsmodule",
-      "community": 18,
+      "community": 24,
       "norm_label": "hostelsmodule"
     },
     {
@@ -5767,7 +5848,7 @@
       "source_file": "backend/src/hostels/hostels.service.ts",
       "source_location": "L1",
       "id": "backend_src_hostels_hostels_service_ts",
-      "community": 18,
+      "community": 24,
       "norm_label": "hostels.service.ts"
     },
     {
@@ -5884,7 +5965,7 @@
       "source_file": "backend/src/students/public-results.controller.ts",
       "source_location": "L1",
       "id": "backend_src_students_public_results_controller_ts",
-      "community": 27,
+      "community": 21,
       "norm_label": "public-results.controller.ts"
     },
     {
@@ -5915,10 +5996,19 @@
       "norm_label": ".getpublicreport()"
     },
     {
-      "label": ".getStatus()",
+      "label": ".getPublicHistory()",
       "file_type": "code",
       "source_file": "backend/src/students/public-results.controller.ts",
       "source_location": "L23",
+      "id": "students_public_results_controller_publicresultscontroller_getpublichistory",
+      "community": 26,
+      "norm_label": ".getpublichistory()"
+    },
+    {
+      "label": ".getStatus()",
+      "file_type": "code",
+      "source_file": "backend/src/students/public-results.controller.ts",
+      "source_location": "L54",
       "id": "students_public_results_controller_publicresultscontroller_getstatus",
       "community": 26,
       "norm_label": ".getstatus()"
@@ -5927,7 +6017,7 @@
       "label": ".getInfo()",
       "file_type": "code",
       "source_file": "backend/src/students/public-results.controller.ts",
-      "source_location": "L31",
+      "source_location": "L62",
       "id": "students_public_results_controller_publicresultscontroller_getinfo",
       "community": 26,
       "norm_label": ".getinfo()"
@@ -5936,7 +6026,7 @@
       "label": ".checkResults()",
       "file_type": "code",
       "source_file": "backend/src/students/public-results.controller.ts",
-      "source_location": "L40",
+      "source_location": "L71",
       "id": "students_public_results_controller_publicresultscontroller_checkresults",
       "community": 26,
       "norm_label": ".checkresults()"
@@ -5947,7 +6037,7 @@
       "source_file": "backend/src/students/students.controller.ts",
       "source_location": "L1",
       "id": "backend_src_students_students_controller_ts",
-      "community": 27,
+      "community": 28,
       "norm_label": "students.controller.ts"
     },
     {
@@ -6019,7 +6109,7 @@
       "source_file": "backend/src/students/students.module.ts",
       "source_location": "L1",
       "id": "backend_src_students_students_module_ts",
-      "community": 27,
+      "community": 28,
       "norm_label": "students.module.ts"
     },
     {
@@ -6028,7 +6118,7 @@
       "source_file": "backend/src/students/students.module.ts",
       "source_location": "L10",
       "id": "students_students_module_studentsmodule",
-      "community": 0,
+      "community": 28,
       "norm_label": "studentsmodule"
     },
     {
@@ -6037,7 +6127,7 @@
       "source_file": "backend/src/students/students.service.ts",
       "source_location": "L1",
       "id": "backend_src_students_students_service_ts",
-      "community": 27,
+      "community": 21,
       "norm_label": "students.service.ts"
     },
     {
@@ -6118,7 +6208,7 @@
       "source_file": "backend/src/subjects/subjects.controller.ts",
       "source_location": "L1",
       "id": "backend_src_subjects_subjects_controller_ts",
-      "community": 14,
+      "community": 24,
       "norm_label": "subjects.controller.ts"
     },
     {
@@ -6208,7 +6298,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L1",
       "id": "backend_src_subjects_subjects_service_ts",
-      "community": 14,
+      "community": 24,
       "norm_label": "subjects.service.ts"
     },
     {
@@ -6217,7 +6307,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L10",
       "id": "subjects_subjects_service_subjectsservice",
-      "community": 14,
+      "community": 75,
       "norm_label": "subjectsservice"
     },
     {
@@ -6226,7 +6316,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L11",
       "id": "subjects_subjects_service_subjectsservice_constructor",
-      "community": 14,
+      "community": 75,
       "norm_label": ".constructor()"
     },
     {
@@ -6235,7 +6325,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L13",
       "id": "subjects_subjects_service_subjectsservice_create",
-      "community": 14,
+      "community": 75,
       "norm_label": ".create()"
     },
     {
@@ -6244,7 +6334,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L27",
       "id": "subjects_subjects_service_subjectsservice_findall",
-      "community": 14,
+      "community": 75,
       "norm_label": ".findall()"
     },
     {
@@ -6253,7 +6343,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L62",
       "id": "subjects_subjects_service_subjectsservice_findone",
-      "community": 14,
+      "community": 75,
       "norm_label": ".findone()"
     },
     {
@@ -6262,7 +6352,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L68",
       "id": "subjects_subjects_service_subjectsservice_remove",
-      "community": 14,
+      "community": 75,
       "norm_label": ".remove()"
     },
     {
@@ -6271,7 +6361,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L99",
       "id": "subjects_subjects_service_subjectsservice_bulkcreate",
-      "community": 14,
+      "community": 75,
       "norm_label": ".bulkcreate()"
     },
     {
@@ -7614,6 +7704,843 @@
       "id": "backend_readme_license",
       "community": 63,
       "norm_label": "license"
+    },
+    {
+      "label": "01_project_overview.md",
+      "file_type": "document",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L1",
+      "id": "docs_01_project_overview_md",
+      "community": 70,
+      "norm_label": "01_project_overview.md"
+    },
+    {
+      "label": "Alphabet-SMIS: Project Overview",
+      "file_type": "document",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L1",
+      "id": "docs_01_project_overview_alphabet_smis_project_overview",
+      "community": 70,
+      "norm_label": "alphabet-smis: project overview"
+    },
+    {
+      "label": "1. System Overview and Problem Statement",
+      "file_type": "document",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L3",
+      "id": "docs_01_project_overview_1_system_overview_and_problem_statement",
+      "community": 70,
+      "norm_label": "1. system overview and problem statement"
+    },
+    {
+      "label": "2. Technology Stack and Architecture Rationale",
+      "file_type": "document",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L18",
+      "id": "docs_01_project_overview_2_technology_stack_and_architecture_rationale",
+      "community": 70,
+      "norm_label": "2. technology stack and architecture rationale"
+    },
+    {
+      "label": "Technology Overview Table",
+      "file_type": "document",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L22",
+      "id": "docs_01_project_overview_technology_overview_table",
+      "community": 70,
+      "norm_label": "technology overview table"
+    },
+    {
+      "label": "3. High-Level Feature List",
+      "file_type": "document",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L36",
+      "id": "docs_01_project_overview_3_high_level_feature_list",
+      "community": 70,
+      "norm_label": "3. high-level feature list"
+    },
+    {
+      "label": "4. Core Strengths and Competitive Advantages",
+      "file_type": "document",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L67",
+      "id": "docs_01_project_overview_4_core_strengths_and_competitive_advantages",
+      "community": 70,
+      "norm_label": "4. core strengths and competitive advantages"
+    },
+    {
+      "label": "5. Known Trade-offs and Design Constraints",
+      "file_type": "document",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L76",
+      "id": "docs_01_project_overview_5_known_trade_offs_and_design_constraints",
+      "community": 70,
+      "norm_label": "5. known trade-offs and design constraints"
+    },
+    {
+      "label": "6. System Context Diagram",
+      "file_type": "document",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L87",
+      "id": "docs_01_project_overview_6_system_context_diagram",
+      "community": 70,
+      "norm_label": "6. system context diagram"
+    },
+    {
+      "label": "code:mermaid (flowchart TD)",
+      "file_type": "document",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L89",
+      "id": "docs_01_project_overview_codeblock_1",
+      "community": 70,
+      "norm_label": "code:mermaid (flowchart td)"
+    },
+    {
+      "label": "02_architecture.md",
+      "file_type": "document",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L1",
+      "id": "docs_02_architecture_md",
+      "community": 69,
+      "norm_label": "02_architecture.md"
+    },
+    {
+      "label": "Alphabet-SMIS: Architecture and System Design",
+      "file_type": "document",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L1",
+      "id": "docs_02_architecture_alphabet_smis_architecture_and_system_design",
+      "community": 69,
+      "norm_label": "alphabet-smis: architecture and system design"
+    },
+    {
+      "label": "1. Architectural Pattern",
+      "file_type": "document",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L3",
+      "id": "docs_02_architecture_1_architectural_pattern",
+      "community": 69,
+      "norm_label": "1. architectural pattern"
+    },
+    {
+      "label": "2. System Architecture Diagram",
+      "file_type": "document",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L13",
+      "id": "docs_02_architecture_2_system_architecture_diagram",
+      "community": 69,
+      "norm_label": "2. system architecture diagram"
+    },
+    {
+      "label": "code:mermaid (flowchart TD)",
+      "file_type": "document",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L15",
+      "id": "docs_02_architecture_codeblock_1",
+      "community": 69,
+      "norm_label": "code:mermaid (flowchart td)"
+    },
+    {
+      "label": "3. Request Lifecycle Walkthrough",
+      "file_type": "document",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L75",
+      "id": "docs_02_architecture_3_request_lifecycle_walkthrough",
+      "community": 69,
+      "norm_label": "3. request lifecycle walkthrough"
+    },
+    {
+      "label": "4. Module and Service Breakdown",
+      "file_type": "document",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L92",
+      "id": "docs_02_architecture_4_module_and_service_breakdown",
+      "community": 69,
+      "norm_label": "4. module and service breakdown"
+    },
+    {
+      "label": "Component Dependency Graph",
+      "file_type": "document",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L112",
+      "id": "docs_02_architecture_component_dependency_graph",
+      "community": 69,
+      "norm_label": "component dependency graph"
+    },
+    {
+      "label": "code:mermaid (graph TD)",
+      "file_type": "document",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L114",
+      "id": "docs_02_architecture_codeblock_2",
+      "community": 69,
+      "norm_label": "code:mermaid (graph td)"
+    },
+    {
+      "label": "5. Infrastructure and Deployment Layout",
+      "file_type": "document",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L145",
+      "id": "docs_02_architecture_5_infrastructure_and_deployment_layout",
+      "community": 69,
+      "norm_label": "5. infrastructure and deployment layout"
+    },
+    {
+      "label": "6. Scalability Considerations",
+      "file_type": "document",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L156",
+      "id": "docs_02_architecture_6_scalability_considerations",
+      "community": 69,
+      "norm_label": "6. scalability considerations"
+    },
+    {
+      "label": "7. Background Jobs and Workers",
+      "file_type": "document",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L169",
+      "id": "docs_02_architecture_7_background_jobs_and_workers",
+      "community": 69,
+      "norm_label": "7. background jobs and workers"
+    },
+    {
+      "label": "03_security.md",
+      "file_type": "document",
+      "source_file": "docs/03_security.md",
+      "source_location": "L1",
+      "id": "docs_03_security_md",
+      "community": 67,
+      "norm_label": "03_security.md"
+    },
+    {
+      "label": "Alphabet-SMIS: Security Implementation",
+      "file_type": "document",
+      "source_file": "docs/03_security.md",
+      "source_location": "L1",
+      "id": "docs_03_security_alphabet_smis_security_implementation",
+      "community": 67,
+      "norm_label": "alphabet-smis: security implementation"
+    },
+    {
+      "label": "1. Authentication Mechanism",
+      "file_type": "document",
+      "source_file": "docs/03_security.md",
+      "source_location": "L3",
+      "id": "docs_03_security_1_authentication_mechanism",
+      "community": 67,
+      "norm_label": "1. authentication mechanism"
+    },
+    {
+      "label": "End-to-End Flow",
+      "file_type": "document",
+      "source_file": "docs/03_security.md",
+      "source_location": "L7",
+      "id": "docs_03_security_end_to_end_flow",
+      "community": 67,
+      "norm_label": "end-to-end flow"
+    },
+    {
+      "label": "Authentication Flow Diagram",
+      "file_type": "document",
+      "source_file": "docs/03_security.md",
+      "source_location": "L19",
+      "id": "docs_03_security_authentication_flow_diagram",
+      "community": 67,
+      "norm_label": "authentication flow diagram"
+    },
+    {
+      "label": "code:mermaid (sequenceDiagram)",
+      "file_type": "document",
+      "source_file": "docs/03_security.md",
+      "source_location": "L21",
+      "id": "docs_03_security_codeblock_1",
+      "community": 67,
+      "norm_label": "code:mermaid (sequencediagram)"
+    },
+    {
+      "label": "2. Authorization Model",
+      "file_type": "document",
+      "source_file": "docs/03_security.md",
+      "source_location": "L51",
+      "id": "docs_03_security_2_authorization_model",
+      "community": 67,
+      "norm_label": "2. authorization model"
+    },
+    {
+      "label": "Enforcement Mechanisms",
+      "file_type": "document",
+      "source_file": "docs/03_security.md",
+      "source_location": "L55",
+      "id": "docs_03_security_enforcement_mechanisms",
+      "community": 67,
+      "norm_label": "enforcement mechanisms"
+    },
+    {
+      "label": "Role Permissions Map",
+      "file_type": "document",
+      "source_file": "docs/03_security.md",
+      "source_location": "L59",
+      "id": "docs_03_security_role_permissions_map",
+      "community": 67,
+      "norm_label": "role permissions map"
+    },
+    {
+      "label": "3. Input Validation and Sanitization",
+      "file_type": "document",
+      "source_file": "docs/03_security.md",
+      "source_location": "L70",
+      "id": "docs_03_security_3_input_validation_and_sanitization",
+      "community": 67,
+      "norm_label": "3. input validation and sanitization"
+    },
+    {
+      "label": "4. Data Protection",
+      "file_type": "document",
+      "source_file": "docs/03_security.md",
+      "source_location": "L80",
+      "id": "docs_03_security_4_data_protection",
+      "community": 67,
+      "norm_label": "4. data protection"
+    },
+    {
+      "label": "5. API Security and Edge Protections",
+      "file_type": "document",
+      "source_file": "docs/03_security.md",
+      "source_location": "L91",
+      "id": "docs_03_security_5_api_security_and_edge_protections",
+      "community": 67,
+      "norm_label": "5. api security and edge protections"
+    },
+    {
+      "label": "Known Security Considerations (Areas for Hardening)",
+      "file_type": "document",
+      "source_file": "docs/03_security.md",
+      "source_location": "L96",
+      "id": "docs_03_security_known_security_considerations_areas_for_hardening",
+      "community": 67,
+      "norm_label": "known security considerations (areas for hardening)"
+    },
+    {
+      "label": "04_database.md",
+      "file_type": "document",
+      "source_file": "docs/04_database.md",
+      "source_location": "L1",
+      "id": "docs_04_database_md",
+      "community": 64,
+      "norm_label": "04_database.md"
+    },
+    {
+      "label": "Alphabet-SMIS: Database and Data Models",
+      "file_type": "document",
+      "source_file": "docs/04_database.md",
+      "source_location": "L1",
+      "id": "docs_04_database_alphabet_smis_database_and_data_models",
+      "community": 64,
+      "norm_label": "alphabet-smis: database and data models"
+    },
+    {
+      "label": "1. Database Technology",
+      "file_type": "document",
+      "source_file": "docs/04_database.md",
+      "source_location": "L3",
+      "id": "docs_04_database_1_database_technology",
+      "community": 64,
+      "norm_label": "1. database technology"
+    },
+    {
+      "label": "2. Entity-Relationship Diagram",
+      "file_type": "document",
+      "source_file": "docs/04_database.md",
+      "source_location": "L15",
+      "id": "docs_04_database_2_entity_relationship_diagram",
+      "community": 64,
+      "norm_label": "2. entity-relationship diagram"
+    },
+    {
+      "label": "code:mermaid (erDiagram)",
+      "file_type": "document",
+      "source_file": "docs/04_database.md",
+      "source_location": "L17",
+      "id": "docs_04_database_codeblock_1",
+      "community": 64,
+      "norm_label": "code:mermaid (erdiagram)"
+    },
+    {
+      "label": "3. Data Model Definitions",
+      "file_type": "document",
+      "source_file": "docs/04_database.md",
+      "source_location": "L62",
+      "id": "docs_04_database_3_data_model_definitions",
+      "community": 64,
+      "norm_label": "3. data model definitions"
+    },
+    {
+      "label": "Core Identity & Access",
+      "file_type": "document",
+      "source_file": "docs/04_database.md",
+      "source_location": "L64",
+      "id": "docs_04_database_core_identity_access",
+      "community": 64,
+      "norm_label": "core identity & access"
+    },
+    {
+      "label": "Academic Domain",
+      "file_type": "document",
+      "source_file": "docs/04_database.md",
+      "source_location": "L75",
+      "id": "docs_04_database_academic_domain",
+      "community": 64,
+      "norm_label": "academic domain"
+    },
+    {
+      "label": "Enrollment & Finance",
+      "file_type": "document",
+      "source_file": "docs/04_database.md",
+      "source_location": "L106",
+      "id": "docs_04_database_enrollment_finance",
+      "community": 64,
+      "norm_label": "enrollment & finance"
+    },
+    {
+      "label": "Boarding",
+      "file_type": "document",
+      "source_file": "docs/04_database.md",
+      "source_location": "L115",
+      "id": "docs_04_database_boarding",
+      "community": 64,
+      "norm_label": "boarding"
+    },
+    {
+      "label": "Communication",
+      "file_type": "document",
+      "source_file": "docs/04_database.md",
+      "source_location": "L120",
+      "id": "docs_04_database_communication",
+      "community": 64,
+      "norm_label": "communication"
+    },
+    {
+      "label": "4. Migration and Seeding Strategy",
+      "file_type": "document",
+      "source_file": "docs/04_database.md",
+      "source_location": "L126",
+      "id": "docs_04_database_4_migration_and_seeding_strategy",
+      "community": 64,
+      "norm_label": "4. migration and seeding strategy"
+    },
+    {
+      "label": "5. Audit Trails, Soft Deletes, and Conventions",
+      "file_type": "document",
+      "source_file": "docs/04_database.md",
+      "source_location": "L133",
+      "id": "docs_04_database_5_audit_trails_soft_deletes_and_conventions",
+      "community": 64,
+      "norm_label": "5. audit trails, soft deletes, and conventions"
+    },
+    {
+      "label": "6. Common Query Patterns and Optimizations",
+      "file_type": "document",
+      "source_file": "docs/04_database.md",
+      "source_location": "L141",
+      "id": "docs_04_database_6_common_query_patterns_and_optimizations",
+      "community": 64,
+      "norm_label": "6. common query patterns and optimizations"
+    },
+    {
+      "label": "05_api_spec.md",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L1",
+      "id": "docs_05_api_spec_md",
+      "community": 56,
+      "norm_label": "05_api_spec.md"
+    },
+    {
+      "label": "Alphabet-SMIS: Complete API Specification",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L1",
+      "id": "docs_05_api_spec_alphabet_smis_complete_api_specification",
+      "community": 56,
+      "norm_label": "alphabet-smis: complete api specification"
+    },
+    {
+      "label": "1. Global Conventions",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L3",
+      "id": "docs_05_api_spec_1_global_conventions",
+      "community": 56,
+      "norm_label": "1. global conventions"
+    },
+    {
+      "label": "Standard Error Response Shape",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L12",
+      "id": "docs_05_api_spec_standard_error_response_shape",
+      "community": 56,
+      "norm_label": "standard error response shape"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L13",
+      "id": "docs_05_api_spec_codeblock_1",
+      "community": 56,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "Global Error Reference Table",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L21",
+      "id": "docs_05_api_spec_global_error_reference_table",
+      "community": 56,
+      "norm_label": "global error reference table"
+    },
+    {
+      "label": "2. API Communication Flow",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L33",
+      "id": "docs_05_api_spec_2_api_communication_flow",
+      "community": 56,
+      "norm_label": "2. api communication flow"
+    },
+    {
+      "label": "code:mermaid (sequenceDiagram)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L35",
+      "id": "docs_05_api_spec_codeblock_2",
+      "community": 56,
+      "norm_label": "code:mermaid (sequencediagram)"
+    },
+    {
+      "label": "3. Endpoint Reference",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L61",
+      "id": "docs_05_api_spec_3_endpoint_reference",
+      "community": 56,
+      "norm_label": "3. endpoint reference"
+    },
+    {
+      "label": "A. Authentication & User Management (`/auth`)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L63",
+      "id": "docs_05_api_spec_a_authentication_user_management_auth",
+      "community": 56,
+      "norm_label": "a. authentication & user management (`/auth`)"
+    },
+    {
+      "label": "`POST /auth/login`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L65",
+      "id": "docs_05_api_spec_post_auth_login",
+      "community": 56,
+      "norm_label": "`post /auth/login`"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L69",
+      "id": "docs_05_api_spec_codeblock_3",
+      "community": 56,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L76",
+      "id": "docs_05_api_spec_codeblock_4",
+      "community": 56,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "`POST /auth/register`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L85",
+      "id": "docs_05_api_spec_post_auth_register",
+      "community": 56,
+      "norm_label": "`post /auth/register`"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L89",
+      "id": "docs_05_api_spec_codeblock_5",
+      "community": 56,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "`POST /auth/refresh`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L99",
+      "id": "docs_05_api_spec_post_auth_refresh",
+      "community": 56,
+      "norm_label": "`post /auth/refresh`"
+    },
+    {
+      "label": "`POST /auth/logout`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L105",
+      "id": "docs_05_api_spec_post_auth_logout",
+      "community": 56,
+      "norm_label": "`post /auth/logout`"
+    },
+    {
+      "label": "B. Students Domain (`/students`)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L113",
+      "id": "docs_05_api_spec_b_students_domain_students",
+      "community": 56,
+      "norm_label": "b. students domain (`/students`)"
+    },
+    {
+      "label": "`GET /students`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L115",
+      "id": "docs_05_api_spec_get_students",
+      "community": 56,
+      "norm_label": "`get /students`"
+    },
+    {
+      "label": "code:json ([)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L120",
+      "id": "docs_05_api_spec_codeblock_6",
+      "community": 56,
+      "norm_label": "code:json ([)"
+    },
+    {
+      "label": "`POST /students`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L132",
+      "id": "docs_05_api_spec_post_students",
+      "community": 56,
+      "norm_label": "`post /students`"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L136",
+      "id": "docs_05_api_spec_codeblock_7",
+      "community": 56,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "`GET /students/:id`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L148",
+      "id": "docs_05_api_spec_get_students_id",
+      "community": 56,
+      "norm_label": "`get /students/:id`"
+    },
+    {
+      "label": "`PATCH /students/:id`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L153",
+      "id": "docs_05_api_spec_patch_students_id",
+      "community": 56,
+      "norm_label": "`patch /students/:id`"
+    },
+    {
+      "label": "C. Classes & Timetables (`/classes`)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L162",
+      "id": "docs_05_api_spec_c_classes_timetables_classes",
+      "community": 56,
+      "norm_label": "c. classes & timetables (`/classes`)"
+    },
+    {
+      "label": "`GET /classes`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L164",
+      "id": "docs_05_api_spec_get_classes",
+      "community": 56,
+      "norm_label": "`get /classes`"
+    },
+    {
+      "label": "`POST /classes`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L169",
+      "id": "docs_05_api_spec_post_classes",
+      "community": 56,
+      "norm_label": "`post /classes`"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L173",
+      "id": "docs_05_api_spec_codeblock_8",
+      "community": 56,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "`PATCH /classes/:id/timetable`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L182",
+      "id": "docs_05_api_spec_patch_classes_id_timetable",
+      "community": 56,
+      "norm_label": "`patch /classes/:id/timetable`"
+    },
+    {
+      "label": "D. Teachers & Grading (`/teachers`)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L189",
+      "id": "docs_05_api_spec_d_teachers_grading_teachers",
+      "community": 56,
+      "norm_label": "d. teachers & grading (`/teachers`)"
+    },
+    {
+      "label": "`GET /teachers/me/main-class`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L191",
+      "id": "docs_05_api_spec_get_teachers_me_main_class",
+      "community": 56,
+      "norm_label": "`get /teachers/me/main-class`"
+    },
+    {
+      "label": "`POST /teachers/grades/entries/bulk`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L196",
+      "id": "docs_05_api_spec_post_teachers_grades_entries_bulk",
+      "community": 56,
+      "norm_label": "`post /teachers/grades/entries/bulk`"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L200",
+      "id": "docs_05_api_spec_codeblock_9",
+      "community": 56,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "E. Finance & Payments (`/finance`)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L216",
+      "id": "docs_05_api_spec_e_finance_payments_finance",
+      "community": 56,
+      "norm_label": "e. finance & payments (`/finance`)"
+    },
+    {
+      "label": "`GET /finance/overview`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L218",
+      "id": "docs_05_api_spec_get_finance_overview",
+      "community": 56,
+      "norm_label": "`get /finance/overview`"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L222",
+      "id": "docs_05_api_spec_codeblock_10",
+      "community": 56,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "`POST /finance/payments`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L230",
+      "id": "docs_05_api_spec_post_finance_payments",
+      "community": 56,
+      "norm_label": "`post /finance/payments`"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L234",
+      "id": "docs_05_api_spec_codeblock_11",
+      "community": 56,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "F. Enrollment Applications (`/enrollment`)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L248",
+      "id": "docs_05_api_spec_f_enrollment_applications_enrollment",
+      "community": 56,
+      "norm_label": "f. enrollment applications (`/enrollment`)"
+    },
+    {
+      "label": "`POST /enrollment/apply`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L250",
+      "id": "docs_05_api_spec_post_enrollment_apply",
+      "community": 56,
+      "norm_label": "`post /enrollment/apply`"
+    },
+    {
+      "label": "`PATCH /enrollment/applications/:id/status`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L257",
+      "id": "docs_05_api_spec_patch_enrollment_applications_id_status",
+      "community": 56,
+      "norm_label": "`patch /enrollment/applications/:id/status`"
+    },
+    {
+      "label": "G. Public Results Portal (`/public-results`)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L265",
+      "id": "docs_05_api_spec_g_public_results_portal_public_results",
+      "community": 56,
+      "norm_label": "g. public results portal (`/public-results`)"
+    },
+    {
+      "label": "`POST /public-results/check`",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L267",
+      "id": "docs_05_api_spec_post_public_results_check",
+      "community": 56,
+      "norm_label": "`post /public-results/check`"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L271",
+      "id": "docs_05_api_spec_codeblock_12",
+      "community": 56,
+      "norm_label": "code:json ({)"
     },
     {
       "label": "ESLint Configuration",
@@ -9657,6 +10584,17 @@
       "source_file": "alphabet-Smis/src/App.tsx",
       "source_location": "L19",
       "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "alphabet_smis_src_pages_publicstudenthistory_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "alphabet_smis_src_app_tsx",
       "target": "alphabet_smis_src_pages_teacher_attendancetracker_tsx"
@@ -10070,6 +11008,77 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "alphabet_smis_src_auth_interceptor_ts",
+      "target": "src_auth_interceptor_istokenexpired"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "alphabet_smis_src_auth_interceptor_ts",
+      "target": "src_auth_interceptor_refreshaccesstoken"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "alphabet_smis_src_auth_interceptor_ts",
+      "target": "src_auth_interceptor_modifiedinit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "alphabet_smis_src_auth_interceptor_ts",
+      "target": "src_auth_interceptor_options"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L101",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "alphabet_smis_src_auth_interceptor_ts",
+      "target": "src_auth_interceptor_token"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L156",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "alphabet_smis_src_auth_interceptor_ts",
+      "target": "src_auth_interceptor_authidx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/main.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "alphabet_smis_src_main_tsx",
+      "target": "alphabet_smis_src_auth_interceptor_ts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "alphabet-Smis/src/components/common/SearchableSelect.tsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -10291,6 +11300,16 @@
       "confidence_score": 1.0,
       "source": "alphabet_smis_src_pages_login_tsx",
       "target": "pages_login_login"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/pages/PublicStudentHistory.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_pages_publicstudenthistory_tsx",
+      "target": "pages_publicstudenthistory_publicstudenthistory",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -15297,9 +16316,9 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_src_finance_finance_service_spec_ts",
-      "target": "backend_src_finance_finance_service_ts",
-      "confidence_score": 1.0
+      "target": "backend_src_finance_finance_service_ts"
     },
     {
       "relation": "imports",
@@ -15308,9 +16327,9 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_src_finance_finance_service_spec_ts",
-      "target": "finance_finance_service_financeservice",
-      "confidence_score": 1.0
+      "target": "finance_finance_service_financeservice"
     },
     {
       "relation": "imports_from",
@@ -15319,9 +16338,9 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_src_finance_finance_service_spec_ts",
-      "target": "backend_src_prisma_prisma_service_ts",
-      "confidence_score": 1.0
+      "target": "backend_src_prisma_prisma_service_ts"
     },
     {
       "relation": "imports",
@@ -15330,9 +16349,9 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_src_finance_finance_service_spec_ts",
-      "target": "prisma_prisma_service_prismaservice",
-      "confidence_score": 1.0
+      "target": "prisma_prisma_service_prismaservice"
     },
     {
       "relation": "contains",
@@ -15340,9 +16359,9 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L160",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_src_finance_finance_service_spec_ts",
-      "target": "finance_finance_service_spec_structures",
-      "confidence_score": 1.0
+      "target": "finance_finance_service_spec_structures"
     },
     {
       "relation": "contains",
@@ -15350,9 +16369,9 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_src_finance_finance_service_spec_ts",
-      "target": "finance_finance_service_spec_payments",
-      "confidence_score": 1.0
+      "target": "finance_finance_service_spec_payments"
     },
     {
       "relation": "contains",
@@ -15360,9 +16379,9 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L169",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_src_finance_finance_service_spec_ts",
-      "target": "finance_finance_service_spec_res",
-      "confidence_score": 1.0
+      "target": "finance_finance_service_spec_res"
     },
     {
       "relation": "imports_from",
@@ -16366,6 +17385,16 @@
       "confidence_score": 1.0,
       "source": "students_public_results_controller_publicresultscontroller",
       "target": "students_public_results_controller_publicresultscontroller_getpublicreport"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/students/public-results.controller.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "students_public_results_controller_publicresultscontroller",
+      "target": "students_public_results_controller_publicresultscontroller_getpublichistory",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -17506,9 +18535,9 @@
       "source_file": ".agents/rules/graphify.md",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_rules_graphify_md",
-      "target": "rules_graphify_graphify",
-      "confidence_score": 1.0
+      "target": "rules_graphify_graphify"
     },
     {
       "relation": "contains",
@@ -17516,9 +18545,9 @@
       "source_file": ".agents/workflows/graphify.md",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_workflows_graphify_md",
-      "target": "workflows_graphify_workflow_graphify",
-      "confidence_score": 1.0
+      "target": "workflows_graphify_workflow_graphify"
     },
     {
       "relation": "contains",
@@ -17526,9 +18555,9 @@
       "source_file": "alphabet-Smis/README.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "alphabet_smis_readme_md",
-      "target": "alphabet_smis_readme_react_typescript_vite",
-      "confidence_score": 1.0
+      "target": "alphabet_smis_readme_react_typescript_vite"
     },
     {
       "relation": "contains",
@@ -17536,9 +18565,9 @@
       "source_file": "alphabet-Smis/README.md",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "alphabet_smis_readme_react_typescript_vite",
-      "target": "alphabet_smis_readme_react_compiler",
-      "confidence_score": 1.0
+      "target": "alphabet_smis_readme_react_compiler"
     },
     {
       "relation": "contains",
@@ -17546,9 +18575,9 @@
       "source_file": "alphabet-Smis/README.md",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "alphabet_smis_readme_react_typescript_vite",
-      "target": "alphabet_smis_readme_expanding_the_eslint_configuration",
-      "confidence_score": 1.0
+      "target": "alphabet_smis_readme_expanding_the_eslint_configuration"
     },
     {
       "relation": "contains",
@@ -17556,9 +18585,9 @@
       "source_file": "alphabet-Smis/README.md",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "alphabet_smis_readme_expanding_the_eslint_configuration",
-      "target": "alphabet_smis_readme_codeblock_1",
-      "confidence_score": 1.0
+      "target": "alphabet_smis_readme_codeblock_1"
     },
     {
       "relation": "contains",
@@ -17566,9 +18595,9 @@
       "source_file": "alphabet-Smis/README.md",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "alphabet_smis_readme_expanding_the_eslint_configuration",
-      "target": "alphabet_smis_readme_codeblock_2",
-      "confidence_score": 1.0
+      "target": "alphabet_smis_readme_codeblock_2"
     },
     {
       "relation": "contains",
@@ -17576,9 +18605,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "alphabet_smis_agent_skills_ui_ux_pro_max_skill_md",
-      "target": "ui_ux_pro_max_skill_ui_ux_pro_max",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_ui_ux_pro_max"
     },
     {
       "relation": "contains",
@@ -17586,9 +18615,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_ui_ux_pro_max",
-      "target": "ui_ux_pro_max_skill_prerequisites",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_prerequisites"
     },
     {
       "relation": "contains",
@@ -17596,9 +18625,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_ui_ux_pro_max",
-      "target": "ui_ux_pro_max_skill_how_to_use_this_skill",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_how_to_use_this_skill"
     },
     {
       "relation": "contains",
@@ -17606,9 +18635,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L122",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_ui_ux_pro_max",
-      "target": "ui_ux_pro_max_skill_search_reference",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_search_reference"
     },
     {
       "relation": "contains",
@@ -17616,9 +18645,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L156",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_ui_ux_pro_max",
-      "target": "ui_ux_pro_max_skill_example_workflow",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_example_workflow"
     },
     {
       "relation": "contains",
@@ -17626,9 +18655,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L194",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_ui_ux_pro_max",
-      "target": "ui_ux_pro_max_skill_output_formats",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_output_formats"
     },
     {
       "relation": "contains",
@@ -17636,9 +18665,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L208",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_ui_ux_pro_max",
-      "target": "ui_ux_pro_max_skill_tips_for_better_results",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_tips_for_better_results"
     },
     {
       "relation": "contains",
@@ -17646,9 +18675,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L219",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_ui_ux_pro_max",
-      "target": "ui_ux_pro_max_skill_common_rules_for_professional_ui",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_common_rules_for_professional_ui"
     },
     {
       "relation": "contains",
@@ -17656,9 +18685,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L259",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_ui_ux_pro_max",
-      "target": "ui_ux_pro_max_skill_pre_delivery_checklist",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_pre_delivery_checklist"
     },
     {
       "relation": "contains",
@@ -17666,9 +18695,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_prerequisites",
-      "target": "ui_ux_pro_max_skill_codeblock_1",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_codeblock_1"
     },
     {
       "relation": "contains",
@@ -17676,9 +18705,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_prerequisites",
-      "target": "ui_ux_pro_max_skill_codeblock_2",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_codeblock_2"
     },
     {
       "relation": "contains",
@@ -17686,9 +18715,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_prerequisites",
-      "target": "ui_ux_pro_max_skill_codeblock_3",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_codeblock_3"
     },
     {
       "relation": "contains",
@@ -17696,9 +18725,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_prerequisites",
-      "target": "ui_ux_pro_max_skill_codeblock_4",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_codeblock_4"
     },
     {
       "relation": "contains",
@@ -17706,9 +18735,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_how_to_use_this_skill",
-      "target": "ui_ux_pro_max_skill_step_1_analyze_user_requirements",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_step_1_analyze_user_requirements"
     },
     {
       "relation": "contains",
@@ -17716,9 +18745,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_how_to_use_this_skill",
-      "target": "ui_ux_pro_max_skill_step_2_generate_design_system_required",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_step_2_generate_design_system_required"
     },
     {
       "relation": "contains",
@@ -17726,9 +18755,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_how_to_use_this_skill",
-      "target": "ui_ux_pro_max_skill_step_2b_persist_design_system_master_overrides_pattern",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_step_2b_persist_design_system_master_overrides_pattern"
     },
     {
       "relation": "contains",
@@ -17736,9 +18765,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_how_to_use_this_skill",
-      "target": "ui_ux_pro_max_skill_step_3_supplement_with_detailed_searches_as_needed",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_step_3_supplement_with_detailed_searches_as_needed"
     },
     {
       "relation": "contains",
@@ -17746,9 +18775,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L110",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_how_to_use_this_skill",
-      "target": "ui_ux_pro_max_skill_step_4_stack_guidelines_default_html_tailwind",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_step_4_stack_guidelines_default_html_tailwind"
     },
     {
       "relation": "contains",
@@ -17756,9 +18785,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_step_2_generate_design_system_required",
-      "target": "ui_ux_pro_max_skill_codeblock_5",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_codeblock_5"
     },
     {
       "relation": "contains",
@@ -17766,9 +18795,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_step_2_generate_design_system_required",
-      "target": "ui_ux_pro_max_skill_codeblock_6",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_codeblock_6"
     },
     {
       "relation": "contains",
@@ -17776,9 +18805,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_step_2b_persist_design_system_master_overrides_pattern",
-      "target": "ui_ux_pro_max_skill_codeblock_7",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_codeblock_7"
     },
     {
       "relation": "contains",
@@ -17786,9 +18815,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_step_2b_persist_design_system_master_overrides_pattern",
-      "target": "ui_ux_pro_max_skill_codeblock_8",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_codeblock_8"
     },
     {
       "relation": "contains",
@@ -17796,9 +18825,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_step_3_supplement_with_detailed_searches_as_needed",
-      "target": "ui_ux_pro_max_skill_codeblock_9",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_codeblock_9"
     },
     {
       "relation": "contains",
@@ -17806,9 +18835,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_step_4_stack_guidelines_default_html_tailwind",
-      "target": "ui_ux_pro_max_skill_codeblock_10",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_codeblock_10"
     },
     {
       "relation": "contains",
@@ -17816,9 +18845,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L124",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_search_reference",
-      "target": "ui_ux_pro_max_skill_available_domains",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_available_domains"
     },
     {
       "relation": "contains",
@@ -17826,9 +18855,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_search_reference",
-      "target": "ui_ux_pro_max_skill_available_stacks",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_available_stacks"
     },
     {
       "relation": "contains",
@@ -17836,9 +18865,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L160",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_example_workflow",
-      "target": "ui_ux_pro_max_skill_step_1_analyze_requirements",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_step_1_analyze_requirements"
     },
     {
       "relation": "contains",
@@ -17846,9 +18875,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L166",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_example_workflow",
-      "target": "ui_ux_pro_max_skill_step_2_generate_design_system_required_166",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_step_2_generate_design_system_required_166"
     },
     {
       "relation": "contains",
@@ -17856,9 +18885,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L174",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_example_workflow",
-      "target": "ui_ux_pro_max_skill_step_3_supplement_with_detailed_searches_as_needed_174",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_step_3_supplement_with_detailed_searches_as_needed_174"
     },
     {
       "relation": "contains",
@@ -17866,9 +18895,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L184",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_example_workflow",
-      "target": "ui_ux_pro_max_skill_step_4_stack_guidelines",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_step_4_stack_guidelines"
     },
     {
       "relation": "contains",
@@ -17876,9 +18905,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L168",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_step_2_generate_design_system_required_166",
-      "target": "ui_ux_pro_max_skill_codeblock_11",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_codeblock_11"
     },
     {
       "relation": "contains",
@@ -17886,9 +18915,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L176",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_step_3_supplement_with_detailed_searches_as_needed_174",
-      "target": "ui_ux_pro_max_skill_codeblock_12",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_codeblock_12"
     },
     {
       "relation": "contains",
@@ -17896,9 +18925,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L186",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_step_4_stack_guidelines",
-      "target": "ui_ux_pro_max_skill_codeblock_13",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_codeblock_13"
     },
     {
       "relation": "contains",
@@ -17906,9 +18935,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L198",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_output_formats",
-      "target": "ui_ux_pro_max_skill_codeblock_14",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_codeblock_14"
     },
     {
       "relation": "contains",
@@ -17916,9 +18945,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L223",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_common_rules_for_professional_ui",
-      "target": "ui_ux_pro_max_skill_icons_visual_elements",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_icons_visual_elements"
     },
     {
       "relation": "contains",
@@ -17926,9 +18955,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L232",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_common_rules_for_professional_ui",
-      "target": "ui_ux_pro_max_skill_interaction_cursor",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_interaction_cursor"
     },
     {
       "relation": "contains",
@@ -17936,9 +18965,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L240",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_common_rules_for_professional_ui",
-      "target": "ui_ux_pro_max_skill_light_dark_mode_contrast",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_light_dark_mode_contrast"
     },
     {
       "relation": "contains",
@@ -17946,9 +18975,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L249",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_common_rules_for_professional_ui",
-      "target": "ui_ux_pro_max_skill_layout_spacing",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_layout_spacing"
     },
     {
       "relation": "contains",
@@ -17956,9 +18985,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L263",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_pre_delivery_checklist",
-      "target": "ui_ux_pro_max_skill_visual_quality",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_visual_quality"
     },
     {
       "relation": "contains",
@@ -17966,9 +18995,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L270",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_pre_delivery_checklist",
-      "target": "ui_ux_pro_max_skill_interaction",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_interaction"
     },
     {
       "relation": "contains",
@@ -17976,9 +19005,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L276",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_pre_delivery_checklist",
-      "target": "ui_ux_pro_max_skill_light_dark_mode",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_light_dark_mode"
     },
     {
       "relation": "contains",
@@ -17986,9 +19015,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L282",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_pre_delivery_checklist",
-      "target": "ui_ux_pro_max_skill_layout",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_layout"
     },
     {
       "relation": "contains",
@@ -17996,9 +19025,9 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/SKILL.md",
       "source_location": "L288",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_ux_pro_max_skill_pre_delivery_checklist",
-      "target": "ui_ux_pro_max_skill_accessibility",
-      "confidence_score": 1.0
+      "target": "ui_ux_pro_max_skill_accessibility"
     },
     {
       "relation": "contains",
@@ -18006,9 +19035,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "alphabet_smis_design_system_heroes_academy_exam_results_master_md",
-      "target": "heroes_academy_exam_results_master_design_system_master_file",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_design_system_master_file"
     },
     {
       "relation": "contains",
@@ -18016,9 +19045,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_design_system_master_file",
-      "target": "heroes_academy_exam_results_master_global_rules",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_global_rules"
     },
     {
       "relation": "contains",
@@ -18026,9 +19055,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_design_system_master_file",
-      "target": "heroes_academy_exam_results_master_component_specs",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_component_specs"
     },
     {
       "relation": "contains",
@@ -18036,9 +19065,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_design_system_master_file",
-      "target": "heroes_academy_exam_results_master_style_guidelines",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_style_guidelines"
     },
     {
       "relation": "contains",
@@ -18046,9 +19075,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L174",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_design_system_master_file",
-      "target": "heroes_academy_exam_results_master_anti_patterns_do_not_use",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_anti_patterns_do_not_use"
     },
     {
       "relation": "contains",
@@ -18056,9 +19085,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L191",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_design_system_master_file",
-      "target": "heroes_academy_exam_results_master_pre_delivery_checklist",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_pre_delivery_checklist"
     },
     {
       "relation": "contains",
@@ -18066,9 +19095,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_global_rules",
-      "target": "heroes_academy_exam_results_master_color_palette",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_color_palette"
     },
     {
       "relation": "contains",
@@ -18076,9 +19105,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_global_rules",
-      "target": "heroes_academy_exam_results_master_typography",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_typography"
     },
     {
       "relation": "contains",
@@ -18086,9 +19115,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_global_rules",
-      "target": "heroes_academy_exam_results_master_spacing_variables",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_spacing_variables"
     },
     {
       "relation": "contains",
@@ -18096,9 +19125,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_global_rules",
-      "target": "heroes_academy_exam_results_master_shadow_depths",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_shadow_depths"
     },
     {
       "relation": "contains",
@@ -18106,9 +19135,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_typography",
-      "target": "heroes_academy_exam_results_master_codeblock_1",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_codeblock_1"
     },
     {
       "relation": "contains",
@@ -18116,9 +19145,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_component_specs",
-      "target": "heroes_academy_exam_results_master_buttons",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_buttons"
     },
     {
       "relation": "contains",
@@ -18126,9 +19155,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_component_specs",
-      "target": "heroes_academy_exam_results_master_cards",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_cards"
     },
     {
       "relation": "contains",
@@ -18136,9 +19165,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L116",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_component_specs",
-      "target": "heroes_academy_exam_results_master_inputs",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_inputs"
     },
     {
       "relation": "contains",
@@ -18146,9 +19175,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L134",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_component_specs",
-      "target": "heroes_academy_exam_results_master_modals",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_modals"
     },
     {
       "relation": "contains",
@@ -18156,9 +19185,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_buttons",
-      "target": "heroes_academy_exam_results_master_codeblock_2",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_codeblock_2"
     },
     {
       "relation": "contains",
@@ -18166,9 +19195,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_cards",
-      "target": "heroes_academy_exam_results_master_codeblock_3",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_codeblock_3"
     },
     {
       "relation": "contains",
@@ -18176,9 +19205,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L118",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_inputs",
-      "target": "heroes_academy_exam_results_master_codeblock_4",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_codeblock_4"
     },
     {
       "relation": "contains",
@@ -18186,9 +19215,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L136",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_modals",
-      "target": "heroes_academy_exam_results_master_codeblock_5",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_codeblock_5"
     },
     {
       "relation": "contains",
@@ -18196,9 +19225,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L164",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_style_guidelines",
-      "target": "heroes_academy_exam_results_master_page_pattern",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_page_pattern"
     },
     {
       "relation": "contains",
@@ -18206,9 +19235,9 @@
       "source_file": "alphabet-Smis/design-system/heroes-academy-exam-results/MASTER.md",
       "source_location": "L180",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "heroes_academy_exam_results_master_anti_patterns_do_not_use",
-      "target": "heroes_academy_exam_results_master_additional_forbidden_patterns",
-      "confidence_score": 1.0
+      "target": "heroes_academy_exam_results_master_additional_forbidden_patterns"
     },
     {
       "relation": "contains",
@@ -18216,9 +19245,9 @@
       "source_file": "backend/README.md",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_readme_md",
-      "target": "backend_readme_description",
-      "confidence_score": 1.0
+      "target": "backend_readme_description"
     },
     {
       "relation": "contains",
@@ -18226,9 +19255,9 @@
       "source_file": "backend/README.md",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_readme_md",
-      "target": "backend_readme_project_setup",
-      "confidence_score": 1.0
+      "target": "backend_readme_project_setup"
     },
     {
       "relation": "contains",
@@ -18236,9 +19265,9 @@
       "source_file": "backend/README.md",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_readme_md",
-      "target": "backend_readme_compile_and_run_the_project",
-      "confidence_score": 1.0
+      "target": "backend_readme_compile_and_run_the_project"
     },
     {
       "relation": "contains",
@@ -18246,9 +19275,9 @@
       "source_file": "backend/README.md",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_readme_md",
-      "target": "backend_readme_run_tests",
-      "confidence_score": 1.0
+      "target": "backend_readme_run_tests"
     },
     {
       "relation": "contains",
@@ -18256,9 +19285,9 @@
       "source_file": "backend/README.md",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_readme_md",
-      "target": "backend_readme_deployment",
-      "confidence_score": 1.0
+      "target": "backend_readme_deployment"
     },
     {
       "relation": "contains",
@@ -18266,9 +19295,9 @@
       "source_file": "backend/README.md",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_readme_md",
-      "target": "backend_readme_resources",
-      "confidence_score": 1.0
+      "target": "backend_readme_resources"
     },
     {
       "relation": "contains",
@@ -18276,9 +19305,9 @@
       "source_file": "backend/README.md",
       "source_location": "L86",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_readme_md",
-      "target": "backend_readme_support",
-      "confidence_score": 1.0
+      "target": "backend_readme_support"
     },
     {
       "relation": "contains",
@@ -18286,9 +19315,9 @@
       "source_file": "backend/README.md",
       "source_location": "L90",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_readme_md",
-      "target": "backend_readme_stay_in_touch",
-      "confidence_score": 1.0
+      "target": "backend_readme_stay_in_touch"
     },
     {
       "relation": "contains",
@@ -18296,9 +19325,9 @@
       "source_file": "backend/README.md",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_readme_md",
-      "target": "backend_readme_license",
-      "confidence_score": 1.0
+      "target": "backend_readme_license"
     },
     {
       "relation": "contains",
@@ -18306,9 +19335,9 @@
       "source_file": "backend/README.md",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_readme_project_setup",
-      "target": "backend_readme_codeblock_1",
-      "confidence_score": 1.0
+      "target": "backend_readme_codeblock_1"
     },
     {
       "relation": "contains",
@@ -18316,9 +19345,9 @@
       "source_file": "backend/README.md",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_readme_compile_and_run_the_project",
-      "target": "backend_readme_codeblock_2",
-      "confidence_score": 1.0
+      "target": "backend_readme_codeblock_2"
     },
     {
       "relation": "contains",
@@ -18326,9 +19355,9 @@
       "source_file": "backend/README.md",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_readme_run_tests",
-      "target": "backend_readme_codeblock_3",
-      "confidence_score": 1.0
+      "target": "backend_readme_codeblock_3"
     },
     {
       "relation": "contains",
@@ -18336,9 +19365,889 @@
       "source_file": "backend/README.md",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "backend_readme_deployment",
-      "target": "backend_readme_codeblock_4",
-      "confidence_score": 1.0
+      "target": "backend_readme_codeblock_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_01_project_overview_md",
+      "target": "docs_01_project_overview_alphabet_smis_project_overview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_01_project_overview_alphabet_smis_project_overview",
+      "target": "docs_01_project_overview_1_system_overview_and_problem_statement"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_01_project_overview_alphabet_smis_project_overview",
+      "target": "docs_01_project_overview_2_technology_stack_and_architecture_rationale"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_01_project_overview_alphabet_smis_project_overview",
+      "target": "docs_01_project_overview_3_high_level_feature_list"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L67",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_01_project_overview_alphabet_smis_project_overview",
+      "target": "docs_01_project_overview_4_core_strengths_and_competitive_advantages"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_01_project_overview_alphabet_smis_project_overview",
+      "target": "docs_01_project_overview_5_known_trade_offs_and_design_constraints"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L87",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_01_project_overview_alphabet_smis_project_overview",
+      "target": "docs_01_project_overview_6_system_context_diagram"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_01_project_overview_2_technology_stack_and_architecture_rationale",
+      "target": "docs_01_project_overview_technology_overview_table"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/01_project_overview.md",
+      "source_location": "L89",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_01_project_overview_6_system_context_diagram",
+      "target": "docs_01_project_overview_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_02_architecture_md",
+      "target": "docs_02_architecture_alphabet_smis_architecture_and_system_design"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_02_architecture_alphabet_smis_architecture_and_system_design",
+      "target": "docs_02_architecture_1_architectural_pattern"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_02_architecture_alphabet_smis_architecture_and_system_design",
+      "target": "docs_02_architecture_2_system_architecture_diagram"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_02_architecture_alphabet_smis_architecture_and_system_design",
+      "target": "docs_02_architecture_3_request_lifecycle_walkthrough"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L92",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_02_architecture_alphabet_smis_architecture_and_system_design",
+      "target": "docs_02_architecture_4_module_and_service_breakdown"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L145",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_02_architecture_alphabet_smis_architecture_and_system_design",
+      "target": "docs_02_architecture_5_infrastructure_and_deployment_layout"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L156",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_02_architecture_alphabet_smis_architecture_and_system_design",
+      "target": "docs_02_architecture_6_scalability_considerations"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L169",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_02_architecture_alphabet_smis_architecture_and_system_design",
+      "target": "docs_02_architecture_7_background_jobs_and_workers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_02_architecture_2_system_architecture_diagram",
+      "target": "docs_02_architecture_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L112",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_02_architecture_4_module_and_service_breakdown",
+      "target": "docs_02_architecture_component_dependency_graph"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/02_architecture.md",
+      "source_location": "L114",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_02_architecture_component_dependency_graph",
+      "target": "docs_02_architecture_codeblock_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/03_security.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_03_security_md",
+      "target": "docs_03_security_alphabet_smis_security_implementation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/03_security.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_03_security_alphabet_smis_security_implementation",
+      "target": "docs_03_security_1_authentication_mechanism"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/03_security.md",
+      "source_location": "L51",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_03_security_alphabet_smis_security_implementation",
+      "target": "docs_03_security_2_authorization_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/03_security.md",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_03_security_alphabet_smis_security_implementation",
+      "target": "docs_03_security_3_input_validation_and_sanitization"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/03_security.md",
+      "source_location": "L80",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_03_security_alphabet_smis_security_implementation",
+      "target": "docs_03_security_4_data_protection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/03_security.md",
+      "source_location": "L91",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_03_security_alphabet_smis_security_implementation",
+      "target": "docs_03_security_5_api_security_and_edge_protections"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/03_security.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_03_security_1_authentication_mechanism",
+      "target": "docs_03_security_end_to_end_flow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/03_security.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_03_security_1_authentication_mechanism",
+      "target": "docs_03_security_authentication_flow_diagram"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/03_security.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_03_security_authentication_flow_diagram",
+      "target": "docs_03_security_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/03_security.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_03_security_2_authorization_model",
+      "target": "docs_03_security_enforcement_mechanisms"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/03_security.md",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_03_security_2_authorization_model",
+      "target": "docs_03_security_role_permissions_map"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/03_security.md",
+      "source_location": "L96",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_03_security_5_api_security_and_edge_protections",
+      "target": "docs_03_security_known_security_considerations_areas_for_hardening"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/04_database.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_04_database_md",
+      "target": "docs_04_database_alphabet_smis_database_and_data_models"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/04_database.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_04_database_alphabet_smis_database_and_data_models",
+      "target": "docs_04_database_1_database_technology"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/04_database.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_04_database_alphabet_smis_database_and_data_models",
+      "target": "docs_04_database_2_entity_relationship_diagram"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/04_database.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_04_database_alphabet_smis_database_and_data_models",
+      "target": "docs_04_database_3_data_model_definitions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/04_database.md",
+      "source_location": "L126",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_04_database_alphabet_smis_database_and_data_models",
+      "target": "docs_04_database_4_migration_and_seeding_strategy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/04_database.md",
+      "source_location": "L133",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_04_database_alphabet_smis_database_and_data_models",
+      "target": "docs_04_database_5_audit_trails_soft_deletes_and_conventions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/04_database.md",
+      "source_location": "L141",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_04_database_alphabet_smis_database_and_data_models",
+      "target": "docs_04_database_6_common_query_patterns_and_optimizations"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/04_database.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_04_database_2_entity_relationship_diagram",
+      "target": "docs_04_database_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/04_database.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_04_database_3_data_model_definitions",
+      "target": "docs_04_database_core_identity_access"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/04_database.md",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_04_database_3_data_model_definitions",
+      "target": "docs_04_database_academic_domain"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/04_database.md",
+      "source_location": "L106",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_04_database_3_data_model_definitions",
+      "target": "docs_04_database_enrollment_finance"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/04_database.md",
+      "source_location": "L115",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_04_database_3_data_model_definitions",
+      "target": "docs_04_database_boarding"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/04_database.md",
+      "source_location": "L120",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_04_database_3_data_model_definitions",
+      "target": "docs_04_database_communication"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_md",
+      "target": "docs_05_api_spec_alphabet_smis_complete_api_specification"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_alphabet_smis_complete_api_specification",
+      "target": "docs_05_api_spec_1_global_conventions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_alphabet_smis_complete_api_specification",
+      "target": "docs_05_api_spec_2_api_communication_flow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_alphabet_smis_complete_api_specification",
+      "target": "docs_05_api_spec_3_endpoint_reference"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_1_global_conventions",
+      "target": "docs_05_api_spec_standard_error_response_shape"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_1_global_conventions",
+      "target": "docs_05_api_spec_global_error_reference_table"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_standard_error_response_shape",
+      "target": "docs_05_api_spec_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_2_api_communication_flow",
+      "target": "docs_05_api_spec_codeblock_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_3_endpoint_reference",
+      "target": "docs_05_api_spec_a_authentication_user_management_auth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L113",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_3_endpoint_reference",
+      "target": "docs_05_api_spec_b_students_domain_students"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L162",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_3_endpoint_reference",
+      "target": "docs_05_api_spec_c_classes_timetables_classes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L189",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_3_endpoint_reference",
+      "target": "docs_05_api_spec_d_teachers_grading_teachers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L216",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_3_endpoint_reference",
+      "target": "docs_05_api_spec_e_finance_payments_finance"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L248",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_3_endpoint_reference",
+      "target": "docs_05_api_spec_f_enrollment_applications_enrollment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L265",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_3_endpoint_reference",
+      "target": "docs_05_api_spec_g_public_results_portal_public_results"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_a_authentication_user_management_auth",
+      "target": "docs_05_api_spec_post_auth_login"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L85",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_a_authentication_user_management_auth",
+      "target": "docs_05_api_spec_post_auth_register"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L99",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_a_authentication_user_management_auth",
+      "target": "docs_05_api_spec_post_auth_refresh"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L105",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_a_authentication_user_management_auth",
+      "target": "docs_05_api_spec_post_auth_logout"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_post_auth_login",
+      "target": "docs_05_api_spec_codeblock_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_post_auth_login",
+      "target": "docs_05_api_spec_codeblock_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L89",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_post_auth_register",
+      "target": "docs_05_api_spec_codeblock_5"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L115",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_b_students_domain_students",
+      "target": "docs_05_api_spec_get_students"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L132",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_b_students_domain_students",
+      "target": "docs_05_api_spec_post_students"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L148",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_b_students_domain_students",
+      "target": "docs_05_api_spec_get_students_id"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L153",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_b_students_domain_students",
+      "target": "docs_05_api_spec_patch_students_id"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L120",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_get_students",
+      "target": "docs_05_api_spec_codeblock_6"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L136",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_post_students",
+      "target": "docs_05_api_spec_codeblock_7"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L164",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_c_classes_timetables_classes",
+      "target": "docs_05_api_spec_get_classes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L169",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_c_classes_timetables_classes",
+      "target": "docs_05_api_spec_post_classes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L182",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_c_classes_timetables_classes",
+      "target": "docs_05_api_spec_patch_classes_id_timetable"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L173",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_post_classes",
+      "target": "docs_05_api_spec_codeblock_8"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L191",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_d_teachers_grading_teachers",
+      "target": "docs_05_api_spec_get_teachers_me_main_class"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L196",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_d_teachers_grading_teachers",
+      "target": "docs_05_api_spec_post_teachers_grades_entries_bulk"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L200",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_post_teachers_grades_entries_bulk",
+      "target": "docs_05_api_spec_codeblock_9"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L218",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_e_finance_payments_finance",
+      "target": "docs_05_api_spec_get_finance_overview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L230",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_e_finance_payments_finance",
+      "target": "docs_05_api_spec_post_finance_payments"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L222",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_get_finance_overview",
+      "target": "docs_05_api_spec_codeblock_10"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L234",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_post_finance_payments",
+      "target": "docs_05_api_spec_codeblock_11"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L250",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_f_enrollment_applications_enrollment",
+      "target": "docs_05_api_spec_post_enrollment_apply"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L257",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_f_enrollment_applications_enrollment",
+      "target": "docs_05_api_spec_patch_enrollment_applications_id_status"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L267",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_g_public_results_portal_public_results",
+      "target": "docs_05_api_spec_post_public_results_check"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/05_api_spec.md",
+      "source_location": "L271",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_05_api_spec_post_public_results_check",
+      "target": "docs_05_api_spec_codeblock_12"
     },
     {
       "relation": "semantically_similar_to",
@@ -18702,5 +20611,6 @@
       "confidence_score": 1.0,
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/scripts/search.py"
     }
-  ]
+  ],
+  "built_at_commit": "c34799fbdb21ba36b8f1a060db8e98a3a0449b16"
 }

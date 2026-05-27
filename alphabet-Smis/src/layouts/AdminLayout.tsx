@@ -86,12 +86,20 @@ export default function AdminLayout() {
   const fetchAdminProfile = async () => {
     try {
       const token = localStorage.getItem('accessToken');
+      if (!token) {
+        navigate('/login');
+        return;
+      }
       const res = await fetch('http://localhost:3000/admin/me', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
         const data = await res.json();
         setAdminProfile(data);
+      } else if (res.status === 401) {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('user');
+        navigate('/login');
       }
     } catch (err) {
       console.error('Failed to fetch admin profile', err);
@@ -106,8 +114,24 @@ export default function AdminLayout() {
     }
   }, [isLightMode]);
 
-  const handleLogout = () => {
-    navigate('/');
+  const handleLogout = async () => {
+    try {
+      const token = localStorage.getItem('accessToken');
+      await fetch('http://localhost:3000/auth/logout', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+      });
+    } catch (err) {
+      console.error('Failed to logout on backend', err);
+    } finally {
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('user');
+      navigate('/login');
+    }
   };
 
   const navItems = [

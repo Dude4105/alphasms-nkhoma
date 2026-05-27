@@ -16,6 +16,7 @@ import FinalResults from './pages/teacher/FinalResults';
 import SubjectResults from './pages/teacher/SubjectResults';
 import StudentReport from './pages/teacher/StudentReport';
 import PublicStudentReport from './pages/PublicStudentReport';
+import PublicStudentHistory from './pages/PublicStudentHistory';
 import AttendanceTracker from './pages/teacher/AttendanceTracker';
 import AttendanceOverview from './pages/teacher/AttendanceOverview';
 import AddClassStudent from './pages/teacher/AddClassStudent';
@@ -66,6 +67,7 @@ function App() {
         <Route path="/campus-gallery" element={<CampusGallery />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reports/:studentId" element={<PublicStudentReport />} />
+        <Route path="/students/:studentId/history" element={<PublicStudentHistory />} />
         <Route path="/teacher" element={<TeacherLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="classes" element={<Classes />} />

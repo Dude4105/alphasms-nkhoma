@@ -27,6 +27,31 @@ let PublicResultsController = class PublicResultsController {
         const parsedTerm = term ? parseInt(term) : undefined;
         return this.studentsService.findOne(id, parsedTerm, academicYear);
     }
+    async getPublicHistory(studentId, academicYear) {
+        const [base, term1, term2, term3] = await Promise.all([
+            this.studentsService.findOne(studentId, undefined, academicYear),
+            this.studentsService.findOne(studentId, 1, academicYear),
+            this.studentsService.findOne(studentId, 2, academicYear),
+            this.studentsService.findOne(studentId, 3, academicYear),
+        ]);
+        if (!base)
+            return null;
+        return {
+            student: {
+                student_id: base.student_id,
+                firstName: base.firstName,
+                lastName: base.lastName,
+                className: base.class?.name || null,
+                classHistory: base.classHistory || null,
+            },
+            history: {
+                term1: term1?.academic || null,
+                term2: term2?.academic || null,
+                term3: term3?.academic || null,
+            },
+            activeYear: base.academic?.year || academicYear || '2027',
+        };
+    }
     async getStatus() {
         const setting = await this.prisma.systemSetting.findUnique({
             where: { key: 'examResultsPublished' },
@@ -80,6 +105,14 @@ __decorate([
     __metadata("design:paramtypes", [String, String, String]),
     __metadata("design:returntype", Promise)
 ], PublicResultsController.prototype, "getPublicReport", null);
+__decorate([
+    (0, common_1.Get)('history/:studentId'),
+    __param(0, (0, common_1.Param)('studentId')),
+    __param(1, (0, common_1.Query)('academicYear')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], PublicResultsController.prototype, "getPublicHistory", null);
 __decorate([
     (0, common_1.Get)('status'),
     __metadata("design:type", Function),

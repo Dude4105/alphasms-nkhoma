@@ -52,6 +52,51 @@ export declare class PublicResultsController {
         classId: number | null;
         hostelId: number | null;
     } | null>;
+    getPublicHistory(studentId: string, academicYear?: string): Promise<{
+        student: {
+            student_id: string;
+            firstName: string;
+            lastName: string;
+            className: string | null;
+            classHistory: string | null;
+        };
+        history: {
+            term1: {
+                term: number;
+                year: string;
+                average: number;
+                points: number;
+                rank: number;
+                totalStudents: number;
+                attendance: number;
+                topSubjects: string[];
+                grades: any[];
+            } | null;
+            term2: {
+                term: number;
+                year: string;
+                average: number;
+                points: number;
+                rank: number;
+                totalStudents: number;
+                attendance: number;
+                topSubjects: string[];
+                grades: any[];
+            } | null;
+            term3: {
+                term: number;
+                year: string;
+                average: number;
+                points: number;
+                rank: number;
+                totalStudents: number;
+                attendance: number;
+                topSubjects: string[];
+                grades: any[];
+            } | null;
+        };
+        activeYear: string;
+    } | null>;
     getStatus(): Promise<{
         published: boolean;
     }>;
