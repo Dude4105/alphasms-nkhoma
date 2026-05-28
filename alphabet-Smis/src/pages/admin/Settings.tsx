@@ -349,12 +349,12 @@ export default function Settings() {
 
   const renderGeneral = () => (
     <div className="animate-fade">
-      <div className="glass-panel" style={{ padding: '2rem', borderRadius: '24px' }}>
+      <div className="glass-panel responsive-panel" style={{ borderRadius: '24px' }}>
         <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <School size={22} color="#3b82f6" /> School Identity
         </h3>
         <form onSubmit={handleUpdateSettings}>
-          <div className="settings-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          <div className="settings-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
             <div className="input-group">
               <label>School Legal Name</label>
               <div className="input-wrapper">
@@ -378,7 +378,7 @@ export default function Settings() {
               </div>
             </div>
           </div>
-          <div className="input-group" style={{ marginTop: '2rem' }}>
+          <div className="input-group" style={{ marginTop: '1.5rem' }}>
             <label>Physical Address</label>
             <div className="input-wrapper">
               <Info size={18} />
@@ -390,7 +390,7 @@ export default function Settings() {
             </div>
           </div>
 
-          <div className="settings-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
+          <div className="settings-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem', marginTop: '1.5rem' }}>
             <div className="input-group">
               <label>Post Office Box (P.O. Box)</label>
               <div className="input-wrapper">
@@ -426,7 +426,7 @@ export default function Settings() {
               </div>
             </div>
           </div>
-          <button type="submit" disabled={isSaving} className="btn-primary" style={{ marginTop: '2.5rem', width: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem' }}>
+          <button type="submit" disabled={isSaving} className="btn-primary responsive-btn" style={{ marginTop: '2.5rem', width: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem' }}>
             {isSaving ? <Loader size={18} className="spin" /> : <Save size={18} />} Save Changes
           </button>
         </form>
@@ -436,12 +436,12 @@ export default function Settings() {
 
   const renderAcademic = () => (
     <div className="animate-fade">
-      <div className="glass-panel" style={{ padding: '2rem', borderRadius: '24px' }}>
+      <div className="glass-panel responsive-panel" style={{ borderRadius: '24px' }}>
         <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <Calendar size={22} color="#f59e0b" /> Academic Configuration
         </h3>
         <form onSubmit={handleUpdateSettings}>
-          <div className="settings-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+          <div className="settings-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
             <div className="input-group">
               <label>Current Academic Year</label>
               <div className="input-wrapper">
@@ -471,14 +471,14 @@ export default function Settings() {
           <p style={{ marginTop: '1.5rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
             <strong>Note:</strong> Changing the academic year or term will immediately reflect in all financial reports and student enrollment default states.
           </p>
-          <button type="submit" disabled={isSaving} className="btn-primary" style={{ marginTop: '2.5rem', width: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem' }}>
+          <button type="submit" disabled={isSaving} className="btn-primary responsive-btn" style={{ marginTop: '2.5rem', width: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem' }}>
             {isSaving ? <Loader size={18} className="spin" /> : <Save size={18} />} Save Changes
           </button>
         </form>
       </div>
 
       {/* Final Results Mode Control */}
-      <div className="glass-panel" style={{ padding: '2rem', borderRadius: '24px', marginTop: '2rem', border: finalResultsMode ? '2px solid rgba(239, 68, 68, 0.4)' : '2px solid rgba(16, 185, 129, 0.2)' }}>
+      <div className="glass-panel responsive-panel" style={{ borderRadius: '24px', marginTop: '2rem', border: finalResultsMode ? '2px solid rgba(239, 68, 68, 0.4)' : '2px solid rgba(16, 185, 129, 0.2)' }}>
         <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           {finalResultsMode ? <Zap size={22} color="#ef4444" /> : <ZapOff size={22} color="var(--text-muted)" />}
           Final Results Mode
@@ -488,7 +488,7 @@ export default function Settings() {
           Teachers will see a single score input per student per subject. 
           The "Configure Assessments" button will be disabled across all teacher portals.
         </p>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+        <div className="controls-flex">
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
             padding: '0.4rem 1rem', borderRadius: '999px', fontSize: '0.8rem', fontWeight: 700,
@@ -520,8 +520,7 @@ export default function Settings() {
       </div>
 
       {/* Publish Exams Control */}
-      <div className="glass-panel" style={{ 
-        padding: '2rem', 
+      <div className="glass-panel responsive-panel" style={{ 
         borderRadius: '24px', 
         marginTop: '2rem', 
         border: examResultsPublished ? '2px solid var(--primary-gold)' : '2px solid rgba(255,255,255,0.05)',
@@ -552,7 +551,7 @@ export default function Settings() {
           Once you have verified all records, use this button to make results available to the public. 
           When enabled, the "Exam Results" button will appear on the school landing page for students to view their unofficial transcripts.
         </p>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+        <div className="controls-flex">
           <button
             onClick={handleTogglePublishExams}
             disabled={isPublishingExams || !finalResultsMode}
@@ -597,7 +596,7 @@ export default function Settings() {
 
   const renderSecurity = () => (
     <div className="animate-fade">
-      <div className="glass-panel" style={{ padding: '2rem', borderRadius: '24px' }}>
+      <div className="glass-panel responsive-panel" style={{ borderRadius: '24px' }}>
         <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <Shield size={22} color="#3b82f6" /> Add New Administrator
         </h3>
@@ -625,7 +624,7 @@ export default function Settings() {
           </div>
           
           <div className="input-group" style={{ marginTop: '1.5rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
               <span style={{ fontSize: '1rem', fontWeight: 600 }}>Module Access Permissions</span>
               <button 
                 type="button" 
@@ -639,8 +638,8 @@ export default function Settings() {
               </button>
             </div>
             <div style={{ 
-              display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', 
-              gap: '1rem', background: 'rgba(255,255,255,0.01)', padding: '1.5rem', borderRadius: '16px',
+              display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', 
+              gap: '0.75rem', background: 'rgba(255,255,255,0.01)', padding: '1.25rem', borderRadius: '16px',
               border: '1px solid var(--glass-border)'
             }}>
               {AVAILABLE_TABS.map(tab => {
@@ -656,7 +655,7 @@ export default function Settings() {
                     }}
                     style={{ 
                       display: 'flex', alignItems: 'center', gap: '0.6rem', cursor: 'pointer', 
-                      padding: '0.75rem 1rem', borderRadius: '12px', fontSize: '0.85rem', fontWeight: 600,
+                      padding: '0.75rem 0.85rem', borderRadius: '12px', fontSize: '0.85rem', fontWeight: 600,
                       background: isSelected ? 'rgba(59, 130, 246, 0.12)' : 'rgba(255, 255, 255, 0.03)',
                       color: isSelected ? '#3b82f6' : 'var(--text-muted)',
                       border: `1px solid ${isSelected ? 'rgba(59, 130, 246, 0.3)' : 'rgba(255, 255, 255, 0.05)'}`,
@@ -665,20 +664,20 @@ export default function Settings() {
                     }}
                   >
                     {isSelected ? <CheckCircle2 size={16} /> : <div style={{ width: 16, height: 16, borderRadius: '4px', border: '2px solid rgba(255,255,255,0.2)' }} />}
-                    {tab}
+                    <span style={{ textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>{tab}</span>
                   </div>
                 );
               })}
             </div>
           </div>
 
-          <button type="submit" disabled={isSaving} className="btn-primary" style={{ marginTop: '2rem', width: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem' }}>
+          <button type="submit" disabled={isSaving} className="btn-primary responsive-btn" style={{ marginTop: '2rem', width: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem' }}>
             {isSaving ? <Loader size={18} className="spin" /> : <Plus size={18} />} Create Admin
           </button>
         </form>
       </div>
 
-      <div className="glass-panel" style={{ padding: '2rem', borderRadius: '24px', marginTop: '2rem' }}>
+      <div className="glass-panel responsive-panel" style={{ borderRadius: '24px', marginTop: '2rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
           <h3 style={{ fontSize: '1.25rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <Users size={22} color="#10b981" /> Administrator Directory
@@ -687,7 +686,9 @@ export default function Settings() {
             <RefreshCw size={18} className={isFetchingAdmins ? 'spin' : ''} />
           </button>
         </div>
-        <div style={{ overflowX: 'auto' }}>
+        
+        {/* Desktop View Table */}
+        <div className="desktop-only-table" style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: '0 0.5rem' }}>
             <thead>
               <tr style={{ color: 'var(--text-muted)', fontSize: '0.85rem', textAlign: 'left' }}>
@@ -721,6 +722,51 @@ export default function Settings() {
             </tbody>
           </table>
         </div>
+
+        {/* Mobile View Cards */}
+        <div className="mobile-only-cards" style={{ display: 'none', flexDirection: 'column', gap: '1rem' }}>
+          {admins.map((adm, i) => (
+            <div 
+              key={i} 
+              className="admin-mobile-card"
+              style={{
+                background: 'rgba(255,255,255,0.02)',
+                border: '1px solid var(--glass-border)',
+                borderRadius: '16px',
+                padding: '1.25rem',
+                cursor: 'pointer',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.75rem'
+              }}
+              onClick={() => navigate(`/admin/settings/admins/${adm.id}`)}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ fontWeight: 700, fontSize: '1.1rem', color: 'var(--text-light)' }}>
+                  {adm.firstName} {adm.lastName}
+                </span>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                  {adm.joinedDate}
+                </span>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Globe size={14} color="#3b82f6" /> {adm.email}
+                </span>
+                {adm.phone && adm.phone !== 'N/A' && (
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <Phone size={14} color="#10b981" /> {adm.phone}
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
+          {admins.length === 0 && (
+            <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)', background: 'rgba(255,255,255,0.01)', borderRadius: '16px' }}>
+              No secondary administrators found.
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -730,9 +776,9 @@ export default function Settings() {
   const renderGrading = () => (
     <div className="animate-fade">
       {/* Grade Boundaries Table */}
-      <div className="glass-panel" style={{ padding: '2rem', borderRadius: '24px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-          <h3 style={{ fontSize: '1.25rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+      <div className="glass-panel responsive-panel" style={{ borderRadius: '24px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
+          <h3 style={{ fontSize: '1.25rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.75rem', margin: 0 }}>
             <Award size={22} color="#f59e0b" /> Grade Boundaries & Points
           </h3>
           <button 
@@ -752,7 +798,8 @@ export default function Settings() {
           These settings apply <strong style={{ color: 'var(--text-light)' }}>system-wide</strong> to all results, reports, and analytics.
         </p>
 
-        <div style={{ overflowX: 'auto' }}>
+        {/* Desktop View Table */}
+        <div className="desktop-only-table" style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: '0 0.4rem' }}>
             <thead>
               <tr style={{ color: 'var(--text-muted)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
@@ -854,21 +901,123 @@ export default function Settings() {
           </table>
         </div>
 
+        {/* Mobile View Cards */}
+        <div className="mobile-only-cards" style={{ display: 'none', flexDirection: 'column', gap: '1rem' }}>
+          {gradingConfig.grades.map((g: any, i: number) => {
+            const isPass = g.minScore >= gradingConfig.passMinScore;
+            const color = gradeColors[g.grade] || '#6b7280';
+            return (
+              <div 
+                key={i} 
+                className="grade-mobile-card"
+                style={{
+                  background: 'rgba(255,255,255,0.01)',
+                  border: `1px solid ${color}30`,
+                  borderRadius: '16px',
+                  padding: '1.25rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1rem'
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <input 
+                      value={g.grade} 
+                      onChange={e => updateGradeRow(i, 'grade', e.target.value)}
+                      style={{
+                        width: '55px', padding: '0.4rem', borderRadius: '8px', textAlign: 'center',
+                        background: `${color}15`, border: `1px solid ${color}40`, color, 
+                        fontWeight: 800, fontSize: '1rem'
+                      }}
+                    />
+                    <span style={{
+                      fontSize: '0.7rem', fontWeight: 700, padding: '0.25rem 0.6rem', borderRadius: '6px',
+                      background: isPass ? 'rgba(16,185,129,0.1)' : 'rgba(239,68,68,0.1)',
+                      color: isPass ? '#10b981' : '#ef4444'
+                    }}>
+                      {isPass ? 'PASS' : 'FAIL'}
+                    </span>
+                  </div>
+                  <button 
+                    onClick={() => removeGradeRow(i)}
+                    disabled={gradingConfig.grades.length <= 2}
+                    style={{
+                      background: 'none', border: 'none', cursor: gradingConfig.grades.length <= 2 ? 'not-allowed' : 'pointer',
+                      color: gradingConfig.grades.length <= 2 ? 'var(--glass-border)' : '#ef4444', padding: '0.3rem'
+                    }}
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                </div>
+
+                <div className="input-group">
+                  <label style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Label / Description</label>
+                  <input 
+                    value={g.label} 
+                    onChange={e => updateGradeRow(i, 'label', e.target.value)}
+                    style={{
+                      width: '100%', padding: '0.6rem 0.75rem', borderRadius: '8px',
+                      background: 'rgba(255,255,255,0.04)', border: '1px solid var(--glass-border)', 
+                      color: 'var(--text-light)', fontSize: '0.85rem', outline: 'none'
+                    }}
+                    placeholder="e.g. Distinction"
+                  />
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem' }}>
+                  <div className="input-group" style={{ textAlign: 'center' }}>
+                    <label style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Min Score</label>
+                    <input 
+                      type="number" value={g.minScore} min={0} max={100}
+                      onChange={e => updateGradeRow(i, 'minScore', parseInt(e.target.value) || 0)}
+                      style={{
+                        width: '100%', padding: '0.6rem 0.5rem', borderRadius: '8px', textAlign: 'center',
+                        background: 'rgba(255,255,255,0.04)', border: '1px solid var(--glass-border)', 
+                        color: 'var(--text-light)', fontSize: '0.9rem', fontWeight: 600, outline: 'none'
+                      }}
+                    />
+                  </div>
+                  <div className="input-group" style={{ textAlign: 'center' }}>
+                    <label style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Max Score</label>
+                    <input 
+                      type="number" value={g.maxScore} min={0} max={100}
+                      onChange={e => updateGradeRow(i, 'maxScore', parseInt(e.target.value) || 0)}
+                      style={{
+                        width: '100%', padding: '0.6rem 0.5rem', borderRadius: '8px', textAlign: 'center',
+                        background: 'rgba(255,255,255,0.04)', border: '1px solid var(--glass-border)', 
+                        color: 'var(--text-light)', fontSize: '0.9rem', fontWeight: 600, outline: 'none'
+                      }}
+                    />
+                  </div>
+                  <div className="input-group" style={{ textAlign: 'center' }}>
+                    <label style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Points</label>
+                    <input 
+                      type="number" value={g.points} min={1} max={9}
+                      onChange={e => updateGradeRow(i, 'points', parseInt(e.target.value) || 1)}
+                      style={{
+                        width: '100%', padding: '0.6rem 0.5rem', borderRadius: '8px', textAlign: 'center',
+                        background: 'rgba(255,255,255,0.04)', border: '1px solid var(--glass-border)', 
+                        color: 'var(--primary-gold)', fontSize: '0.9rem', fontWeight: 700, outline: 'none'
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
         <button 
           onClick={addGradeRow}
-          style={{
-            display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '1rem',
-            padding: '0.6rem 1.25rem', background: 'rgba(255,255,255,0.05)',
-            border: '1px dashed var(--glass-border)', borderRadius: '10px',
-            color: 'var(--text-muted)', cursor: 'pointer', fontSize: '0.85rem'
-          }}
+          className="responsive-btn-secondary"
         >
           <Plus size={16} /> Add Grade Level
         </button>
       </div>
 
       {/* Visual Score Range Bar */}
-      <div className="glass-panel" style={{ padding: '2rem', borderRadius: '24px', marginTop: '2rem' }}>
+      <div className="glass-panel responsive-panel" style={{ borderRadius: '24px', marginTop: '2rem' }}>
         <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <BarChart3 size={20} color="#3b82f6" /> Score Range Preview
         </h3>
@@ -882,7 +1031,7 @@ export default function Settings() {
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative'
               }}>
                 <span style={{ fontSize: '0.9rem', fontWeight: 800, color }}>{g.grade}</span>
-                <span style={{ fontSize: '0.55rem', color: 'var(--text-muted)' }}>{g.minScore}–{g.maxScore}</span>
+                <span style={{ fontSize: '0.55rem', color: 'var(--text-muted)' }} className="range-preview-text">{g.minScore}–{g.maxScore}</span>
               </div>
             );
           })}
@@ -895,7 +1044,7 @@ export default function Settings() {
       </div>
 
       {/* Pass Threshold */}
-      <div className="glass-panel" style={{ padding: '2rem', borderRadius: '24px', marginTop: '2rem', border: '2px solid rgba(16, 185, 129, 0.2)' }}>
+      <div className="glass-panel responsive-panel" style={{ borderRadius: '24px', marginTop: '2rem', border: '2px solid rgba(16, 185, 129, 0.2)' }}>
         <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <CheckCircle2 size={20} color="#10b981" /> Pass Threshold
         </h3>
@@ -903,7 +1052,7 @@ export default function Settings() {
           Students scoring <strong style={{ color: 'var(--text-light)' }}>at or above</strong> this percentage will be marked as <strong style={{ color: '#10b981' }}>PASSED</strong>. 
           Students below will be marked as <strong style={{ color: '#ef4444' }}>FAILED</strong>.
         </p>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+        <div className="controls-flex">
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <input 
               type="number" 
@@ -934,7 +1083,7 @@ export default function Settings() {
         <button 
           onClick={handleSaveGrading} 
           disabled={isSavingGrading}
-          className="btn-primary" 
+          className="btn-primary responsive-btn" 
           style={{ 
             width: '240px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem',
             padding: '0.85rem 1.5rem', background: 'linear-gradient(135deg, #f59e0b, #d97706)',
@@ -996,7 +1145,8 @@ export default function Settings() {
               background: activeTab === tab.id ? 'rgba(59, 130, 246, 0.1)' : 'transparent',
               color: activeTab === tab.id ? '#3b82f6' : 'var(--text-muted)',
               border: 'none', borderRadius: '12px', fontWeight: activeTab === tab.id ? 600 : 500,
-              cursor: 'pointer', transition: 'all 0.2s', position: 'relative'
+              cursor: 'pointer', transition: 'all 0.2s', position: 'relative',
+              flexShrink: 0
             }}
           >
             {tab.icon} {tab.label}
@@ -1013,7 +1163,7 @@ export default function Settings() {
       </div>
 
       <style>{`
-        .input-group { display: flex; flexDirection: column; gap: 0.5rem; }
+        .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
         .input-group label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
         .input-wrapper { 
           display: flex; align-items: center; gap: 0.75rem; 
@@ -1033,6 +1183,88 @@ export default function Settings() {
         .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
         .spin { animation: spin 2s linear infinite; }
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        /* Responsive styles */
+        .responsive-panel {
+          padding: 2rem;
+        }
+        .scrollable-tabs {
+          overflow-x: auto;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none; /* Firefox */
+        }
+        .scrollable-tabs::-webkit-scrollbar {
+          display: none; /* Safari and Chrome */
+        }
+        .controls-flex {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+        }
+        .responsive-btn-secondary {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          margin-top: 1.25rem;
+          padding: 0.75rem 1.5rem;
+          background: rgba(255,255,255,0.03);
+          border: 1px dashed var(--glass-border);
+          border-radius: 12px;
+          color: var(--text-muted);
+          cursor: pointer;
+          font-size: 0.9rem;
+          transition: all 0.2s;
+          font-weight: 600;
+        }
+        .responsive-btn-secondary:hover {
+          background: rgba(255,255,255,0.06);
+          color: var(--text-light);
+        }
+
+        .desktop-only-table {
+          display: block;
+        }
+        .mobile-only-cards {
+          display: none;
+        }
+
+        @media (max-width: 768px) {
+          .responsive-panel {
+            padding: 1.25rem !important;
+            border-radius: 18px !important;
+          }
+          .controls-flex {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1rem;
+          }
+          .controls-flex > div {
+            justify-content: center;
+          }
+          .controls-flex > button {
+            width: 100% !important;
+            justify-content: center;
+          }
+          .responsive-btn {
+            width: 100% !important;
+            margin-top: 1.5rem !important;
+            justify-content: center;
+          }
+          .responsive-btn-secondary {
+            width: 100% !important;
+          }
+          .desktop-only-table {
+            display: none !important;
+          }
+          .mobile-only-cards {
+            display: flex !important;
+          }
+          .range-preview-text {
+            display: none !important;
+          }
+        }
       `}</style>
     </div>
   );

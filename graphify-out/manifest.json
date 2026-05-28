@@ -70,269 +70,269 @@
     "semantic_hash": "acf69d29e675864047c59b91f8a37c71"
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\layouts\\AdminLayout.tsx": {
-    "mtime": 1779889307.1302044,
-    "ast_hash": "10a89795f6f4a08184a4e2b21c875ab0",
+    "mtime": 1779959030.1594148,
+    "ast_hash": "093d8ffe826cb558c7d70b9fe0f795ae",
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\layouts\\TeacherLayout.tsx": {
-    "mtime": 1779889314.3114576,
-    "ast_hash": "4127e98e0d5d154d8e5468eae39cf326",
+    "mtime": 1779959030.1594148,
+    "ast_hash": "69c26e4ddd04d7510a73769751fc7e64",
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\Apply.tsx": {
-    "mtime": 1776515756.3599474,
-    "ast_hash": "9fc24aa2eb9576a7454f3c643ce68e6f",
-    "semantic_hash": "9fc24aa2eb9576a7454f3c643ce68e6f"
+    "mtime": 1779959030.1993673,
+    "ast_hash": "d215ca9d6eaf0acb7db7606ce610f28a",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\CampusGallery.tsx": {
-    "mtime": 1778954684.1410172,
-    "ast_hash": "eb768d7eb55a4b4cda18e6d54a807e15",
-    "semantic_hash": "eb768d7eb55a4b4cda18e6d54a807e15"
+    "mtime": 1779959030.224051,
+    "ast_hash": "f8c648cedbedb97dfb47933ed650b018",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\ExamResults.tsx": {
-    "mtime": 1779906010.1162434,
-    "ast_hash": "200e1ba4d6d478c5522888f80da03a6a",
+    "mtime": 1779959030.2279055,
+    "ast_hash": "cb223694d29dc9561b235780f6e520a0",
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\ExploreCampus.tsx": {
-    "mtime": 1778954694.577425,
-    "ast_hash": "90320058abde65a4dcd4b5dff20142b8",
-    "semantic_hash": "90320058abde65a4dcd4b5dff20142b8"
+    "mtime": 1779959225.433831,
+    "ast_hash": "131485bf06a5dd53edba0116fc7b31c9",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\ExploreCampusDetail.tsx": {
-    "mtime": 1778954701.2955241,
-    "ast_hash": "9d34d88c6b39245e533b891ea1aad279",
-    "semantic_hash": "9d34d88c6b39245e533b891ea1aad279"
+    "mtime": 1779959225.433831,
+    "ast_hash": "90fc3d008e3521921d0faf7a6a013f7b",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\Home.tsx": {
-    "mtime": 1779151082.2368,
-    "ast_hash": "583504128fb64dcaf21043753f00eb25",
-    "semantic_hash": "583504128fb64dcaf21043753f00eb25"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "7a42e705815fac9545de5afaf38372a9",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\Login.tsx": {
-    "mtime": 1779889295.8535063,
-    "ast_hash": "3c6851e104417e166177357276a2c2b3",
+    "mtime": 1779959453.079891,
+    "ast_hash": "0ee86c570005a496a9163eb61b03307a",
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\PublicStudentReport.tsx": {
-    "mtime": 1779313424.99577,
-    "ast_hash": "73558c15c6261266dad187f011369a64",
-    "semantic_hash": "73558c15c6261266dad187f011369a64"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "12c8603bfb58c65457bb1a10d5066b2d",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\AddStudent.tsx": {
-    "mtime": 1776629082.504408,
-    "ast_hash": "381bf5b6391d56437d2339dfac1b12f7",
-    "semantic_hash": "381bf5b6391d56437d2339dfac1b12f7"
+    "mtime": 1779959030.2279055,
+    "ast_hash": "f5788a30c3725c99d64df9dbdc9b1940",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\AddTeacher.tsx": {
-    "mtime": 1777204529.3937385,
-    "ast_hash": "ef51b38b246d49c55b55e9728ff9648a",
-    "semantic_hash": "ef51b38b246d49c55b55e9728ff9648a"
+    "mtime": 1779959225.382404,
+    "ast_hash": "573769941915d8d1bbd18fe3340ff7e1",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\AdminClasses.tsx": {
-    "mtime": 1776501902.7166326,
-    "ast_hash": "fc49c7f26c3763bf125b32c9ee09cc90",
-    "semantic_hash": "fc49c7f26c3763bf125b32c9ee09cc90"
+    "mtime": 1779959225.378231,
+    "ast_hash": "218d5405d19ed6b650be774262b92ce2",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\AdminDetail.tsx": {
-    "mtime": 1779093152.4449189,
-    "ast_hash": "30a668e2844424bc386205499b5de902",
-    "semantic_hash": "30a668e2844424bc386205499b5de902"
+    "mtime": 1779959225.382404,
+    "ast_hash": "2dc1b750b023fcd0ec17e994172b6c98",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\Boarding.tsx": {
-    "mtime": 1776514196.0620608,
-    "ast_hash": "6b08298008297ce6d4e1458853e4c9c7",
-    "semantic_hash": "6b08298008297ce6d4e1458853e4c9c7"
+    "mtime": 1779959225.382404,
+    "ast_hash": "542d56c0b98caebc23a6f0780962da37",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\ClassDetail.tsx": {
-    "mtime": 1779154349.1836784,
-    "ast_hash": "7f1976313940693b95d97f6aa6a7dc10",
-    "semantic_hash": "7f1976313940693b95d97f6aa6a7dc10"
+    "mtime": 1779959225.4092221,
+    "ast_hash": "1ca23c6b7a15a6fe8de4557ced246a24",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\CreateClass.tsx": {
-    "mtime": 1779002146.9080458,
-    "ast_hash": "f16867b8264a874ebc0fac1756d055df",
-    "semantic_hash": "f16867b8264a874ebc0fac1756d055df"
+    "mtime": 1779959030.2279055,
+    "ast_hash": "16fcee0bd6a4b050860a709ba872f604",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\CreateTimetable.tsx": {
-    "mtime": 1776614180.3435798,
-    "ast_hash": "f78c03d9a8c3ddfe84eb00da305063cf",
-    "semantic_hash": "f78c03d9a8c3ddfe84eb00da305063cf"
+    "mtime": 1779959225.4229863,
+    "ast_hash": "0e0b4d2974050a1e2f6284eda149ffe1",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\Dashboard.tsx": {
-    "mtime": 1779093152.3891015,
-    "ast_hash": "10952b2a03f2a7a46ccc313898b81ab9",
-    "semantic_hash": "10952b2a03f2a7a46ccc313898b81ab9"
+    "mtime": 1779959225.433831,
+    "ast_hash": "2f0194f297e95d8148dc46088bd764ed",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\EditClass.tsx": {
-    "mtime": 1779002183.149426,
-    "ast_hash": "eea5a7a6e8b8014e64f035bfa31a4798",
-    "semantic_hash": "eea5a7a6e8b8014e64f035bfa31a4798"
+    "mtime": 1779959225.433831,
+    "ast_hash": "0924ce6785094b370828517011e642b8",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\EditStudent.tsx": {
-    "mtime": 1776506965.6258807,
-    "ast_hash": "e9539fd86971fd7105b0151ac8240ad3",
-    "semantic_hash": "e9539fd86971fd7105b0151ac8240ad3"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "a99b040c89abb9421e24d9ccd1325db9",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\EditTeacher.tsx": {
-    "mtime": 1777204870.1318593,
-    "ast_hash": "c04e0670c64bff87b182ac36278d2168",
-    "semantic_hash": "c04e0670c64bff87b182ac36278d2168"
+    "mtime": 1779959317.6976588,
+    "ast_hash": "b35e889bb52e8da6c9ab293262dbb3e9",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\Enrollment.tsx": {
-    "mtime": 1776516342.6989295,
-    "ast_hash": "c7e42ed808596a74484ddcef4ce8a876",
-    "semantic_hash": "c7e42ed808596a74484ddcef4ce8a876"
+    "mtime": 1779959317.7314403,
+    "ast_hash": "e7a1a0ef8ac97f4d761d6f6be2fbd8e7",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\Finance.tsx": {
-    "mtime": 1779154960.1199174,
-    "ast_hash": "f7c935d1b5478aa6b973add356af30b4",
-    "semantic_hash": "f7c935d1b5478aa6b973add356af30b4"
+    "mtime": 1779959317.7314403,
+    "ast_hash": "eef2b95d455a145848ec2cc001919e80",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\PasswordResets.tsx": {
-    "mtime": 1776627802.124811,
-    "ast_hash": "109c2dc78c1ff26862b81cdb90555ccd",
-    "semantic_hash": "109c2dc78c1ff26862b81cdb90555ccd"
+    "mtime": 1779959317.7314403,
+    "ast_hash": "5af91fa4f4ea570b3896849127d3b324",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\Profile.tsx": {
-    "mtime": 1777232237.2250917,
-    "ast_hash": "06e5a7b44fbd3b182973061d43b52c91",
-    "semantic_hash": "06e5a7b44fbd3b182973061d43b52c91"
+    "mtime": 1779959225.4375956,
+    "ast_hash": "fd35dd0ccdaac5d7176e942a51c18163",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\SchoolFeedForm.tsx": {
-    "mtime": 1778947532.331029,
-    "ast_hash": "917f5cc15c57a0c2a789737783d414de",
-    "semantic_hash": "917f5cc15c57a0c2a789737783d414de"
+    "mtime": 1779959317.7314403,
+    "ast_hash": "db8cd3b5df8fed6b1bba6ddfe78653de",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\SchoolFeeds.tsx": {
-    "mtime": 1778954634.3556404,
-    "ast_hash": "7ba69b6e05c6a9f1fdbc1971b52192ef",
-    "semantic_hash": "7ba69b6e05c6a9f1fdbc1971b52192ef"
+    "mtime": 1779959317.7314403,
+    "ast_hash": "52069179145b6121afb80ddb8d9490e3",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\SchoolGallery.tsx": {
-    "mtime": 1778954653.37473,
-    "ast_hash": "83d92fa2f7374ddd4ea35fd2949e8ec3",
-    "semantic_hash": "83d92fa2f7374ddd4ea35fd2949e8ec3"
+    "mtime": 1779959317.7314403,
+    "ast_hash": "6cffc56b7a62fef70f2c30cf057c1ffa",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\SchoolGalleryForm.tsx": {
-    "mtime": 1779000885.5651596,
-    "ast_hash": "bc1a90abd6a6e06f4c58fb97397ea4e7",
-    "semantic_hash": "bc1a90abd6a6e06f4c58fb97397ea4e7"
+    "mtime": 1779959317.7314403,
+    "ast_hash": "6743470dcf5b7063646d50a5aac66748",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\Settings.tsx": {
-    "mtime": 1779109010.2702293,
-    "ast_hash": "97cb53e1d8c77c156db91c079b76c651",
-    "semantic_hash": "97cb53e1d8c77c156db91c079b76c651"
+    "mtime": 1779988047.9816387,
+    "ast_hash": "ab06097eaa61bbae96fbd419daae71a5",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\StudentDetail.tsx": {
-    "mtime": 1779309139.8441372,
-    "ast_hash": "8cbe2417ab0865baf2de16318c37f170",
-    "semantic_hash": "8cbe2417ab0865baf2de16318c37f170"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "49212ef3da3d85382ff217b0190f18f4",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\StudentHistory.tsx": {
-    "mtime": 1779309713.3361757,
-    "ast_hash": "d62cec3b9aa4722580b2e8065a58f9c8",
-    "semantic_hash": "d62cec3b9aa4722580b2e8065a58f9c8"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "57567c8f24254e9f4ad74e08904a90d0",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\Students.tsx": {
-    "mtime": 1779019563.7302587,
-    "ast_hash": "66a07f0e2448688c897f776c2f3dea48",
-    "semantic_hash": "66a07f0e2448688c897f776c2f3dea48"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "da77e2676106803377378a2521221406",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\Subjects.tsx": {
-    "mtime": 1777116638.7402103,
-    "ast_hash": "263b159829f1df455e85f46d8a5a1d5a",
-    "semantic_hash": "263b159829f1df455e85f46d8a5a1d5a"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "2b82d11d0748c05854105804614e68bb",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\TeacherDetail.tsx": {
-    "mtime": 1779020744.3465607,
-    "ast_hash": "8d0c884ca097cdf081a6ad0d7200add1",
-    "semantic_hash": "8d0c884ca097cdf081a6ad0d7200add1"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "10f9ca37c4bf2a6f5fed5442f1043a18",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\Teachers.tsx": {
-    "mtime": 1776607827.4801297,
-    "ast_hash": "1ccd443d76a6c6d0c60abf1577316f65",
-    "semantic_hash": "1ccd443d76a6c6d0c60abf1577316f65"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "57b125e8f328b1c8de308975cb38d835",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\ViewTimetable.tsx": {
-    "mtime": 1776615154.7538762,
-    "ast_hash": "6ecd8bc5bef920dbdf51ea5ca1683d03",
-    "semantic_hash": "6ecd8bc5bef920dbdf51ea5ca1683d03"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "4e3dc2226865d30543c27dd2f32cf79b",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\AddClassStudent.tsx": {
-    "mtime": 1776629067.554258,
-    "ast_hash": "42583386d172f53016ff6e72422bf24d",
-    "semantic_hash": "42583386d172f53016ff6e72422bf24d"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "eaebc1bfabd93a4caf1ad1c3d043cf24",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\AttendanceOverview.tsx": {
-    "mtime": 1779014555.5993342,
-    "ast_hash": "fd16da000e871eb1d98cca51de888def",
-    "semantic_hash": "fd16da000e871eb1d98cca51de888def"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "7311c910965548c654e762f6a7712360",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\AttendanceTracker.tsx": {
-    "mtime": 1779241775.0688794,
-    "ast_hash": "d4a78eeb4f9a90700a51ac74466b69f4",
-    "semantic_hash": "d4a78eeb4f9a90700a51ac74466b69f4"
+    "mtime": 1779959317.7314403,
+    "ast_hash": "5d1b91f4f652f1343933e6b65309f20e",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\Classes.tsx": {
-    "mtime": 1779021853.997208,
-    "ast_hash": "dc14e19bab1c966fe3b968a97afc8bbd",
-    "semantic_hash": "dc14e19bab1c966fe3b968a97afc8bbd"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "c9d21f75e9b40d3179437075fb4fd6a1",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\ClassMigration.tsx": {
-    "mtime": 1779132696.7536452,
-    "ast_hash": "7a41bf670444c3a2d031b959b31619a1",
-    "semantic_hash": "7a41bf670444c3a2d031b959b31619a1"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "c66bb1e5022937d4967d977e9c1386e8",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\ClassRoster.tsx": {
-    "mtime": 1779132228.4825616,
-    "ast_hash": "f4bf6d0cd3865a788cc83e9ae088052a",
-    "semantic_hash": "f4bf6d0cd3865a788cc83e9ae088052a"
+    "mtime": 1779959317.7314403,
+    "ast_hash": "d9897fadf565cb41eed11037e6a216c2",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\Dashboard.tsx": {
-    "mtime": 1779152088.733035,
-    "ast_hash": "627ea0010d885d8417ea1fb410ccc7f6",
-    "semantic_hash": "627ea0010d885d8417ea1fb410ccc7f6"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "21c6769507d41da7d6dee79e30e908a9",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\FinalResults.tsx": {
-    "mtime": 1779313446.7471292,
-    "ast_hash": "09c85a8d6f47f9a329593ae9ef9c4519",
-    "semantic_hash": "09c85a8d6f47f9a329593ae9ef9c4519"
+    "mtime": 1779959347.1972766,
+    "ast_hash": "e3ac3eac69fa5fa22ee4ca7ac086470d",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\Grades.tsx": {
-    "mtime": 1779241786.1335263,
-    "ast_hash": "3f21e3494c168fce7efb4e806ab2f40f",
-    "semantic_hash": "3f21e3494c168fce7efb4e806ab2f40f"
+    "mtime": 1779959317.7314403,
+    "ast_hash": "67877a1d7be1de18c2b52358bd48eafc",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\InTermResults.tsx": {
-    "mtime": 1777121796.1479495,
-    "ast_hash": "b98b31f60a9fb0d6790c3fe783ad5827",
-    "semantic_hash": "b98b31f60a9fb0d6790c3fe783ad5827"
+    "mtime": 1779959317.7314403,
+    "ast_hash": "537f88823884c077a2f7ab08edf9d8e9",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\MainClass.tsx": {
-    "mtime": 1779132213.004026,
-    "ast_hash": "c4ba14ed93ee9ab295d68a02e54c2169",
-    "semantic_hash": "c4ba14ed93ee9ab295d68a02e54c2169"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "89eb70e6a17c2e20e3c99564342757aa",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\Profile.tsx": {
-    "mtime": 1776617002.2945592,
-    "ast_hash": "74ab1cc7f7e97a1d2284e6b13eeac416",
-    "semantic_hash": "74ab1cc7f7e97a1d2284e6b13eeac416"
+    "mtime": 1779959225.4358356,
+    "ast_hash": "6842c927bb379af3dd744cebb360bd65",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\StudentReport.tsx": {
-    "mtime": 1779300969.145246,
-    "ast_hash": "18b16288d682f4c7a8b30e1efba59f56",
-    "semantic_hash": "18b16288d682f4c7a8b30e1efba59f56"
+    "mtime": 1779959317.7314403,
+    "ast_hash": "3563a90f872ea29017530dbd6de3638a",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\SubjectResults.tsx": {
-    "mtime": 1779134235.3226545,
-    "ast_hash": "9040360bf05e3b55c5d21cfe0620d9b0",
-    "semantic_hash": "9040360bf05e3b55c5d21cfe0620d9b0"
+    "mtime": 1779959317.701429,
+    "ast_hash": "5a1d71089bd306dbbb17b273af0de9f8",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\ViewTimetable.tsx": {
-    "mtime": 1779023304.4902833,
-    "ast_hash": "78c2bd68f3e017ec04a32d7a8cfbb4c3",
-    "semantic_hash": "78c2bd68f3e017ec04a32d7a8cfbb4c3"
+    "mtime": 1779959317.701429,
+    "ast_hash": "c291e505d8cb02cbd6c5a011090d3e9e",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\backend\\check_classes.js": {
     "mtime": 1776682319.1774046,
@@ -375,9 +375,9 @@
     "semantic_hash": "cdc3df74fe63c73978f55adcd9b861f8"
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\backend\\prisma\\seed.ts": {
-    "mtime": 1776594565.650709,
-    "ast_hash": "e66b03e1c2e263eb04f1a16db184636d",
-    "semantic_hash": "e66b03e1c2e263eb04f1a16db184636d"
+    "mtime": 1779986629.6065836,
+    "ast_hash": "1b85d17471ebe71049613892408ac9ec",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\backend\\src\\app.controller.spec.ts": {
     "mtime": 1775985972.7187676,
@@ -400,8 +400,8 @@
     "semantic_hash": "08e985e831bca61f6be89c5c2ecef2fa"
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\backend\\src\\main.ts": {
-    "mtime": 1779889239.169487,
-    "ast_hash": "347dab2a8990c85b4a5ff04c7e731bf2",
+    "mtime": 1779975889.0597565,
+    "ast_hash": "d01242d2077d08bb958e3a708c116dfe",
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\backend\\src\\admin\\admin.controller.ts": {
@@ -950,8 +950,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\auth-interceptor.ts": {
-    "mtime": 1779889270.8546543,
-    "ast_hash": "2e3f3b303d7dd99947ba367baf5e09ed",
+    "mtime": 1779959030.1594148,
+    "ast_hash": "089af2c0af483897914536b1551be044",
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\docs\\01_project_overview.md": {
@@ -980,8 +980,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\PublicStudentHistory.tsx": {
-    "mtime": 1779906003.3201945,
-    "ast_hash": "438817c7c8c09968b78f0267a2b9271a",
+    "mtime": 1779959225.4358356,
+    "ast_hash": "1563dc7928ee69c03b7698914afe7f3e",
     "semantic_hash": ""
   }
 }

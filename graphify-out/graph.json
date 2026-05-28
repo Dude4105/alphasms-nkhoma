@@ -1316,10 +1316,19 @@
       "norm_label": "refreshaccesstoken()"
     },
     {
+      "label": "isBackendRequest",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L86",
+      "id": "src_auth_interceptor_isbackendrequest",
+      "community": 71,
+      "norm_label": "isbackendrequest"
+    },
+    {
       "label": "modifiedInit",
       "file_type": "code",
       "source_file": "alphabet-Smis/src/auth-interceptor.ts",
-      "source_location": "L90",
+      "source_location": "L91",
       "id": "src_auth_interceptor_modifiedinit",
       "community": 71,
       "norm_label": "modifiedinit"
@@ -1328,7 +1337,7 @@
       "label": "options",
       "file_type": "code",
       "source_file": "alphabet-Smis/src/auth-interceptor.ts",
-      "source_location": "L98",
+      "source_location": "L99",
       "id": "src_auth_interceptor_options",
       "community": 71,
       "norm_label": "options"
@@ -1337,7 +1346,7 @@
       "label": "token",
       "file_type": "code",
       "source_file": "alphabet-Smis/src/auth-interceptor.ts",
-      "source_location": "L101",
+      "source_location": "L102",
       "id": "src_auth_interceptor_token",
       "community": 71,
       "norm_label": "token"
@@ -1346,7 +1355,7 @@
       "label": "authIdx",
       "file_type": "code",
       "source_file": "alphabet-Smis/src/auth-interceptor.ts",
-      "source_location": "L128",
+      "source_location": "L129",
       "id": "src_auth_interceptor_authidx",
       "community": 71,
       "norm_label": "authidx"
@@ -1591,7 +1600,7 @@
       "source_file": "alphabet-Smis/src/pages/Login.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_login_tsx",
-      "community": 98,
+      "community": 5,
       "norm_label": "login.tsx"
     },
     {
@@ -1600,7 +1609,7 @@
       "source_file": "alphabet-Smis/src/pages/Login.tsx",
       "source_location": "L6",
       "id": "pages_login_login",
-      "community": 98,
+      "community": 5,
       "norm_label": "login()"
     },
     {
@@ -2419,7 +2428,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/Dashboard.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_teacher_dashboard_tsx",
-      "community": 5,
+      "community": 92,
       "norm_label": "dashboard.tsx"
     },
     {
@@ -2428,7 +2437,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/Dashboard.tsx",
       "source_location": "L4",
       "id": "teacher_dashboard_dashboard",
-      "community": 5,
+      "community": 92,
       "norm_label": "dashboard()"
     },
     {
@@ -4498,7 +4507,7 @@
       "source_file": "backend/src/auth/auth.service.ts",
       "source_location": "L1",
       "id": "backend_src_auth_auth_service_ts",
-      "community": 21,
+      "community": 6,
       "norm_label": "auth.service.ts"
     },
     {
@@ -5047,7 +5056,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L9",
       "id": "feeds_feeds_controller_feedscontroller",
-      "community": 92,
+      "community": 17,
       "norm_label": "feedscontroller"
     },
     {
@@ -5056,7 +5065,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L10",
       "id": "feeds_feeds_controller_feedscontroller_constructor",
-      "community": 92,
+      "community": 17,
       "norm_label": ".constructor()"
     },
     {
@@ -5065,7 +5074,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L13",
       "id": "feeds_feeds_controller_feedscontroller_findallpublic",
-      "community": 92,
+      "community": 17,
       "norm_label": ".findallpublic()"
     },
     {
@@ -5074,7 +5083,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L19",
       "id": "feeds_feeds_controller_feedscontroller_findalladmin",
-      "community": 92,
+      "community": 17,
       "norm_label": ".findalladmin()"
     },
     {
@@ -5083,7 +5092,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L24",
       "id": "feeds_feeds_controller_feedscontroller_findone",
-      "community": 92,
+      "community": 17,
       "norm_label": ".findone()"
     },
     {
@@ -5101,7 +5110,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L40",
       "id": "feeds_feeds_controller_feedscontroller_create",
-      "community": 92,
+      "community": 17,
       "norm_label": ".create()"
     },
     {
@@ -5110,7 +5119,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L60",
       "id": "feeds_feeds_controller_feedscontroller_update",
-      "community": 92,
+      "community": 17,
       "norm_label": ".update()"
     },
     {
@@ -5119,7 +5128,7 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L81",
       "id": "feeds_feeds_controller_feedscontroller_remove",
-      "community": 92,
+      "community": 17,
       "norm_label": ".remove()"
     },
     {
@@ -5218,7 +5227,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L1",
       "id": "backend_src_finance_finance_controller_ts",
-      "community": 15,
+      "community": 76,
       "norm_label": "finance.controller.ts"
     },
     {
@@ -5227,7 +5236,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L22",
       "id": "finance_finance_controller_financecontroller",
-      "community": 15,
+      "community": 75,
       "norm_label": "financecontroller"
     },
     {
@@ -5236,7 +5245,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L23",
       "id": "finance_finance_controller_financecontroller_constructor",
-      "community": 15,
+      "community": 75,
       "norm_label": ".constructor()"
     },
     {
@@ -5245,7 +5254,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L26",
       "id": "finance_finance_controller_financecontroller_getoverview",
-      "community": 15,
+      "community": 75,
       "norm_label": ".getoverview()"
     },
     {
@@ -5254,7 +5263,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L37",
       "id": "finance_finance_controller_financecontroller_test",
-      "community": 15,
+      "community": 75,
       "norm_label": ".test()"
     },
     {
@@ -5263,7 +5272,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L42",
       "id": "finance_finance_controller_financecontroller_getreports",
-      "community": 15,
+      "community": 75,
       "norm_label": ".getreports()"
     },
     {
@@ -5272,7 +5281,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L47",
       "id": "finance_finance_controller_financecontroller_getteachers",
-      "community": 15,
+      "community": 75,
       "norm_label": ".getteachers()"
     },
     {
@@ -5281,7 +5290,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L52",
       "id": "finance_finance_controller_financecontroller_getfeestructure",
-      "community": 15,
+      "community": 75,
       "norm_label": ".getfeestructure()"
     },
     {
@@ -5290,7 +5299,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L57",
       "id": "finance_finance_controller_financecontroller_updatefeestructure",
-      "community": 15,
+      "community": 75,
       "norm_label": ".updatefeestructure()"
     },
     {
@@ -5299,7 +5308,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L62",
       "id": "finance_finance_controller_financecontroller_getpayments",
-      "community": 15,
+      "community": 75,
       "norm_label": ".getpayments()"
     },
     {
@@ -5308,7 +5317,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L67",
       "id": "finance_finance_controller_financecontroller_recordpayment",
-      "community": 15,
+      "community": 75,
       "norm_label": ".recordpayment()"
     },
     {
@@ -5317,7 +5326,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L72",
       "id": "finance_finance_controller_financecontroller_searchstudents",
-      "community": 15,
+      "community": 75,
       "norm_label": ".searchstudents()"
     },
     {
@@ -5326,7 +5335,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L77",
       "id": "finance_finance_controller_financecontroller_getstudentfees",
-      "community": 15,
+      "community": 75,
       "norm_label": ".getstudentfees()"
     },
     {
@@ -5335,7 +5344,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L82",
       "id": "finance_finance_controller_financecontroller_getstudentaccount",
-      "community": 15,
+      "community": 75,
       "norm_label": ".getstudentaccount()"
     },
     {
@@ -5344,7 +5353,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L89",
       "id": "finance_finance_controller_financecontroller_getexpenses",
-      "community": 15,
+      "community": 75,
       "norm_label": ".getexpenses()"
     },
     {
@@ -5353,7 +5362,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L99",
       "id": "finance_finance_controller_randomname",
-      "community": 15,
+      "community": 76,
       "norm_label": "randomname"
     },
     {
@@ -5362,7 +5371,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L120",
       "id": "finance_finance_controller_financecontroller_recordexpense",
-      "community": 15,
+      "community": 75,
       "norm_label": ".recordexpense()"
     },
     {
@@ -5371,7 +5380,7 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L151",
       "id": "finance_finance_controller_financecontroller_updateexpense",
-      "community": 15,
+      "community": 75,
       "norm_label": ".updateexpense()"
     },
     {
@@ -5380,7 +5389,7 @@
       "source_file": "backend/src/finance/finance.module.ts",
       "source_location": "L1",
       "id": "backend_src_finance_finance_module_ts",
-      "community": 15,
+      "community": 76,
       "norm_label": "finance.module.ts"
     },
     {
@@ -5389,7 +5398,7 @@
       "source_file": "backend/src/finance/finance.module.ts",
       "source_location": "L11",
       "id": "finance_finance_module_financemodule",
-      "community": 15,
+      "community": 76,
       "norm_label": "financemodule"
     },
     {
@@ -5434,7 +5443,7 @@
       "source_file": "backend/src/finance/finance.service.ts",
       "source_location": "L1",
       "id": "backend_src_finance_finance_service_ts",
-      "community": 15,
+      "community": 76,
       "norm_label": "finance.service.ts"
     },
     {
@@ -5767,7 +5776,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L1",
       "id": "backend_src_hostels_hostels_controller_ts",
-      "community": 24,
+      "community": 18,
       "norm_label": "hostels.controller.ts"
     },
     {
@@ -5776,7 +5785,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L16",
       "id": "hostels_hostels_controller_hostelscontroller",
-      "community": 76,
+      "community": 18,
       "norm_label": "hostelscontroller"
     },
     {
@@ -5785,7 +5794,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L17",
       "id": "hostels_hostels_controller_hostelscontroller_constructor",
-      "community": 76,
+      "community": 18,
       "norm_label": ".constructor()"
     },
     {
@@ -5794,7 +5803,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L20",
       "id": "hostels_hostels_controller_hostelscontroller_findall",
-      "community": 76,
+      "community": 18,
       "norm_label": ".findall()"
     },
     {
@@ -5803,7 +5812,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L25",
       "id": "hostels_hostels_controller_hostelscontroller_create",
-      "community": 76,
+      "community": 18,
       "norm_label": ".create()"
     },
     {
@@ -5812,7 +5821,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L30",
       "id": "hostels_hostels_controller_hostelscontroller_getstats",
-      "community": 76,
+      "community": 18,
       "norm_label": ".getstats()"
     },
     {
@@ -5821,7 +5830,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L35",
       "id": "hostels_hostels_controller_hostelscontroller_findone",
-      "community": 76,
+      "community": 18,
       "norm_label": ".findone()"
     },
     {
@@ -5830,7 +5839,7 @@
       "source_file": "backend/src/hostels/hostels.module.ts",
       "source_location": "L1",
       "id": "backend_src_hostels_hostels_module_ts",
-      "community": 24,
+      "community": 18,
       "norm_label": "hostels.module.ts"
     },
     {
@@ -5839,7 +5848,7 @@
       "source_file": "backend/src/hostels/hostels.module.ts",
       "source_location": "L9",
       "id": "hostels_hostels_module_hostelsmodule",
-      "community": 24,
+      "community": 18,
       "norm_label": "hostelsmodule"
     },
     {
@@ -5848,7 +5857,7 @@
       "source_file": "backend/src/hostels/hostels.service.ts",
       "source_location": "L1",
       "id": "backend_src_hostels_hostels_service_ts",
-      "community": 24,
+      "community": 18,
       "norm_label": "hostels.service.ts"
     },
     {
@@ -6037,7 +6046,7 @@
       "source_file": "backend/src/students/students.controller.ts",
       "source_location": "L1",
       "id": "backend_src_students_students_controller_ts",
-      "community": 28,
+      "community": 24,
       "norm_label": "students.controller.ts"
     },
     {
@@ -6109,7 +6118,7 @@
       "source_file": "backend/src/students/students.module.ts",
       "source_location": "L1",
       "id": "backend_src_students_students_module_ts",
-      "community": 28,
+      "community": 26,
       "norm_label": "students.module.ts"
     },
     {
@@ -6118,7 +6127,7 @@
       "source_file": "backend/src/students/students.module.ts",
       "source_location": "L10",
       "id": "students_students_module_studentsmodule",
-      "community": 28,
+      "community": 26,
       "norm_label": "studentsmodule"
     },
     {
@@ -6208,7 +6217,7 @@
       "source_file": "backend/src/subjects/subjects.controller.ts",
       "source_location": "L1",
       "id": "backend_src_subjects_subjects_controller_ts",
-      "community": 24,
+      "community": 14,
       "norm_label": "subjects.controller.ts"
     },
     {
@@ -6298,7 +6307,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L1",
       "id": "backend_src_subjects_subjects_service_ts",
-      "community": 24,
+      "community": 14,
       "norm_label": "subjects.service.ts"
     },
     {
@@ -6307,7 +6316,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L10",
       "id": "subjects_subjects_service_subjectsservice",
-      "community": 75,
+      "community": 14,
       "norm_label": "subjectsservice"
     },
     {
@@ -6316,7 +6325,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L11",
       "id": "subjects_subjects_service_subjectsservice_constructor",
-      "community": 75,
+      "community": 14,
       "norm_label": ".constructor()"
     },
     {
@@ -6325,7 +6334,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L13",
       "id": "subjects_subjects_service_subjectsservice_create",
-      "community": 75,
+      "community": 14,
       "norm_label": ".create()"
     },
     {
@@ -6334,7 +6343,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L27",
       "id": "subjects_subjects_service_subjectsservice_findall",
-      "community": 75,
+      "community": 14,
       "norm_label": ".findall()"
     },
     {
@@ -6343,7 +6352,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L62",
       "id": "subjects_subjects_service_subjectsservice_findone",
-      "community": 75,
+      "community": 14,
       "norm_label": ".findone()"
     },
     {
@@ -6352,7 +6361,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L68",
       "id": "subjects_subjects_service_subjectsservice_remove",
-      "community": 75,
+      "community": 14,
       "norm_label": ".remove()"
     },
     {
@@ -6361,7 +6370,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L99",
       "id": "subjects_subjects_service_subjectsservice_bulkcreate",
-      "community": 75,
+      "community": 14,
       "norm_label": ".bulkcreate()"
     },
     {
@@ -6577,7 +6586,7 @@
       "source_file": "backend/src/teachers/teachers.module.ts",
       "source_location": "L1",
       "id": "backend_src_teachers_teachers_module_ts",
-      "community": 24,
+      "community": 0,
       "norm_label": "teachers.module.ts"
     },
     {
@@ -10584,9 +10593,9 @@
       "source_file": "alphabet-Smis/src/App.tsx",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "alphabet_smis_src_app_tsx",
-      "target": "alphabet_smis_src_pages_publicstudenthistory_tsx",
-      "confidence_score": 1.0
+      "target": "alphabet_smis_src_pages_publicstudenthistory_tsx"
     },
     {
       "relation": "imports_from",
@@ -11029,6 +11038,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "alphabet-Smis/src/auth-interceptor.ts",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_auth_interceptor_ts",
+      "target": "src_auth_interceptor_isbackendrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/auth-interceptor.ts",
       "source_location": "L90",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -11307,9 +11326,9 @@
       "source_file": "alphabet-Smis/src/pages/PublicStudentHistory.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "alphabet_smis_src_pages_publicstudenthistory_tsx",
-      "target": "pages_publicstudenthistory_publicstudenthistory",
-      "confidence_score": 1.0
+      "target": "pages_publicstudenthistory_publicstudenthistory"
     },
     {
       "relation": "contains",
@@ -17392,9 +17411,9 @@
       "source_file": "backend/src/students/public-results.controller.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "students_public_results_controller_publicresultscontroller",
-      "target": "students_public_results_controller_publicresultscontroller_getpublichistory",
-      "confidence_score": 1.0
+      "target": "students_public_results_controller_publicresultscontroller_getpublichistory"
     },
     {
       "relation": "method",
@@ -20612,5 +20631,5 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/scripts/search.py"
     }
   ],
-  "built_at_commit": "c34799fbdb21ba36b8f1a060db8e98a3a0449b16"
+  "built_at_commit": "0e05536d2e6d24dd1752909bce19f3f24717f0ed"
 }
