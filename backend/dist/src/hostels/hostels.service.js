@@ -120,6 +120,30 @@ let HostelsService = class HostelsService {
             },
         });
     }
+    async update(id, data) {
+        const hostel = await this.prisma.hostel.findUnique({ where: { id } });
+        if (!hostel) {
+            throw new common_1.NotFoundException(`Hostel with ID ${id} not found`);
+        }
+        return this.prisma.hostel.update({
+            where: { id },
+            data: {
+                name: data.name,
+                type: data.type,
+                capacity: data.capacity !== undefined ? Number(data.capacity) : undefined,
+                warden: data.warden,
+            },
+        });
+    }
+    async remove(id) {
+        const hostel = await this.prisma.hostel.findUnique({ where: { id } });
+        if (!hostel) {
+            throw new common_1.NotFoundException(`Hostel with ID ${id} not found`);
+        }
+        return this.prisma.hostel.delete({
+            where: { id },
+        });
+    }
 };
 exports.HostelsService = HostelsService;
 exports.HostelsService = HostelsService = __decorate([

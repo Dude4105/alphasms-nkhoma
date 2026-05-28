@@ -440,6 +440,10 @@ let StudentsService = class StudentsService {
                     guardianEmail: data.guardianEmail,
                     guardianAddress: data.guardianAddress,
                     classId: classId,
+                    ...(data.scholarType === 'Day' && { hostelId: null }),
+                    ...(data.hostelId !== undefined && {
+                        hostelId: data.hostelId === null ? null : Number(data.hostelId),
+                    }),
                     ...(data.student_id && { student_id: data.student_id }),
                 },
             });

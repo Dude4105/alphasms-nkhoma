@@ -28,9 +28,9 @@ export declare class FinanceService {
     getFeeStructure(): Promise<{
         id: number;
         updatedAt: Date;
-        scholarType: string;
         academicYear: string;
         term: number;
+        scholarType: string;
         totalAmount: number;
         installments: import("@prisma/client/runtime/library").JsonValue | null;
     }[]>;
@@ -50,27 +50,27 @@ export declare class FinanceService {
             createdAt: Date;
             updatedAt: Date;
             email: string | null;
-            student_id: string;
             gender: string | null;
             dob: string | null;
-            enrollmentDate: string | null;
-            scholarType: string | null;
             guardianName: string | null;
             guardianRelation: string | null;
+            guardianAddress: string | null;
+            student_id: string;
+            enrollmentDate: string | null;
+            scholarType: string | null;
             guardianPhone: string | null;
             guardianEmail: string | null;
-            guardianAddress: string | null;
-            classHistory: string | null;
             classId: number | null;
             hostelId: number | null;
+            classHistory: string | null;
         };
     } & {
         id: number;
         createdAt: Date;
-        studentId: number;
         status: string;
         academicYear: string;
         term: number;
+        studentId: number;
         amount: number;
         date: Date;
         method: string;
@@ -89,10 +89,10 @@ export declare class FinanceService {
     recordPayment(data: any): Promise<{
         id: number;
         createdAt: Date;
-        studentId: number;
         status: string;
         academicYear: string;
         term: number;
+        studentId: number;
         amount: number;
         date: Date;
         method: string;

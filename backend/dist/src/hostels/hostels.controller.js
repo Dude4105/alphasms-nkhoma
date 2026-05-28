@@ -34,6 +34,12 @@ let HostelsController = class HostelsController {
     findOne(id) {
         return this.hostelsService.findOne(+id);
     }
+    update(id, body) {
+        return this.hostelsService.update(+id, body);
+    }
+    remove(id) {
+        return this.hostelsService.remove(+id);
+    }
 };
 exports.HostelsController = HostelsController;
 __decorate([
@@ -63,6 +69,21 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], HostelsController.prototype, "findOne", null);
+__decorate([
+    (0, common_1.Patch)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", void 0)
+], HostelsController.prototype, "update", null);
+__decorate([
+    (0, common_1.Delete)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], HostelsController.prototype, "remove", null);
 exports.HostelsController = HostelsController = __decorate([
     (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt')),
     (0, common_1.Controller)('hostels'),

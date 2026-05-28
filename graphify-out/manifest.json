@@ -140,8 +140,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\Boarding.tsx": {
-    "mtime": 1779959225.382404,
-    "ast_hash": "542d56c0b98caebc23a6f0780962da37",
+    "mtime": 1780008586.6517153,
+    "ast_hash": "1933ed4511804ffb627575b28e027d3d",
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\admin\\ClassDetail.tsx": {
@@ -295,8 +295,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\FinalResults.tsx": {
-    "mtime": 1779959347.1972766,
-    "ast_hash": "e3ac3eac69fa5fa22ee4ca7ac086470d",
+    "mtime": 1780007834.4758258,
+    "ast_hash": "63ac9c104edeae8615a120c4e167abaa",
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\teacher\\Grades.tsx": {
@@ -400,7 +400,7 @@
     "semantic_hash": "08e985e831bca61f6be89c5c2ecef2fa"
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\backend\\src\\main.ts": {
-    "mtime": 1779991918.4627159,
+    "mtime": 1779992892.2861,
     "ast_hash": "de38014c43043c11be5bdaf910832bb4",
     "semantic_hash": ""
   },
@@ -545,9 +545,9 @@
     "semantic_hash": "7bcc4ae58c46ada3b18016a7dd463c57"
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\backend\\src\\hostels\\hostels.controller.ts": {
-    "mtime": 1776680820.3336983,
-    "ast_hash": "a3806a900e3bad08300a43179298614d",
-    "semantic_hash": "a3806a900e3bad08300a43179298614d"
+    "mtime": 1780008454.0658891,
+    "ast_hash": "373fae578388f02a0b268ef4ecd3c1ba",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\backend\\src\\hostels\\hostels.module.ts": {
     "mtime": 1775986655.8443108,
@@ -555,9 +555,9 @@
     "semantic_hash": "99531231af33a21a723cb1bde6608c0c"
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\backend\\src\\hostels\\hostels.service.ts": {
-    "mtime": 1776680820.3336983,
-    "ast_hash": "7f53dd24cc350333777d616fcc8c79a7",
-    "semantic_hash": "7f53dd24cc350333777d616fcc8c79a7"
+    "mtime": 1780008555.5230844,
+    "ast_hash": "6959e08903ba576769022e33bbb8e958",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\backend\\src\\prisma\\prisma.module.ts": {
     "mtime": 1775986517.4624963,
@@ -585,9 +585,9 @@
     "semantic_hash": "ac5eb0797bbd62a88b2668fdd10b0ba4"
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\backend\\src\\students\\students.service.ts": {
-    "mtime": 1779155689.834546,
-    "ast_hash": "5431aecb434d08defe7c8fd9e6d13f2a",
-    "semantic_hash": "5431aecb434d08defe7c8fd9e6d13f2a"
+    "mtime": 1780008558.1226096,
+    "ast_hash": "7015147827ed1b31f3dafe542801f36a",
+    "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\backend\\src\\subjects\\subjects.controller.ts": {
     "mtime": 1776680820.3336983,

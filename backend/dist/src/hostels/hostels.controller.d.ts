@@ -5,14 +5,14 @@ export declare class HostelsController {
     constructor(hostelsService: HostelsService);
     findAll(query: PaginationDto): Promise<{
         data: ({
+            _count: {
+                students: number;
+            };
             owner: {
                 user: {
                     email: string;
                     role: import(".prisma/client").$Enums.Role;
                 };
-            };
-            _count: {
-                students: number;
             };
         } & {
             id: number;
@@ -73,4 +73,26 @@ export declare class HostelsController {
         warden: string | null;
         ownerId: number;
     }) | null>;
+    update(id: string, body: any): Promise<{
+        id: number;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
+        capacity: number;
+        hostel_id: string;
+        type: string | null;
+        warden: string | null;
+        ownerId: number;
+    }>;
+    remove(id: string): Promise<{
+        id: number;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
+        capacity: number;
+        hostel_id: string;
+        type: string | null;
+        warden: string | null;
+        ownerId: number;
+    }>;
 }

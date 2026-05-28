@@ -51,8 +51,8 @@ export declare class ClassesService {
             id: number;
             firstName: string;
             lastName: string;
-            student_id: string;
             gender: string | null;
+            student_id: string;
             scholarType: string | null;
         }[];
         performance: {

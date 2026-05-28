@@ -2,6 +2,8 @@ import {
   Controller,
   Get,
   Post,
+  Patch,
+  Delete,
   Body,
   Param,
   Query,
@@ -34,5 +36,15 @@ export class HostelsController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.hostelsService.findOne(+id);
+  }
+
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() body: any) {
+    return this.hostelsService.update(+id, body);
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.hostelsService.remove(+id);
   }
 }

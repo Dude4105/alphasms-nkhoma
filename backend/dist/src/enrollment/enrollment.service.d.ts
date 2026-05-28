@@ -9,17 +9,17 @@ export declare class EnrollmentService {
         createdAt: Date;
         updatedAt: Date;
         email: string | null;
-        gender: string;
-        dob: string | null;
-        guardianName: string;
-        guardianRelation: string | null;
-        guardianAddress: string | null;
         status: string;
         surname: string;
+        gender: string;
         targetClass: string;
         boardingStatus: string;
         previousSchool: string | null;
+        dob: string | null;
         guardianTitle: string;
+        guardianName: string;
+        guardianRelation: string | null;
+        guardianAddress: string | null;
         whatsapp: string | null;
     }>;
     findAll(): Promise<{
@@ -29,17 +29,17 @@ export declare class EnrollmentService {
         createdAt: Date;
         updatedAt: Date;
         email: string | null;
-        gender: string;
-        dob: string | null;
-        guardianName: string;
-        guardianRelation: string | null;
-        guardianAddress: string | null;
         status: string;
         surname: string;
+        gender: string;
         targetClass: string;
         boardingStatus: string;
         previousSchool: string | null;
+        dob: string | null;
         guardianTitle: string;
+        guardianName: string;
+        guardianRelation: string | null;
+        guardianAddress: string | null;
         whatsapp: string | null;
     }[]>;
     updateStatus(id: number, status: string): Promise<{
@@ -49,17 +49,17 @@ export declare class EnrollmentService {
         createdAt: Date;
         updatedAt: Date;
         email: string | null;
-        gender: string;
-        dob: string | null;
-        guardianName: string;
-        guardianRelation: string | null;
-        guardianAddress: string | null;
         status: string;
         surname: string;
+        gender: string;
         targetClass: string;
         boardingStatus: string;
         previousSchool: string | null;
+        dob: string | null;
         guardianTitle: string;
+        guardianName: string;
+        guardianRelation: string | null;
+        guardianAddress: string | null;
         whatsapp: string | null;
     }>;
 }

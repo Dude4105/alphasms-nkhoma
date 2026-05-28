@@ -225,9 +225,9 @@ export declare class TeachersService {
         id: number;
         createdAt: Date;
         updatedAt: Date;
-        classId: number;
         academicYear: string;
         term: number;
+        classId: number;
         subjectKey: string;
         config: import("@prisma/client/runtime/library").JsonValue;
     } | null>;
@@ -235,9 +235,9 @@ export declare class TeachersService {
         id: number;
         createdAt: Date;
         updatedAt: Date;
-        classId: number;
         academicYear: string;
         term: number;
+        classId: number;
         subjectKey: string;
         config: import("@prisma/client/runtime/library").JsonValue;
     }>;

@@ -279,6 +279,129 @@ export default function FinalResults() {
 
   return (
     <div className="animate-fade">
+      <style>{`
+        /* ── Mobile responsive styles for FinalResults ── */
+        .fr-header-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+        .fr-action-btns {
+          display: flex;
+          gap: 0.75rem;
+          flex-wrap: wrap;
+        }
+        .fr-stats-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 1rem;
+          margin-bottom: 2rem;
+        }
+        .fr-info-row {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+          margin-bottom: 2rem;
+        }
+        /* Desktop table, mobile cards */
+        .fr-table-wrap { display: block; overflow-x: auto; }
+        .fr-student-cards { display: none; }
+        .fr-title-h1 { font-size: 1.8rem; }
+        .fr-btn-text { display: inline; }
+
+        @media (max-width: 768px) {
+          .fr-header-row { align-items: flex-start; }
+          .fr-action-btns { width: 100%; }
+          .fr-action-btns .btn {
+            flex: 1;
+            justify-content: center;
+            padding: 0.6rem 0.5rem;
+            font-size: 0.75rem;
+          }
+          .fr-stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .fr-info-row {
+            grid-template-columns: 1fr;
+          }
+          .fr-table-wrap { display: none; }
+          .fr-student-cards { display: flex; flex-direction: column; gap: 0.85rem; padding: 1rem; }
+          .fr-title-h1 { font-size: 1.3rem; }
+          .fr-btn-text { display: none; }
+          .fr-merit-header {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+          }
+          .fr-merit-search {
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+        }
+
+        .fr-student-card {
+          background: rgba(255,255,255,0.04);
+          border: 1px solid var(--glass-border);
+          border-radius: 14px;
+          padding: 1rem;
+          position: relative;
+          overflow: hidden;
+        }
+        .fr-card-rank-badge {
+          position: absolute;
+          top: 0.85rem;
+          right: 0.85rem;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          font-weight: 800;
+        }
+        .fr-card-subjects {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.4rem;
+          margin-top: 0.75rem;
+        }
+        .fr-card-subject-pill {
+          padding: 0.25rem 0.55rem;
+          border-radius: 6px;
+          font-size: 0.7rem;
+          font-weight: 600;
+          background: rgba(255,255,255,0.05);
+          border: 1px solid var(--glass-border);
+          color: var(--text-muted);
+        }
+        .fr-card-summary {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 0.5rem;
+          margin-top: 0.75rem;
+        }
+        .fr-card-stat {
+          background: rgba(255,255,255,0.03);
+          border: 1px solid var(--glass-border);
+          border-radius: 8px;
+          padding: 0.4rem 0.5rem;
+          text-align: center;
+        }
+        .fr-card-actions {
+          display: flex;
+          gap: 0.5rem;
+          margin-top: 0.75rem;
+        }
+        .fr-card-actions .btn {
+          flex: 1;
+          justify-content: center;
+          font-size: 0.72rem;
+          padding: 0.45rem 0.5rem;
+        }
+      `}</style>
+
       {/* Header */}
       <div style={{ marginBottom: '2rem' }}>
         <button 
@@ -291,17 +414,16 @@ export default function FinalResults() {
         >
           <ArrowLeft size={18} /> {classId ? 'Back to Class Details' : 'Back to Dashboard'}
         </button>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1rem' }}>
+        <div className="fr-header-row">
           <div>
-            <h1 style={{ fontSize: '1.8rem', color: 'var(--silver-light)', marginBottom: '0.25rem' }}>Final Exam Results</h1>
-            <p style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+            <h1 className="fr-title-h1" style={{ color: 'var(--silver-light)', marginBottom: '0.25rem' }}>Final Exam Results</h1>
+            <p style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', fontSize: '0.9rem' }}>
               {classInfo?.name} · Merit List
               <span style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
                 padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.75rem', fontWeight: 600,
                 background: 'rgba(59, 130, 246, 0.1)', color: '#3b82f6',
-                border: '1px solid rgba(59, 130, 246, 0.2)',
-                alignItems: 'center'
+                border: '1px solid rgba(59, 130, 246, 0.2)'
               }}>
                 <Calendar size={12} style={{ color: 'var(--primary-gold)' }} />
                 <select 
@@ -326,53 +448,44 @@ export default function FinalResults() {
               </span>
             </p>
           </div>
-          <div style={{ display: 'flex', gap: '0.75rem' }}>
+          <div className="fr-action-btns no-print">
             <button 
               onClick={handlePrint}
-              className="btn no-print" 
+              className="btn" 
               style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.05)', color: 'var(--text-muted)' }}
             >
-              <Printer size={16} /> Print Merit List
+              <Printer size={16} /> <span className="fr-btn-text">Print</span>
             </button>
             <button 
               onClick={handleDownloadMeritPDF}
               disabled={isDownloadingPDF}
-              className="btn no-print" 
+              className="btn" 
               style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '0.5rem', 
-                background: 'rgba(59, 130, 246, 0.1)', 
-                color: '#3b82f6', 
+                display: 'flex', alignItems: 'center', gap: '0.5rem', 
+                background: 'rgba(59, 130, 246, 0.1)', color: '#3b82f6', 
                 border: '1px solid rgba(59, 130, 246, 0.2)',
                 cursor: isDownloadingPDF ? 'not-allowed' : 'pointer'
               }}
             >
               {isDownloadingPDF ? (
-                <>
-                  <Loader size={16} className="spin" style={{ color: '#3b82f6' }} />
-                  <span>Generating PDF...</span>
-                </>
+                <><Loader size={16} className="spin" style={{ color: '#3b82f6' }} /><span className="fr-btn-text">Generating...</span></>
               ) : (
-                <>
-                  <FileText size={16} />
-                  <span>Download Merit PDF</span>
-                </>
+                <><FileText size={16} /><span className="fr-btn-text">Merit PDF</span></>
               )}
             </button>
             <button 
               onClick={handleExportCSV}
-              className="btn btn-primary no-print" 
+              className="btn btn-primary" 
               style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
             >
-              <Download size={16} /> Export CSV
+              <Download size={16} /> <span className="fr-btn-text">Export CSV</span>
             </button>
           </div>
         </div>
       </div>
 
       {/* Summary Analytics Cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+      <div className="fr-stats-grid">
         {[
           { label: 'Pass Rate', value: `${passRate.toFixed(1)}%`, icon: <TrendingUp size={20} />, color: '#10b981', desc: `Met ${gradingConfig.passMinScore}% threshold` },
           { label: 'Students Passed', value: passedCount, icon: <CheckCircle2 size={20} />, color: '#10b981', desc: `Out of ${totalStudents}` },
@@ -390,7 +503,7 @@ export default function FinalResults() {
         ))}
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '2rem' }}>
+      <div className="fr-info-row">
         {/* Top Performer Card */}
         <div className="glass-panel" style={{ borderRadius: '12px', padding: '1.5rem', background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0) 100%)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
@@ -430,30 +543,34 @@ export default function FinalResults() {
         </div>
       </div>
 
-      {/* Results Table Section */}
+      {/* Results Table + Card Section */}
       <div className="glass-panel" style={{ borderRadius: '16px', overflow: 'hidden' }}>
-        <div style={{ padding: '1.5rem', borderBottom: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <GraduationCap size={24} color="#3b82f6" /> Class Merit List
-          </h2>
-          <div style={{ display: 'flex', gap: '0.75rem', flex: 1, maxWidth: '400px' }}>
-            <div style={{ position: 'relative', flex: 1 }}>
-              <Search size={16} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
-              <input 
-                type="text" 
-                placeholder="Search by name or ID..." 
-                value={searchTerm}
-                onChange={e => setSearchTerm(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem 1rem 0.6rem 2.5rem', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(255,255,255,0.05)', color: 'var(--text-light)', fontSize: '0.85rem' }}
-              />
+        {/* Panel Header */}
+        <div style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid var(--glass-border)' }}>
+          <div className="fr-merit-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
+            <h2 style={{ fontSize: '1.2rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.5rem', margin: 0 }}>
+              <GraduationCap size={24} color="#3b82f6" /> Class Merit List
+            </h2>
+            <div className="fr-merit-search" style={{ display: 'flex', gap: '0.75rem', flex: 1, maxWidth: '400px' }}>
+              <div style={{ position: 'relative', flex: 1 }}>
+                <Search size={16} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
+                <input 
+                  type="text" 
+                  placeholder="Search by name or ID..." 
+                  value={searchTerm}
+                  onChange={e => setSearchTerm(e.target.value)}
+                  style={{ width: '100%', padding: '0.6rem 1rem 0.6rem 2.5rem', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(255,255,255,0.05)', color: 'var(--text-light)', fontSize: '0.85rem', boxSizing: 'border-box' }}
+                />
+              </div>
+              <button className="btn" style={{ padding: '0.5rem', background: 'rgba(255,255,255,0.05)', color: 'var(--text-muted)', flexShrink: 0 }}>
+                <Filter size={18} />
+              </button>
             </div>
-            <button className="btn" style={{ padding: '0.5rem', background: 'rgba(255,255,255,0.05)', color: 'var(--text-muted)' }}>
-              <Filter size={18} />
-            </button>
           </div>
         </div>
 
-        <div style={{ overflowX: 'auto' }}>
+        {/* ── DESKTOP TABLE ── */}
+        <div className="fr-table-wrap" style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '900px' }}>
             <thead>
               <tr style={{ background: 'rgba(255,255,255,0.02)', color: 'var(--text-muted)' }}>
@@ -535,13 +652,9 @@ export default function FinalResults() {
                         }}
                       >
                         {generatingReportId === s.id ? (
-                          <>
-                            <Loader size={14} className="spin" /> Sending...
-                          </>
+                          <><Loader size={14} className="spin" /> Sending...</>
                         ) : (
-                          <>
-                            <MessageCircle size={14} /> Send Report
-                          </>
+                          <><MessageCircle size={14} /> Send Report</>
                         )}
                       </button>
                     </td>
@@ -551,13 +664,107 @@ export default function FinalResults() {
             </tbody>
           </table>
         </div>
-        <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.02)', borderTop: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+
+        {/* ── MOBILE CARDS ── */}
+        <div className="fr-student-cards">
+          {filteredResults.length === 0 && (
+            <div style={{ textAlign: 'center', padding: '3rem 1rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+              No results found.
+            </div>
+          )}
+          {filteredResults.map((s, i) => {
+            const rank = i + 1;
+            const isFailed = s.avg < gradingConfig.passMinScore;
+            const resolved = resolveGrade(s.avg);
+            const rankBg = rank === 1 ? 'var(--primary-gold)' : rank === 2 ? '#c0c0c0' : rank === 3 ? '#cd7f32' : 'rgba(255,255,255,0.08)';
+            const rankColor = rank <= 3 ? '#000' : 'var(--text-muted)';
+            return (
+              <div key={s.id} className="fr-student-card" style={{ borderLeft: `4px solid ${isFailed ? '#ef4444' : '#10b981'}` }}>
+                {/* Rank badge */}
+                <span className="fr-card-rank-badge" style={{ background: rankBg, color: rankColor }}>
+                  {rank}
+                </span>
+
+                {/* Identity */}
+                <div style={{ paddingRight: '2.5rem' }}>
+                  <div style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--text-light)', lineHeight: 1.2 }}>{s.name}</div>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '0.1rem' }}>{s.id}</div>
+                </div>
+
+                {/* Subject pills */}
+                {(classInfo?.subjects || []).length > 0 && (
+                  <div className="fr-card-subjects">
+                    {(classInfo?.subjects || []).map((subj: any) => {
+                      const score = s[subj.key] || 0;
+                      const fail = score < gradingConfig.passMinScore;
+                      return (
+                        <span key={subj.key} className="fr-card-subject-pill" style={{
+                          color: fail ? '#ef4444' : 'var(--text-light)',
+                          borderColor: fail ? 'rgba(239,68,68,0.3)' : 'var(--glass-border)'
+                        }}>
+                          {subj.name.substring(0, 3).toUpperCase()}: <strong>{score}</strong>
+                        </span>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* Summary stats */}
+                <div className="fr-card-summary">
+                  <div className="fr-card-stat">
+                    <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>TOTAL</div>
+                    <div style={{ fontSize: '0.95rem', fontWeight: 800, color: 'var(--text-light)' }}>{s.total}</div>
+                  </div>
+                  <div className="fr-card-stat">
+                    <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>AVG</div>
+                    <div style={{ fontSize: '0.95rem', fontWeight: 800, color: isFailed ? '#ef4444' : '#10b981' }}>{s.avg.toFixed(1)}%</div>
+                  </div>
+                  <div className="fr-card-stat">
+                    <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>GRADE</div>
+                    <div style={{ fontSize: '0.95rem', fontWeight: 800, color: isFailed ? '#ef4444' : '#10b981' }}>{resolved.grade}</div>
+                  </div>
+                  <div className="fr-card-stat">
+                    <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>STATUS</div>
+                    <div style={{ 
+                      fontSize: '0.65rem', fontWeight: 800, padding: '0.15rem 0.4rem', borderRadius: '5px', display: 'inline-block', marginTop: '0.1rem',
+                      background: isFailed ? 'rgba(239,68,68,0.15)' : 'rgba(16,185,129,0.15)',
+                      color: isFailed ? '#ef4444' : '#10b981'
+                    }}>{isFailed ? 'FAIL' : 'PASS'}</div>
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="fr-card-actions no-print">
+                  <button 
+                    className="btn"
+                    onClick={() => navigate(`/teacher/students/${s.id}/report`)}
+                    style={{ background: 'rgba(255,215,0,0.1)', color: 'var(--primary-gold)', border: '1px solid rgba(255,215,0,0.2)', display: 'flex', alignItems: 'center', gap: '0.4rem' }}
+                  >
+                    <FileText size={14} /> Report
+                  </button>
+                  <button 
+                    className="btn"
+                    onClick={() => handleSendWhatsAppReport(s.id)}
+                    disabled={generatingReportId === s.id}
+                    style={{ 
+                      background: 'rgba(37,211,102,0.1)', color: '#10b981', 
+                      border: '1px solid rgba(37,211,102,0.2)',
+                      display: 'flex', alignItems: 'center', gap: '0.4rem',
+                      cursor: generatingReportId === s.id ? 'not-allowed' : 'pointer'
+                    }}
+                  >
+                    {generatingReportId === s.id ? <><Loader size={14} className="spin" /> Sending...</> : <><MessageCircle size={14} /> WhatsApp</>}
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Footer */}
+        <div style={{ padding: '1rem 1.5rem', background: 'rgba(255,255,255,0.02)', borderTop: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
           <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
             Showing {filteredResults.length} students ranked by overall aggregate.
-          </div>
-          <div style={{ display: 'flex', gap: '0.5rem' }}>
-            <button className="btn" disabled style={{ opacity: 0.5 }}>Prev</button>
-            <button className="btn" disabled style={{ opacity: 0.5 }}>Next</button>
           </div>
         </div>
       </div>
@@ -1085,9 +1292,11 @@ export default function FinalResults() {
       <style>{`
         @media print {
           body { background: white !important; color: black !important; }
-          .no-print, .btn, .search-container, .sidebar, .top-nav, button { display: none !important; }
+          .no-print, .fr-action-btns, .search-container, .sidebar, .top-nav, button { display: none !important; }
           .glass-panel { background: white !important; border: 1px solid #eee !important; color: black !important; box-shadow: none !important; }
           .animate-fade { animation: none !important; }
+          .fr-table-wrap { display: block !important; }
+          .fr-student-cards { display: none !important; }
           table { width: 100% !important; border: 1px solid #eee !important; color: black !important; font-size: 10pt !important; }
           th { background: #f9f9f9 !important; color: black !important; border: 1px solid #eee !important; }
           td { border: 1px solid #eee !important; color: black !important; }

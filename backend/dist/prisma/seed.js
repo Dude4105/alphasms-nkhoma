@@ -37,96 +37,48 @@ const client_1 = require("@prisma/client");
 const bcrypt = __importStar(require("bcrypt"));
 const prisma = new client_1.PrismaClient();
 async function main() {
-    console.log('Seeding database...');
-    const adminPass = await bcrypt.hash('admin123', 10);
-    const admin = await prisma.user.upsert({
-        where: { email: 'admin@alphabetsmis.com' },
-        update: {},
-        create: {
-            email: 'admin@alphabetsmis.com',
-            passwordHash: adminPass,
-            role: client_1.Role.ADMIN,
-            adminProfile: {
-                create: {
-                    firstName: 'System',
-                    lastName: 'Administrator',
-                }
-            }
-        },
+    console.log('Checking for existing admin accounts...');
+    const adminExists = await prisma.user.findFirst({
+        where: { role: client_1.Role.ADMIN },
     });
-    const class1A = await prisma.class.upsert({
-        where: { class_id: 'C-1A' },
-        update: {},
-        create: {
-            class_id: 'C-1A',
-            name: 'Form 1A',
-        },
-    });
-    const ownerPass = await bcrypt.hash('owner123', 10);
-    const ownerUser = await prisma.user.upsert({
-        where: { email: 'owner@alphabetsmis.com' },
-        update: {},
-        create: {
-            email: 'owner@alphabetsmis.com',
-            passwordHash: ownerPass,
-            role: client_1.Role.HOSTEL_OWNER,
-            hostelOwner: {
-                create: {
-                    hostels: {
-                        create: [
-                            {
-                                hostel_id: 'H-01',
-                                name: 'Sunrise Hostel',
-                                capacity: 50,
-                            }
-                        ]
-                    }
-                }
-            }
-        },
-    });
-    const hostel = await prisma.hostel.findUnique({ where: { hostel_id: 'H-01' } });
-    const studentPass = await bcrypt.hash('student123', 10);
-    const studentUser = await prisma.user.upsert({
-        where: { email: 'student1@alphabetsmis.com' },
-        update: {},
-        create: {
-            email: 'student1@alphabetsmis.com',
-            passwordHash: studentPass,
-            role: client_1.Role.STUDENT,
-            student: {
-                create: {
-                    student_id: 'S-2024-001',
-                    firstName: 'John',
-                    lastName: 'Doe',
-                    email: 'student1@alphabetsmis.com',
-                    classId: class1A.id,
-                    hostelId: hostel?.id,
-                }
-            }
-        },
-        include: { student: true }
-    });
-    if (studentUser.student) {
-        const termStr = '1';
-        const academicYear = '2025';
-        const existingResultCount = await prisma.result.count({
-            where: { studentId: studentUser.student.id }
+    if (!adminExists) {
+        console.log('No admin account found. Seeding admin account...');
+        const passwordHash = await bcrypt.hash('pass1234', 10);
+        const permissions = [
+            'Dashboard',
+            'Students',
+            'Teachers',
+            'Classes',
+            'Subjects',
+            'Enrollment',
+            'Finance',
+            'Boarding',
+            'Password Resets',
+            'School Feeds',
+            'Settings',
+            'Edit Admin Access',
+            'Delete Admin',
+        ];
+        const admin = await prisma.user.create({
+            data: {
+                email: 'admin@alphasmis.com',
+                passwordHash,
+                role: client_1.Role.ADMIN,
+                adminProfile: {
+                    create: {
+                        firstName: 'system',
+                        lastName: 'admin',
+                        phone: '+265990070065',
+                        permissions,
+                    },
+                },
+            },
         });
-        if (existingResultCount === 0) {
-            await prisma.result.createMany({
-                data: [
-                    { studentId: studentUser.student.id, subjectKey: 'bio', score: 85, term: 1, academicYear },
-                    { studentId: studentUser.student.id, subjectKey: 'math', score: 78, term: 1, academicYear },
-                    { studentId: studentUser.student.id, subjectKey: 'eng', score: 88, term: 1, academicYear },
-                    { studentId: studentUser.student.id, subjectKey: 'chi', score: 82, term: 1, academicYear },
-                    { studentId: studentUser.student.id, subjectKey: 'phys', score: 80, term: 1, academicYear }
-                ]
-            });
-            console.log('Dummy results seeded.');
-        }
+        console.log(`Admin account seeded successfully: ${admin.email}`);
     }
-    console.log('Database seeded successfully!');
+    else {
+        console.log('Admin account already exists. Skipping seeding.');
+    }
 }
 main()
     .catch((e) => {

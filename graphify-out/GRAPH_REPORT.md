@@ -1,16 +1,16 @@
-# Graph Report - alphabetsmis-II  (2026-05-28)
+# Graph Report - alphabetsmis-II  (2026-05-29)
 
 ## Corpus Check
-- 140 files · ~1,244,520 words
+- 140 files · ~1,248,768 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 968 nodes · 1143 edges · 104 communities (60 shown, 44 thin omitted)
+- 972 nodes · 1147 edges · 98 communities (55 shown, 43 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 20 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0e05536d`
+- Built from commit: `af001ce3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -20,7 +20,6 @@
 - [[_COMMUNITY_Community 2|Community 2]]
 - [[_COMMUNITY_Community 3|Community 3]]
 - [[_COMMUNITY_Community 4|Community 4]]
-- [[_COMMUNITY_Community 5|Community 5]]
 - [[_COMMUNITY_Community 6|Community 6]]
 - [[_COMMUNITY_Community 7|Community 7]]
 - [[_COMMUNITY_Community 8|Community 8]]
@@ -79,15 +78,12 @@
 - [[_COMMUNITY_Community 61|Community 61]]
 - [[_COMMUNITY_Community 63|Community 63]]
 - [[_COMMUNITY_Community 64|Community 64]]
+- [[_COMMUNITY_Community 65|Community 65]]
 - [[_COMMUNITY_Community 66|Community 66]]
 - [[_COMMUNITY_Community 67|Community 67]]
-- [[_COMMUNITY_Community 68|Community 68]]
 - [[_COMMUNITY_Community 69|Community 69]]
 - [[_COMMUNITY_Community 70|Community 70]]
 - [[_COMMUNITY_Community 71|Community 71]]
-- [[_COMMUNITY_Community 72|Community 72]]
-- [[_COMMUNITY_Community 75|Community 75]]
-- [[_COMMUNITY_Community 76|Community 76]]
 - [[_COMMUNITY_Community 78|Community 78]]
 - [[_COMMUNITY_Community 83|Community 83]]
 - [[_COMMUNITY_Community 84|Community 84]]
@@ -127,11 +123,11 @@
 - **Public Portal Navigation Flow** — home_tsx, apply_tsx, explore_campus_tsx, campus_gallery_tsx [INFERRED 0.85]
 - **UI/UX Pro Max Tooling** — core_py, design_system_py, search_py [EXTRACTED 1.00]
 
-## Communities (104 total, 44 thin omitted)
+## Communities (98 total, 43 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.22
-Nodes (7): AdminModule, ClassesModule, FeedsModule, GalleryModule, PrismaModule, AppModule, TeachersModule
+Cohesion: 0.07
+Nodes (17): AdminModule, AttendanceController, AttendanceModule, AttendanceService, ClassesModule, EnrollmentController, EnrollmentModule, EnrollmentService (+9 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.11
@@ -174,8 +170,8 @@ Cohesion: 0.14
 Nodes (3): SubjectsController, SubjectsModule, SubjectsService
 
 ### Community 15 - "Community 15"
-Cohesion: 0.13
-Nodes (4): FinanceService, payments, res, structures
+Cohesion: 0.06
+Nodes (7): FinanceController, randomName, FinanceModule, FinanceService, payments, res, structures
 
 ### Community 16 - "Community 16"
 Cohesion: 0.09
@@ -184,10 +180,6 @@ Nodes (21): Additional Forbidden Patterns, Anti-Patterns (Do NOT Use), Buttons, 
 ### Community 17 - "Community 17"
 Cohesion: 0.12
 Nodes (3): ext, FeedsController, FeedsService
-
-### Community 18 - "Community 18"
-Cohesion: 0.16
-Nodes (3): HostelsController, HostelsModule, HostelsService
 
 ### Community 19 - "Community 19"
 Cohesion: 0.14
@@ -245,17 +237,9 @@ Nodes (13): code:bash ($ npm install), code:bash (# development), code:bash (# u
 Cohesion: 0.14
 Nodes (13): 1. Database Technology, 2. Entity-Relationship Diagram, 3. Data Model Definitions, 4. Migration and Seeding Strategy, 5. Audit Trails, Soft Deletes, and Conventions, 6. Common Query Patterns and Optimizations, Academic Domain, Alphabet-SMIS: Database and Data Models (+5 more)
 
-### Community 66 - "Community 66"
-Cohesion: 0.19
-Nodes (3): EnrollmentController, EnrollmentModule, EnrollmentService
-
 ### Community 67 - "Community 67"
 Cohesion: 0.15
 Nodes (12): 1. Authentication Mechanism, 2. Authorization Model, 3. Input Validation and Sanitization, 4. Data Protection, 5. API Security and Edge Protections, Alphabet-SMIS: Security Implementation, Authentication Flow Diagram, code:mermaid (sequenceDiagram) (+4 more)
-
-### Community 68 - "Community 68"
-Cohesion: 0.23
-Nodes (3): AttendanceController, AttendanceModule, AttendanceService
 
 ### Community 69 - "Community 69"
 Cohesion: 0.17
@@ -284,22 +268,22 @@ Nodes (9): jest, collectCoverageFrom, coverageDirectory, moduleFileExtensions, r
 ## Knowledge Gaps
 - **325 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+320 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **44 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **43 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `TeachersService` connect `Community 7` to `Community 24`, `Community 0`?**
+- **Why does `TeachersService` connect `Community 7` to `Community 24`?**
   _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `TeachersController` connect `Community 10` to `Community 24`, `Community 0`?**
+- **Why does `TeachersController` connect `Community 10` to `Community 24`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
-- **Why does `AdminService` connect `Community 2` to `Community 0`, `Community 21`?**
+- **Why does `AdminService` connect `Community 2` to `Community 0`, `Community 27`, `Community 21`?**
   _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
   _351 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Community 0` be split into smaller, more focused modules?**
+  _Cohesion score 0.06509803921568627 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._
-- **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.05520614954577219 - nodes in this community are weakly interconnected._

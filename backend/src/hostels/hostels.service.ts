@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { PaginationDto } from '../common/dto/pagination.dto';
 
@@ -117,6 +117,34 @@ export class HostelsService {
         warden: data.warden,
         ownerId: 1, // Default owner
       },
+    });
+  }
+
+  async update(id: number, data: any) {
+    const hostel = await this.prisma.hostel.findUnique({ where: { id } });
+    if (!hostel) {
+      throw new NotFoundException(`Hostel with ID ${id} not found`);
+    }
+
+    return this.prisma.hostel.update({
+      where: { id },
+      data: {
+        name: data.name,
+        type: data.type,
+        capacity: data.capacity !== undefined ? Number(data.capacity) : undefined,
+        warden: data.warden,
+      },
+    });
+  }
+
+  async remove(id: number) {
+    const hostel = await this.prisma.hostel.findUnique({ where: { id } });
+    if (!hostel) {
+      throw new NotFoundException(`Hostel with ID ${id} not found`);
+    }
+
+    return this.prisma.hostel.delete({
+      where: { id },
     });
   }
 }
