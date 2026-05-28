@@ -1402,7 +1402,7 @@
       "source_file": "alphabet-Smis/src/layouts/AdminLayout.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_layouts_adminlayout_tsx",
-      "community": 5,
+      "community": 54,
       "norm_label": "adminlayout.tsx"
     },
     {
@@ -1411,7 +1411,7 @@
       "source_file": "alphabet-Smis/src/layouts/AdminLayout.tsx",
       "source_location": "L27",
       "id": "layouts_adminlayout_adminlayout",
-      "community": 5,
+      "community": 54,
       "norm_label": "adminlayout()"
     },
     {
@@ -2401,7 +2401,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/ClassRoster.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_teacher_classroster_tsx",
-      "community": 54,
+      "community": 5,
       "norm_label": "classroster.tsx"
     },
     {
@@ -2410,7 +2410,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/ClassRoster.tsx",
       "source_location": "L5",
       "id": "teacher_classroster_studentrow",
-      "community": 54,
+      "community": 5,
       "norm_label": "studentrow"
     },
     {
@@ -2419,7 +2419,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/ClassRoster.tsx",
       "source_location": "L12",
       "id": "teacher_classroster_classroster",
-      "community": 54,
+      "community": 5,
       "norm_label": "classroster()"
     },
     {
@@ -2617,7 +2617,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/StudentReport.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_teacher_studentreport_tsx",
-      "community": 5,
+      "community": 87,
       "norm_label": "studentreport.tsx"
     },
     {
@@ -2626,7 +2626,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/StudentReport.tsx",
       "source_location": "L5",
       "id": "teacher_studentreport_studentreport",
-      "community": 5,
+      "community": 87,
       "norm_label": "studentreport()"
     },
     {
@@ -5936,7 +5936,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "backend/src/hostels/hostels.service.ts",
-      "source_location": "L123",
+      "source_location": "L125",
       "id": "hostels_hostels_service_hostelsservice_update",
       "community": 18,
       "norm_label": ".update()"
@@ -5945,7 +5945,7 @@
       "label": ".remove()",
       "file_type": "code",
       "source_file": "backend/src/hostels/hostels.service.ts",
-      "source_location": "L140",
+      "source_location": "L144",
       "id": "hostels_hostels_service_hostelsservice_remove",
       "community": 18,
       "norm_label": ".remove()"
@@ -17109,9 +17109,9 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hostels_hostels_controller_hostelscontroller",
-      "target": "hostels_hostels_controller_hostelscontroller_update",
-      "confidence_score": 1.0
+      "target": "hostels_hostels_controller_hostelscontroller_update"
     },
     {
       "relation": "method",
@@ -17119,9 +17119,9 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hostels_hostels_controller_hostelscontroller",
-      "target": "hostels_hostels_controller_hostelscontroller_remove",
-      "confidence_score": 1.0
+      "target": "hostels_hostels_controller_hostelscontroller_remove"
     },
     {
       "relation": "imports",
@@ -17254,9 +17254,9 @@
       "source_file": "backend/src/hostels/hostels.service.ts",
       "source_location": "L123",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hostels_hostels_service_hostelsservice",
-      "target": "hostels_hostels_service_hostelsservice_update",
-      "confidence_score": 1.0
+      "target": "hostels_hostels_service_hostelsservice_update"
     },
     {
       "relation": "method",
@@ -17264,9 +17264,9 @@
       "source_file": "backend/src/hostels/hostels.service.ts",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hostels_hostels_service_hostelsservice",
-      "target": "hostels_hostels_service_hostelsservice_remove",
-      "confidence_score": 1.0
+      "target": "hostels_hostels_service_hostelsservice_remove"
     },
     {
       "relation": "imports_from",
@@ -20707,5 +20707,5 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/scripts/search.py"
     }
   ],
-  "built_at_commit": "af001ce33f6c0fdffe408bae0109d951cc52d3fc"
+  "built_at_commit": "42cb3f9fac98ecbd6c89f2594dfae8bf36fa4c97"
 }

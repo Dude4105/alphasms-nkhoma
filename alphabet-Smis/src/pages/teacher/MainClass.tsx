@@ -148,7 +148,16 @@ export default function MainClass() {
             <ShieldCheck size={32} />
           </div>
           <div>
-            <h1 style={{ fontSize: '2rem', color: 'var(--silver-light)', marginBottom: '0.2rem' }}>My Main Class</h1>
+            <h1 style={{ 
+              fontSize: '2rem', 
+              fontWeight: 800,
+              letterSpacing: '-0.01em',
+              marginBottom: '0.2rem',
+              background: 'linear-gradient(to right, #ffffff, #e2e8f0)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>My Main Class</h1>
             <p style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
               <BookOpen size={16} /> {data.class.name} {data.class.level ? `· ${data.class.level}` : ''}
               {termContext.year && (

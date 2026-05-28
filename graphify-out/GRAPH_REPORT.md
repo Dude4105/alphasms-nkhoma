@@ -1,16 +1,16 @@
 # Graph Report - alphabetsmis-II  (2026-05-29)
 
 ## Corpus Check
-- 140 files · ~1,248,768 words
+- 140 files · ~1,249,460 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 972 nodes · 1147 edges · 98 communities (55 shown, 43 thin omitted)
+- 972 nodes · 1147 edges · 99 communities (56 shown, 43 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 20 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `af001ce3`
+- Built from commit: `42cb3f9f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -20,6 +20,7 @@
 - [[_COMMUNITY_Community 2|Community 2]]
 - [[_COMMUNITY_Community 3|Community 3]]
 - [[_COMMUNITY_Community 4|Community 4]]
+- [[_COMMUNITY_Community 5|Community 5]]
 - [[_COMMUNITY_Community 6|Community 6]]
 - [[_COMMUNITY_Community 7|Community 7]]
 - [[_COMMUNITY_Community 8|Community 8]]
@@ -68,7 +69,6 @@
 - [[_COMMUNITY_Community 51|Community 51]]
 - [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
-- [[_COMMUNITY_Community 54|Community 54]]
 - [[_COMMUNITY_Community 55|Community 55]]
 - [[_COMMUNITY_Community 56|Community 56]]
 - [[_COMMUNITY_Community 57|Community 57]]
@@ -123,7 +123,7 @@
 - **Public Portal Navigation Flow** — home_tsx, apply_tsx, explore_campus_tsx, campus_gallery_tsx [INFERRED 0.85]
 - **UI/UX Pro Max Tooling** — core_py, design_system_py, search_py [EXTRACTED 1.00]
 
-## Communities (98 total, 43 thin omitted)
+## Communities (99 total, 43 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.07

@@ -111,6 +111,8 @@ model Hostel {
   name      String
   type      String?   // "Boys" or "Girls"
   warden    String?
+  wardenPhone String?
+  wardenEmail String?
   capacity  Int
   
   ownerId   Int

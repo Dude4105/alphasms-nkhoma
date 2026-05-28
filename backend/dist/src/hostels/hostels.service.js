@@ -116,6 +116,8 @@ let HostelsService = class HostelsService {
                 type: data.type,
                 capacity: Number(data.capacity),
                 warden: data.warden,
+                wardenPhone: data.wardenPhone,
+                wardenEmail: data.wardenEmail,
                 ownerId: 1,
             },
         });
@@ -132,6 +134,8 @@ let HostelsService = class HostelsService {
                 type: data.type,
                 capacity: data.capacity !== undefined ? Number(data.capacity) : undefined,
                 warden: data.warden,
+                wardenPhone: data.wardenPhone,
+                wardenEmail: data.wardenEmail,
             },
         });
     }

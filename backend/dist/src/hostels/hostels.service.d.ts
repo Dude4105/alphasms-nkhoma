@@ -23,6 +23,8 @@ export declare class HostelsService {
             hostel_id: string;
             type: string | null;
             warden: string | null;
+            wardenPhone: string | null;
+            wardenEmail: string | null;
             ownerId: number;
         })[];
         meta: {
@@ -54,6 +56,8 @@ export declare class HostelsService {
         hostel_id: string;
         type: string | null;
         warden: string | null;
+        wardenPhone: string | null;
+        wardenEmail: string | null;
         ownerId: number;
     }) | null>;
     getStats(): Promise<{
@@ -71,6 +75,8 @@ export declare class HostelsService {
         hostel_id: string;
         type: string | null;
         warden: string | null;
+        wardenPhone: string | null;
+        wardenEmail: string | null;
         ownerId: number;
     }>;
     update(id: number, data: any): Promise<{
@@ -82,6 +88,8 @@ export declare class HostelsService {
         hostel_id: string;
         type: string | null;
         warden: string | null;
+        wardenPhone: string | null;
+        wardenEmail: string | null;
         ownerId: number;
     }>;
     remove(id: number): Promise<{
@@ -93,6 +101,8 @@ export declare class HostelsService {
         hostel_id: string;
         type: string | null;
         warden: string | null;
+        wardenPhone: string | null;
+        wardenEmail: string | null;
         ownerId: number;
     }>;
 }

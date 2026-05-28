@@ -55,6 +55,8 @@ export declare class StudentsService {
                 hostel_id: string;
                 type: string | null;
                 warden: string | null;
+                wardenPhone: string | null;
+                wardenEmail: string | null;
                 ownerId: number;
             } | null;
         } & {
@@ -111,6 +113,8 @@ export declare class StudentsService {
             hostel_id: string;
             type: string | null;
             warden: string | null;
+            wardenPhone: string | null;
+            wardenEmail: string | null;
             ownerId: number;
         } | null;
         id: number;
@@ -190,6 +194,8 @@ export declare class StudentsService {
             hostel_id: string;
             type: string | null;
             warden: string | null;
+            wardenPhone: string | null;
+            wardenEmail: string | null;
             ownerId: number;
         } | null;
         id: number;

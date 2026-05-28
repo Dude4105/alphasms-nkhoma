@@ -44,21 +44,34 @@ export default function Boarding() {
   const [classFilter, setClassFilter] = useState('');
   const [hostelFilter, setHostelFilter] = useState('');
 
-  // Form States
+  // Form States (Hostel fields)
   const [newHostel, setNewHostel] = useState({
     name: '',
     type: 'Boys',
-    capacity: '',
-    warden: ''
+    capacity: ''
   });
 
   const [editingHostel, setEditingHostel] = useState<any>({
     id: '',
     name: '',
     type: 'Boys',
-    capacity: '',
-    warden: ''
+    capacity: ''
   });
+
+  // Warden Selection & Creation Form States
+  const [wardenMode, setWardenMode] = useState<'select' | 'create'>('create');
+  const [selectedWardenName, setSelectedWardenName] = useState('');
+  const [wardenFirstName, setWardenFirstName] = useState('');
+  const [wardenLastName, setWardenLastName] = useState('');
+  const [wardenPhone, setWardenPhone] = useState('');
+  const [wardenEmail, setWardenEmail] = useState('');
+
+  const [editWardenMode, setEditWardenMode] = useState<'select' | 'create'>('create');
+  const [editSelectedWardenName, setEditSelectedWardenName] = useState('');
+  const [editWardenFirstName, setEditWardenFirstName] = useState('');
+  const [editWardenLastName, setEditWardenLastName] = useState('');
+  const [editWardenPhone, setEditWardenPhone] = useState('');
+  const [editWardenEmail, setEditWardenEmail] = useState('');
 
   const [assignData, setAssignData] = useState({
     studentId: '',
@@ -91,13 +104,12 @@ export default function Boarding() {
         setHostels(hostelJson.data || []);
       }
 
-      // Fetch All Students (for allocation selection & list)
+      // Fetch All Students
       const studentRes = await fetch(`${import.meta.env.VITE_API_URL}/students?limit=250`, { headers });
       if (studentRes.ok) {
         const studentJson = await studentRes.json();
         const rawStudents = studentJson.data || [];
         setAllStudents(rawStudents);
-        // Filter those allocated to hostels
         setStudents(rawStudents.filter((s: any) => s.hostelId !== null));
       }
     } catch (err) {
@@ -107,8 +119,39 @@ export default function Boarding() {
     }
   };
 
+  // Collect unique wardens from hostels
+  const existingWardens = hostels.reduce((acc: any[], h: any) => {
+    if (h.warden && !acc.find(w => w.name.toLowerCase() === h.warden.toLowerCase())) {
+      acc.push({
+        name: h.warden,
+        phone: h.wardenPhone || '',
+        email: h.wardenEmail || ''
+      });
+    }
+    return acc;
+  }, []);
+
   const handleAddHostel = async () => {
-    if (!newHostel.name || !newHostel.capacity || !newHostel.warden) return;
+    let wardenName = '';
+    let phone = '';
+    let email = '';
+
+    if (wardenMode === 'create') {
+      if (!wardenFirstName || !wardenLastName || !wardenPhone || !wardenEmail) return;
+      wardenName = `${wardenFirstName.trim()} ${wardenLastName.trim()}`;
+      phone = wardenPhone.trim();
+      email = wardenEmail.trim();
+    } else {
+      if (!selectedWardenName) return;
+      const selectedW = existingWardens.find(w => w.name === selectedWardenName);
+      if (selectedW) {
+        wardenName = selectedW.name;
+        phone = selectedW.phone;
+        email = selectedW.email;
+      }
+    }
+
+    if (!newHostel.name || !newHostel.capacity) return;
 
     try {
       const token = localStorage.getItem('accessToken');
@@ -118,12 +161,24 @@ export default function Boarding() {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify(newHostel)
+        body: JSON.stringify({
+          name: newHostel.name,
+          type: newHostel.type,
+          capacity: newHostel.capacity,
+          warden: wardenName,
+          wardenPhone: phone,
+          wardenEmail: email
+        })
       });
 
       if (res.ok) {
         setIsAddHostelOpen(false);
-        setNewHostel({ name: '', type: 'Boys', capacity: '', warden: '' });
+        setNewHostel({ name: '', type: 'Boys', capacity: '' });
+        setWardenFirstName('');
+        setWardenLastName('');
+        setWardenPhone('');
+        setWardenEmail('');
+        setSelectedWardenName('');
         fetchBoardingData();
       } else {
         const err = await res.json();
@@ -136,7 +191,26 @@ export default function Boarding() {
   };
 
   const handleEditHostel = async () => {
-    if (!editingHostel.name || !editingHostel.capacity || !editingHostel.warden) return;
+    let wardenName = '';
+    let phone = '';
+    let email = '';
+
+    if (editWardenMode === 'create') {
+      if (!editWardenFirstName || !editWardenLastName || !editWardenPhone || !editWardenEmail) return;
+      wardenName = `${editWardenFirstName.trim()} ${editWardenLastName.trim()}`;
+      phone = editWardenPhone.trim();
+      email = editWardenEmail.trim();
+    } else {
+      if (!editSelectedWardenName) return;
+      const selectedW = existingWardens.find(w => w.name === editSelectedWardenName);
+      if (selectedW) {
+        wardenName = selectedW.name;
+        phone = selectedW.phone;
+        email = selectedW.email;
+      }
+    }
+
+    if (!editingHostel.name || !editingHostel.capacity) return;
 
     try {
       const token = localStorage.getItem('accessToken');
@@ -150,7 +224,9 @@ export default function Boarding() {
           name: editingHostel.name,
           type: editingHostel.type,
           capacity: editingHostel.capacity,
-          warden: editingHostel.warden
+          warden: wardenName,
+          wardenPhone: phone,
+          wardenEmail: email
         })
       });
 
@@ -196,7 +272,6 @@ export default function Boarding() {
 
     try {
       const token = localStorage.getItem('accessToken');
-      // Find selected student record to retrieve their student_id (string)
       const selectedStudent = allStudents.find(s => s.id === Number(assignData.studentId));
       if (!selectedStudent) return;
 
@@ -265,11 +340,10 @@ export default function Boarding() {
     return matchesSearch && matchesGender && matchesClass && matchesHostel;
   });
 
-  // Extract unique classes and hostels for filters
   const uniqueClasses = Array.from(new Set(students.map(s => s.class?.name).filter(Boolean)));
   const uniqueHostelsList = Array.from(new Set(hostels.map(h => h.name).filter(Boolean)));
 
-  // Derived Wardens/Matrons list
+  // Derived Wardens/Matrons list using the live data
   const wardensList = hostels.reduce((acc: any[], hostel: any) => {
     if (hostel.warden && !acc.find(w => w.name.toLowerCase() === hostel.warden.toLowerCase())) {
       const isMatron = hostel.type === 'Girls';
@@ -278,20 +352,34 @@ export default function Boarding() {
         hostelName: hostel.name,
         role: isMatron ? 'Matron' : 'Warden',
         gender: hostel.type,
-        phone: `+265 990 070 ${Math.floor(100 + Math.random() * 900)}`,
-        email: `${hostel.warden.toLowerCase().split(' ').join('.')}@alphasmis.com`
+        phone: hostel.wardenPhone || '+265 990 070 000',
+        email: hostel.wardenEmail || 'warden@alphasmis.com'
       });
     }
     return acc;
   }, []);
 
-  // Filter candidates for Assign Student dropdown (those who are Day scholars OR unallocated Boarding scholars)
   const assignCandidates = allStudents.filter(stu => {
     const isUnassigned = stu.hostelId === null;
     const searchString = `${stu.firstName} ${stu.lastName} ${stu.student_id}`.toLowerCase();
     const matchesSearch = searchString.includes(studentSearchTerm.toLowerCase());
     return isUnassigned && matchesSearch;
   });
+
+  // Validation checkers
+  const isAddHostelFormValid = 
+    newHostel.name && 
+    newHostel.capacity && 
+    (wardenMode === 'create' 
+      ? (wardenFirstName && wardenLastName && wardenPhone && wardenEmail) 
+      : selectedWardenName);
+
+  const isEditHostelFormValid = 
+    editingHostel.name && 
+    editingHostel.capacity && 
+    (editWardenMode === 'create' 
+      ? (editWardenFirstName && editWardenLastName && editWardenPhone && editWardenEmail) 
+      : editSelectedWardenName);
 
   const renderOverview = () => (
     <div className="animate-fade">
@@ -322,7 +410,10 @@ export default function Boarding() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 600 }}>Hostel Overview</h3>
             <button 
-              onClick={() => setIsAddHostelOpen(true)}
+              onClick={() => {
+                setWardenMode(existingWardens.length > 0 ? 'select' : 'create');
+                setIsAddHostelOpen(true);
+              }}
               className="btn-icon" style={{ background: 'none', border: 'none', color: '#3b82f6', cursor: 'pointer', fontSize: '0.85rem' }}
             >
               Add New Hostel
@@ -589,7 +680,15 @@ export default function Boarding() {
     <div className="animate-fade">
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1.5rem' }}>
         <button 
-          onClick={() => setIsAddHostelOpen(true)}
+          onClick={() => {
+            setWardenMode(existingWardens.length > 0 ? 'select' : 'create');
+            setWardenFirstName('');
+            setWardenLastName('');
+            setWardenPhone('');
+            setWardenEmail('');
+            setSelectedWardenName('');
+            setIsAddHostelOpen(true);
+          }}
           className="btn btn-primary" style={{ background: '#3b82f6', color: 'white', border: 'none', padding: '0.65rem 1.5rem', borderRadius: '10px', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
         >
           Add Hostel <Plus size={18} />
@@ -610,7 +709,7 @@ export default function Boarding() {
             const percent = Math.min(100, Math.round((occupied / cap) * 100));
 
             return (
-              <div key={hostel.id} className="glass-panel" style={{ padding: '1.5rem', borderRadius: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <div key={hostel.id} className="glass-panel" style={{ padding: '1.5rem', borderRadius: '16px', display: 'flex', flexDirection: 'column', justifycontent: 'space-between', position: 'relative', border: '1px solid rgba(255,255,255,0.08)' }}>
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -651,6 +750,17 @@ export default function Boarding() {
                   <button 
                     onClick={() => {
                       setEditingHostel(hostel);
+                      
+                      // Pre-populate Edit Warden fields
+                      const wardenNameStr = hostel.warden || '';
+                      const parts = wardenNameStr.trim().split(' ');
+                      setEditWardenFirstName(parts[0] || '');
+                      setEditWardenLastName(parts.slice(1).join(' ') || '');
+                      setEditWardenPhone(hostel.wardenPhone || '');
+                      setEditWardenEmail(hostel.wardenEmail || '');
+                      setEditSelectedWardenName('');
+                      setEditWardenMode('create');
+
                       setIsEditHostelOpen(true);
                     }}
                     style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', padding: '8px', borderRadius: '8px', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--glass-border)', color: 'white', cursor: 'pointer', fontSize: '0.8rem', fontWeight: 600 }}
@@ -757,7 +867,15 @@ export default function Boarding() {
             Assign Student
           </button>
           <button 
-            onClick={() => setIsAddHostelOpen(true)}
+            onClick={() => {
+              setWardenMode(existingWardens.length > 0 ? 'select' : 'create');
+              setWardenFirstName('');
+              setWardenLastName('');
+              setWardenPhone('');
+              setWardenEmail('');
+              setSelectedWardenName('');
+              setIsAddHostelOpen(true);
+            }}
             className="btn btn-primary" style={{ background: '#3b82f6', color: 'white', border: 'none', padding: '0.65rem 1.5rem', borderRadius: '10px', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
           >
             Add Hostel <ArrowRight size={18} />
@@ -767,8 +885,8 @@ export default function Boarding() {
 
       {/* Add Hostel Modal */}
       {isAddHostelOpen && (
-        <div className="modal-overlay" onClick={() => setIsAddHostelOpen(false)} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100 }}>
-          <div className="modal-content glass-panel" style={{ padding: '2rem', borderRadius: '20px', maxWidth: '450px', width: '90%' }} onClick={e => e.stopPropagation()}>
+        <div className="modal-overlay" onClick={() => setIsAddHostelOpen(false)} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', zIndex: 100, overflowY: 'auto', padding: '2rem 0' }}>
+          <div className="modal-content glass-panel" style={{ padding: '2rem', borderRadius: '20px', maxWidth: '500px', width: '90%', margin: 'auto' }} onClick={e => e.stopPropagation()}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(59,130,246,0.1)', color: '#3b82f6', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -817,18 +935,88 @@ export default function Boarding() {
                 </div>
               </div>
 
-              <div className="form-group-custom">
-                <label>Assigned Warden</label>
-                <div style={{ position: 'relative' }}>
-                  <Users size={16} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
-                  <input 
-                    style={{ paddingLeft: '2.5rem' }}
-                    type="text" 
-                    value={newHostel.warden}
-                    onChange={e => setNewHostel({...newHostel, warden: e.target.value})}
-                    placeholder="Warden Name" 
-                  />
+              {/* Warden Option Toggle */}
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1rem' }}>
+                <label style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500, display: 'block', marginBottom: '0.5rem' }}>Warden Assignment</label>
+                <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.85rem', cursor: 'pointer', color: 'white' }}>
+                    <input 
+                      type="radio" 
+                      name="addWardenMode" 
+                      disabled={existingWardens.length === 0}
+                      checked={wardenMode === 'select'} 
+                      onChange={() => setWardenMode('select')} 
+                    />
+                    Select Existing Warden
+                  </label>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.85rem', cursor: 'pointer', color: 'white' }}>
+                    <input 
+                      type="radio" 
+                      name="addWardenMode" 
+                      checked={wardenMode === 'create'} 
+                      onChange={() => setWardenMode('create')} 
+                    />
+                    Create New Warden
+                  </label>
                 </div>
+
+                {wardenMode === 'select' && existingWardens.length > 0 ? (
+                  <div className="form-group-custom">
+                    <label>Choose Warden</label>
+                    <select 
+                      value={selectedWardenName}
+                      onChange={e => setSelectedWardenName(e.target.value)}
+                    >
+                      <option value="">-- Choose Warden --</option>
+                      {existingWardens.map((w, idx) => (
+                        <option key={idx} value={w.name}>{w.name} ({w.phone})</option>
+                      ))}
+                    </select>
+                  </div>
+                ) : (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.04)', padding: '1rem', borderRadius: '10px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                      <div className="form-group-custom">
+                        <label>Warden First Name</label>
+                        <input 
+                          type="text" 
+                          value={wardenFirstName}
+                          onChange={e => setWardenFirstName(e.target.value)}
+                          placeholder="e.g. John" 
+                        />
+                      </div>
+                      <div className="form-group-custom">
+                        <label>Warden Last Name</label>
+                        <input 
+                          type="text" 
+                          value={wardenLastName}
+                          onChange={e => setWardenLastName(e.target.value)}
+                          placeholder="e.g. Banda" 
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-group-custom">
+                      <label>Phone Number</label>
+                      <input 
+                        type="text" 
+                        value={wardenPhone}
+                        onChange={e => setWardenPhone(e.target.value)}
+                        placeholder="e.g. +265990070000" 
+                      />
+                    </div>
+
+                    <div className="form-group-custom">
+                      <label>Email Address</label>
+                      <input 
+                        type="email" 
+                        value={wardenEmail}
+                        onChange={e => setWardenEmail(e.target.value)}
+                        placeholder="e.g. john@alphasmis.com" 
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div style={{ marginTop: '1rem', display: 'flex', gap: '1rem' }}>
@@ -839,13 +1027,13 @@ export default function Boarding() {
                   Cancel
                 </button>
                 <button 
-                  disabled={!newHostel.name || !newHostel.capacity || !newHostel.warden}
+                  disabled={!isAddHostelFormValid}
                   onClick={handleAddHostel}
                   style={{ 
                     flex: 1, padding: '0.75rem', borderRadius: '10px', border: 'none', 
-                    background: (!newHostel.name || !newHostel.capacity || !newHostel.warden) ? 'rgba(255,255,255,0.05)' : '#3b82f6', 
+                    background: !isAddHostelFormValid ? 'rgba(255,255,255,0.05)' : '#3b82f6', 
                     color: 'white', fontWeight: 600, cursor: 'pointer',
-                    opacity: (!newHostel.name || !newHostel.capacity || !newHostel.warden) ? 0.5 : 1
+                    opacity: !isAddHostelFormValid ? 0.5 : 1
                   }}
                 >
                   Save Hostel
@@ -858,8 +1046,8 @@ export default function Boarding() {
 
       {/* Edit Hostel Modal */}
       {isEditHostelOpen && (
-        <div className="modal-overlay" onClick={() => setIsEditHostelOpen(false)} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100 }}>
-          <div className="modal-content glass-panel" style={{ padding: '2rem', borderRadius: '20px', maxWidth: '450px', width: '90%' }} onClick={e => e.stopPropagation()}>
+        <div className="modal-overlay" onClick={() => setIsEditHostelOpen(false)} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', zIndex: 100, overflowY: 'auto', padding: '2rem 0' }}>
+          <div className="modal-content glass-panel" style={{ padding: '2rem', borderRadius: '20px', maxWidth: '500px', width: '90%', margin: 'auto' }} onClick={e => e.stopPropagation()}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(59,130,246,0.1)', color: '#3b82f6', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -908,18 +1096,88 @@ export default function Boarding() {
                 </div>
               </div>
 
-              <div className="form-group-custom">
-                <label>Assigned Warden</label>
-                <div style={{ position: 'relative' }}>
-                  <Users size={16} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
-                  <input 
-                    style={{ paddingLeft: '2.5rem' }}
-                    type="text" 
-                    value={editingHostel.warden}
-                    onChange={e => setEditingHostel({...editingHostel, warden: e.target.value})}
-                    placeholder="Warden Name" 
-                  />
+              {/* Edit Warden Option Toggle */}
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1rem' }}>
+                <label style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500, display: 'block', marginBottom: '0.5rem' }}>Warden Assignment</label>
+                <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.85rem', cursor: 'pointer', color: 'white' }}>
+                    <input 
+                      type="radio" 
+                      name="editWardenMode" 
+                      disabled={existingWardens.length === 0}
+                      checked={editWardenMode === 'select'} 
+                      onChange={() => setEditWardenMode('select')} 
+                    />
+                    Select Existing Warden
+                  </label>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.85rem', cursor: 'pointer', color: 'white' }}>
+                    <input 
+                      type="radio" 
+                      name="editWardenMode" 
+                      checked={editWardenMode === 'create'} 
+                      onChange={() => setEditWardenMode('create')} 
+                    />
+                    Edit/Create Warden details
+                  </label>
                 </div>
+
+                {editWardenMode === 'select' && existingWardens.length > 0 ? (
+                  <div className="form-group-custom">
+                    <label>Choose Warden</label>
+                    <select 
+                      value={editSelectedWardenName}
+                      onChange={e => setEditSelectedWardenName(e.target.value)}
+                    >
+                      <option value="">-- Choose Warden --</option>
+                      {existingWardens.map((w, idx) => (
+                        <option key={idx} value={w.name}>{w.name} ({w.phone})</option>
+                      ))}
+                    </select>
+                  </div>
+                ) : (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.04)', padding: '1rem', borderRadius: '10px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                      <div className="form-group-custom">
+                        <label>Warden First Name</label>
+                        <input 
+                          type="text" 
+                          value={editWardenFirstName}
+                          onChange={e => setEditWardenFirstName(e.target.value)}
+                          placeholder="e.g. John" 
+                        />
+                      </div>
+                      <div className="form-group-custom">
+                        <label>Warden Last Name</label>
+                        <input 
+                          type="text" 
+                          value={editWardenLastName}
+                          onChange={e => setEditWardenLastName(e.target.value)}
+                          placeholder="e.g. Banda" 
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-group-custom">
+                      <label>Phone Number</label>
+                      <input 
+                        type="text" 
+                        value={editWardenPhone}
+                        onChange={e => setEditWardenPhone(e.target.value)}
+                        placeholder="e.g. +265990070000" 
+                      />
+                    </div>
+
+                    <div className="form-group-custom">
+                      <label>Email Address</label>
+                      <input 
+                        type="email" 
+                        value={editWardenEmail}
+                        onChange={e => setEditWardenEmail(e.target.value)}
+                        placeholder="e.g. john@alphasmis.com" 
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div style={{ marginTop: '1rem', display: 'flex', gap: '1rem' }}>
@@ -930,13 +1188,13 @@ export default function Boarding() {
                   Cancel
                 </button>
                 <button 
-                  disabled={!editingHostel.name || !editingHostel.capacity || !editingHostel.warden}
+                  disabled={!isEditHostelFormValid}
                   onClick={handleEditHostel}
                   style={{ 
                     flex: 1, padding: '0.75rem', borderRadius: '10px', border: 'none', 
-                    background: (!editingHostel.name || !editingHostel.capacity || !editingHostel.warden) ? 'rgba(255,255,255,0.05)' : '#3b82f6', 
+                    background: !isEditHostelFormValid ? 'rgba(255,255,255,0.05)' : '#3b82f6', 
                     color: 'white', fontWeight: 600, cursor: 'pointer',
-                    opacity: (!editingHostel.name || !editingHostel.capacity || !editingHostel.warden) ? 0.5 : 1
+                    opacity: !isEditHostelFormValid ? 0.5 : 1
                   }}
                 >
                   Save Changes
