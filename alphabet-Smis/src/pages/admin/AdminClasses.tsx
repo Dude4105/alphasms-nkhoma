@@ -18,7 +18,7 @@ export default function AdminClasses() {
         setIsLoading(false);
         return;
       }
-      const res = await fetch('http://localhost:3000/classes', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/classes`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const json = await res.json();

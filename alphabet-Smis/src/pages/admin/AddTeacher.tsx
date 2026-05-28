@@ -32,7 +32,7 @@ export default function AddTeacher() {
       try {
         const token = localStorage.getItem('accessToken');
         const [subRes] = await Promise.all([
-          fetch('http://localhost:3000/subjects?limit=1000', { headers: { 'Authorization': `Bearer ${token}` } })
+          fetch(`${import.meta.env.VITE_API_URL}/subjects?limit=1000`, { headers: { 'Authorization': `Bearer ${token}` } })
         ]);
         
         const subData = await subRes.json();
@@ -61,7 +61,7 @@ export default function AddTeacher() {
     
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await fetch('http://localhost:3000/teachers', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/teachers`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

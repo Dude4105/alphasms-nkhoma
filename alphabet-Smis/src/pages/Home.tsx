@@ -111,8 +111,8 @@ export default function Home() {
   const fetchData = async () => {
     try {
       const [statusRes, infoRes] = await Promise.all([
-        fetch('http://localhost:3000/public-results/status'),
-        fetch('http://localhost:3000/public-results/info')
+        fetch(`${import.meta.env.VITE_API_URL}/public-results/status`),
+        fetch(`${import.meta.env.VITE_API_URL}/public-results/info`)
       ]);
       if (statusRes.ok) {
         const data = await statusRes.json();

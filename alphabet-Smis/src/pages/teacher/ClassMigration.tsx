@@ -54,7 +54,7 @@ export default function ClassMigration() {
         const token = localStorage.getItem('accessToken');
 
         // 1. Fetch current class details & students roster
-        const classRes = await fetch(`http://localhost:3000/classes/${classId}`, {
+        const classRes = await fetch(`${import.meta.env.VITE_API_URL}/classes/${classId}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (!classRes.ok) throw new Error('Failed to retrieve source class data');
@@ -74,7 +74,7 @@ export default function ClassMigration() {
         }
 
         // 2. Fetch all school classes for promotion dropdown list
-        const listRes = await fetch('http://localhost:3000/classes?limit=100', {
+        const listRes = await fetch(`${import.meta.env.VITE_API_URL}/classes?limit=100`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (listRes.ok) {
@@ -129,7 +129,7 @@ export default function ClassMigration() {
         }))
       };
 
-      const res = await fetch(`http://localhost:3000/teachers/classes/${classId}/migrate`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/teachers/classes/${classId}/migrate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

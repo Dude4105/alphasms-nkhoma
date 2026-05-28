@@ -64,7 +64,7 @@ export default function Subjects() {
         setIsLoading(false);
         return;
       }
-      const res = await fetch(`http://localhost:3000/subjects?limit=${limit}&search=${searchTerm}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/subjects?limit=${limit}&search=${searchTerm}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const json = await res.json();
@@ -88,7 +88,7 @@ export default function Subjects() {
       const finalName = nameSelect === 'Other' ? customName : nameSelect;
       const finalDepartment = departmentSelect === 'Other' ? customDepartment : departmentSelect;
 
-      const response = await fetch('http://localhost:3000/subjects', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/subjects`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -130,7 +130,7 @@ export default function Subjects() {
 
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await fetch(`http://localhost:3000/subjects/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/subjects/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -266,7 +266,7 @@ export default function Subjects() {
                   setIsBulkSubmitting(true);
                   try {
                     const token = localStorage.getItem('accessToken');
-                    const res = await fetch('http://localhost:3000/subjects/bulk', {
+                    const res = await fetch(`${import.meta.env.VITE_API_URL}/subjects/bulk`, {
                       method: 'POST',
                       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
                       body: JSON.stringify({ subjects: selectedBulkSubjects.map(name => ({ name })) })

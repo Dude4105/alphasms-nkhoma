@@ -23,7 +23,7 @@ export default function AdminProfile() {
     setIsLoading(true);
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/admin/me', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/me`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!res.ok) throw new Error('Failed to fetch profile');
@@ -49,7 +49,7 @@ export default function AdminProfile() {
     
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/admin/change-password', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/change-password`, {
         method: 'PATCH',
         headers: { 
           'Authorization': `Bearer ${token}`,

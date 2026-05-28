@@ -20,7 +20,7 @@ export default function SchoolGallery() {
   const fetchItems = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/gallery', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/gallery`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!res.ok) throw new Error('Failed to fetch gallery items');
@@ -42,7 +42,7 @@ export default function SchoolGallery() {
     
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch(`http://localhost:3000/gallery/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/gallery/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -85,7 +85,7 @@ export default function SchoolGallery() {
           ) : items.map(item => (
             <div key={item.id} className="glass-panel" style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '0' }}>
               <div style={{ height: '180px', overflow: 'hidden', borderTopLeftRadius: '12px', borderTopRightRadius: '12px' }}>
-                <img src={`http://localhost:3000${item.imageUrl}`} alt={item.title || 'Gallery item'} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={`${import.meta.env.VITE_API_URL}${item.imageUrl}`} alt={item.title || 'Gallery item'} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div style={{ padding: '1rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <h3 style={{ fontSize: '1.1rem', color: 'var(--text-light)', marginBottom: '0.4rem' }}>{item.title || 'Untitled'}</h3>

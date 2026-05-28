@@ -25,7 +25,7 @@ export default function SchoolFeedForm() {
   const fetchFeed = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch(`http://localhost:3000/feeds/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/feeds/${id}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!res.ok) throw new Error('Failed to load feed details');
@@ -64,8 +64,8 @@ export default function SchoolFeedForm() {
 
     try {
       const url = isEditing 
-        ? `http://localhost:3000/feeds/${id}`
-        : 'http://localhost:3000/feeds';
+        ? `${import.meta.env.VITE_API_URL}/feeds/${id}`
+        : `${import.meta.env.VITE_API_URL}/feeds`;
         
       const res = await fetch(url, {
         method: isEditing ? 'PATCH' : 'POST',
@@ -168,7 +168,7 @@ export default function SchoolFeedForm() {
                 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '1rem' }}>
                   {existingImages.map((url, i) => (
                     <div key={`existing-${i}`} style={{ position: 'relative', width: '120px', height: '90px', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--glass-border)' }}>
-                      <img src={`http://localhost:3000${url}`} alt="Existing preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src={`${import.meta.env.VITE_API_URL}${url}`} alt="Existing preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       <button 
                         type="button" 
                         onClick={() => removeExistingImage(i)}

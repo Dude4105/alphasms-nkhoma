@@ -37,7 +37,7 @@ export default function AddClassStudent() {
     const fetchMainClass = async () => {
       try {
         const token = localStorage.getItem('accessToken');
-        const res = await fetch('http://localhost:3000/teachers/me/main-class', {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/teachers/me/main-class`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const json = await res.json();
@@ -58,7 +58,7 @@ export default function AddClassStudent() {
     setIsSubmitting(true);
     
     try {
-      const res = await fetch('http://localhost:3000/enrollment/apply', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/enrollment/apply`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

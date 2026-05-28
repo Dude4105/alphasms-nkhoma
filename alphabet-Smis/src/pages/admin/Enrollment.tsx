@@ -15,7 +15,7 @@ export default function Enrollment() {
     setIsLoading(true);
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/enrollment/applications', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/enrollment/applications`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await res.json();
@@ -35,7 +35,7 @@ export default function Enrollment() {
 
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch(`http://localhost:3000/enrollment/applications/${id}/status`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/enrollment/applications/${id}/status`, {
         method: 'PATCH',
         headers: { 
           'Content-Type': 'application/json',

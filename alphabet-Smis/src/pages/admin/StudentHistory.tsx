@@ -23,7 +23,7 @@ export default function StudentHistory() {
         const token = localStorage.getItem('accessToken');
         
         // Fetch basic info first with year parameter
-        const infoRes = await fetch(`http://localhost:3000/students/${studentId}?academicYear=${selectedYear}`, {
+        const infoRes = await fetch(`${import.meta.env.VITE_API_URL}/students/${studentId}?academicYear=${selectedYear}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const infoJson = await infoRes.json();
@@ -53,7 +53,7 @@ export default function StudentHistory() {
         }
 
         const fetchTerm = async (t: number) => {
-          const res = await fetch(`http://localhost:3000/students/${studentId}?term=${t}&academicYear=${selectedYear}`, {
+          const res = await fetch(`${import.meta.env.VITE_API_URL}/students/${studentId}?term=${t}&academicYear=${selectedYear}`, {
             headers: { 'Authorization': `Bearer ${token}` }
           });
           if (!res.ok) return null;

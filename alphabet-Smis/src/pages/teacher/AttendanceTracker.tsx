@@ -39,7 +39,7 @@ export default function AttendanceTracker() {
       setIsLoading(true);
       try {
         const token = localStorage.getItem('accessToken');
-        const res = await fetch(`http://localhost:3000/teachers/classes/${classId}/attendance?date=${selectedDate}`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/teachers/classes/${classId}/attendance?date=${selectedDate}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
 
@@ -88,7 +88,7 @@ export default function AttendanceTracker() {
       
       // Filter out unmarked students or save them as absent/unmarked? 
       // We will save all records as is.
-      const res = await fetch(`http://localhost:3000/teachers/classes/${classId}/attendance`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/teachers/classes/${classId}/attendance`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

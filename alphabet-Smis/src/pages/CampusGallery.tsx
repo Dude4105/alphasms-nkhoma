@@ -29,7 +29,7 @@ export default function CampusGallery() {
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     
-    fetch('http://localhost:3000/gallery')
+    fetch(`${import.meta.env.VITE_API_URL}/gallery`)
       .then(res => {
         if (!res.ok) throw new Error('Failed to load gallery');
         return res.json();
@@ -134,7 +134,7 @@ export default function CampusGallery() {
                 >
                   <div className="premium-card-image-wrap">
                     <img 
-                      src={`http://localhost:3000${item.imageUrl}`} 
+                      src={`${import.meta.env.VITE_API_URL}${item.imageUrl}`} 
                       alt={item.title || 'Campus Photo'} 
                       className="premium-card-image"
                       style={{ height: 'auto', maxHeight: '600px' }}
@@ -182,7 +182,7 @@ export default function CampusGallery() {
             </button>
             <div className="post-modal-content" style={{ overflow: 'hidden', textAlign: 'center' }}>
               <img 
-                src={`http://localhost:3000${selectedImage.imageUrl}`} 
+                src={`${import.meta.env.VITE_API_URL}${selectedImage.imageUrl}`} 
                 alt={selectedImage.title} 
                 style={{ maxWidth: '100%', maxHeight: '80vh', objectFit: 'contain', borderRadius: '16px', boxShadow: '0 25px 50px rgba(0,0,0,0.5)' }} 
               />

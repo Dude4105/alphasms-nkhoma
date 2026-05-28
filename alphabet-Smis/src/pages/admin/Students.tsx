@@ -19,7 +19,7 @@ export default function Students() {
   const fetchClasses = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/classes?limit=100', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/classes?limit=100`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -36,7 +36,7 @@ export default function Students() {
   const fetchStudents = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/students', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/students`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

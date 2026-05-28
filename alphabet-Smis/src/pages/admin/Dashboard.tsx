@@ -14,8 +14,8 @@ export default function AdminDashboard() {
       try {
         const token = localStorage.getItem('accessToken');
         const [statsRes, meRes] = await Promise.all([
-          fetch('http://localhost:3000/admin/dashboard-stats', { headers: { 'Authorization': `Bearer ${token}` } }),
-          fetch('http://localhost:3000/admin/me', { headers: { 'Authorization': `Bearer ${token}` } })
+          fetch(`${import.meta.env.VITE_API_URL}/admin/dashboard-stats`, { headers: { 'Authorization': `Bearer ${token}` } }),
+          fetch(`${import.meta.env.VITE_API_URL}/admin/me`, { headers: { 'Authorization': `Bearer ${token}` } })
         ]);
 
         if (!statsRes.ok) throw new Error('Failed to fetch dashboard statistics');

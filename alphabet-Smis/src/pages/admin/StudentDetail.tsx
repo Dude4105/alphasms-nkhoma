@@ -31,7 +31,7 @@ export default function StudentDetail() {
       try {
         const token = localStorage.getItem('accessToken');
         const termQuery = `?term=${selectedTerm}&academicYear=${selectedYear}`;
-        const res = await fetch(`http://localhost:3000/students/${studentId}${termQuery}`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/students/${studentId}${termQuery}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const student = await res.json();
@@ -99,7 +99,7 @@ export default function StudentDetail() {
 
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch(`http://localhost:3000/students/${studentId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/students/${studentId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

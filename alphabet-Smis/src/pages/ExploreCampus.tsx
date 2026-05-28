@@ -45,7 +45,7 @@ const FeedCard = ({ feed, onClick }: { feed: SchoolFeed, onClick: () => void }) 
             {feed.images.map((img, idx) => (
               <div key={idx} className="image-slider-slide">
                 <img 
-                  src={`http://localhost:3000${img}`} 
+                  src={`${import.meta.env.VITE_API_URL}${img}`} 
                   alt={`${feed.title} ${idx + 1}`} 
                   className="premium-card-image"
                 />
@@ -115,7 +115,7 @@ export default function ExploreCampus() {
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     
-    fetch('http://localhost:3000/feeds/public')
+    fetch(`${import.meta.env.VITE_API_URL}/feeds/public`)
       .then(res => {
         if (!res.ok) throw new Error('Failed to load campus feeds');
         return res.json();

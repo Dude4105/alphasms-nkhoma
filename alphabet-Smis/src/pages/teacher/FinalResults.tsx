@@ -28,7 +28,7 @@ export default function FinalResults() {
     try {
       const token = localStorage.getItem('accessToken');
       // Fetch full student report details
-      const res = await fetch(`http://localhost:3000/students/${studentId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/students/${studentId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!res.ok) throw new Error('Failed to fetch student report data');
@@ -109,7 +109,7 @@ export default function FinalResults() {
     const fetchActiveContext = async () => {
       try {
         const token = localStorage.getItem('accessToken');
-        const settingsRes = await fetch('http://localhost:3000/admin/settings', {
+        const settingsRes = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (settingsRes.ok) {
@@ -163,8 +163,8 @@ export default function FinalResults() {
     try {
       const token = localStorage.getItem('accessToken');
       const baseUrl = classId 
-        ? `http://localhost:3000/classes/${classId}/results`
-        : 'http://localhost:3000/teachers/me/main-class/results';
+        ? `${import.meta.env.VITE_API_URL}/classes/${classId}/results`
+        : `${import.meta.env.VITE_API_URL}/teachers/me/main-class/results`;
       
       const url = new URL(baseUrl);
       url.searchParams.append('term', term);

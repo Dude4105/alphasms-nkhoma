@@ -20,14 +20,14 @@ export default function SchoolGalleryForm() {
       const fetchItem = async () => {
         try {
           const token = localStorage.getItem('accessToken');
-          const res = await fetch(`http://localhost:3000/gallery/${id}`, {
+          const res = await fetch(`${import.meta.env.VITE_API_URL}/gallery/${id}`, {
             headers: { 'Authorization': `Bearer ${token}` }
           });
           if (!res.ok) throw new Error('Failed to fetch gallery item');
           const data = await res.json();
           setTitle(data.title || '');
           setDescription(data.description || '');
-          setImagePreview(`http://localhost:3000${data.imageUrl}`);
+          setImagePreview(`${import.meta.env.VITE_API_URL}${data.imageUrl}`);
         } catch (err: any) {
           alert(err.message);
           navigate('/admin/gallery');
@@ -68,7 +68,7 @@ export default function SchoolGalleryForm() {
         formData.append('image', imageFile);
       }
 
-      const url = isEdit ? `http://localhost:3000/gallery/${id}` : 'http://localhost:3000/gallery';
+      const url = isEdit ? `${import.meta.env.VITE_API_URL}/gallery/${id}` : `${import.meta.env.VITE_API_URL}/gallery`;
       const method = isEdit ? 'PATCH' : 'POST';
 
       const res = await fetch(url, {

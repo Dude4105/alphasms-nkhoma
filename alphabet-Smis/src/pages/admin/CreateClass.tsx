@@ -42,8 +42,8 @@ export default function CreateClass() {
       try {
         const token = localStorage.getItem('accessToken');
         const [subRes, tchRes] = await Promise.all([
-          fetch('http://localhost:3000/subjects?limit=1000', { headers: { 'Authorization': `Bearer ${token}` } }),
-          fetch('http://localhost:3000/teachers?limit=1000', { headers: { 'Authorization': `Bearer ${token}` } })
+          fetch(`${import.meta.env.VITE_API_URL}/subjects?limit=1000`, { headers: { 'Authorization': `Bearer ${token}` } }),
+          fetch(`${import.meta.env.VITE_API_URL}/teachers?limit=1000`, { headers: { 'Authorization': `Bearer ${token}` } })
         ]);
         
         const subData = await subRes.json();
@@ -106,7 +106,7 @@ export default function CreateClass() {
     setIsSubmitting(true);
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await fetch('http://localhost:3000/classes', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/classes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

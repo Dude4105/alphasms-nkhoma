@@ -30,7 +30,7 @@ export default function ViewTimetable() {
     const fetchTimetableAndTeacher = async () => {
       try {
         const token = localStorage.getItem('accessToken');
-        const res = await fetch(`http://localhost:3000/classes/${classId}`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/classes/${classId}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const classData = await res.json();
@@ -39,7 +39,7 @@ export default function ViewTimetable() {
         }
 
         try {
-          const profileRes = await fetch('http://localhost:3000/teachers/me/classes', {
+          const profileRes = await fetch(`${import.meta.env.VITE_API_URL}/teachers/me/classes`, {
             headers: { 'Authorization': `Bearer ${token}` }
           });
           if (profileRes.ok) {

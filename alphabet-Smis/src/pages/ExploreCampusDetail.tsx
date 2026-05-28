@@ -30,7 +30,7 @@ export default function ExploreCampusDetail() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     
     if (id) {
-      fetch(`http://localhost:3000/feeds/${id}`)
+      fetch(`${import.meta.env.VITE_API_URL}/feeds/${id}`)
         .then(res => {
           if (!res.ok) throw new Error('Failed to load post details');
           return res.json();
@@ -70,7 +70,7 @@ export default function ExploreCampusDetail() {
     );
   }
 
-  const firstImage = feed.images && feed.images.length > 0 ? `http://localhost:3000${feed.images[0]}` : null;
+  const firstImage = feed.images && feed.images.length > 0 ? `${import.meta.env.VITE_API_URL}${feed.images[0]}` : null;
   const otherImages = feed.images && feed.images.length > 1 ? feed.images.slice(1) : [];
 
   return (
@@ -177,7 +177,7 @@ export default function ExploreCampusDetail() {
                   {otherImages.map((img, idx) => (
                     <div key={idx} className="gallery-item" style={{ borderRadius: '24px', overflow: 'hidden', border: '1px solid var(--glass-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}>
                       <img 
-                        src={`http://localhost:3000${img}`} 
+                        src={`${import.meta.env.VITE_API_URL}${img}`} 
                         alt={`${feed.title} ${idx + 2}`} 
                         style={{ width: '100%', height: 'auto', display: 'block' }} 
                       />

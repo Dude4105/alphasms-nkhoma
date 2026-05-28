@@ -20,7 +20,7 @@ export default function PasswordResets() {
     setStatusMessage({ text: '', type: '' });
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/admin/password-resets', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/password-resets`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -43,7 +43,7 @@ export default function PasswordResets() {
   const handleResolve = async (id: number) => {
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch(`http://localhost:3000/admin/password-resets/${id}/resolve`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/password-resets/${id}/resolve`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

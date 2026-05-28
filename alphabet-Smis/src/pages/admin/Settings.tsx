@@ -67,7 +67,7 @@ export default function Settings() {
   const fetchExamResultsPublishedStatus = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/admin/settings/exam-results-published', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings/exam-results-published`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -82,7 +82,7 @@ export default function Settings() {
   const fetchFinalResultsMode = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/admin/settings/final-results-mode', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings/final-results-mode`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -107,7 +107,7 @@ export default function Settings() {
     setIsTogglingFinals(true);
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/admin/settings/final-results-mode', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings/final-results-mode`, {
         method: 'PATCH',
         headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({ enabled: newState })
@@ -139,7 +139,7 @@ export default function Settings() {
     setIsPublishingExams(true);
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/admin/settings/exam-results-published', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings/exam-results-published`, {
         method: 'PATCH',
         headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({ enabled: newState })
@@ -162,7 +162,7 @@ export default function Settings() {
   const fetchGradingConfig = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/admin/settings/grading-system', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings/grading-system`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -179,7 +179,7 @@ export default function Settings() {
     setMessage({ type: '', text: '' });
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/admin/settings/grading-system', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings/grading-system`, {
         method: 'PATCH',
         headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
         body: JSON.stringify(gradingConfig)
@@ -226,7 +226,7 @@ export default function Settings() {
     setIsLoading(true);
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/admin/settings', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!res.ok) throw new Error('Failed to fetch settings');
@@ -272,7 +272,7 @@ export default function Settings() {
     setMessage({ type: '', text: '' });
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/admin/settings', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings`, {
         method: 'PATCH',
         headers: { 
           'Authorization': `Bearer ${token}`,
@@ -306,7 +306,7 @@ export default function Settings() {
     setIsFetchingAdmins(true);
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/admin/list', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/list`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!res.ok) throw new Error('Failed to fetch admin list');
@@ -325,7 +325,7 @@ export default function Settings() {
     setMessage({ type: '', text: '' });
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/admin/add-admin', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/add-admin`, {
         method: 'POST',
         headers: { 
           'Authorization': `Bearer ${token}`,

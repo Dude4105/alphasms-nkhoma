@@ -40,7 +40,7 @@ async function refreshAccessToken(): Promise<string> {
   refreshPromise = (async () => {
     try {
       console.log('[Auth Interceptor] Refreshing access token silently...');
-      const res = await originalFetch('http://localhost:3000/auth/refresh', {
+      const res = await originalFetch(`${import.meta.env.VITE_API_URL}/auth/refresh`, {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -82,7 +82,8 @@ async function refreshAccessToken(): Promise<string> {
 // Monkey-patch window.fetch
 window.fetch = async function (input: RequestInfo | URL, init?: RequestInit): Promise<Response> {
   const urlString = typeof input === 'string' ? input : input instanceof URL ? input.toString() : input.url;
-  const isBackendRequest = urlString.startsWith('http://localhost:3000') || urlString.startsWith('http://127.0.0.1:3000');
+  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+  const isBackendRequest = urlString.startsWith(apiUrl);
 
   // Skip interception for non-backend requests or auth endpoints
   if (!isBackendRequest || urlString.includes('/auth/login') || urlString.includes('/auth/refresh') || urlString.includes('/auth/forgot-password')) {

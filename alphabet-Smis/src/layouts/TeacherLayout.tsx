@@ -83,7 +83,7 @@ export default function TeacherLayout() {
         navigate('/login');
         return;
       }
-      const res = await fetch('http://localhost:3000/teachers/me/profile', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/teachers/me/profile`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -114,7 +114,7 @@ export default function TeacherLayout() {
   const handleLogout = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      await fetch('http://localhost:3000/auth/logout', {
+      await fetch(`${import.meta.env.VITE_API_URL}/auth/logout`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

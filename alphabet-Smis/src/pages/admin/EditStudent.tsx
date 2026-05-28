@@ -38,7 +38,7 @@ export default function EditStudent() {
         const token = localStorage.getItem('accessToken');
         
         // 1. Fetch Classes for dropdown
-        const classRes = await fetch('http://localhost:3000/classes', {
+        const classRes = await fetch(`${import.meta.env.VITE_API_URL}/classes`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const classJson = await classRes.json();
@@ -47,7 +47,7 @@ export default function EditStudent() {
         }
 
         // 2. Fetch Student Data
-        const studentRes = await fetch(`http://localhost:3000/students/${urlStudentId}`, {
+        const studentRes = await fetch(`${import.meta.env.VITE_API_URL}/students/${urlStudentId}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const student = await studentRes.json();
@@ -84,7 +84,7 @@ export default function EditStudent() {
     
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await fetch(`http://localhost:3000/students/${urlStudentId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/students/${urlStudentId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

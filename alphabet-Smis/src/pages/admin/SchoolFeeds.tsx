@@ -20,7 +20,7 @@ export default function SchoolFeeds() {
   const fetchFeeds = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/feeds', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/feeds`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!res.ok) throw new Error('Failed to fetch feeds');
@@ -42,7 +42,7 @@ export default function SchoolFeeds() {
     
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch(`http://localhost:3000/feeds/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/feeds/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -88,7 +88,7 @@ export default function SchoolFeeds() {
             <div key={feed.id} className="glass-panel" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
               {feed.images && feed.images.length > 0 ? (
                 <div style={{ height: '160px', overflow: 'hidden', borderTopLeftRadius: '12px', borderTopRightRadius: '12px', position: 'relative' }}>
-                  <img src={`http://localhost:3000${feed.images[0]}`} alt={feed.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={`${import.meta.env.VITE_API_URL}${feed.images[0]}`} alt={feed.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   {feed.images.length > 1 && (
                     <div style={{ position: 'absolute', bottom: '0.5rem', right: '0.5rem', background: 'rgba(0,0,0,0.6)', color: 'white', padding: '0.2rem 0.5rem', borderRadius: '12px', fontSize: '0.8rem' }}>
                       +{feed.images.length - 1} more

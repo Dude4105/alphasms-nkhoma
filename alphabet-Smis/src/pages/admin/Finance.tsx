@@ -72,7 +72,7 @@ export default function Finance() {
     try {
       const token = localStorage.getItem('accessToken');
       const headers = { 'Authorization': `Bearer ${token}` };
-      const url = `http://localhost:3000/finance/overview?term=${termQuery}&academicYear=${yearQuery}`;
+      const url = `${import.meta.env.VITE_API_URL}/finance/overview?term=${termQuery}&academicYear=${yearQuery}`;
       const res = await fetch(url, { headers });
       if (res.ok) {
         setOverviewData(await res.json());
@@ -112,9 +112,9 @@ export default function Finance() {
       const token = localStorage.getItem('accessToken');
       const headers = { 'Authorization': `Bearer ${token}` };
       const [ovRes, fsRes, tRes] = await Promise.all([
-        fetch('http://localhost:3000/finance/overview', { headers }),
-        fetch('http://localhost:3000/finance/fee-structure', { headers }),
-        fetch('http://localhost:3000/finance/teachers', { headers })
+        fetch(`${import.meta.env.VITE_API_URL}/finance/overview`, { headers }),
+        fetch(`${import.meta.env.VITE_API_URL}/finance/fee-structure`, { headers }),
+        fetch(`${import.meta.env.VITE_API_URL}/finance/teachers`, { headers })
       ]);
       if (!ovRes.ok || !fsRes.ok || !tRes.ok) throw new Error('Failed to fetch financial records');
       const ovJson = await ovRes.json();
@@ -148,7 +148,7 @@ export default function Finance() {
   const fetchStudentFees = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/finance/student-fees', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/finance/student-fees`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) setStudentFees(await res.json());
@@ -158,7 +158,7 @@ export default function Finance() {
   const fetchExpenses = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/finance/expenses', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/finance/expenses`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) setExpenses(await res.json());
@@ -169,7 +169,7 @@ export default function Finance() {
     setIsRefreshingReport(true);
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/finance/reports', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/finance/reports`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) setReportData(await res.json());
@@ -182,7 +182,7 @@ export default function Finance() {
       let data = reportData;
       if (!data) {
         const token = localStorage.getItem('accessToken');
-        const res = await fetch('http://localhost:3000/finance/reports', {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/finance/reports`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (res.ok) {
@@ -259,7 +259,7 @@ export default function Finance() {
     const searchTimer = setTimeout(async () => {
       if (searchStudentQuery.length > 1) {
         const token = localStorage.getItem('accessToken');
-        const res = await fetch(`http://localhost:3000/finance/students?q=${searchStudentQuery}`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/finance/students?q=${searchStudentQuery}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (res.ok) setDbStudents(await res.json());
@@ -274,7 +274,7 @@ export default function Finance() {
     setIsSavingPayment(true);
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/finance/payments', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/finance/payments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         body: JSON.stringify({
@@ -310,7 +310,7 @@ export default function Finance() {
     if (expenseFile) formData.append('attachment', expenseFile);
     try {
       const token = localStorage.getItem('accessToken');
-      const url = editingExpense ? `http://localhost:3000/finance/expenses/${editingExpense.id}` : 'http://localhost:3000/finance/expenses';
+      const url = editingExpense ? `${import.meta.env.VITE_API_URL}/finance/expenses/${editingExpense.id}` : `${import.meta.env.VITE_API_URL}/finance/expenses`;
       const res = await fetch(url, {
         method: editingExpense ? 'PATCH' : 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
@@ -330,7 +330,7 @@ export default function Finance() {
   const handleSaveFees = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/finance/fee-structure', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/finance/fee-structure`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         body: JSON.stringify([
@@ -355,7 +355,7 @@ export default function Finance() {
     setIsAccountModalOpen(true);
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch(`http://localhost:3000/finance/student-account/${dbId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/finance/student-account/${dbId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) setStudentAccountData(await res.json());
@@ -720,7 +720,7 @@ export default function Finance() {
                 <td style={{ padding: '1rem' }}><div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem' }}>{exp.status === 'COMPLETED' ? <CheckCircle2 size={16} color="#10b981" /> : <Clock size={16} color="#f59e0b" />}<span style={{ color: exp.status === 'COMPLETED' ? '#10b981' : '#f59e0b', fontWeight: 500 }}>{exp.status}</span></div></td>
                 <td style={{ padding: '1rem', textAlign: 'right', fontSize: '0.85rem', color: 'var(--text-muted)' }}>{new Date(exp.date).toLocaleDateString()}</td>
                 <td style={{ padding: '1rem', textAlign: 'right', borderRadius: '0 10px 10px 0' }}><div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
-                  {exp.attachmentUrl && <a href={`http://localhost:3000${exp.attachmentUrl}`} target="_blank" rel="noopener noreferrer" className="btn-icon" style={{ color: '#3b82f6' }}><Download size={18} /></a>}
+                  {exp.attachmentUrl && <a href={`${import.meta.env.VITE_API_URL}${exp.attachmentUrl}`} target="_blank" rel="noopener noreferrer" className="btn-icon" style={{ color: '#3b82f6' }}><Download size={18} /></a>}
                   {exp.status === 'PENDING' && <button onClick={() => { setEditingExpense(exp); setExpenseForm({ category: exp.category, description: exp.description, amount: exp.amount.toString(), status: exp.status, date: new Date(exp.date).toISOString().split('T')[0] }); setIsExpenseModalOpen(true); }} className="btn-icon" style={{ color: '#ffc107', background: 'none', border: 'none', cursor: 'pointer' }}><Settings size={18} /></button>}
                 </div></td>
               </tr>
@@ -754,7 +754,7 @@ export default function Finance() {
                 </div>
                 <div className="expense-mobile-actions">
                   {exp.attachmentUrl && (
-                    <a href={`http://localhost:3000${exp.attachmentUrl}`} target="_blank" rel="noopener noreferrer" className="mobile-expense-act-btn doc-btn">
+                    <a href={`${import.meta.env.VITE_API_URL}${exp.attachmentUrl}`} target="_blank" rel="noopener noreferrer" className="mobile-expense-act-btn doc-btn">
                       <Download size={14} /> Doc
                     </a>
                   )}

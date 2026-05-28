@@ -44,7 +44,7 @@ export default function EditClass() {
         const headers = { 'Authorization': `Bearer ${token}` };
 
         // 1. Fetch Class Details
-        const classRes = await fetch(`http://localhost:3000/classes/${classId}`, { headers });
+        const classRes = await fetch(`${import.meta.env.VITE_API_URL}/classes/${classId}`, { headers });
         const classData = await classRes.json();
 
         if (classRes.ok && classData) {
@@ -84,15 +84,15 @@ export default function EditClass() {
 
         // 2. Fetch Options
         const [subRes, tchRes] = await Promise.all([
-          fetch('http://localhost:3000/subjects?limit=1000', { headers }),
-          fetch('http://localhost:3000/teachers?limit=1000', { headers })
+          fetch(`${import.meta.env.VITE_API_URL}/subjects?limit=1000`, { headers }),
+          fetch(`${import.meta.env.VITE_API_URL}/teachers?limit=1000`, { headers })
         ]);
         
         const subOptions = await subRes.json();
         const tchOptions = await tchRes.json();
 
         // 3. Fetch Used Subjects (those with grades)
-        const usedRes = await fetch(`http://localhost:3000/classes/${classId}/used-subjects`, { headers });
+        const usedRes = await fetch(`${import.meta.env.VITE_API_URL}/classes/${classId}/used-subjects`, { headers });
         if (usedRes.ok) {
           const usedData = await usedRes.json();
           setUsedSubjects(usedData);
@@ -159,7 +159,7 @@ export default function EditClass() {
     setIsSubmitting(true);
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await fetch(`http://localhost:3000/classes/${classId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/classes/${classId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

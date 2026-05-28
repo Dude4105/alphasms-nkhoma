@@ -29,9 +29,9 @@ export default function EditTeacher() {
         const headers = { 'Authorization': `Bearer ${token}` };
 
         const [teacherRes, subRes, clsRes] = await Promise.all([
-          fetch(`http://localhost:3000/teachers/${teacherId}`, { headers }),
-          fetch(`http://localhost:3000/subjects?limit=1000`, { headers }),
-          fetch(`http://localhost:3000/classes?limit=1000`, { headers })
+          fetch(`${import.meta.env.VITE_API_URL}/teachers/${teacherId}`, { headers }),
+          fetch(`${import.meta.env.VITE_API_URL}/subjects?limit=1000`, { headers }),
+          fetch(`${import.meta.env.VITE_API_URL}/classes?limit=1000`, { headers })
         ]);
 
         const teacher = await teacherRes.json();
@@ -74,7 +74,7 @@ export default function EditTeacher() {
     
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await fetch(`http://localhost:3000/teachers/${teacherId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/teachers/${teacherId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

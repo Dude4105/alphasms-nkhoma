@@ -38,17 +38,17 @@ export default function Boarding() {
       const headers = { 'Authorization': `Bearer ${token}` };
 
       // Fetch Stats
-      const statRes = await fetch('http://localhost:3000/hostels/stats', { headers });
+      const statRes = await fetch(`${import.meta.env.VITE_API_URL}/hostels/stats`, { headers });
       const statJson = await statRes.json();
       if (statRes.ok) setStats(statJson);
 
       // Fetch Hostels
-      const hostelRes = await fetch('http://localhost:3000/hostels', { headers });
+      const hostelRes = await fetch(`${import.meta.env.VITE_API_URL}/hostels`, { headers });
       const hostelJson = await hostelRes.json();
       if (hostelRes.ok) setHostels(hostelJson.data);
 
       // Fetch Students with Hostels (Allocations)
-      const studentRes = await fetch('http://localhost:3000/students?limit=100', { headers });
+      const studentRes = await fetch(`${import.meta.env.VITE_API_URL}/students?limit=100`, { headers });
       const studentJson = await studentRes.json();
       if (studentRes.ok) {
         setStudents(studentJson.data.filter((s:any) => s.hostelId !== null));
@@ -72,7 +72,7 @@ export default function Boarding() {
 
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/hostels', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/hostels`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

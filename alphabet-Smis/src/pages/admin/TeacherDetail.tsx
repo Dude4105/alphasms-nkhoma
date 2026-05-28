@@ -18,7 +18,7 @@ export default function TeacherDetail() {
     const fetchTeacher = async () => {
       try {
         const token = localStorage.getItem('accessToken');
-        const res = await fetch(`http://localhost:3000/teachers/${teacherId}`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/teachers/${teacherId}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const teacher = await res.json();
@@ -52,7 +52,7 @@ export default function TeacherDetail() {
     const fetchClasses = async () => {
       try {
         const token = localStorage.getItem('accessToken');
-        const res = await fetch('http://localhost:3000/classes?limit=100', {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/classes?limit=100`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const json = await res.json();
@@ -75,7 +75,7 @@ export default function TeacherDetail() {
 
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch(`http://localhost:3000/teachers/${teacherId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/teachers/${teacherId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

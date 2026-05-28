@@ -106,7 +106,7 @@ export default function Grades() {
         
         // Check if admin enabled Final Results Mode and fetch active period
         try {
-          const modeRes = await fetch('http://localhost:3000/admin/settings/final-results-mode', {
+          const modeRes = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings/final-results-mode`, {
             headers: { 'Authorization': `Bearer ${token}` }
           });
           if (modeRes.ok) {
@@ -115,7 +115,7 @@ export default function Grades() {
           }
 
           // Fetch Global Settings
-          const settingsRes = await fetch('http://localhost:3000/admin/settings', {
+          const settingsRes = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings`, {
               headers: { 'Authorization': `Bearer ${token}` }
           });
           if (settingsRes.ok) {
@@ -125,7 +125,7 @@ export default function Grades() {
           }
 
           // Fetch grading config for pass threshold
-          const gradingRes = await fetch('http://localhost:3000/admin/settings/grading-system', {
+          const gradingRes = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings/grading-system`, {
               headers: { 'Authorization': `Bearer ${token}` }
           });
           if (gradingRes.ok) {
@@ -135,7 +135,7 @@ export default function Grades() {
         } catch (e) { /* ignore, defaults stay */ }
 
         // Fetch User Profile for Subjects (Backup)
-        const profileRes = await fetch('http://localhost:3000/teachers/me/profile', {
+        const profileRes = await fetch(`${import.meta.env.VITE_API_URL}/teachers/me/profile`, {
             headers: { 'Authorization': `Bearer ${token}` }
         });
         let foundSubjects: string[] = [];
@@ -145,7 +145,7 @@ export default function Grades() {
         }
 
         // Fetch Classes (and Primary Subjects)
-        const res = await fetch('http://localhost:3000/teachers/me/classes', {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/teachers/me/classes`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const json = await res.json();
@@ -216,7 +216,7 @@ export default function Grades() {
 
         // 1. Fetch Class & Students
         // We try the string ID first, then fallback to any class with this name if ID fails
-        let classRes = await fetch(`http://localhost:3000/classes/${selectedClass}`, {
+        let classRes = await fetch(`${import.meta.env.VITE_API_URL}/classes/${selectedClass}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         
@@ -230,7 +230,7 @@ export default function Grades() {
             const targetName = classes.find(c => c.id === selectedClass)?.name || '';
             
             if (targetName) {
-                const searchRes = await fetch(`http://localhost:3000/classes?search=${encodeURIComponent(targetName)}`, {
+                const searchRes = await fetch(`${import.meta.env.VITE_API_URL}/classes?search=${encodeURIComponent(targetName)}`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 const searchJson = await searchRes.json();
@@ -239,7 +239,7 @@ export default function Grades() {
                 const candidate = (searchJson.data || []).find((c: any) => c._count?.students > 0) || (searchJson.data || [])[0];
                 
                 if (candidate) {
-                    const detailRes = await fetch(`http://localhost:3000/classes/${candidate.class_id || candidate.id}`, {
+                    const detailRes = await fetch(`${import.meta.env.VITE_API_URL}/classes/${candidate.class_id || candidate.id}`, {
                         headers: { 'Authorization': `Bearer ${token}` }
                     });
                     classJson = await detailRes.json();
@@ -254,7 +254,7 @@ export default function Grades() {
         }
         
         // 2. Fetch Config
-        const configRes = await fetch(`http://localhost:3000/teachers/grades/config?classId=${selectedClass}&subjectKey=${subjectKey}&term=${activeTerm}&academicYear=${academicYear}`, {
+        const configRes = await fetch(`${import.meta.env.VITE_API_URL}/teachers/grades/config?classId=${selectedClass}&subjectKey=${subjectKey}&term=${activeTerm}&academicYear=${academicYear}`, {
             headers: { 'Authorization': `Bearer ${token}` }
         });
         if (configRes.ok) {
@@ -266,7 +266,7 @@ export default function Grades() {
         }
 
         // 3. Fetch Entries
-        const entriesRes = await fetch(`http://localhost:3000/teachers/grades/entries?classId=${selectedClass}&subjectKey=${subjectKey}&term=${activeTerm}&academicYear=${academicYear}`, {
+        const entriesRes = await fetch(`${import.meta.env.VITE_API_URL}/teachers/grades/entries?classId=${selectedClass}&subjectKey=${subjectKey}&term=${activeTerm}&academicYear=${academicYear}`, {
             headers: { 'Authorization': `Bearer ${token}` }
         });
         const entriesData = entriesRes.ok ? await entriesRes.json() : [];
@@ -298,7 +298,7 @@ export default function Grades() {
     try {
       const token = localStorage.getItem('accessToken');
       const subjectKey = normalizeSubjectKey(selectedSubject);
-      const res = await fetch('http://localhost:3000/teachers/grades/config', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/teachers/grades/config`, {
         method: 'POST',
         headers: { 
             'Authorization': `Bearer ${token}`,
@@ -341,7 +341,7 @@ export default function Grades() {
         totalScore: finalResultsMode ? (s.scores['finalScore'] || 0) : 0
       }));
 
-      const res = await fetch('http://localhost:3000/teachers/grades/entries/bulk', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/teachers/grades/entries/bulk`, {
         method: 'POST',
         headers: { 
             'Authorization': `Bearer ${token}`,

@@ -41,8 +41,8 @@ export default function AddStudent() {
         const headers = { 'Authorization': `Bearer ${token}` };
         
         const [classRes, hostelRes] = await Promise.all([
-          fetch('http://localhost:3000/classes', { headers }),
-          fetch('http://localhost:3000/hostels', { headers })
+          fetch(`${import.meta.env.VITE_API_URL}/classes`, { headers }),
+          fetch(`${import.meta.env.VITE_API_URL}/hostels`, { headers })
         ]);
 
         const classJson = await classRes.json();
@@ -84,7 +84,7 @@ export default function AddStudent() {
     
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await fetch('http://localhost:3000/students', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/students`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -115,7 +115,7 @@ export default function AddStudent() {
 
       // If from application, update application status
       if (location.state?.application?.id) {
-        await fetch(`http://localhost:3000/enrollment/applications/${location.state.application.id}/status`, {
+        await fetch(`${import.meta.env.VITE_API_URL}/enrollment/applications/${location.state.application.id}/status`, {
           method: 'PATCH',
           headers: { 
             'Content-Type': 'application/json',

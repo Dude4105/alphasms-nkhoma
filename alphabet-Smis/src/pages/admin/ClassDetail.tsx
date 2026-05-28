@@ -22,7 +22,7 @@ export default function ClassDetail() {
 
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch(`http://localhost:3000/classes/${classId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/classes/${classId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -47,7 +47,7 @@ export default function ClassDetail() {
         setIsLoading(false);
         return;
       }
-      const res = await fetch(`http://localhost:3000/classes/${classId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/classes/${classId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const c = await res.json();

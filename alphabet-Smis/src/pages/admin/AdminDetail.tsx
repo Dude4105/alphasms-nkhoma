@@ -28,8 +28,8 @@ export default function AdminDetail() {
       try {
         const token = localStorage.getItem('accessToken');
         const [adminRes, meRes] = await Promise.all([
-          fetch(`http://localhost:3000/admin/${adminId}`, { headers: { 'Authorization': `Bearer ${token}` } }),
-          fetch(`http://localhost:3000/admin/me`, { headers: { 'Authorization': `Bearer ${token}` } })
+          fetch(`${import.meta.env.VITE_API_URL}/admin/${adminId}`, { headers: { 'Authorization': `Bearer ${token}` } }),
+          fetch(`${import.meta.env.VITE_API_URL}/admin/me`, { headers: { 'Authorization': `Bearer ${token}` } })
         ]);
         if (!adminRes.ok) throw new Error('Failed to fetch admin details');
         setAdminData(await adminRes.json());
@@ -47,7 +47,7 @@ export default function AdminDetail() {
     setIsUpdatingPermissions(true);
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch(`http://localhost:3000/admin/${adminId}/permissions`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/${adminId}/permissions`, {
         method: 'PATCH',
         headers: { 
           'Authorization': `Bearer ${token}`,
@@ -77,7 +77,7 @@ export default function AdminDetail() {
     setIsDeleting(true);
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch(`http://localhost:3000/admin/${adminId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/${adminId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

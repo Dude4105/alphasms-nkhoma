@@ -42,8 +42,8 @@ export default function CreateTimetable() {
       try {
         const token = localStorage.getItem('accessToken');
         const [subRes, classRes] = await Promise.all([
-          fetch('http://localhost:3000/subjects?limit=1000', { headers: { 'Authorization': `Bearer ${token}` } }),
-          fetch(`http://localhost:3000/classes/${classId}`, { headers: { 'Authorization': `Bearer ${token}` } })
+          fetch(`${import.meta.env.VITE_API_URL}/subjects?limit=1000`, { headers: { 'Authorization': `Bearer ${token}` } }),
+          fetch(`${import.meta.env.VITE_API_URL}/classes/${classId}`, { headers: { 'Authorization': `Bearer ${token}` } })
         ]);
 
         const subJson = await subRes.json();
@@ -131,7 +131,7 @@ export default function CreateTimetable() {
     setIsSubmitting(true);
     try {
       const token = localStorage.getItem('accessToken');
-      const response = await fetch(`http://localhost:3000/classes/${classId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/classes/${classId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

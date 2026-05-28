@@ -29,7 +29,7 @@ export default function ViewTimetable() {
     const fetchTimetable = async () => {
       try {
         const token = localStorage.getItem('accessToken');
-        const res = await fetch(`http://localhost:3000/classes/${classId}`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/classes/${classId}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const classData = await res.json();

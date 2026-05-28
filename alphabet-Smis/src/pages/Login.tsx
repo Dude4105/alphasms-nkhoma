@@ -17,7 +17,7 @@ export default function Login() {
     setIsLoading(true);
     setError('');
     try {
-      const response = await fetch('https://alphabetsmis-ii.onrender.com/auth/login', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ export default function Login() {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:3000/auth/forgot-password', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/forgot-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -90,7 +90,7 @@ export default function AdminLayout() {
         navigate('/login');
         return;
       }
-      const res = await fetch('http://localhost:3000/admin/me', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/me`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -117,7 +117,7 @@ export default function AdminLayout() {
   const handleLogout = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      await fetch('http://localhost:3000/auth/logout', {
+      await fetch(`${import.meta.env.VITE_API_URL}/auth/logout`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

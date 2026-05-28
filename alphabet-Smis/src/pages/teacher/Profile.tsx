@@ -22,7 +22,7 @@ export default function Profile() {
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/teachers/me/profile', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/teachers/me/profile`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -51,7 +51,7 @@ export default function Profile() {
 
     try {
       const token = localStorage.getItem('accessToken');
-      const res = await fetch('http://localhost:3000/teachers/me/change-password', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/teachers/me/change-password`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

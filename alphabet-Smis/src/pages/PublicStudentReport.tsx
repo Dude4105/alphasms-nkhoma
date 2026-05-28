@@ -18,7 +18,7 @@ export default function PublicStudentReport() {
       setIsLoading(true);
       setError('');
       try {
-        let url = `http://localhost:3000/public-results/report/${studentId}`;
+        let url = `${import.meta.env.VITE_API_URL}/public-results/report/${studentId}`;
         const params = new URLSearchParams();
         if (term) params.append('term', term);
         if (year) params.append('academicYear', year);

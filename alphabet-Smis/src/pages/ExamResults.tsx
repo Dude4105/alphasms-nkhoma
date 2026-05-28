@@ -31,7 +31,7 @@ export default function ExamResults() {
 
   const fetchResultsStatus = async () => {
     try {
-      const res = await fetch('http://localhost:3000/public-results/status');
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/public-results/status`);
       if (res.ok) {
         const data = await res.json();
         setIsResultsPublished(data.published);
@@ -56,7 +56,7 @@ export default function ExamResults() {
       if (!searchData.dob) return alert('Please enter date of birth');
       setIsSearching(true);
       try {
-        const response = await fetch('http://localhost:3000/public-results/check', {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/public-results/check`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(searchData)

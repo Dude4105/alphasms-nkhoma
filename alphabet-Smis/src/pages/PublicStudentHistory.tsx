@@ -50,8 +50,8 @@ export default function PublicStudentHistory() {
     setNotFound(false);
     try {
       const url = year 
-        ? `http://localhost:3000/public-results/history/${studentId}?academicYear=${year}`
-        : `http://localhost:3000/public-results/history/${studentId}`;
+        ? `${import.meta.env.VITE_API_URL}/public-results/history/${studentId}?academicYear=${year}`
+        : `${import.meta.env.VITE_API_URL}/public-results/history/${studentId}`;
 
       const res = await fetch(url);
       if (!res.ok || res.status === 404) { setNotFound(true); return; }

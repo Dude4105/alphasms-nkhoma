@@ -52,7 +52,7 @@ export default function MainClass() {
     const fetchMainClass = async () => {
       try {
         const token = localStorage.getItem('accessToken');
-        const res = await fetch('http://localhost:3000/teachers/me/main-class', {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/teachers/me/main-class`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
 
@@ -63,7 +63,7 @@ export default function MainClass() {
 
         // Fetch current term context
         try {
-          const settingsRes = await fetch('http://localhost:3000/admin/settings', {
+          const settingsRes = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings`, {
             headers: { 'Authorization': `Bearer ${token}` }
           });
           if (settingsRes.ok) {
