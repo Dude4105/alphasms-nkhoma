@@ -58,8 +58,10 @@ export default function Enrollment() {
   };
 
   const filtered = applications.filter(a => 
-    `${a.firstName} ${a.surname}`.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    `APP-${a.id}`.toLowerCase().includes(searchTerm.toLowerCase())
+    a.status !== 'APPROVED' && (
+      `${a.firstName} ${a.surname}`.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      `APP-${a.id}`.toLowerCase().includes(searchTerm.toLowerCase())
+    )
   );
 
   const pendingCount = applications.filter(a => a.status === 'PENDING').length;
