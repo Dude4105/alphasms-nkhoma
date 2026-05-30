@@ -105,6 +105,24 @@ export default function Home() {
     schoolPhone: '+265 (0) 123 456 789',
     schoolEmail: 'admissions@heroesacademy.mw'
   });
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+    const userStr = localStorage.getItem('user');
+    if (token && userStr) {
+      try {
+        const user = JSON.parse(userStr);
+        const role = user.role?.toLowerCase() || '';
+        if (role === 'admin') {
+          navigate('/admin', { replace: true });
+        } else if (role === 'teacher') {
+          navigate('/teacher', { replace: true });
+        }
+      } catch (e) {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('user');
+      }
+    }
+  }, [navigate]);
 
   useEffect(() => { fetchData(); }, []);
 

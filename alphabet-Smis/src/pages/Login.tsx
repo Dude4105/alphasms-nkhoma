@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Lock, Mail } from 'lucide-react';
 import '../App.css';
@@ -7,10 +7,30 @@ export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isForgotPassword, setIsForgotPassword] = useState(false);
   const [isResetSent, setIsResetSent] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+    const userStr = localStorage.getItem('user');
+    if (token && userStr) {
+      try {
+        const user = JSON.parse(userStr);
+        const role = user.role?.toLowerCase() || '';
+        if (role === 'admin') {
+          navigate('/admin', { replace: true });
+        } else if (role === 'teacher') {
+          navigate('/teacher', { replace: true });
+        }
+      } catch (e) {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('user');
+      }
+    }
+  }, [navigate]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,6 +56,10 @@ export default function Login() {
       // Store token and user
       localStorage.setItem('accessToken', data.accessToken);
       localStorage.setItem('user', JSON.stringify(data.user));
+      localStorage.setItem('rememberMe', rememberMe ? 'true' : 'false');
+      if (!rememberMe) {
+        sessionStorage.setItem('sessionActive', 'true');
+      }
 
       // Navigate based on role from backend
       const role = data.user.role?.toLowerCase() || '';
@@ -203,7 +227,16 @@ export default function Login() {
               </div>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1.5rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+                <input 
+                  type="checkbox" 
+                  checked={rememberMe} 
+                  onChange={e => setRememberMe(e.target.checked)}
+                  style={{ cursor: 'pointer', width: 'auto', height: 'auto', margin: 0 }}
+                />
+                Remember Me
+              </label>
               <button 
                 type="button"
                 onClick={() => { setIsForgotPassword(true); setError(''); }}

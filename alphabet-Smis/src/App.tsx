@@ -55,6 +55,23 @@ import SchoolGallery from './pages/admin/SchoolGallery';
 import SchoolGalleryForm from './pages/admin/SchoolGalleryForm';
 import './App.css';
 
+// Session management for "Remember Me"
+const token = localStorage.getItem('accessToken');
+if (token) {
+  const rememberMe = localStorage.getItem('rememberMe') === 'true';
+  const sessionActive = sessionStorage.getItem('sessionActive') === 'true';
+  
+  if (!rememberMe && !sessionActive) {
+    // This is a new browser session, and user didn't select "Remember Me".
+    // Clear storage to force login.
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('user');
+  } else {
+    // Mark session as active so refreshing doesn't log the user out
+    sessionStorage.setItem('sessionActive', 'true');
+  }
+}
+
 function App() {
   return (
     <Router>

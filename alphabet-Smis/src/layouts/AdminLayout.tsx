@@ -130,6 +130,8 @@ export default function AdminLayout() {
     } finally {
       localStorage.removeItem('accessToken');
       localStorage.removeItem('user');
+      localStorage.removeItem('rememberMe');
+      sessionStorage.removeItem('sessionActive');
       navigate('/login');
     }
   };

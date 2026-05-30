@@ -55,8 +55,8 @@
     "semantic_hash": "8c7e35426fe8f6f3ed91e9dce0ed7af1"
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\App.tsx": {
-    "mtime": 1779904834.1154153,
-    "ast_hash": "a5cfb192888679a9740045402d3a7bb5",
+    "mtime": 1780139818.5775754,
+    "ast_hash": "3d128d0c14a95fd9b4c5d5368eb04ceb",
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\main.tsx": {
@@ -70,13 +70,13 @@
     "semantic_hash": "acf69d29e675864047c59b91f8a37c71"
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\layouts\\AdminLayout.tsx": {
-    "mtime": 1779959030.1594148,
-    "ast_hash": "093d8ffe826cb558c7d70b9fe0f795ae",
+    "mtime": 1780139834.59103,
+    "ast_hash": "da853f5218ab8a3fb45f0a9d3975b987",
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\layouts\\TeacherLayout.tsx": {
-    "mtime": 1779959030.1594148,
-    "ast_hash": "69c26e4ddd04d7510a73769751fc7e64",
+    "mtime": 1780139837.9594524,
+    "ast_hash": "3323ff3add7e24cf957e1cc12821446f",
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\Apply.tsx": {
@@ -105,13 +105,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\Home.tsx": {
-    "mtime": 1779959225.4358356,
-    "ast_hash": "7a42e705815fac9545de5afaf38372a9",
+    "mtime": 1780139820.238399,
+    "ast_hash": "c6c900660401ef0f4f52f83999986218",
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\Login.tsx": {
-    "mtime": 1779959453.079891,
-    "ast_hash": "0ee86c570005a496a9163eb61b03307a",
+    "mtime": 1780139832.726867,
+    "ast_hash": "57e5a66b196ed2ad81dc36c034d51235",
     "semantic_hash": ""
   },
   "C:\\Users\\dude\\Desktop\\41\\Project\\alphabetsmis-II\\alphabet-Smis\\src\\pages\\PublicStudentReport.tsx": {

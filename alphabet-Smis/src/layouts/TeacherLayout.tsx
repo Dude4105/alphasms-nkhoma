@@ -127,6 +127,8 @@ export default function TeacherLayout() {
     } finally {
       localStorage.removeItem('accessToken');
       localStorage.removeItem('user');
+      localStorage.removeItem('rememberMe');
+      sessionStorage.removeItem('sessionActive');
       navigate('/login');
     }
   };

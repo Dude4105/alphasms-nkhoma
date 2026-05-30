@@ -1,16 +1,16 @@
 # Graph Report - alphabetsmis-II  (2026-05-30)
 
 ## Corpus Check
-- 140 files · ~1,249,509 words
+- 140 files · ~1,249,760 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 975 nodes · 1150 edges · 95 communities (53 shown, 42 thin omitted)
+- 976 nodes · 1151 edges · 96 communities (54 shown, 42 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 20 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8e661d94`
+- Built from commit: `76948a71`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -61,6 +61,7 @@
 - [[_COMMUNITY_Community 43|Community 43]]
 - [[_COMMUNITY_Community 44|Community 44]]
 - [[_COMMUNITY_Community 45|Community 45]]
+- [[_COMMUNITY_Community 46|Community 46]]
 - [[_COMMUNITY_Community 47|Community 47]]
 - [[_COMMUNITY_Community 48|Community 48]]
 - [[_COMMUNITY_Community 49|Community 49]]
@@ -69,6 +70,7 @@
 - [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
 - [[_COMMUNITY_Community 54|Community 54]]
+- [[_COMMUNITY_Community 55|Community 55]]
 - [[_COMMUNITY_Community 56|Community 56]]
 - [[_COMMUNITY_Community 57|Community 57]]
 - [[_COMMUNITY_Community 58|Community 58]]
@@ -120,11 +122,11 @@
 - **Public Portal Navigation Flow** — home_tsx, apply_tsx, explore_campus_tsx, campus_gallery_tsx [INFERRED 0.85]
 - **UI/UX Pro Max Tooling** — core_py, design_system_py, search_py [EXTRACTED 1.00]
 
-## Communities (95 total, 42 thin omitted)
+## Communities (96 total, 42 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.05
-Nodes (16): AdminModule, AttendanceController, AttendanceModule, AttendanceService, ClassesModule, EnrollmentController, EnrollmentModule, EnrollmentService (+8 more)
+Cohesion: 0.18
+Nodes (3): EnrollmentController, EnrollmentModule, EnrollmentService
 
 ### Community 1 - "Community 1"
 Cohesion: 0.04
@@ -162,10 +164,6 @@ Nodes (18): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx
 Cohesion: 0.11
 Nodes (17): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+9 more)
 
-### Community 14 - "Community 14"
-Cohesion: 0.14
-Nodes (3): SubjectsController, SubjectsModule, SubjectsService
-
 ### Community 15 - "Community 15"
 Cohesion: 0.06
 Nodes (7): FinanceController, randomName, FinanceModule, FinanceService, payments, res, structures
@@ -178,6 +176,10 @@ Nodes (21): Additional Forbidden Patterns, Anti-Patterns (Do NOT Use), Buttons, 
 Cohesion: 0.12
 Nodes (4): ext, FeedsController, FeedsModule, FeedsService
 
+### Community 18 - "Community 18"
+Cohesion: 0.21
+Nodes (6): ClassesModule, HostelsModule, AppModule, StudentsModule, SubjectsModule, TeachersModule
+
 ### Community 19 - "Community 19"
 Cohesion: 0.14
 Nodes (4): ext, GalleryController, GalleryModule, GalleryService
@@ -189,6 +191,14 @@ Nodes (14): Admin Portal Layout, React App Router, Admissions Form, Campus Galle
 ### Community 22 - "Community 22"
 Cohesion: 0.17
 Nodes (4): SubjectEntry, Slot, SubjectEntry, SearchableSelectProps
+
+### Community 24 - "Community 24"
+Cohesion: 0.23
+Nodes (3): AttendanceController, AttendanceModule, AttendanceService
+
+### Community 27 - "Community 27"
+Cohesion: 0.06
+Nodes (8): normalizeSubjectKey(), PaginationDto, HostelsService, PrismaService, PublicResultsController, StudentsController, StudentsService, SubjectsService
 
 ### Community 29 - "Community 29"
 Cohesion: 0.29
@@ -255,24 +265,24 @@ Cohesion: 0.33
 Nodes (5): code:js (export default defineConfig([), code:js (// eslint.config.js), Expanding the ESLint configuration, React Compiler, React + TypeScript + Vite
 
 ## Knowledge Gaps
-- **328 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+323 more)
+- **329 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+324 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **42 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `TeachersService` connect `Community 7` to `Community 24`, `Community 0`?**
+- **Why does `TeachersService` connect `Community 7` to `Community 18`, `Community 27`?**
   _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `TeachersController` connect `Community 10` to `Community 24`, `Community 0`?**
+- **Why does `TeachersController` connect `Community 10` to `Community 18`, `Community 27`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
-- **Why does `AdminService` connect `Community 2` to `Community 0`, `Community 27`?**
+- **Why does `AdminService` connect `Community 2` to `Community 27`, `Community 46`?**
   _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _354 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.05143191116306254 - nodes in this community are weakly interconnected._
+  _355 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._
+- **Should `Community 3` be split into smaller, more focused modules?**
+  _Cohesion score 0.05520614954577219 - nodes in this community are weakly interconnected._
