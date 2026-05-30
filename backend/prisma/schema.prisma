@@ -115,8 +115,8 @@ model Hostel {
   wardenEmail String?
   capacity  Int
   
-  ownerId   Int
-  owner     HostelOwner @relation(fields: [ownerId], references: [id])
+  ownerId   Int?
+  owner     HostelOwner? @relation(fields: [ownerId], references: [id])
   
   students  Student[]
   
@@ -124,7 +124,6 @@ model Hostel {
   updatedAt DateTime  @updatedAt
 
   @@index([hostel_id])
-  @@index([ownerId])
 }
 
 model Teacher {

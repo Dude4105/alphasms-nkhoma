@@ -1402,7 +1402,7 @@
       "source_file": "alphabet-Smis/src/layouts/AdminLayout.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_layouts_adminlayout_tsx",
-      "community": 54,
+      "community": 5,
       "norm_label": "adminlayout.tsx"
     },
     {
@@ -1411,7 +1411,7 @@
       "source_file": "alphabet-Smis/src/layouts/AdminLayout.tsx",
       "source_location": "L27",
       "id": "layouts_adminlayout_adminlayout",
-      "community": 54,
+      "community": 5,
       "norm_label": "adminlayout()"
     },
     {
@@ -2401,7 +2401,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/ClassRoster.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_teacher_classroster_tsx",
-      "community": 5,
+      "community": 54,
       "norm_label": "classroster.tsx"
     },
     {
@@ -2410,7 +2410,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/ClassRoster.tsx",
       "source_location": "L5",
       "id": "teacher_classroster_studentrow",
-      "community": 5,
+      "community": 54,
       "norm_label": "studentrow"
     },
     {
@@ -2419,7 +2419,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/ClassRoster.tsx",
       "source_location": "L12",
       "id": "teacher_classroster_classroster",
-      "community": 5,
+      "community": 54,
       "norm_label": "classroster()"
     },
     {
@@ -2588,7 +2588,7 @@
       "label": "Info()",
       "file_type": "code",
       "source_file": "alphabet-Smis/src/pages/teacher/MainClass.tsx",
-      "source_location": "L362",
+      "source_location": "L371",
       "id": "teacher_mainclass_info",
       "community": 37,
       "norm_label": "info()"
@@ -2617,7 +2617,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/StudentReport.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_teacher_studentreport_tsx",
-      "community": 87,
+      "community": 5,
       "norm_label": "studentreport.tsx"
     },
     {
@@ -2626,7 +2626,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/StudentReport.tsx",
       "source_location": "L5",
       "id": "teacher_studentreport_studentreport",
-      "community": 87,
+      "community": 5,
       "norm_label": "studentreport()"
     },
     {
@@ -5936,7 +5936,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "backend/src/hostels/hostels.service.ts",
-      "source_location": "L125",
+      "source_location": "L124",
       "id": "hostels_hostels_service_hostelsservice_update",
       "community": 18,
       "norm_label": ".update()"
@@ -5945,7 +5945,7 @@
       "label": ".remove()",
       "file_type": "code",
       "source_file": "backend/src/hostels/hostels.service.ts",
-      "source_location": "L144",
+      "source_location": "L143",
       "id": "hostels_hostels_service_hostelsservice_remove",
       "community": 18,
       "norm_label": ".remove()"
@@ -20707,5 +20707,5 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/scripts/search.py"
     }
   ],
-  "built_at_commit": "42cb3f9fac98ecbd6c89f2594dfae8bf36fa4c97"
+  "built_at_commit": "ad2715c8632d1e70cd96052ccd257757f422e31a"
 }
