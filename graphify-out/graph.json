@@ -758,6 +758,33 @@
       "norm_label": "vite.config.ts"
     },
     {
+      "label": "env",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/vite.config.ts",
+      "source_location": "L8",
+      "id": "alphabet_smis_vite_config_env",
+      "community": 81,
+      "norm_label": "env"
+    },
+    {
+      "label": "escapedApiUrl",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/vite.config.ts",
+      "source_location": "L11",
+      "id": "alphabet_smis_vite_config_escapedapiurl",
+      "community": 81,
+      "norm_label": "escapedapiurl"
+    },
+    {
+      "label": "apiUrlRegex",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/vite.config.ts",
+      "source_location": "L12",
+      "id": "alphabet_smis_vite_config_apiurlregex",
+      "community": 81,
+      "norm_label": "apiurlregex"
+    },
+    {
       "label": "core.py",
       "file_type": "code",
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/scripts/core.py",
@@ -1402,7 +1429,7 @@
       "source_file": "alphabet-Smis/src/layouts/AdminLayout.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_layouts_adminlayout_tsx",
-      "community": 5,
+      "community": 88,
       "norm_label": "adminlayout.tsx"
     },
     {
@@ -1411,7 +1438,7 @@
       "source_file": "alphabet-Smis/src/layouts/AdminLayout.tsx",
       "source_location": "L27",
       "id": "layouts_adminlayout_adminlayout",
-      "community": 5,
+      "community": 88,
       "norm_label": "adminlayout()"
     },
     {
@@ -1438,7 +1465,7 @@
       "source_file": "alphabet-Smis/src/pages/Apply.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_apply_tsx",
-      "community": 97,
+      "community": 5,
       "norm_label": "apply.tsx"
     },
     {
@@ -1447,7 +1474,7 @@
       "source_file": "alphabet-Smis/src/pages/Apply.tsx",
       "source_location": "L15",
       "id": "pages_apply_apply",
-      "community": 97,
+      "community": 5,
       "norm_label": "apply()"
     },
     {
@@ -1537,7 +1564,7 @@
       "source_file": "alphabet-Smis/src/pages/ExploreCampusDetail.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_explorecampusdetail_tsx",
-      "community": 55,
+      "community": 5,
       "norm_label": "explorecampusdetail.tsx"
     },
     {
@@ -1546,7 +1573,7 @@
       "source_file": "alphabet-Smis/src/pages/ExploreCampusDetail.tsx",
       "source_location": "L7",
       "id": "pages_explorecampusdetail_schoolfeed",
-      "community": 55,
+      "community": 5,
       "norm_label": "schoolfeed"
     },
     {
@@ -1555,7 +1582,7 @@
       "source_file": "alphabet-Smis/src/pages/ExploreCampusDetail.tsx",
       "source_location": "L15",
       "id": "pages_explorecampusdetail_explorecampusdetail",
-      "community": 55,
+      "community": 5,
       "norm_label": "explorecampusdetail()"
     },
     {
@@ -1600,7 +1627,7 @@
       "source_file": "alphabet-Smis/src/pages/Login.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_login_tsx",
-      "community": 5,
+      "community": 91,
       "norm_label": "login.tsx"
     },
     {
@@ -1609,7 +1636,7 @@
       "source_file": "alphabet-Smis/src/pages/Login.tsx",
       "source_location": "L6",
       "id": "pages_login_login",
-      "community": 5,
+      "community": 91,
       "norm_label": "login()"
     },
     {
@@ -1618,7 +1645,7 @@
       "source_file": "alphabet-Smis/src/pages/PublicStudentHistory.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_publicstudenthistory_tsx",
-      "community": 101,
+      "community": 5,
       "norm_label": "publicstudenthistory.tsx"
     },
     {
@@ -1627,7 +1654,7 @@
       "source_file": "alphabet-Smis/src/pages/PublicStudentHistory.tsx",
       "source_location": "L9",
       "id": "pages_publicstudenthistory_publicstudenthistory",
-      "community": 101,
+      "community": 5,
       "norm_label": "publicstudenthistory()"
     },
     {
@@ -1735,7 +1762,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Boarding.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_boarding_tsx",
-      "community": 5,
+      "community": 46,
       "norm_label": "boarding.tsx"
     },
     {
@@ -1744,7 +1771,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Boarding.tsx",
       "source_location": "L25",
       "id": "admin_boarding_boarding",
-      "community": 5,
+      "community": 46,
       "norm_label": "boarding()"
     },
     {
@@ -1753,7 +1780,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/ClassDetail.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_classdetail_tsx",
-      "community": 5,
+      "community": 55,
       "norm_label": "classdetail.tsx"
     },
     {
@@ -1762,7 +1789,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/ClassDetail.tsx",
       "source_location": "L8",
       "id": "admin_classdetail_classdetail",
-      "community": 5,
+      "community": 55,
       "norm_label": "classdetail()"
     },
     {
@@ -1870,7 +1897,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/EditStudent.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_editstudent_tsx",
-      "community": 95,
+      "community": 5,
       "norm_label": "editstudent.tsx"
     },
     {
@@ -1879,7 +1906,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/EditStudent.tsx",
       "source_location": "L9",
       "id": "admin_editstudent_editstudent",
-      "community": 95,
+      "community": 5,
       "norm_label": "editstudent()"
     },
     {
@@ -1924,7 +1951,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Finance.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_finance_tsx",
-      "community": 5,
+      "community": 65,
       "norm_label": "finance.tsx"
     },
     {
@@ -1933,7 +1960,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Finance.tsx",
       "source_location": "L8",
       "id": "admin_finance_finance",
-      "community": 5,
+      "community": 65,
       "norm_label": "finance()"
     },
     {
@@ -1969,7 +1996,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Profile.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_profile_tsx",
-      "community": 5,
+      "community": 78,
       "norm_label": "profile.tsx"
     },
     {
@@ -1978,7 +2005,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Profile.tsx",
       "source_location": "L7",
       "id": "admin_profile_adminprofile",
-      "community": 5,
+      "community": 78,
       "norm_label": "adminprofile()"
     },
     {
@@ -1987,7 +2014,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/SchoolFeedForm.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_schoolfeedform_tsx",
-      "community": 99,
+      "community": 5,
       "norm_label": "schoolfeedform.tsx"
     },
     {
@@ -1996,7 +2023,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/SchoolFeedForm.tsx",
       "source_location": "L5",
       "id": "admin_schoolfeedform_schoolfeedform",
-      "community": 99,
+      "community": 5,
       "norm_label": "schoolfeedform()"
     },
     {
@@ -2122,7 +2149,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/StudentHistory.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_studenthistory_tsx",
-      "community": 93,
+      "community": 5,
       "norm_label": "studenthistory.tsx"
     },
     {
@@ -2131,7 +2158,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/StudentHistory.tsx",
       "source_location": "L7",
       "id": "admin_studenthistory_studenthistory",
-      "community": 93,
+      "community": 5,
       "norm_label": "studenthistory()"
     },
     {
@@ -2194,7 +2221,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/TeacherDetail.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_teacherdetail_tsx",
-      "community": 5,
+      "community": 87,
       "norm_label": "teacherdetail.tsx"
     },
     {
@@ -2203,7 +2230,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/TeacherDetail.tsx",
       "source_location": "L9",
       "id": "admin_teacherdetail_teacherdetail",
-      "community": 5,
+      "community": 87,
       "norm_label": "teacherdetail()"
     },
     {
@@ -2428,7 +2455,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/Dashboard.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_teacher_dashboard_tsx",
-      "community": 92,
+      "community": 5,
       "norm_label": "dashboard.tsx"
     },
     {
@@ -2437,7 +2464,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/Dashboard.tsx",
       "source_location": "L4",
       "id": "teacher_dashboard_dashboard",
-      "community": 92,
+      "community": 5,
       "norm_label": "dashboard()"
     },
     {
@@ -2599,7 +2626,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/Profile.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_teacher_profile_tsx",
-      "community": 5,
+      "community": 92,
       "norm_label": "profile.tsx"
     },
     {
@@ -2608,7 +2635,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/Profile.tsx",
       "source_location": "L7",
       "id": "teacher_profile_profile",
-      "community": 5,
+      "community": 92,
       "norm_label": "profile()"
     },
     {
@@ -2806,7 +2833,7 @@
       "source_file": "backend/package.json",
       "source_location": "L1",
       "id": "backend_package_json",
-      "community": 78,
+      "community": 1,
       "norm_label": "package.json"
     },
     {
@@ -2815,7 +2842,7 @@
       "source_file": "backend/package.json",
       "source_location": "L2",
       "id": "backend_package_name",
-      "community": 78,
+      "community": 1,
       "norm_label": "name"
     },
     {
@@ -2824,7 +2851,7 @@
       "source_file": "backend/package.json",
       "source_location": "L3",
       "id": "backend_package_version",
-      "community": 78,
+      "community": 1,
       "norm_label": "version"
     },
     {
@@ -2833,7 +2860,7 @@
       "source_file": "backend/package.json",
       "source_location": "L4",
       "id": "backend_package_description",
-      "community": 78,
+      "community": 1,
       "norm_label": "description"
     },
     {
@@ -2842,7 +2869,7 @@
       "source_file": "backend/package.json",
       "source_location": "L5",
       "id": "backend_package_author",
-      "community": 78,
+      "community": 1,
       "norm_label": "author"
     },
     {
@@ -2851,7 +2878,7 @@
       "source_file": "backend/package.json",
       "source_location": "L6",
       "id": "backend_package_private",
-      "community": 78,
+      "community": 1,
       "norm_label": "private"
     },
     {
@@ -2860,7 +2887,7 @@
       "source_file": "backend/package.json",
       "source_location": "L7",
       "id": "backend_package_license",
-      "community": 78,
+      "community": 1,
       "norm_label": "license"
     },
     {
@@ -2869,7 +2896,7 @@
       "source_file": "backend/package.json",
       "source_location": "L8",
       "id": "backend_package_scripts",
-      "community": 46,
+      "community": 1,
       "norm_label": "scripts"
     },
     {
@@ -2878,7 +2905,7 @@
       "source_file": "backend/package.json",
       "source_location": "L9",
       "id": "backend_package_scripts_build",
-      "community": 46,
+      "community": 1,
       "norm_label": "build"
     },
     {
@@ -2887,7 +2914,7 @@
       "source_file": "backend/package.json",
       "source_location": "L10",
       "id": "backend_package_scripts_format",
-      "community": 46,
+      "community": 1,
       "norm_label": "format"
     },
     {
@@ -2896,7 +2923,7 @@
       "source_file": "backend/package.json",
       "source_location": "L11",
       "id": "backend_package_scripts_start",
-      "community": 46,
+      "community": 1,
       "norm_label": "start"
     },
     {
@@ -2905,7 +2932,7 @@
       "source_file": "backend/package.json",
       "source_location": "L12",
       "id": "backend_package_scripts_start_dev",
-      "community": 46,
+      "community": 1,
       "norm_label": "start:dev"
     },
     {
@@ -2914,7 +2941,7 @@
       "source_file": "backend/package.json",
       "source_location": "L13",
       "id": "backend_package_scripts_start_debug",
-      "community": 46,
+      "community": 1,
       "norm_label": "start:debug"
     },
     {
@@ -2923,7 +2950,7 @@
       "source_file": "backend/package.json",
       "source_location": "L14",
       "id": "backend_package_scripts_start_prod",
-      "community": 46,
+      "community": 1,
       "norm_label": "start:prod"
     },
     {
@@ -2932,7 +2959,7 @@
       "source_file": "backend/package.json",
       "source_location": "L15",
       "id": "backend_package_scripts_lint",
-      "community": 46,
+      "community": 1,
       "norm_label": "lint"
     },
     {
@@ -2941,7 +2968,7 @@
       "source_file": "backend/package.json",
       "source_location": "L16",
       "id": "backend_package_scripts_test",
-      "community": 46,
+      "community": 1,
       "norm_label": "test"
     },
     {
@@ -2950,7 +2977,7 @@
       "source_file": "backend/package.json",
       "source_location": "L17",
       "id": "backend_package_scripts_test_watch",
-      "community": 46,
+      "community": 1,
       "norm_label": "test:watch"
     },
     {
@@ -2959,7 +2986,7 @@
       "source_file": "backend/package.json",
       "source_location": "L18",
       "id": "backend_package_scripts_test_cov",
-      "community": 46,
+      "community": 1,
       "norm_label": "test:cov"
     },
     {
@@ -2968,7 +2995,7 @@
       "source_file": "backend/package.json",
       "source_location": "L19",
       "id": "backend_package_scripts_test_debug",
-      "community": 46,
+      "community": 1,
       "norm_label": "test:debug"
     },
     {
@@ -2977,7 +3004,7 @@
       "source_file": "backend/package.json",
       "source_location": "L20",
       "id": "backend_package_scripts_test_e2e",
-      "community": 46,
+      "community": 1,
       "norm_label": "test:e2e"
     },
     {
@@ -3364,7 +3391,7 @@
       "source_file": "backend/package.json",
       "source_location": "L66",
       "id": "backend_package_jest",
-      "community": 91,
+      "community": 1,
       "norm_label": "jest"
     },
     {
@@ -3373,7 +3400,7 @@
       "source_file": "backend/package.json",
       "source_location": "L67",
       "id": "backend_package_jest_modulefileextensions",
-      "community": 91,
+      "community": 1,
       "norm_label": "modulefileextensions"
     },
     {
@@ -3382,7 +3409,7 @@
       "source_file": "backend/package.json",
       "source_location": "L72",
       "id": "backend_package_jest_rootdir",
-      "community": 91,
+      "community": 1,
       "norm_label": "rootdir"
     },
     {
@@ -3391,7 +3418,7 @@
       "source_file": "backend/package.json",
       "source_location": "L73",
       "id": "backend_package_jest_testregex",
-      "community": 91,
+      "community": 1,
       "norm_label": "testregex"
     },
     {
@@ -3400,7 +3427,7 @@
       "source_file": "backend/package.json",
       "source_location": "L74",
       "id": "backend_package_jest_transform",
-      "community": 91,
+      "community": 1,
       "norm_label": "transform"
     },
     {
@@ -3409,7 +3436,7 @@
       "source_file": "backend/package.json",
       "source_location": "L75",
       "id": "backend_package_transform_t_j_s",
-      "community": 91,
+      "community": 1,
       "norm_label": "^.+\\\\.(t|j)s$"
     },
     {
@@ -3418,7 +3445,7 @@
       "source_file": "backend/package.json",
       "source_location": "L77",
       "id": "backend_package_jest_collectcoveragefrom",
-      "community": 91,
+      "community": 1,
       "norm_label": "collectcoveragefrom"
     },
     {
@@ -3427,7 +3454,7 @@
       "source_file": "backend/package.json",
       "source_location": "L80",
       "id": "backend_package_jest_coveragedirectory",
-      "community": 91,
+      "community": 1,
       "norm_label": "coveragedirectory"
     },
     {
@@ -3436,7 +3463,7 @@
       "source_file": "backend/package.json",
       "source_location": "L81",
       "id": "backend_package_jest_testenvironment",
-      "community": 91,
+      "community": 1,
       "norm_label": "testenvironment"
     },
     {
@@ -3445,7 +3472,7 @@
       "source_file": "backend/package.json",
       "source_location": "L83",
       "id": "backend_package_prisma",
-      "community": 78,
+      "community": 1,
       "norm_label": "prisma"
     },
     {
@@ -3454,7 +3481,7 @@
       "source_file": "backend/package.json",
       "source_location": "L84",
       "id": "backend_package_prisma_seed",
-      "community": 78,
+      "community": 1,
       "norm_label": "seed"
     },
     {
@@ -3904,7 +3931,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L1",
       "id": "backend_src_admin_admin_controller_ts",
-      "community": 2,
+      "community": 0,
       "norm_label": "admin.controller.ts"
     },
     {
@@ -3913,7 +3940,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L17",
       "id": "admin_admin_controller_admincontroller",
-      "community": 2,
+      "community": 21,
       "norm_label": "admincontroller"
     },
     {
@@ -3922,7 +3949,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L18",
       "id": "admin_admin_controller_admincontroller_constructor",
-      "community": 2,
+      "community": 21,
       "norm_label": ".constructor()"
     },
     {
@@ -3931,7 +3958,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L21",
       "id": "admin_admin_controller_admincontroller_getdashboardstats",
-      "community": 2,
+      "community": 21,
       "norm_label": ".getdashboardstats()"
     },
     {
@@ -3940,7 +3967,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L26",
       "id": "admin_admin_controller_admincontroller_getsettings",
-      "community": 2,
+      "community": 21,
       "norm_label": ".getsettings()"
     },
     {
@@ -3949,7 +3976,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L31",
       "id": "admin_admin_controller_admincontroller_updatesettings",
-      "community": 2,
+      "community": 21,
       "norm_label": ".updatesettings()"
     },
     {
@@ -3958,7 +3985,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L36",
       "id": "admin_admin_controller_admincontroller_getfinalresultsmode",
-      "community": 2,
+      "community": 21,
       "norm_label": ".getfinalresultsmode()"
     },
     {
@@ -3967,7 +3994,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L41",
       "id": "admin_admin_controller_admincontroller_togglefinalresultsmode",
-      "community": 2,
+      "community": 21,
       "norm_label": ".togglefinalresultsmode()"
     },
     {
@@ -3976,7 +4003,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L46",
       "id": "admin_admin_controller_admincontroller_getexamresultspublished",
-      "community": 2,
+      "community": 21,
       "norm_label": ".getexamresultspublished()"
     },
     {
@@ -3985,7 +4012,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L51",
       "id": "admin_admin_controller_admincontroller_toggleexamresultspublished",
-      "community": 2,
+      "community": 21,
       "norm_label": ".toggleexamresultspublished()"
     },
     {
@@ -3994,7 +4021,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L56",
       "id": "admin_admin_controller_admincontroller_getgradingsystem",
-      "community": 2,
+      "community": 21,
       "norm_label": ".getgradingsystem()"
     },
     {
@@ -4003,7 +4030,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L61",
       "id": "admin_admin_controller_admincontroller_updategradingsystem",
-      "community": 2,
+      "community": 21,
       "norm_label": ".updategradingsystem()"
     },
     {
@@ -4012,7 +4039,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L66",
       "id": "admin_admin_controller_admincontroller_addadmin",
-      "community": 2,
+      "community": 21,
       "norm_label": ".addadmin()"
     },
     {
@@ -4021,7 +4048,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L80",
       "id": "admin_admin_controller_admincontroller_getadmins",
-      "community": 2,
+      "community": 21,
       "norm_label": ".getadmins()"
     },
     {
@@ -4030,7 +4057,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L85",
       "id": "admin_admin_controller_admincontroller_changepassword",
-      "community": 2,
+      "community": 21,
       "norm_label": ".changepassword()"
     },
     {
@@ -4039,7 +4066,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L93",
       "id": "admin_admin_controller_admincontroller_getme",
-      "community": 2,
+      "community": 21,
       "norm_label": ".getme()"
     },
     {
@@ -4048,7 +4075,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L98",
       "id": "admin_admin_controller_admincontroller_getpasswordresets",
-      "community": 2,
+      "community": 21,
       "norm_label": ".getpasswordresets()"
     },
     {
@@ -4057,7 +4084,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L103",
       "id": "admin_admin_controller_admincontroller_resolvepasswordreset",
-      "community": 2,
+      "community": 21,
       "norm_label": ".resolvepasswordreset()"
     },
     {
@@ -4066,7 +4093,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L108",
       "id": "admin_admin_controller_admincontroller_getadmin",
-      "community": 2,
+      "community": 21,
       "norm_label": ".getadmin()"
     },
     {
@@ -4075,7 +4102,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L116",
       "id": "admin_admin_controller_admincontroller_updatepermissions",
-      "community": 2,
+      "community": 21,
       "norm_label": ".updatepermissions()"
     },
     {
@@ -4084,7 +4111,7 @@
       "source_file": "backend/src/admin/admin.controller.ts",
       "source_location": "L124",
       "id": "admin_admin_controller_admincontroller_deleteadmin",
-      "community": 2,
+      "community": 21,
       "norm_label": ".deleteadmin()"
     },
     {
@@ -4111,7 +4138,7 @@
       "source_file": "backend/src/admin/admin.service.ts",
       "source_location": "L1",
       "id": "backend_src_admin_admin_service_ts",
-      "community": 21,
+      "community": 27,
       "norm_label": "admin.service.ts"
     },
     {
@@ -4606,7 +4633,7 @@
       "source_file": "backend/src/auth/jwt.strategy.ts",
       "source_location": "L1",
       "id": "backend_src_auth_jwt_strategy_ts",
-      "community": 21,
+      "community": 27,
       "norm_label": "jwt.strategy.ts"
     },
     {
@@ -4768,7 +4795,7 @@
       "source_file": "backend/src/classes/classes.module.ts",
       "source_location": "L1",
       "id": "backend_src_classes_classes_module_ts",
-      "community": 24,
+      "community": 0,
       "norm_label": "classes.module.ts"
     },
     {
@@ -5137,7 +5164,7 @@
       "source_file": "backend/src/feeds/feeds.module.ts",
       "source_location": "L1",
       "id": "backend_src_feeds_feeds_module_ts",
-      "community": 0,
+      "community": 17,
       "norm_label": "feeds.module.ts"
     },
     {
@@ -5146,7 +5173,7 @@
       "source_file": "backend/src/feeds/feeds.module.ts",
       "source_location": "L11",
       "id": "feeds_feeds_module_feedsmodule",
-      "community": 0,
+      "community": 17,
       "norm_label": "feedsmodule"
     },
     {
@@ -5155,7 +5182,7 @@
       "source_file": "backend/src/feeds/feeds.service.ts",
       "source_location": "L1",
       "id": "backend_src_feeds_feeds_service_ts",
-      "community": 21,
+      "community": 17,
       "norm_label": "feeds.service.ts"
     },
     {
@@ -5686,7 +5713,7 @@
       "source_file": "backend/src/gallery/gallery.module.ts",
       "source_location": "L1",
       "id": "backend_src_gallery_gallery_module_ts",
-      "community": 0,
+      "community": 19,
       "norm_label": "gallery.module.ts"
     },
     {
@@ -5695,7 +5722,7 @@
       "source_file": "backend/src/gallery/gallery.module.ts",
       "source_location": "L11",
       "id": "gallery_gallery_module_gallerymodule",
-      "community": 0,
+      "community": 19,
       "norm_label": "gallerymodule"
     },
     {
@@ -5704,7 +5731,7 @@
       "source_file": "backend/src/gallery/gallery.service.ts",
       "source_location": "L1",
       "id": "backend_src_gallery_gallery_service_ts",
-      "community": 21,
+      "community": 19,
       "norm_label": "gallery.service.ts"
     },
     {
@@ -5785,7 +5812,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L18",
       "id": "hostels_hostels_controller_hostelscontroller",
-      "community": 65,
+      "community": 0,
       "norm_label": "hostelscontroller"
     },
     {
@@ -5794,7 +5821,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L19",
       "id": "hostels_hostels_controller_hostelscontroller_constructor",
-      "community": 65,
+      "community": 0,
       "norm_label": ".constructor()"
     },
     {
@@ -5803,7 +5830,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L22",
       "id": "hostels_hostels_controller_hostelscontroller_findall",
-      "community": 65,
+      "community": 0,
       "norm_label": ".findall()"
     },
     {
@@ -5812,7 +5839,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L27",
       "id": "hostels_hostels_controller_hostelscontroller_create",
-      "community": 65,
+      "community": 0,
       "norm_label": ".create()"
     },
     {
@@ -5821,7 +5848,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L32",
       "id": "hostels_hostels_controller_hostelscontroller_getstats",
-      "community": 65,
+      "community": 0,
       "norm_label": ".getstats()"
     },
     {
@@ -5830,7 +5857,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L37",
       "id": "hostels_hostels_controller_hostelscontroller_findone",
-      "community": 65,
+      "community": 0,
       "norm_label": ".findone()"
     },
     {
@@ -5839,7 +5866,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L42",
       "id": "hostels_hostels_controller_hostelscontroller_update",
-      "community": 65,
+      "community": 0,
       "norm_label": ".update()"
     },
     {
@@ -5848,7 +5875,7 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L47",
       "id": "hostels_hostels_controller_hostelscontroller_remove",
-      "community": 65,
+      "community": 0,
       "norm_label": ".remove()"
     },
     {
@@ -5857,7 +5884,7 @@
       "source_file": "backend/src/hostels/hostels.module.ts",
       "source_location": "L1",
       "id": "backend_src_hostels_hostels_module_ts",
-      "community": 18,
+      "community": 0,
       "norm_label": "hostels.module.ts"
     },
     {
@@ -5974,7 +6001,7 @@
       "source_file": "backend/src/prisma/prisma.service.ts",
       "source_location": "L1",
       "id": "backend_src_prisma_prisma_service_ts",
-      "community": 21,
+      "community": 27,
       "norm_label": "prisma.service.ts"
     },
     {
@@ -5983,7 +6010,7 @@
       "source_file": "backend/src/prisma/prisma.service.ts",
       "source_location": "L5",
       "id": "prisma_prisma_service_prismaservice",
-      "community": 21,
+      "community": 27,
       "norm_label": "prismaservice"
     },
     {
@@ -5992,7 +6019,7 @@
       "source_file": "backend/src/prisma/prisma.service.ts",
       "source_location": "L9",
       "id": "prisma_prisma_service_prismaservice_onmoduleinit",
-      "community": 21,
+      "community": 27,
       "norm_label": ".onmoduleinit()"
     },
     {
@@ -6001,7 +6028,7 @@
       "source_file": "backend/src/prisma/prisma.service.ts",
       "source_location": "L13",
       "id": "prisma_prisma_service_prismaservice_onmoduledestroy",
-      "community": 21,
+      "community": 27,
       "norm_label": ".onmoduledestroy()"
     },
     {
@@ -6622,7 +6649,7 @@
       "source_file": "backend/src/teachers/teachers.module.ts",
       "source_location": "L1",
       "id": "backend_src_teachers_teachers_module_ts",
-      "community": 24,
+      "community": 0,
       "norm_label": "teachers.module.ts"
     },
     {
@@ -9597,6 +9624,36 @@
       "confidence_score": 1.0,
       "source": "alphabet_smis_tsconfig_node_compileroptions",
       "target": "alphabet_smis_tsconfig_node_compileroptions_nofallthroughcasesinswitch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/vite.config.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "alphabet_smis_vite_config_ts",
+      "target": "alphabet_smis_vite_config_env",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/vite.config.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "alphabet_smis_vite_config_ts",
+      "target": "alphabet_smis_vite_config_escapedapiurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/vite.config.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "alphabet_smis_vite_config_ts",
+      "target": "alphabet_smis_vite_config_apiurlregex",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -20707,5 +20764,5 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/scripts/search.py"
     }
   ],
-  "built_at_commit": "ad2715c8632d1e70cd96052ccd257757f422e31a"
+  "built_at_commit": "8e661d943dcf250c4126af6624335cb621b3f297"
 }

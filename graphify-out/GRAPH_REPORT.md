@@ -1,16 +1,16 @@
 # Graph Report - alphabetsmis-II  (2026-05-30)
 
 ## Corpus Check
-- 140 files · ~1,249,468 words
+- 140 files · ~1,249,509 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 972 nodes · 1147 edges · 98 communities (55 shown, 43 thin omitted)
+- 975 nodes · 1150 edges · 95 communities (53 shown, 42 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 20 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ad2715c8`
+- Built from commit: `8e661d94`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -20,6 +20,7 @@
 - [[_COMMUNITY_Community 2|Community 2]]
 - [[_COMMUNITY_Community 3|Community 3]]
 - [[_COMMUNITY_Community 4|Community 4]]
+- [[_COMMUNITY_Community 5|Community 5]]
 - [[_COMMUNITY_Community 6|Community 6]]
 - [[_COMMUNITY_Community 7|Community 7]]
 - [[_COMMUNITY_Community 8|Community 8]]
@@ -60,7 +61,6 @@
 - [[_COMMUNITY_Community 43|Community 43]]
 - [[_COMMUNITY_Community 44|Community 44]]
 - [[_COMMUNITY_Community 45|Community 45]]
-- [[_COMMUNITY_Community 46|Community 46]]
 - [[_COMMUNITY_Community 47|Community 47]]
 - [[_COMMUNITY_Community 48|Community 48]]
 - [[_COMMUNITY_Community 49|Community 49]]
@@ -69,7 +69,6 @@
 - [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
 - [[_COMMUNITY_Community 54|Community 54]]
-- [[_COMMUNITY_Community 55|Community 55]]
 - [[_COMMUNITY_Community 56|Community 56]]
 - [[_COMMUNITY_Community 57|Community 57]]
 - [[_COMMUNITY_Community 58|Community 58]]
@@ -78,20 +77,18 @@
 - [[_COMMUNITY_Community 61|Community 61]]
 - [[_COMMUNITY_Community 63|Community 63]]
 - [[_COMMUNITY_Community 64|Community 64]]
-- [[_COMMUNITY_Community 65|Community 65]]
 - [[_COMMUNITY_Community 66|Community 66]]
 - [[_COMMUNITY_Community 67|Community 67]]
 - [[_COMMUNITY_Community 69|Community 69]]
 - [[_COMMUNITY_Community 70|Community 70]]
 - [[_COMMUNITY_Community 71|Community 71]]
-- [[_COMMUNITY_Community 78|Community 78]]
+- [[_COMMUNITY_Community 81|Community 81]]
 - [[_COMMUNITY_Community 83|Community 83]]
 - [[_COMMUNITY_Community 84|Community 84]]
 - [[_COMMUNITY_Community 85|Community 85]]
 - [[_COMMUNITY_Community 86|Community 86]]
 - [[_COMMUNITY_Community 89|Community 89]]
 - [[_COMMUNITY_Community 90|Community 90]]
-- [[_COMMUNITY_Community 91|Community 91]]
 - [[_COMMUNITY_Community 94|Community 94]]
 
 ## God Nodes (most connected - your core abstractions)
@@ -123,15 +120,15 @@
 - **Public Portal Navigation Flow** — home_tsx, apply_tsx, explore_campus_tsx, campus_gallery_tsx [INFERRED 0.85]
 - **UI/UX Pro Max Tooling** — core_py, design_system_py, search_py [EXTRACTED 1.00]
 
-## Communities (98 total, 43 thin omitted)
+## Communities (95 total, 42 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.07
-Nodes (17): AdminModule, AttendanceController, AttendanceModule, AttendanceService, ClassesModule, EnrollmentController, EnrollmentModule, EnrollmentService (+9 more)
+Cohesion: 0.05
+Nodes (16): AdminModule, AttendanceController, AttendanceModule, AttendanceService, ClassesModule, EnrollmentController, EnrollmentModule, EnrollmentService (+8 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.11
-Nodes (18): dependencies, bcrypt, class-transformer, class-validator, dotenv, @nestjs/common, @nestjs/core, @nestjs/jwt (+10 more)
+Cohesion: 0.04
+Nodes (48): author, dependencies, bcrypt, class-transformer, class-validator, dotenv, @nestjs/common, @nestjs/core (+40 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.06
@@ -179,11 +176,11 @@ Nodes (21): Additional Forbidden Patterns, Anti-Patterns (Do NOT Use), Buttons, 
 
 ### Community 17 - "Community 17"
 Cohesion: 0.12
-Nodes (3): ext, FeedsController, FeedsService
+Nodes (4): ext, FeedsController, FeedsModule, FeedsService
 
 ### Community 19 - "Community 19"
 Cohesion: 0.14
-Nodes (3): ext, GalleryController, GalleryService
+Nodes (4): ext, GalleryController, GalleryModule, GalleryService
 
 ### Community 20 - "Community 20"
 Cohesion: 0.30
@@ -212,10 +209,6 @@ Nodes (3): InTermData, ResultItem, SubjectItem
 ### Community 43 - "Community 43"
 Cohesion: 0.83
 Nodes (3): Home(), useCountUp(), useReveal()
-
-### Community 46 - "Community 46"
-Cohesion: 0.15
-Nodes (13): scripts, build, format, lint, start, start:debug, start:dev, start:prod (+5 more)
 
 ### Community 56 - "Community 56"
 Cohesion: 0.05
@@ -253,37 +246,33 @@ Nodes (9): 1. System Overview and Problem Statement, 2. Technology Stack and Arc
 Cohesion: 0.22
 Nodes (5): authIdx, isBackendRequest, modifiedInit, options, token
 
-### Community 78 - "Community 78"
-Cohesion: 0.22
-Nodes (8): author, description, license, name, prisma, seed, private, version
+### Community 81 - "Community 81"
+Cohesion: 0.50
+Nodes (3): apiUrlRegex, env, escapedApiUrl
 
 ### Community 86 - "Community 86"
 Cohesion: 0.33
 Nodes (5): code:js (export default defineConfig([), code:js (// eslint.config.js), Expanding the ESLint configuration, React Compiler, React + TypeScript + Vite
 
-### Community 91 - "Community 91"
-Cohesion: 0.22
-Nodes (9): jest, collectCoverageFrom, coverageDirectory, moduleFileExtensions, rootDir, testEnvironment, testRegex, transform (+1 more)
-
 ## Knowledge Gaps
-- **325 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+320 more)
+- **328 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+323 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **43 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **42 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `TeachersService` connect `Community 7` to `Community 24`?**
+- **Why does `TeachersService` connect `Community 7` to `Community 24`, `Community 0`?**
   _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `TeachersController` connect `Community 10` to `Community 24`?**
+- **Why does `TeachersController` connect `Community 10` to `Community 24`, `Community 0`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
-- **Why does `AdminService` connect `Community 2` to `Community 0`, `Community 27`, `Community 21`?**
+- **Why does `AdminService` connect `Community 2` to `Community 0`, `Community 27`?**
   _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _351 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _354 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.06509803921568627 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05143191116306254 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
