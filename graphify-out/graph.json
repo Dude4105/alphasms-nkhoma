@@ -1307,10 +1307,496 @@
       "norm_label": "app.tsx"
     },
     {
-      "label": "token",
+      "label": "Home",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L6",
+      "id": "src_app_home",
+      "community": 5,
+      "norm_label": "home"
+    },
+    {
+      "label": "Apply",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L7",
+      "id": "src_app_apply",
+      "community": 5,
+      "norm_label": "apply"
+    },
+    {
+      "label": "ExamResults",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L8",
+      "id": "src_app_examresults",
+      "community": 5,
+      "norm_label": "examresults"
+    },
+    {
+      "label": "ExploreCampus",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L9",
+      "id": "src_app_explorecampus",
+      "community": 5,
+      "norm_label": "explorecampus"
+    },
+    {
+      "label": "ExploreCampusDetail",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L10",
+      "id": "src_app_explorecampusdetail",
+      "community": 5,
+      "norm_label": "explorecampusdetail"
+    },
+    {
+      "label": "CampusGallery",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L11",
+      "id": "src_app_campusgallery",
+      "community": 5,
+      "norm_label": "campusgallery"
+    },
+    {
+      "label": "Login",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L12",
+      "id": "src_app_login",
+      "community": 5,
+      "norm_label": "login"
+    },
+    {
+      "label": "PublicStudentReport",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L13",
+      "id": "src_app_publicstudentreport",
+      "community": 5,
+      "norm_label": "publicstudentreport"
+    },
+    {
+      "label": "PublicStudentHistory",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L14",
+      "id": "src_app_publicstudenthistory",
+      "community": 5,
+      "norm_label": "publicstudenthistory"
+    },
+    {
+      "label": "TeacherLayout",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L17",
+      "id": "src_app_teacherlayout",
+      "community": 5,
+      "norm_label": "teacherlayout"
+    },
+    {
+      "label": "Dashboard",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L18",
+      "id": "src_app_dashboard",
+      "community": 5,
+      "norm_label": "dashboard"
+    },
+    {
+      "label": "Classes",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L19",
+      "id": "src_app_classes",
+      "community": 5,
+      "norm_label": "classes"
+    },
+    {
+      "label": "ClassRoster",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L20",
+      "id": "src_app_classroster",
+      "community": 5,
+      "norm_label": "classroster"
+    },
+    {
+      "label": "ClassMigration",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L21",
+      "id": "src_app_classmigration",
+      "community": 5,
+      "norm_label": "classmigration"
+    },
+    {
+      "label": "InTermResults",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L22",
+      "id": "src_app_intermresults",
+      "community": 5,
+      "norm_label": "intermresults"
+    },
+    {
+      "label": "TeacherViewTimetable",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L23",
+      "id": "src_app_teacherviewtimetable",
+      "community": 5,
+      "norm_label": "teacherviewtimetable"
+    },
+    {
+      "label": "Grades",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L24",
+      "id": "src_app_grades",
+      "community": 5,
+      "norm_label": "grades"
+    },
+    {
+      "label": "MainClass",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L25",
+      "id": "src_app_mainclass",
+      "community": 5,
+      "norm_label": "mainclass"
+    },
+    {
+      "label": "AddClassStudent",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L26",
+      "id": "src_app_addclassstudent",
+      "community": 5,
+      "norm_label": "addclassstudent"
+    },
+    {
+      "label": "FinalResults",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L27",
+      "id": "src_app_finalresults",
+      "community": 5,
+      "norm_label": "finalresults"
+    },
+    {
+      "label": "SubjectResults",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L28",
+      "id": "src_app_subjectresults",
+      "community": 5,
+      "norm_label": "subjectresults"
+    },
+    {
+      "label": "StudentReport",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L29",
+      "id": "src_app_studentreport",
+      "community": 5,
+      "norm_label": "studentreport"
+    },
+    {
+      "label": "AttendanceTracker",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L30",
+      "id": "src_app_attendancetracker",
+      "community": 5,
+      "norm_label": "attendancetracker"
+    },
+    {
+      "label": "AttendanceOverview",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L31",
+      "id": "src_app_attendanceoverview",
+      "community": 5,
+      "norm_label": "attendanceoverview"
+    },
+    {
+      "label": "StudentDetail",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L32",
+      "id": "src_app_studentdetail",
+      "community": 5,
+      "norm_label": "studentdetail"
+    },
+    {
+      "label": "StudentHistory",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L33",
+      "id": "src_app_studenthistory",
+      "community": 5,
+      "norm_label": "studenthistory"
+    },
+    {
+      "label": "Profile",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L34",
+      "id": "src_app_profile",
+      "community": 5,
+      "norm_label": "profile"
+    },
+    {
+      "label": "AdminLayout",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L37",
+      "id": "src_app_adminlayout",
+      "community": 5,
+      "norm_label": "adminlayout"
+    },
+    {
+      "label": "AdminDashboard",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L38",
+      "id": "src_app_admindashboard",
+      "community": 5,
+      "norm_label": "admindashboard"
+    },
+    {
+      "label": "Students",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L39",
+      "id": "src_app_students",
+      "community": 5,
+      "norm_label": "students"
+    },
+    {
+      "label": "AddStudent",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L40",
+      "id": "src_app_addstudent",
+      "community": 5,
+      "norm_label": "addstudent"
+    },
+    {
+      "label": "EditStudent",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L41",
+      "id": "src_app_editstudent",
+      "community": 5,
+      "norm_label": "editstudent"
+    },
+    {
+      "label": "Teachers",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L42",
+      "id": "src_app_teachers",
+      "community": 5,
+      "norm_label": "teachers"
+    },
+    {
+      "label": "AddTeacher",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L43",
+      "id": "src_app_addteacher",
+      "community": 5,
+      "norm_label": "addteacher"
+    },
+    {
+      "label": "TeacherDetail",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L44",
+      "id": "src_app_teacherdetail",
+      "community": 5,
+      "norm_label": "teacherdetail"
+    },
+    {
+      "label": "EditTeacher",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L45",
+      "id": "src_app_editteacher",
+      "community": 5,
+      "norm_label": "editteacher"
+    },
+    {
+      "label": "AdminClasses",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L46",
+      "id": "src_app_adminclasses",
+      "community": 5,
+      "norm_label": "adminclasses"
+    },
+    {
+      "label": "CreateClass",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L47",
+      "id": "src_app_createclass",
+      "community": 5,
+      "norm_label": "createclass"
+    },
+    {
+      "label": "ClassDetail",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L48",
+      "id": "src_app_classdetail",
+      "community": 5,
+      "norm_label": "classdetail"
+    },
+    {
+      "label": "EditClass",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L49",
+      "id": "src_app_editclass",
+      "community": 5,
+      "norm_label": "editclass"
+    },
+    {
+      "label": "ViewTimetable",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L50",
+      "id": "src_app_viewtimetable",
+      "community": 5,
+      "norm_label": "viewtimetable"
+    },
+    {
+      "label": "CreateTimetable",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L51",
+      "id": "src_app_createtimetable",
+      "community": 5,
+      "norm_label": "createtimetable"
+    },
+    {
+      "label": "Subjects",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L52",
+      "id": "src_app_subjects",
+      "community": 5,
+      "norm_label": "subjects"
+    },
+    {
+      "label": "Enrollment",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L53",
+      "id": "src_app_enrollment",
+      "community": 5,
+      "norm_label": "enrollment"
+    },
+    {
+      "label": "Finance",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L54",
+      "id": "src_app_finance",
+      "community": 5,
+      "norm_label": "finance"
+    },
+    {
+      "label": "Boarding",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L55",
+      "id": "src_app_boarding",
+      "community": 5,
+      "norm_label": "boarding"
+    },
+    {
+      "label": "Settings",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L56",
+      "id": "src_app_settings",
+      "community": 5,
+      "norm_label": "settings"
+    },
+    {
+      "label": "AdminDetail",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L57",
+      "id": "src_app_admindetail",
+      "community": 5,
+      "norm_label": "admindetail"
+    },
+    {
+      "label": "AdminProfile",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L58",
+      "id": "src_app_adminprofile",
+      "community": 5,
+      "norm_label": "adminprofile"
+    },
+    {
+      "label": "PasswordResets",
       "file_type": "code",
       "source_file": "alphabet-Smis/src/App.tsx",
       "source_location": "L59",
+      "id": "src_app_passwordresets",
+      "community": 5,
+      "norm_label": "passwordresets"
+    },
+    {
+      "label": "SchoolFeeds",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L60",
+      "id": "src_app_schoolfeeds",
+      "community": 5,
+      "norm_label": "schoolfeeds"
+    },
+    {
+      "label": "SchoolFeedForm",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L61",
+      "id": "src_app_schoolfeedform",
+      "community": 5,
+      "norm_label": "schoolfeedform"
+    },
+    {
+      "label": "SchoolGallery",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L62",
+      "id": "src_app_schoolgallery",
+      "community": 5,
+      "norm_label": "schoolgallery"
+    },
+    {
+      "label": "SchoolGalleryForm",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L63",
+      "id": "src_app_schoolgalleryform",
+      "community": 5,
+      "norm_label": "schoolgalleryform"
+    },
+    {
+      "label": "token",
+      "file_type": "code",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L66",
       "id": "src_app_token",
       "community": 5,
       "norm_label": "token"
@@ -1319,7 +1805,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "alphabet-Smis/src/App.tsx",
-      "source_location": "L75",
+      "source_location": "L82",
       "id": "src_app_app",
       "community": 5,
       "norm_label": "app()"
@@ -1438,7 +1924,7 @@
       "source_file": "alphabet-Smis/src/layouts/AdminLayout.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_layouts_adminlayout_tsx",
-      "community": 5,
+      "community": 116,
       "norm_label": "adminlayout.tsx"
     },
     {
@@ -1447,7 +1933,7 @@
       "source_file": "alphabet-Smis/src/layouts/AdminLayout.tsx",
       "source_location": "L27",
       "id": "layouts_adminlayout_adminlayout",
-      "community": 5,
+      "community": 116,
       "norm_label": "adminlayout()"
     },
     {
@@ -1456,7 +1942,7 @@
       "source_file": "alphabet-Smis/src/layouts/TeacherLayout.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_layouts_teacherlayout_tsx",
-      "community": 5,
+      "community": 117,
       "norm_label": "teacherlayout.tsx"
     },
     {
@@ -1465,7 +1951,7 @@
       "source_file": "alphabet-Smis/src/layouts/TeacherLayout.tsx",
       "source_location": "L20",
       "id": "layouts_teacherlayout_teacherlayout",
-      "community": 5,
+      "community": 117,
       "norm_label": "teacherlayout()"
     },
     {
@@ -1474,7 +1960,7 @@
       "source_file": "alphabet-Smis/src/pages/Apply.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_apply_tsx",
-      "community": 5,
+      "community": 118,
       "norm_label": "apply.tsx"
     },
     {
@@ -1483,7 +1969,7 @@
       "source_file": "alphabet-Smis/src/pages/Apply.tsx",
       "source_location": "L15",
       "id": "pages_apply_apply",
-      "community": 5,
+      "community": 118,
       "norm_label": "apply()"
     },
     {
@@ -1708,7 +2194,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/AddTeacher.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_addteacher_tsx",
-      "community": 5,
+      "community": 107,
       "norm_label": "addteacher.tsx"
     },
     {
@@ -1717,7 +2203,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/AddTeacher.tsx",
       "source_location": "L9",
       "id": "admin_addteacher_addteacher",
-      "community": 5,
+      "community": 107,
       "norm_label": "addteacher()"
     },
     {
@@ -1771,7 +2257,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Boarding.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_boarding_tsx",
-      "community": 5,
+      "community": 108,
       "norm_label": "boarding.tsx"
     },
     {
@@ -1780,7 +2266,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Boarding.tsx",
       "source_location": "L25",
       "id": "admin_boarding_boarding",
-      "community": 5,
+      "community": 108,
       "norm_label": "boarding()"
     },
     {
@@ -1789,7 +2275,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/ClassDetail.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_classdetail_tsx",
-      "community": 5,
+      "community": 109,
       "norm_label": "classdetail.tsx"
     },
     {
@@ -1798,7 +2284,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/ClassDetail.tsx",
       "source_location": "L8",
       "id": "admin_classdetail_classdetail",
-      "community": 5,
+      "community": 109,
       "norm_label": "classdetail()"
     },
     {
@@ -1861,7 +2347,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Dashboard.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_dashboard_tsx",
-      "community": 5,
+      "community": 110,
       "norm_label": "dashboard.tsx"
     },
     {
@@ -1870,7 +2356,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Dashboard.tsx",
       "source_location": "L5",
       "id": "admin_dashboard_admindashboard",
-      "community": 5,
+      "community": 110,
       "norm_label": "admindashboard()"
     },
     {
@@ -1942,7 +2428,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Enrollment.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_enrollment_tsx",
-      "community": 5,
+      "community": 111,
       "norm_label": "enrollment.tsx"
     },
     {
@@ -1951,7 +2437,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Enrollment.tsx",
       "source_location": "L5",
       "id": "admin_enrollment_enrollment",
-      "community": 5,
+      "community": 111,
       "norm_label": "enrollment()"
     },
     {
@@ -1960,7 +2446,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Finance.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_finance_tsx",
-      "community": 5,
+      "community": 112,
       "norm_label": "finance.tsx"
     },
     {
@@ -1969,7 +2455,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Finance.tsx",
       "source_location": "L8",
       "id": "admin_finance_finance",
-      "community": 5,
+      "community": 112,
       "norm_label": "finance()"
     },
     {
@@ -2005,7 +2491,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Profile.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_profile_tsx",
-      "community": 5,
+      "community": 113,
       "norm_label": "profile.tsx"
     },
     {
@@ -2014,7 +2500,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Profile.tsx",
       "source_location": "L7",
       "id": "admin_profile_adminprofile",
-      "community": 5,
+      "community": 113,
       "norm_label": "adminprofile()"
     },
     {
@@ -2095,7 +2581,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/SchoolGalleryForm.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_schoolgalleryform_tsx",
-      "community": 5,
+      "community": 114,
       "norm_label": "schoolgalleryform.tsx"
     },
     {
@@ -2104,7 +2590,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/SchoolGalleryForm.tsx",
       "source_location": "L6",
       "id": "admin_schoolgalleryform_schoolgalleryform",
-      "community": 5,
+      "community": 114,
       "norm_label": "schoolgalleryform()"
     },
     {
@@ -2248,7 +2734,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Teachers.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_admin_teachers_tsx",
-      "community": 5,
+      "community": 115,
       "norm_label": "teachers.tsx"
     },
     {
@@ -2257,7 +2743,7 @@
       "source_file": "alphabet-Smis/src/pages/admin/Teachers.tsx",
       "source_location": "L5",
       "id": "admin_teachers_teachers",
-      "community": 5,
+      "community": 115,
       "norm_label": "teachers()"
     },
     {
@@ -2464,7 +2950,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/Dashboard.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_teacher_dashboard_tsx",
-      "community": 5,
+      "community": 119,
       "norm_label": "dashboard.tsx"
     },
     {
@@ -2473,7 +2959,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/Dashboard.tsx",
       "source_location": "L4",
       "id": "teacher_dashboard_dashboard",
-      "community": 5,
+      "community": 119,
       "norm_label": "dashboard()"
     },
     {
@@ -2482,7 +2968,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/FinalResults.tsx",
       "source_location": "L1",
       "id": "alphabet_smis_src_pages_teacher_finalresults_tsx",
-      "community": 5,
+      "community": 120,
       "norm_label": "finalresults.tsx"
     },
     {
@@ -2491,7 +2977,7 @@
       "source_file": "alphabet-Smis/src/pages/teacher/FinalResults.tsx",
       "source_location": "L10",
       "id": "teacher_finalresults_finalresults",
-      "community": 5,
+      "community": 120,
       "norm_label": "finalresults()"
     },
     {
@@ -3886,7 +4372,7 @@
       "source_file": "backend/src/app.module.ts",
       "source_location": "L43",
       "id": "src_app_module_appmodule",
-      "community": 18,
+      "community": 106,
       "norm_label": "appmodule"
     },
     {
@@ -3922,7 +4408,7 @@
       "source_file": "backend/src/main.ts",
       "source_location": "L1",
       "id": "backend_src_main_ts",
-      "community": 18,
+      "community": 106,
       "norm_label": "main.ts"
     },
     {
@@ -3931,7 +4417,7 @@
       "source_file": "backend/src/main.ts",
       "source_location": "L5",
       "id": "src_main_bootstrap",
-      "community": 18,
+      "community": 106,
       "norm_label": "bootstrap()"
     },
     {
@@ -3947,7 +4433,7 @@
       "label": "AdminController",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L17",
+      "source_location": "L21",
       "id": "admin_admin_controller_admincontroller",
       "community": 21,
       "norm_label": "admincontroller"
@@ -3956,7 +4442,7 @@
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L18",
+      "source_location": "L22",
       "id": "admin_admin_controller_admincontroller_constructor",
       "community": 21,
       "norm_label": ".constructor()"
@@ -3965,7 +4451,7 @@
       "label": ".getDashboardStats()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L21",
+      "source_location": "L25",
       "id": "admin_admin_controller_admincontroller_getdashboardstats",
       "community": 21,
       "norm_label": ".getdashboardstats()"
@@ -3974,7 +4460,7 @@
       "label": ".getSettings()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L26",
+      "source_location": "L30",
       "id": "admin_admin_controller_admincontroller_getsettings",
       "community": 21,
       "norm_label": ".getsettings()"
@@ -3983,7 +4469,7 @@
       "label": ".updateSettings()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L31",
+      "source_location": "L35",
       "id": "admin_admin_controller_admincontroller_updatesettings",
       "community": 21,
       "norm_label": ".updatesettings()"
@@ -3992,7 +4478,7 @@
       "label": ".getFinalResultsMode()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L36",
+      "source_location": "L40",
       "id": "admin_admin_controller_admincontroller_getfinalresultsmode",
       "community": 21,
       "norm_label": ".getfinalresultsmode()"
@@ -4001,7 +4487,7 @@
       "label": ".toggleFinalResultsMode()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L41",
+      "source_location": "L45",
       "id": "admin_admin_controller_admincontroller_togglefinalresultsmode",
       "community": 21,
       "norm_label": ".togglefinalresultsmode()"
@@ -4010,7 +4496,7 @@
       "label": ".getExamResultsPublished()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L46",
+      "source_location": "L50",
       "id": "admin_admin_controller_admincontroller_getexamresultspublished",
       "community": 21,
       "norm_label": ".getexamresultspublished()"
@@ -4019,7 +4505,7 @@
       "label": ".toggleExamResultsPublished()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L51",
+      "source_location": "L55",
       "id": "admin_admin_controller_admincontroller_toggleexamresultspublished",
       "community": 21,
       "norm_label": ".toggleexamresultspublished()"
@@ -4028,7 +4514,7 @@
       "label": ".getGradingSystem()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L56",
+      "source_location": "L60",
       "id": "admin_admin_controller_admincontroller_getgradingsystem",
       "community": 21,
       "norm_label": ".getgradingsystem()"
@@ -4037,7 +4523,7 @@
       "label": ".updateGradingSystem()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L61",
+      "source_location": "L65",
       "id": "admin_admin_controller_admincontroller_updategradingsystem",
       "community": 21,
       "norm_label": ".updategradingsystem()"
@@ -4046,7 +4532,7 @@
       "label": ".addAdmin()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L66",
+      "source_location": "L70",
       "id": "admin_admin_controller_admincontroller_addadmin",
       "community": 21,
       "norm_label": ".addadmin()"
@@ -4055,7 +4541,7 @@
       "label": ".getAdmins()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L80",
+      "source_location": "L84",
       "id": "admin_admin_controller_admincontroller_getadmins",
       "community": 21,
       "norm_label": ".getadmins()"
@@ -4064,7 +4550,7 @@
       "label": ".changePassword()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L85",
+      "source_location": "L89",
       "id": "admin_admin_controller_admincontroller_changepassword",
       "community": 21,
       "norm_label": ".changepassword()"
@@ -4073,7 +4559,7 @@
       "label": ".getMe()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L93",
+      "source_location": "L97",
       "id": "admin_admin_controller_admincontroller_getme",
       "community": 21,
       "norm_label": ".getme()"
@@ -4082,7 +4568,7 @@
       "label": ".getPasswordResets()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L98",
+      "source_location": "L102",
       "id": "admin_admin_controller_admincontroller_getpasswordresets",
       "community": 21,
       "norm_label": ".getpasswordresets()"
@@ -4091,7 +4577,7 @@
       "label": ".resolvePasswordReset()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L103",
+      "source_location": "L107",
       "id": "admin_admin_controller_admincontroller_resolvepasswordreset",
       "community": 21,
       "norm_label": ".resolvepasswordreset()"
@@ -4100,7 +4586,7 @@
       "label": ".getAdmin()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L108",
+      "source_location": "L112",
       "id": "admin_admin_controller_admincontroller_getadmin",
       "community": 21,
       "norm_label": ".getadmin()"
@@ -4109,7 +4595,7 @@
       "label": ".updatePermissions()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L116",
+      "source_location": "L120",
       "id": "admin_admin_controller_admincontroller_updatepermissions",
       "community": 21,
       "norm_label": ".updatepermissions()"
@@ -4118,7 +4604,7 @@
       "label": ".deleteAdmin()",
       "file_type": "code",
       "source_file": "backend/src/admin/admin.controller.ts",
-      "source_location": "L124",
+      "source_location": "L128",
       "id": "admin_admin_controller_admincontroller_deleteadmin",
       "community": 21,
       "norm_label": ".deleteadmin()"
@@ -4129,7 +4615,7 @@
       "source_file": "backend/src/admin/admin.module.ts",
       "source_location": "L1",
       "id": "backend_src_admin_admin_module_ts",
-      "community": 46,
+      "community": 18,
       "norm_label": "admin.module.ts"
     },
     {
@@ -4138,7 +4624,7 @@
       "source_file": "backend/src/admin/admin.module.ts",
       "source_location": "L11",
       "id": "admin_admin_module_adminmodule",
-      "community": 46,
+      "community": 18,
       "norm_label": "adminmodule"
     },
     {
@@ -4147,7 +4633,7 @@
       "source_file": "backend/src/admin/admin.service.ts",
       "source_location": "L1",
       "id": "backend_src_admin_admin_service_ts",
-      "community": 27,
+      "community": 95,
       "norm_label": "admin.service.ts"
     },
     {
@@ -4345,43 +4831,43 @@
       "source_file": "backend/src/attendance/attendance.controller.ts",
       "source_location": "L1",
       "id": "backend_src_attendance_attendance_controller_ts",
-      "community": 24,
+      "community": 46,
       "norm_label": "attendance.controller.ts"
     },
     {
       "label": "AttendanceController",
       "file_type": "code",
       "source_file": "backend/src/attendance/attendance.controller.ts",
-      "source_location": "L15",
+      "source_location": "L19",
       "id": "attendance_attendance_controller_attendancecontroller",
-      "community": 24,
+      "community": 104,
       "norm_label": "attendancecontroller"
     },
     {
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/attendance/attendance.controller.ts",
-      "source_location": "L16",
+      "source_location": "L20",
       "id": "attendance_attendance_controller_attendancecontroller_constructor",
-      "community": 24,
+      "community": 104,
       "norm_label": ".constructor()"
     },
     {
       "label": ".getAttendance()",
       "file_type": "code",
       "source_file": "backend/src/attendance/attendance.controller.ts",
-      "source_location": "L19",
+      "source_location": "L23",
       "id": "attendance_attendance_controller_attendancecontroller_getattendance",
-      "community": 24,
+      "community": 104,
       "norm_label": ".getattendance()"
     },
     {
       "label": ".saveAttendance()",
       "file_type": "code",
       "source_file": "backend/src/attendance/attendance.controller.ts",
-      "source_location": "L29",
+      "source_location": "L33",
       "id": "attendance_attendance_controller_attendancecontroller_saveattendance",
-      "community": 24,
+      "community": 104,
       "norm_label": ".saveattendance()"
     },
     {
@@ -4390,7 +4876,7 @@
       "source_file": "backend/src/attendance/attendance.module.ts",
       "source_location": "L1",
       "id": "backend_src_attendance_attendance_module_ts",
-      "community": 24,
+      "community": 18,
       "norm_label": "attendance.module.ts"
     },
     {
@@ -4399,7 +4885,7 @@
       "source_file": "backend/src/attendance/attendance.module.ts",
       "source_location": "L12",
       "id": "attendance_attendance_module_attendancemodule",
-      "community": 24,
+      "community": 18,
       "norm_label": "attendancemodule"
     },
     {
@@ -4642,7 +5128,7 @@
       "source_file": "backend/src/auth/jwt.strategy.ts",
       "source_location": "L1",
       "id": "backend_src_auth_jwt_strategy_ts",
-      "community": 27,
+      "community": 95,
       "norm_label": "jwt.strategy.ts"
     },
     {
@@ -4709,19 +5195,73 @@
       "norm_label": ".validate()"
     },
     {
+      "label": "roles.decorator.ts",
+      "file_type": "code",
+      "source_file": "backend/src/auth/roles.decorator.ts",
+      "source_location": "L1",
+      "id": "backend_src_auth_roles_decorator_ts",
+      "community": 46,
+      "norm_label": "roles.decorator.ts"
+    },
+    {
+      "label": "Roles()",
+      "file_type": "code",
+      "source_file": "backend/src/auth/roles.decorator.ts",
+      "source_location": "L5",
+      "id": "auth_roles_decorator_roles",
+      "community": 46,
+      "norm_label": "roles()"
+    },
+    {
+      "label": "roles.guard.ts",
+      "file_type": "code",
+      "source_file": "backend/src/auth/roles.guard.ts",
+      "source_location": "L1",
+      "id": "backend_src_auth_roles_guard_ts",
+      "community": 46,
+      "norm_label": "roles.guard.ts"
+    },
+    {
+      "label": "RolesGuard",
+      "file_type": "code",
+      "source_file": "backend/src/auth/roles.guard.ts",
+      "source_location": "L7",
+      "id": "auth_roles_guard_rolesguard",
+      "community": 46,
+      "norm_label": "rolesguard"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "backend/src/auth/roles.guard.ts",
+      "source_location": "L8",
+      "id": "auth_roles_guard_rolesguard_constructor",
+      "community": 46,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".canActivate()",
+      "file_type": "code",
+      "source_file": "backend/src/auth/roles.guard.ts",
+      "source_location": "L10",
+      "id": "auth_roles_guard_rolesguard_canactivate",
+      "community": 46,
+      "norm_label": ".canactivate()"
+    },
+    {
       "label": "classes.controller.ts",
       "file_type": "code",
       "source_file": "backend/src/classes/classes.controller.ts",
       "source_location": "L1",
       "id": "backend_src_classes_classes_controller_ts",
-      "community": 27,
+      "community": 46,
       "norm_label": "classes.controller.ts"
     },
     {
       "label": "ClassesController",
       "file_type": "code",
       "source_file": "backend/src/classes/classes.controller.ts",
-      "source_location": "L18",
+      "source_location": "L21",
       "id": "classes_classes_controller_classescontroller",
       "community": 25,
       "norm_label": "classescontroller"
@@ -4730,7 +5270,7 @@
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/classes/classes.controller.ts",
-      "source_location": "L19",
+      "source_location": "L22",
       "id": "classes_classes_controller_classescontroller_constructor",
       "community": 25,
       "norm_label": ".constructor()"
@@ -4739,7 +5279,7 @@
       "label": ".create()",
       "file_type": "code",
       "source_file": "backend/src/classes/classes.controller.ts",
-      "source_location": "L22",
+      "source_location": "L26",
       "id": "classes_classes_controller_classescontroller_create",
       "community": 25,
       "norm_label": ".create()"
@@ -4748,7 +5288,7 @@
       "label": ".findAll()",
       "file_type": "code",
       "source_file": "backend/src/classes/classes.controller.ts",
-      "source_location": "L27",
+      "source_location": "L31",
       "id": "classes_classes_controller_classescontroller_findall",
       "community": 25,
       "norm_label": ".findall()"
@@ -4757,7 +5297,7 @@
       "label": ".findOne()",
       "file_type": "code",
       "source_file": "backend/src/classes/classes.controller.ts",
-      "source_location": "L32",
+      "source_location": "L36",
       "id": "classes_classes_controller_classescontroller_findone",
       "community": 25,
       "norm_label": ".findone()"
@@ -4766,7 +5306,7 @@
       "label": ".getClassResults()",
       "file_type": "code",
       "source_file": "backend/src/classes/classes.controller.ts",
-      "source_location": "L37",
+      "source_location": "L42",
       "id": "classes_classes_controller_classescontroller_getclassresults",
       "community": 25,
       "norm_label": ".getclassresults()"
@@ -4775,7 +5315,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "backend/src/classes/classes.controller.ts",
-      "source_location": "L51",
+      "source_location": "L56",
       "id": "classes_classes_controller_classescontroller_update",
       "community": 25,
       "norm_label": ".update()"
@@ -4784,7 +5324,7 @@
       "label": ".getUsedSubjects()",
       "file_type": "code",
       "source_file": "backend/src/classes/classes.controller.ts",
-      "source_location": "L56",
+      "source_location": "L61",
       "id": "classes_classes_controller_classescontroller_getusedsubjects",
       "community": 25,
       "norm_label": ".getusedsubjects()"
@@ -4793,7 +5333,7 @@
       "label": ".remove()",
       "file_type": "code",
       "source_file": "backend/src/classes/classes.controller.ts",
-      "source_location": "L61",
+      "source_location": "L67",
       "id": "classes_classes_controller_classescontroller_remove",
       "community": 25,
       "norm_label": ".remove()"
@@ -4804,7 +5344,7 @@
       "source_file": "backend/src/classes/classes.module.ts",
       "source_location": "L1",
       "id": "backend_src_classes_classes_module_ts",
-      "community": 18,
+      "community": 25,
       "norm_label": "classes.module.ts"
     },
     {
@@ -4813,7 +5353,7 @@
       "source_file": "backend/src/classes/classes.module.ts",
       "source_location": "L9",
       "id": "classes_classes_module_classesmodule",
-      "community": 18,
+      "community": 25,
       "norm_label": "classesmodule"
     },
     {
@@ -4822,7 +5362,7 @@
       "source_file": "backend/src/classes/classes.service.ts",
       "source_location": "L1",
       "id": "backend_src_classes_classes_service_ts",
-      "community": 27,
+      "community": 95,
       "norm_label": "classes.service.ts"
     },
     {
@@ -4910,7 +5450,7 @@
       "label": ".syncTeacherClasses()",
       "file_type": "code",
       "source_file": "backend/src/classes/classes.service.ts",
-      "source_location": "L579",
+      "source_location": "L583",
       "id": "classes_classes_service_classesservice_syncteacherclasses",
       "community": 23,
       "norm_label": ".syncteacherclasses()"
@@ -4921,7 +5461,7 @@
       "source_file": "backend/src/common/utils.ts",
       "source_location": "L1",
       "id": "backend_src_common_utils_ts",
-      "community": 27,
+      "community": 95,
       "norm_label": "utils.ts"
     },
     {
@@ -4930,7 +5470,7 @@
       "source_file": "backend/src/common/utils.ts",
       "source_location": "L1",
       "id": "common_utils_normalizesubjectkey",
-      "community": 27,
+      "community": 95,
       "norm_label": "normalizesubjectkey()"
     },
     {
@@ -4939,7 +5479,7 @@
       "source_file": "backend/src/common/dto/pagination.dto.ts",
       "source_location": "L1",
       "id": "backend_src_common_dto_pagination_dto_ts",
-      "community": 27,
+      "community": 95,
       "norm_label": "pagination.dto.ts"
     },
     {
@@ -4948,7 +5488,7 @@
       "source_file": "backend/src/common/dto/pagination.dto.ts",
       "source_location": "L4",
       "id": "dto_pagination_dto_paginationdto",
-      "community": 27,
+      "community": 95,
       "norm_label": "paginationdto"
     },
     {
@@ -4957,52 +5497,52 @@
       "source_file": "backend/src/enrollment/enrollment.controller.ts",
       "source_location": "L1",
       "id": "backend_src_enrollment_enrollment_controller_ts",
-      "community": 0,
+      "community": 46,
       "norm_label": "enrollment.controller.ts"
     },
     {
       "label": "EnrollmentController",
       "file_type": "code",
       "source_file": "backend/src/enrollment/enrollment.controller.ts",
-      "source_location": "L14",
+      "source_location": "L17",
       "id": "enrollment_enrollment_controller_enrollmentcontroller",
-      "community": 0,
+      "community": 103,
       "norm_label": "enrollmentcontroller"
     },
     {
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/enrollment/enrollment.controller.ts",
-      "source_location": "L15",
+      "source_location": "L18",
       "id": "enrollment_enrollment_controller_enrollmentcontroller_constructor",
-      "community": 0,
+      "community": 103,
       "norm_label": ".constructor()"
     },
     {
       "label": ".submit()",
       "file_type": "code",
       "source_file": "backend/src/enrollment/enrollment.controller.ts",
-      "source_location": "L18",
+      "source_location": "L21",
       "id": "enrollment_enrollment_controller_enrollmentcontroller_submit",
-      "community": 0,
+      "community": 103,
       "norm_label": ".submit()"
     },
     {
       "label": ".findAll()",
       "file_type": "code",
       "source_file": "backend/src/enrollment/enrollment.controller.ts",
-      "source_location": "L24",
+      "source_location": "L28",
       "id": "enrollment_enrollment_controller_enrollmentcontroller_findall",
-      "community": 0,
+      "community": 103,
       "norm_label": ".findall()"
     },
     {
       "label": ".updateStatus()",
       "file_type": "code",
       "source_file": "backend/src/enrollment/enrollment.controller.ts",
-      "source_location": "L30",
+      "source_location": "L35",
       "id": "enrollment_enrollment_controller_enrollmentcontroller_updatestatus",
-      "community": 0,
+      "community": 103,
       "norm_label": ".updatestatus()"
     },
     {
@@ -5011,7 +5551,7 @@
       "source_file": "backend/src/enrollment/enrollment.module.ts",
       "source_location": "L1",
       "id": "backend_src_enrollment_enrollment_module_ts",
-      "community": 0,
+      "community": 18,
       "norm_label": "enrollment.module.ts"
     },
     {
@@ -5020,7 +5560,7 @@
       "source_file": "backend/src/enrollment/enrollment.module.ts",
       "source_location": "L11",
       "id": "enrollment_enrollment_module_enrollmentmodule",
-      "community": 0,
+      "community": 18,
       "norm_label": "enrollmentmodule"
     },
     {
@@ -5029,7 +5569,7 @@
       "source_file": "backend/src/enrollment/enrollment.service.ts",
       "source_location": "L1",
       "id": "backend_src_enrollment_enrollment_service_ts",
-      "community": 27,
+      "community": 0,
       "norm_label": "enrollment.service.ts"
     },
     {
@@ -5083,14 +5623,14 @@
       "source_file": "backend/src/feeds/feeds.controller.ts",
       "source_location": "L1",
       "id": "backend_src_feeds_feeds_controller_ts",
-      "community": 17,
+      "community": 95,
       "norm_label": "feeds.controller.ts"
     },
     {
       "label": "FeedsController",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.controller.ts",
-      "source_location": "L9",
+      "source_location": "L10",
       "id": "feeds_feeds_controller_feedscontroller",
       "community": 17,
       "norm_label": "feedscontroller"
@@ -5099,7 +5639,7 @@
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.controller.ts",
-      "source_location": "L10",
+      "source_location": "L11",
       "id": "feeds_feeds_controller_feedscontroller_constructor",
       "community": 17,
       "norm_label": ".constructor()"
@@ -5108,7 +5648,7 @@
       "label": ".findAllPublic()",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.controller.ts",
-      "source_location": "L13",
+      "source_location": "L14",
       "id": "feeds_feeds_controller_feedscontroller_findallpublic",
       "community": 17,
       "norm_label": ".findallpublic()"
@@ -5117,7 +5657,7 @@
       "label": ".findAllAdmin()",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.controller.ts",
-      "source_location": "L19",
+      "source_location": "L20",
       "id": "feeds_feeds_controller_feedscontroller_findalladmin",
       "community": 17,
       "norm_label": ".findalladmin()"
@@ -5126,7 +5666,7 @@
       "label": ".findOne()",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.controller.ts",
-      "source_location": "L24",
+      "source_location": "L25",
       "id": "feeds_feeds_controller_feedscontroller_findone",
       "community": 17,
       "norm_label": ".findone()"
@@ -5135,16 +5675,16 @@
       "label": "ext",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.controller.ts",
-      "source_location": "L35",
+      "source_location": "L36",
       "id": "feeds_feeds_controller_ext",
-      "community": 17,
+      "community": 95,
       "norm_label": "ext"
     },
     {
       "label": ".create()",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.controller.ts",
-      "source_location": "L40",
+      "source_location": "L41",
       "id": "feeds_feeds_controller_feedscontroller_create",
       "community": 17,
       "norm_label": ".create()"
@@ -5153,7 +5693,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.controller.ts",
-      "source_location": "L60",
+      "source_location": "L61",
       "id": "feeds_feeds_controller_feedscontroller_update",
       "community": 17,
       "norm_label": ".update()"
@@ -5162,7 +5702,7 @@
       "label": ".remove()",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.controller.ts",
-      "source_location": "L81",
+      "source_location": "L82",
       "id": "feeds_feeds_controller_feedscontroller_remove",
       "community": 17,
       "norm_label": ".remove()"
@@ -5173,7 +5713,7 @@
       "source_file": "backend/src/feeds/feeds.module.ts",
       "source_location": "L1",
       "id": "backend_src_feeds_feeds_module_ts",
-      "community": 17,
+      "community": 18,
       "norm_label": "feeds.module.ts"
     },
     {
@@ -5182,7 +5722,7 @@
       "source_file": "backend/src/feeds/feeds.module.ts",
       "source_location": "L11",
       "id": "feeds_feeds_module_feedsmodule",
-      "community": 17,
+      "community": 18,
       "norm_label": "feedsmodule"
     },
     {
@@ -5191,70 +5731,70 @@
       "source_file": "backend/src/feeds/feeds.service.ts",
       "source_location": "L1",
       "id": "backend_src_feeds_feeds_service_ts",
-      "community": 17,
+      "community": 95,
       "norm_label": "feeds.service.ts"
     },
     {
       "label": "FeedsService",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.service.ts",
-      "source_location": "L5",
+      "source_location": "L6",
       "id": "feeds_feeds_service_feedsservice",
-      "community": 17,
+      "community": 98,
       "norm_label": "feedsservice"
     },
     {
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.service.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "id": "feeds_feeds_service_feedsservice_constructor",
-      "community": 17,
+      "community": 98,
       "norm_label": ".constructor()"
     },
     {
       "label": ".findAll()",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.service.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "id": "feeds_feeds_service_feedsservice_findall",
-      "community": 17,
+      "community": 98,
       "norm_label": ".findall()"
     },
     {
       "label": ".findOne()",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.service.ts",
-      "source_location": "L14",
+      "source_location": "L34",
       "id": "feeds_feeds_service_feedsservice_findone",
-      "community": 17,
+      "community": 98,
       "norm_label": ".findone()"
     },
     {
       "label": ".create()",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.service.ts",
-      "source_location": "L20",
+      "source_location": "L40",
       "id": "feeds_feeds_service_feedsservice_create",
-      "community": 17,
+      "community": 98,
       "norm_label": ".create()"
     },
     {
       "label": ".update()",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.service.ts",
-      "source_location": "L26",
+      "source_location": "L46",
       "id": "feeds_feeds_service_feedsservice_update",
-      "community": 17,
+      "community": 98,
       "norm_label": ".update()"
     },
     {
       "label": ".remove()",
       "file_type": "code",
       "source_file": "backend/src/feeds/feeds.service.ts",
-      "source_location": "L35",
+      "source_location": "L55",
       "id": "feeds_feeds_service_feedsservice_remove",
-      "community": 17,
+      "community": 98,
       "norm_label": ".remove()"
     },
     {
@@ -5263,160 +5803,160 @@
       "source_file": "backend/src/finance/finance.controller.ts",
       "source_location": "L1",
       "id": "backend_src_finance_finance_controller_ts",
-      "community": 15,
+      "community": 46,
       "norm_label": "finance.controller.ts"
     },
     {
       "label": "FinanceController",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L22",
+      "source_location": "L27",
       "id": "finance_finance_controller_financecontroller",
-      "community": 15,
+      "community": 96,
       "norm_label": "financecontroller"
     },
     {
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L23",
+      "source_location": "L28",
       "id": "finance_finance_controller_financecontroller_constructor",
-      "community": 15,
+      "community": 96,
       "norm_label": ".constructor()"
     },
     {
       "label": ".getOverview()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L26",
+      "source_location": "L31",
       "id": "finance_finance_controller_financecontroller_getoverview",
-      "community": 15,
+      "community": 96,
       "norm_label": ".getoverview()"
     },
     {
       "label": ".test()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L37",
+      "source_location": "L42",
       "id": "finance_finance_controller_financecontroller_test",
-      "community": 15,
+      "community": 96,
       "norm_label": ".test()"
     },
     {
       "label": ".getReports()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L42",
+      "source_location": "L47",
       "id": "finance_finance_controller_financecontroller_getreports",
-      "community": 15,
+      "community": 96,
       "norm_label": ".getreports()"
     },
     {
       "label": ".getTeachers()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L47",
+      "source_location": "L52",
       "id": "finance_finance_controller_financecontroller_getteachers",
-      "community": 15,
+      "community": 96,
       "norm_label": ".getteachers()"
     },
     {
       "label": ".getFeeStructure()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L52",
+      "source_location": "L57",
       "id": "finance_finance_controller_financecontroller_getfeestructure",
-      "community": 15,
+      "community": 96,
       "norm_label": ".getfeestructure()"
     },
     {
       "label": ".updateFeeStructure()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L57",
+      "source_location": "L62",
       "id": "finance_finance_controller_financecontroller_updatefeestructure",
-      "community": 15,
+      "community": 96,
       "norm_label": ".updatefeestructure()"
     },
     {
       "label": ".getPayments()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L62",
+      "source_location": "L67",
       "id": "finance_finance_controller_financecontroller_getpayments",
-      "community": 15,
+      "community": 96,
       "norm_label": ".getpayments()"
     },
     {
       "label": ".recordPayment()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L67",
+      "source_location": "L72",
       "id": "finance_finance_controller_financecontroller_recordpayment",
-      "community": 15,
+      "community": 96,
       "norm_label": ".recordpayment()"
     },
     {
       "label": ".searchStudents()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L72",
+      "source_location": "L77",
       "id": "finance_finance_controller_financecontroller_searchstudents",
-      "community": 15,
+      "community": 96,
       "norm_label": ".searchstudents()"
     },
     {
       "label": ".getStudentFees()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L77",
+      "source_location": "L82",
       "id": "finance_finance_controller_financecontroller_getstudentfees",
-      "community": 15,
+      "community": 96,
       "norm_label": ".getstudentfees()"
     },
     {
       "label": ".getStudentAccount()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L82",
+      "source_location": "L87",
       "id": "finance_finance_controller_financecontroller_getstudentaccount",
-      "community": 15,
+      "community": 96,
       "norm_label": ".getstudentaccount()"
     },
     {
       "label": ".getExpenses()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L89",
+      "source_location": "L94",
       "id": "finance_finance_controller_financecontroller_getexpenses",
-      "community": 15,
+      "community": 96,
       "norm_label": ".getexpenses()"
     },
     {
       "label": "randomName",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L99",
+      "source_location": "L104",
       "id": "finance_finance_controller_randomname",
-      "community": 15,
+      "community": 46,
       "norm_label": "randomname"
     },
     {
       "label": ".recordExpense()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L120",
+      "source_location": "L125",
       "id": "finance_finance_controller_financecontroller_recordexpense",
-      "community": 15,
+      "community": 96,
       "norm_label": ".recordexpense()"
     },
     {
       "label": ".updateExpense()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.controller.ts",
-      "source_location": "L151",
+      "source_location": "L156",
       "id": "finance_finance_controller_financecontroller_updateexpense",
-      "community": 15,
+      "community": 96,
       "norm_label": ".updateexpense()"
     },
     {
@@ -5425,7 +5965,7 @@
       "source_file": "backend/src/finance/finance.module.ts",
       "source_location": "L1",
       "id": "backend_src_finance_finance_module_ts",
-      "community": 15,
+      "community": 18,
       "norm_label": "finance.module.ts"
     },
     {
@@ -5434,7 +5974,7 @@
       "source_file": "backend/src/finance/finance.module.ts",
       "source_location": "L11",
       "id": "finance_finance_module_financemodule",
-      "community": 15,
+      "community": 18,
       "norm_label": "financemodule"
     },
     {
@@ -5443,7 +5983,7 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L1",
       "id": "backend_src_finance_finance_service_spec_ts",
-      "community": 15,
+      "community": 105,
       "norm_label": "finance.service.spec.ts"
     },
     {
@@ -5452,7 +5992,7 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L57",
       "id": "finance_finance_service_spec_structures",
-      "community": 15,
+      "community": 105,
       "norm_label": "structures"
     },
     {
@@ -5461,7 +6001,7 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L63",
       "id": "finance_finance_service_spec_payments",
-      "community": 15,
+      "community": 105,
       "norm_label": "payments"
     },
     {
@@ -5470,7 +6010,7 @@
       "source_file": "backend/src/finance/finance.service.spec.ts",
       "source_location": "L68",
       "id": "finance_finance_service_spec_res",
-      "community": 15,
+      "community": 105,
       "norm_label": "res"
     },
     {
@@ -5479,14 +6019,14 @@
       "source_file": "backend/src/finance/finance.service.ts",
       "source_location": "L1",
       "id": "backend_src_finance_finance_service_ts",
-      "community": 15,
+      "community": 95,
       "norm_label": "finance.service.ts"
     },
     {
       "label": "FinanceService",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L5",
+      "source_location": "L6",
       "id": "finance_finance_service_financeservice",
       "community": 15,
       "norm_label": "financeservice"
@@ -5495,7 +6035,7 @@
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "id": "finance_finance_service_financeservice_constructor",
       "community": 15,
       "norm_label": ".constructor()"
@@ -5504,7 +6044,7 @@
       "label": ".getActiveTermContext()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L9",
+      "source_location": "L10",
       "id": "finance_finance_service_financeservice_getactivetermcontext",
       "community": 15,
       "norm_label": ".getactivetermcontext()"
@@ -5513,7 +6053,7 @@
       "label": ".getOverview()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L23",
+      "source_location": "L24",
       "id": "finance_finance_service_financeservice_getoverview",
       "community": 15,
       "norm_label": ".getoverview()"
@@ -5522,7 +6062,7 @@
       "label": ".getFeeStructure()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L177",
+      "source_location": "L178",
       "id": "finance_finance_service_financeservice_getfeestructure",
       "community": 15,
       "norm_label": ".getfeestructure()"
@@ -5531,7 +6071,7 @@
       "label": ".updateFeeStructure()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L212",
+      "source_location": "L213",
       "id": "finance_finance_service_financeservice_updatefeestructure",
       "community": 15,
       "norm_label": ".updatefeestructure()"
@@ -5540,7 +6080,7 @@
       "label": ".getPayments()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L244",
+      "source_location": "L245",
       "id": "finance_finance_service_financeservice_getpayments",
       "community": 15,
       "norm_label": ".getpayments()"
@@ -5549,7 +6089,7 @@
       "label": ".searchStudents()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L255",
+      "source_location": "L275",
       "id": "finance_finance_service_financeservice_searchstudents",
       "community": 15,
       "norm_label": ".searchstudents()"
@@ -5558,7 +6098,7 @@
       "label": ".recordPayment()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L276",
+      "source_location": "L296",
       "id": "finance_finance_service_financeservice_recordpayment",
       "community": 15,
       "norm_label": ".recordpayment()"
@@ -5567,7 +6107,7 @@
       "label": ".computeTermBreakdown()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L299",
+      "source_location": "L319",
       "id": "finance_finance_service_financeservice_computetermbreakdown",
       "community": 15,
       "norm_label": ".computetermbreakdown()"
@@ -5576,7 +6116,7 @@
       "label": ".getStudentFees()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L371",
+      "source_location": "L391",
       "id": "finance_finance_service_financeservice_getstudentfees",
       "community": 15,
       "norm_label": ".getstudentfees()"
@@ -5585,7 +6125,7 @@
       "label": ".getStudentAccount()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L419",
+      "source_location": "L439",
       "id": "finance_finance_service_financeservice_getstudentaccount",
       "community": 15,
       "norm_label": ".getstudentaccount()"
@@ -5594,7 +6134,7 @@
       "label": ".getExpenses()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L482",
+      "source_location": "L502",
       "id": "finance_finance_service_financeservice_getexpenses",
       "community": 15,
       "norm_label": ".getexpenses()"
@@ -5603,7 +6143,7 @@
       "label": ".recordExpense()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L488",
+      "source_location": "L527",
       "id": "finance_finance_service_financeservice_recordexpense",
       "community": 15,
       "norm_label": ".recordexpense()"
@@ -5612,7 +6152,7 @@
       "label": ".updateExpense()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L501",
+      "source_location": "L540",
       "id": "finance_finance_service_financeservice_updateexpense",
       "community": 15,
       "norm_label": ".updateexpense()"
@@ -5621,7 +6161,7 @@
       "label": ".getReports()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L526",
+      "source_location": "L565",
       "id": "finance_finance_service_financeservice_getreports",
       "community": 15,
       "norm_label": ".getreports()"
@@ -5630,7 +6170,7 @@
       "label": ".getTeachers()",
       "file_type": "code",
       "source_file": "backend/src/finance/finance.service.ts",
-      "source_location": "L599",
+      "source_location": "L638",
       "id": "finance_finance_service_financeservice_getteachers",
       "community": 15,
       "norm_label": ".getteachers()"
@@ -5641,14 +6181,14 @@
       "source_file": "backend/src/gallery/gallery.controller.ts",
       "source_location": "L1",
       "id": "backend_src_gallery_gallery_controller_ts",
-      "community": 19,
+      "community": 95,
       "norm_label": "gallery.controller.ts"
     },
     {
       "label": "GalleryController",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.controller.ts",
-      "source_location": "L9",
+      "source_location": "L10",
       "id": "gallery_gallery_controller_gallerycontroller",
       "community": 19,
       "norm_label": "gallerycontroller"
@@ -5657,7 +6197,7 @@
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.controller.ts",
-      "source_location": "L10",
+      "source_location": "L11",
       "id": "gallery_gallery_controller_gallerycontroller_constructor",
       "community": 19,
       "norm_label": ".constructor()"
@@ -5666,7 +6206,7 @@
       "label": ".findAll()",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.controller.ts",
-      "source_location": "L13",
+      "source_location": "L14",
       "id": "gallery_gallery_controller_gallerycontroller_findall",
       "community": 19,
       "norm_label": ".findall()"
@@ -5675,7 +6215,7 @@
       "label": ".findOne()",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.controller.ts",
-      "source_location": "L18",
+      "source_location": "L19",
       "id": "gallery_gallery_controller_gallerycontroller_findone",
       "community": 19,
       "norm_label": ".findone()"
@@ -5684,16 +6224,16 @@
       "label": "ext",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.controller.ts",
-      "source_location": "L29",
+      "source_location": "L30",
       "id": "gallery_gallery_controller_ext",
-      "community": 19,
+      "community": 95,
       "norm_label": "ext"
     },
     {
       "label": ".create()",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.controller.ts",
-      "source_location": "L34",
+      "source_location": "L35",
       "id": "gallery_gallery_controller_gallerycontroller_create",
       "community": 19,
       "norm_label": ".create()"
@@ -5702,7 +6242,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.controller.ts",
-      "source_location": "L54",
+      "source_location": "L55",
       "id": "gallery_gallery_controller_gallerycontroller_update",
       "community": 19,
       "norm_label": ".update()"
@@ -5711,7 +6251,7 @@
       "label": ".remove()",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.controller.ts",
-      "source_location": "L68",
+      "source_location": "L69",
       "id": "gallery_gallery_controller_gallerycontroller_remove",
       "community": 19,
       "norm_label": ".remove()"
@@ -5722,7 +6262,7 @@
       "source_file": "backend/src/gallery/gallery.module.ts",
       "source_location": "L1",
       "id": "backend_src_gallery_gallery_module_ts",
-      "community": 19,
+      "community": 18,
       "norm_label": "gallery.module.ts"
     },
     {
@@ -5731,7 +6271,7 @@
       "source_file": "backend/src/gallery/gallery.module.ts",
       "source_location": "L11",
       "id": "gallery_gallery_module_gallerymodule",
-      "community": 19,
+      "community": 18,
       "norm_label": "gallerymodule"
     },
     {
@@ -5740,70 +6280,70 @@
       "source_file": "backend/src/gallery/gallery.service.ts",
       "source_location": "L1",
       "id": "backend_src_gallery_gallery_service_ts",
-      "community": 19,
+      "community": 95,
       "norm_label": "gallery.service.ts"
     },
     {
       "label": "GalleryService",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.service.ts",
-      "source_location": "L5",
+      "source_location": "L6",
       "id": "gallery_gallery_service_galleryservice",
-      "community": 19,
+      "community": 99,
       "norm_label": "galleryservice"
     },
     {
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.service.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "id": "gallery_gallery_service_galleryservice_constructor",
-      "community": 19,
+      "community": 99,
       "norm_label": ".constructor()"
     },
     {
       "label": ".findAll()",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.service.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "id": "gallery_gallery_service_galleryservice_findall",
-      "community": 19,
+      "community": 99,
       "norm_label": ".findall()"
     },
     {
       "label": ".findOne()",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.service.ts",
-      "source_location": "L14",
+      "source_location": "L34",
       "id": "gallery_gallery_service_galleryservice_findone",
-      "community": 19,
+      "community": 99,
       "norm_label": ".findone()"
     },
     {
       "label": ".create()",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.service.ts",
-      "source_location": "L22",
+      "source_location": "L42",
       "id": "gallery_gallery_service_galleryservice_create",
-      "community": 19,
+      "community": 99,
       "norm_label": ".create()"
     },
     {
       "label": ".update()",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.service.ts",
-      "source_location": "L28",
+      "source_location": "L48",
       "id": "gallery_gallery_service_galleryservice_update",
-      "community": 19,
+      "community": 99,
       "norm_label": ".update()"
     },
     {
       "label": ".remove()",
       "file_type": "code",
       "source_file": "backend/src/gallery/gallery.service.ts",
-      "source_location": "L36",
+      "source_location": "L56",
       "id": "gallery_gallery_service_galleryservice_remove",
-      "community": 19,
+      "community": 99,
       "norm_label": ".remove()"
     },
     {
@@ -5812,14 +6352,14 @@
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L1",
       "id": "backend_src_hostels_hostels_controller_ts",
-      "community": 27,
+      "community": 46,
       "norm_label": "hostels.controller.ts"
     },
     {
       "label": "HostelsController",
       "file_type": "code",
       "source_file": "backend/src/hostels/hostels.controller.ts",
-      "source_location": "L18",
+      "source_location": "L21",
       "id": "hostels_hostels_controller_hostelscontroller",
       "community": 28,
       "norm_label": "hostelscontroller"
@@ -5828,7 +6368,7 @@
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/hostels/hostels.controller.ts",
-      "source_location": "L19",
+      "source_location": "L22",
       "id": "hostels_hostels_controller_hostelscontroller_constructor",
       "community": 28,
       "norm_label": ".constructor()"
@@ -5837,7 +6377,7 @@
       "label": ".findAll()",
       "file_type": "code",
       "source_file": "backend/src/hostels/hostels.controller.ts",
-      "source_location": "L22",
+      "source_location": "L25",
       "id": "hostels_hostels_controller_hostelscontroller_findall",
       "community": 28,
       "norm_label": ".findall()"
@@ -5846,7 +6386,7 @@
       "label": ".create()",
       "file_type": "code",
       "source_file": "backend/src/hostels/hostels.controller.ts",
-      "source_location": "L27",
+      "source_location": "L31",
       "id": "hostels_hostels_controller_hostelscontroller_create",
       "community": 28,
       "norm_label": ".create()"
@@ -5855,7 +6395,7 @@
       "label": ".getStats()",
       "file_type": "code",
       "source_file": "backend/src/hostels/hostels.controller.ts",
-      "source_location": "L32",
+      "source_location": "L36",
       "id": "hostels_hostels_controller_hostelscontroller_getstats",
       "community": 28,
       "norm_label": ".getstats()"
@@ -5864,7 +6404,7 @@
       "label": ".findOne()",
       "file_type": "code",
       "source_file": "backend/src/hostels/hostels.controller.ts",
-      "source_location": "L37",
+      "source_location": "L41",
       "id": "hostels_hostels_controller_hostelscontroller_findone",
       "community": 28,
       "norm_label": ".findone()"
@@ -5873,7 +6413,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "backend/src/hostels/hostels.controller.ts",
-      "source_location": "L42",
+      "source_location": "L47",
       "id": "hostels_hostels_controller_hostelscontroller_update",
       "community": 28,
       "norm_label": ".update()"
@@ -5882,7 +6422,7 @@
       "label": ".remove()",
       "file_type": "code",
       "source_file": "backend/src/hostels/hostels.controller.ts",
-      "source_location": "L47",
+      "source_location": "L53",
       "id": "hostels_hostels_controller_hostelscontroller_remove",
       "community": 28,
       "norm_label": ".remove()"
@@ -5911,7 +6451,7 @@
       "source_file": "backend/src/hostels/hostels.service.ts",
       "source_location": "L1",
       "id": "backend_src_hostels_hostels_service_ts",
-      "community": 27,
+      "community": 95,
       "norm_label": "hostels.service.ts"
     },
     {
@@ -5920,7 +6460,7 @@
       "source_file": "backend/src/hostels/hostels.service.ts",
       "source_location": "L6",
       "id": "hostels_hostels_service_hostelsservice",
-      "community": 27,
+      "community": 97,
       "norm_label": "hostelsservice"
     },
     {
@@ -5929,7 +6469,7 @@
       "source_file": "backend/src/hostels/hostels.service.ts",
       "source_location": "L7",
       "id": "hostels_hostels_service_hostelsservice_constructor",
-      "community": 27,
+      "community": 97,
       "norm_label": ".constructor()"
     },
     {
@@ -5938,7 +6478,7 @@
       "source_file": "backend/src/hostels/hostels.service.ts",
       "source_location": "L9",
       "id": "hostels_hostels_service_hostelsservice_findall",
-      "community": 27,
+      "community": 97,
       "norm_label": ".findall()"
     },
     {
@@ -5947,7 +6487,7 @@
       "source_file": "backend/src/hostels/hostels.service.ts",
       "source_location": "L58",
       "id": "hostels_hostels_service_hostelsservice_findone",
-      "community": 27,
+      "community": 97,
       "norm_label": ".findone()"
     },
     {
@@ -5956,7 +6496,7 @@
       "source_file": "backend/src/hostels/hostels.service.ts",
       "source_location": "L84",
       "id": "hostels_hostels_service_hostelsservice_getstats",
-      "community": 27,
+      "community": 97,
       "norm_label": ".getstats()"
     },
     {
@@ -5965,7 +6505,7 @@
       "source_file": "backend/src/hostels/hostels.service.ts",
       "source_location": "L108",
       "id": "hostels_hostels_service_hostelsservice_create",
-      "community": 27,
+      "community": 97,
       "norm_label": ".create()"
     },
     {
@@ -5974,7 +6514,7 @@
       "source_file": "backend/src/hostels/hostels.service.ts",
       "source_location": "L124",
       "id": "hostels_hostels_service_hostelsservice_update",
-      "community": 27,
+      "community": 97,
       "norm_label": ".update()"
     },
     {
@@ -5983,7 +6523,7 @@
       "source_file": "backend/src/hostels/hostels.service.ts",
       "source_location": "L143",
       "id": "hostels_hostels_service_hostelsservice_remove",
-      "community": 27,
+      "community": 97,
       "norm_label": ".remove()"
     },
     {
@@ -5992,7 +6532,7 @@
       "source_file": "backend/src/prisma/prisma.module.ts",
       "source_location": "L1",
       "id": "backend_src_prisma_prisma_module_ts",
-      "community": 46,
+      "community": 18,
       "norm_label": "prisma.module.ts"
     },
     {
@@ -6001,7 +6541,7 @@
       "source_file": "backend/src/prisma/prisma.module.ts",
       "source_location": "L9",
       "id": "prisma_prisma_module_prismamodule",
-      "community": 46,
+      "community": 18,
       "norm_label": "prismamodule"
     },
     {
@@ -6010,7 +6550,7 @@
       "source_file": "backend/src/prisma/prisma.service.ts",
       "source_location": "L1",
       "id": "backend_src_prisma_prisma_service_ts",
-      "community": 27,
+      "community": 95,
       "norm_label": "prisma.service.ts"
     },
     {
@@ -6019,7 +6559,7 @@
       "source_file": "backend/src/prisma/prisma.service.ts",
       "source_location": "L5",
       "id": "prisma_prisma_service_prismaservice",
-      "community": 27,
+      "community": 95,
       "norm_label": "prismaservice"
     },
     {
@@ -6028,7 +6568,7 @@
       "source_file": "backend/src/prisma/prisma.service.ts",
       "source_location": "L9",
       "id": "prisma_prisma_service_prismaservice_onmoduleinit",
-      "community": 27,
+      "community": 95,
       "norm_label": ".onmoduleinit()"
     },
     {
@@ -6037,7 +6577,7 @@
       "source_file": "backend/src/prisma/prisma.service.ts",
       "source_location": "L13",
       "id": "prisma_prisma_service_prismaservice_onmoduledestroy",
-      "community": 27,
+      "community": 95,
       "norm_label": ".onmoduledestroy()"
     },
     {
@@ -6118,70 +6658,70 @@
       "source_file": "backend/src/students/students.controller.ts",
       "source_location": "L1",
       "id": "backend_src_students_students_controller_ts",
-      "community": 27,
+      "community": 46,
       "norm_label": "students.controller.ts"
     },
     {
       "label": "StudentsController",
       "file_type": "code",
       "source_file": "backend/src/students/students.controller.ts",
-      "source_location": "L18",
+      "source_location": "L22",
       "id": "students_students_controller_studentscontroller",
-      "community": 27,
+      "community": 100,
       "norm_label": "studentscontroller"
     },
     {
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/students/students.controller.ts",
-      "source_location": "L19",
+      "source_location": "L23",
       "id": "students_students_controller_studentscontroller_constructor",
-      "community": 27,
+      "community": 100,
       "norm_label": ".constructor()"
     },
     {
       "label": ".create()",
       "file_type": "code",
       "source_file": "backend/src/students/students.controller.ts",
-      "source_location": "L22",
+      "source_location": "L27",
       "id": "students_students_controller_studentscontroller_create",
-      "community": 27,
+      "community": 100,
       "norm_label": ".create()"
     },
     {
       "label": ".findAll()",
       "file_type": "code",
       "source_file": "backend/src/students/students.controller.ts",
-      "source_location": "L27",
+      "source_location": "L33",
       "id": "students_students_controller_studentscontroller_findall",
-      "community": 27,
+      "community": 100,
       "norm_label": ".findall()"
     },
     {
       "label": ".findOne()",
       "file_type": "code",
       "source_file": "backend/src/students/students.controller.ts",
-      "source_location": "L32",
+      "source_location": "L39",
       "id": "students_students_controller_studentscontroller_findone",
-      "community": 27,
+      "community": 100,
       "norm_label": ".findone()"
     },
     {
       "label": ".update()",
       "file_type": "code",
       "source_file": "backend/src/students/students.controller.ts",
-      "source_location": "L42",
+      "source_location": "L52",
       "id": "students_students_controller_studentscontroller_update",
-      "community": 27,
+      "community": 100,
       "norm_label": ".update()"
     },
     {
       "label": ".remove()",
       "file_type": "code",
       "source_file": "backend/src/students/students.controller.ts",
-      "source_location": "L47",
+      "source_location": "L58",
       "id": "students_students_controller_studentscontroller_remove",
-      "community": 27,
+      "community": 100,
       "norm_label": ".remove()"
     },
     {
@@ -6199,7 +6739,7 @@
       "source_file": "backend/src/students/students.module.ts",
       "source_location": "L10",
       "id": "students_students_module_studentsmodule",
-      "community": 18,
+      "community": 27,
       "norm_label": "studentsmodule"
     },
     {
@@ -6260,7 +6800,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "backend/src/students/students.service.ts",
-      "source_location": "L396",
+      "source_location": "L392",
       "id": "students_students_service_studentsservice_update",
       "community": 27,
       "norm_label": ".update()"
@@ -6269,16 +6809,34 @@
       "label": ".remove()",
       "file_type": "code",
       "source_file": "backend/src/students/students.service.ts",
-      "source_location": "L459",
+      "source_location": "L455",
       "id": "students_students_service_studentsservice_remove",
       "community": 27,
       "norm_label": ".remove()"
     },
     {
+      "label": ".findByUserId()",
+      "file_type": "code",
+      "source_file": "backend/src/students/students.service.ts",
+      "source_location": "L470",
+      "id": "students_students_service_studentsservice_findbyuserid",
+      "community": 27,
+      "norm_label": ".findbyuserid()"
+    },
+    {
+      "label": ".authorizeStudentAccess()",
+      "file_type": "code",
+      "source_file": "backend/src/students/students.service.ts",
+      "source_location": "L480",
+      "id": "students_students_service_studentsservice_authorizestudentaccess",
+      "community": 27,
+      "norm_label": ".authorizestudentaccess()"
+    },
+    {
       "label": ".findByDetails()",
       "file_type": "code",
       "source_file": "backend/src/students/students.service.ts",
-      "source_location": "L474",
+      "source_location": "L526",
       "id": "students_students_service_studentsservice_findbydetails",
       "community": 27,
       "norm_label": ".findbydetails()"
@@ -6289,14 +6847,14 @@
       "source_file": "backend/src/subjects/subjects.controller.ts",
       "source_location": "L1",
       "id": "backend_src_subjects_subjects_controller_ts",
-      "community": 27,
+      "community": 46,
       "norm_label": "subjects.controller.ts"
     },
     {
       "label": "SubjectsController",
       "file_type": "code",
       "source_file": "backend/src/subjects/subjects.controller.ts",
-      "source_location": "L17",
+      "source_location": "L20",
       "id": "subjects_subjects_controller_subjectscontroller",
       "community": 14,
       "norm_label": "subjectscontroller"
@@ -6305,7 +6863,7 @@
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/subjects/subjects.controller.ts",
-      "source_location": "L18",
+      "source_location": "L21",
       "id": "subjects_subjects_controller_subjectscontroller_constructor",
       "community": 14,
       "norm_label": ".constructor()"
@@ -6314,7 +6872,7 @@
       "label": ".create()",
       "file_type": "code",
       "source_file": "backend/src/subjects/subjects.controller.ts",
-      "source_location": "L21",
+      "source_location": "L25",
       "id": "subjects_subjects_controller_subjectscontroller_create",
       "community": 14,
       "norm_label": ".create()"
@@ -6323,7 +6881,7 @@
       "label": ".bulkCreate()",
       "file_type": "code",
       "source_file": "backend/src/subjects/subjects.controller.ts",
-      "source_location": "L26",
+      "source_location": "L31",
       "id": "subjects_subjects_controller_subjectscontroller_bulkcreate",
       "community": 14,
       "norm_label": ".bulkcreate()"
@@ -6332,7 +6890,7 @@
       "label": ".findAll()",
       "file_type": "code",
       "source_file": "backend/src/subjects/subjects.controller.ts",
-      "source_location": "L31",
+      "source_location": "L36",
       "id": "subjects_subjects_controller_subjectscontroller_findall",
       "community": 14,
       "norm_label": ".findall()"
@@ -6341,7 +6899,7 @@
       "label": ".findOne()",
       "file_type": "code",
       "source_file": "backend/src/subjects/subjects.controller.ts",
-      "source_location": "L36",
+      "source_location": "L41",
       "id": "subjects_subjects_controller_subjectscontroller_findone",
       "community": 14,
       "norm_label": ".findone()"
@@ -6350,7 +6908,7 @@
       "label": ".remove()",
       "file_type": "code",
       "source_file": "backend/src/subjects/subjects.controller.ts",
-      "source_location": "L41",
+      "source_location": "L47",
       "id": "subjects_subjects_controller_subjectscontroller_remove",
       "community": 14,
       "norm_label": ".remove()"
@@ -6361,7 +6919,7 @@
       "source_file": "backend/src/subjects/subjects.module.ts",
       "source_location": "L1",
       "id": "backend_src_subjects_subjects_module_ts",
-      "community": 18,
+      "community": 14,
       "norm_label": "subjects.module.ts"
     },
     {
@@ -6370,7 +6928,7 @@
       "source_file": "backend/src/subjects/subjects.module.ts",
       "source_location": "L9",
       "id": "subjects_subjects_module_subjectsmodule",
-      "community": 18,
+      "community": 14,
       "norm_label": "subjectsmodule"
     },
     {
@@ -6379,7 +6937,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L1",
       "id": "backend_src_subjects_subjects_service_ts",
-      "community": 27,
+      "community": 95,
       "norm_label": "subjects.service.ts"
     },
     {
@@ -6388,7 +6946,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L10",
       "id": "subjects_subjects_service_subjectsservice",
-      "community": 27,
+      "community": 101,
       "norm_label": "subjectsservice"
     },
     {
@@ -6397,7 +6955,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L11",
       "id": "subjects_subjects_service_subjectsservice_constructor",
-      "community": 27,
+      "community": 101,
       "norm_label": ".constructor()"
     },
     {
@@ -6406,7 +6964,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L13",
       "id": "subjects_subjects_service_subjectsservice_create",
-      "community": 27,
+      "community": 101,
       "norm_label": ".create()"
     },
     {
@@ -6415,7 +6973,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L27",
       "id": "subjects_subjects_service_subjectsservice_findall",
-      "community": 27,
+      "community": 101,
       "norm_label": ".findall()"
     },
     {
@@ -6424,7 +6982,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L62",
       "id": "subjects_subjects_service_subjectsservice_findone",
-      "community": 27,
+      "community": 101,
       "norm_label": ".findone()"
     },
     {
@@ -6433,7 +6991,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L68",
       "id": "subjects_subjects_service_subjectsservice_remove",
-      "community": 27,
+      "community": 101,
       "norm_label": ".remove()"
     },
     {
@@ -6442,7 +7000,7 @@
       "source_file": "backend/src/subjects/subjects.service.ts",
       "source_location": "L99",
       "id": "subjects_subjects_service_subjectsservice_bulkcreate",
-      "community": 27,
+      "community": 101,
       "norm_label": ".bulkcreate()"
     },
     {
@@ -6451,14 +7009,14 @@
       "source_file": "backend/src/teachers/teachers.controller.ts",
       "source_location": "L1",
       "id": "backend_src_teachers_teachers_controller_ts",
-      "community": 27,
+      "community": 46,
       "norm_label": "teachers.controller.ts"
     },
     {
       "label": "TeachersController",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L19",
+      "source_location": "L22",
       "id": "teachers_teachers_controller_teacherscontroller",
       "community": 10,
       "norm_label": "teacherscontroller"
@@ -6467,7 +7025,7 @@
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L20",
+      "source_location": "L23",
       "id": "teachers_teachers_controller_teacherscontroller_constructor",
       "community": 10,
       "norm_label": ".constructor()"
@@ -6476,7 +7034,7 @@
       "label": ".changePassword()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L24",
+      "source_location": "L28",
       "id": "teachers_teachers_controller_teacherscontroller_changepassword",
       "community": 10,
       "norm_label": ".changepassword()"
@@ -6485,7 +7043,7 @@
       "label": ".getGradeConfig()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L33",
+      "source_location": "L38",
       "id": "teachers_teachers_controller_teacherscontroller_getgradeconfig",
       "community": 10,
       "norm_label": ".getgradeconfig()"
@@ -6494,7 +7052,7 @@
       "label": ".saveGradeConfig()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L49",
+      "source_location": "L55",
       "id": "teachers_teachers_controller_teacherscontroller_savegradeconfig",
       "community": 10,
       "norm_label": ".savegradeconfig()"
@@ -6503,7 +7061,7 @@
       "label": ".getGradeEntries()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L54",
+      "source_location": "L61",
       "id": "teachers_teachers_controller_teacherscontroller_getgradeentries",
       "community": 10,
       "norm_label": ".getgradeentries()"
@@ -6512,7 +7070,7 @@
       "label": ".bulkSaveGrades()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L70",
+      "source_location": "L78",
       "id": "teachers_teachers_controller_teacherscontroller_bulksavegrades",
       "community": 10,
       "norm_label": ".bulksavegrades()"
@@ -6521,7 +7079,7 @@
       "label": ".getProfile()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L76",
+      "source_location": "L85",
       "id": "teachers_teachers_controller_teacherscontroller_getprofile",
       "community": 10,
       "norm_label": ".getprofile()"
@@ -6530,7 +7088,7 @@
       "label": ".getDashboard()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L81",
+      "source_location": "L91",
       "id": "teachers_teachers_controller_teacherscontroller_getdashboard",
       "community": 10,
       "norm_label": ".getdashboard()"
@@ -6539,7 +7097,7 @@
       "label": ".getMyClasses()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L86",
+      "source_location": "L97",
       "id": "teachers_teachers_controller_teacherscontroller_getmyclasses",
       "community": 10,
       "norm_label": ".getmyclasses()"
@@ -6548,7 +7106,7 @@
       "label": ".getMyMainClass()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L91",
+      "source_location": "L103",
       "id": "teachers_teachers_controller_teacherscontroller_getmymainclass",
       "community": 10,
       "norm_label": ".getmymainclass()"
@@ -6557,7 +7115,7 @@
       "label": ".getMainClassResults()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L96",
+      "source_location": "L109",
       "id": "teachers_teachers_controller_teacherscontroller_getmainclassresults",
       "community": 10,
       "norm_label": ".getmainclassresults()"
@@ -6566,7 +7124,7 @@
       "label": ".getInTermResults()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L109",
+      "source_location": "L123",
       "id": "teachers_teachers_controller_teacherscontroller_getintermresults",
       "community": 10,
       "norm_label": ".getintermresults()"
@@ -6575,7 +7133,7 @@
       "label": ".getSubjectResults()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L134",
+      "source_location": "L148",
       "id": "teachers_teachers_controller_teacherscontroller_getsubjectresults",
       "community": 10,
       "norm_label": ".getsubjectresults()"
@@ -6584,7 +7142,7 @@
       "label": ".migrateClass()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L152",
+      "source_location": "L167",
       "id": "teachers_teachers_controller_teacherscontroller_migrateclass",
       "community": 10,
       "norm_label": ".migrateclass()"
@@ -6593,7 +7151,7 @@
       "label": ".unenrollStudent()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L166",
+      "source_location": "L182",
       "id": "teachers_teachers_controller_teacherscontroller_unenrollstudent",
       "community": 10,
       "norm_label": ".unenrollstudent()"
@@ -6602,7 +7160,7 @@
       "label": ".unenrollStaff()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L171",
+      "source_location": "L188",
       "id": "teachers_teachers_controller_teacherscontroller_unenrollstaff",
       "community": 10,
       "norm_label": ".unenrollstaff()"
@@ -6611,7 +7169,7 @@
       "label": ".create()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L177",
+      "source_location": "L195",
       "id": "teachers_teachers_controller_teacherscontroller_create",
       "community": 10,
       "norm_label": ".create()"
@@ -6620,7 +7178,7 @@
       "label": ".findAll()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L182",
+      "source_location": "L201",
       "id": "teachers_teachers_controller_teacherscontroller_findall",
       "community": 10,
       "norm_label": ".findall()"
@@ -6629,7 +7187,7 @@
       "label": ".findOne()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L187",
+      "source_location": "L207",
       "id": "teachers_teachers_controller_teacherscontroller_findone",
       "community": 10,
       "norm_label": ".findone()"
@@ -6638,7 +7196,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L192",
+      "source_location": "L213",
       "id": "teachers_teachers_controller_teacherscontroller_update",
       "community": 10,
       "norm_label": ".update()"
@@ -6647,7 +7205,7 @@
       "label": ".remove()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.controller.ts",
-      "source_location": "L197",
+      "source_location": "L219",
       "id": "teachers_teachers_controller_teacherscontroller_remove",
       "community": 10,
       "norm_label": ".remove()"
@@ -6676,14 +7234,14 @@
       "source_file": "backend/src/teachers/teachers.service.ts",
       "source_location": "L1",
       "id": "backend_src_teachers_teachers_service_ts",
-      "community": 27,
+      "community": 95,
       "norm_label": "teachers.service.ts"
     },
     {
       "label": "TeachersService",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L9",
+      "source_location": "L10",
       "id": "teachers_teachers_service_teachersservice",
       "community": 7,
       "norm_label": "teachersservice"
@@ -6692,7 +7250,7 @@
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L10",
+      "source_location": "L11",
       "id": "teachers_teachers_service_teachersservice_constructor",
       "community": 7,
       "norm_label": ".constructor()"
@@ -6701,7 +7259,7 @@
       "label": ".normalizeSubjectKey()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L12",
+      "source_location": "L13",
       "id": "teachers_teachers_service_teachersservice_normalizesubjectkey",
       "community": 7,
       "norm_label": ".normalizesubjectkey()"
@@ -6710,7 +7268,7 @@
       "label": ".create()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L16",
+      "source_location": "L17",
       "id": "teachers_teachers_service_teachersservice_create",
       "community": 7,
       "norm_label": ".create()"
@@ -6719,7 +7277,7 @@
       "label": ".findAll()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L53",
+      "source_location": "L54",
       "id": "teachers_teachers_service_teachersservice_findall",
       "community": 7,
       "norm_label": ".findall()"
@@ -6728,7 +7286,7 @@
       "label": ".findOne()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L89",
+      "source_location": "L90",
       "id": "teachers_teachers_service_teachersservice_findone",
       "community": 7,
       "norm_label": ".findone()"
@@ -6737,7 +7295,7 @@
       "label": ".findByUserId()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L95",
+      "source_location": "L96",
       "id": "teachers_teachers_service_teachersservice_findbyuserid",
       "community": 7,
       "norm_label": ".findbyuserid()"
@@ -6746,7 +7304,7 @@
       "label": ".getMainClass()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L101",
+      "source_location": "L102",
       "id": "teachers_teachers_service_teachersservice_getmainclass",
       "community": 7,
       "norm_label": ".getmainclass()"
@@ -6755,7 +7313,7 @@
       "label": ".getDashboardData()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L175",
+      "source_location": "L176",
       "id": "teachers_teachers_service_teachersservice_getdashboarddata",
       "community": 7,
       "norm_label": ".getdashboarddata()"
@@ -6764,7 +7322,7 @@
       "label": ".getMyClasses()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L334",
+      "source_location": "L335",
       "id": "teachers_teachers_service_teachersservice_getmyclasses",
       "community": 7,
       "norm_label": ".getmyclasses()"
@@ -6773,7 +7331,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L398",
+      "source_location": "L399",
       "id": "teachers_teachers_service_teachersservice_update",
       "community": 7,
       "norm_label": ".update()"
@@ -6782,7 +7340,7 @@
       "label": ".remove()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L434",
+      "source_location": "L435",
       "id": "teachers_teachers_service_teachersservice_remove",
       "community": 7,
       "norm_label": ".remove()"
@@ -6791,7 +7349,7 @@
       "label": ".getMainClassResults()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L448",
+      "source_location": "L449",
       "id": "teachers_teachers_service_teachersservice_getmainclassresults",
       "community": 7,
       "norm_label": ".getmainclassresults()"
@@ -6800,7 +7358,7 @@
       "label": ".getProfile()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L596",
+      "source_location": "L598",
       "id": "teachers_teachers_service_teachersservice_getprofile",
       "community": 7,
       "norm_label": ".getprofile()"
@@ -6809,7 +7367,7 @@
       "label": ".getGradeConfig()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L617",
+      "source_location": "L619",
       "id": "teachers_teachers_service_teachersservice_getgradeconfig",
       "community": 7,
       "norm_label": ".getgradeconfig()"
@@ -6818,7 +7376,7 @@
       "label": ".saveGradeConfig()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L641",
+      "source_location": "L643",
       "id": "teachers_teachers_service_teachersservice_savegradeconfig",
       "community": 7,
       "norm_label": ".savegradeconfig()"
@@ -6827,7 +7385,7 @@
       "label": ".getInTermResults()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L683",
+      "source_location": "L685",
       "id": "teachers_teachers_service_teachersservice_getintermresults",
       "community": 7,
       "norm_label": ".getintermresults()"
@@ -6836,7 +7394,7 @@
       "label": ".getInTermResultsWithActiveContext()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L823",
+      "source_location": "L826",
       "id": "teachers_teachers_service_teachersservice_getintermresultswithactivecontext",
       "community": 7,
       "norm_label": ".getintermresultswithactivecontext()"
@@ -6845,7 +7403,7 @@
       "label": ".unenrollStudent()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L849",
+      "source_location": "L852",
       "id": "teachers_teachers_service_teachersservice_unenrollstudent",
       "community": 7,
       "norm_label": ".unenrollstudent()"
@@ -6854,7 +7412,7 @@
       "label": ".unenrollStaff()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L869",
+      "source_location": "L872",
       "id": "teachers_teachers_service_teachersservice_unenrollstaff",
       "community": 7,
       "norm_label": ".unenrollstaff()"
@@ -6863,7 +7421,7 @@
       "label": ".getGradeEntries()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L888",
+      "source_location": "L891",
       "id": "teachers_teachers_service_teachersservice_getgradeentries",
       "community": 7,
       "norm_label": ".getgradeentries()"
@@ -6872,7 +7430,7 @@
       "label": ".bulkSaveGrades()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L947",
+      "source_location": "L950",
       "id": "teachers_teachers_service_teachersservice_bulksavegrades",
       "community": 7,
       "norm_label": ".bulksavegrades()"
@@ -6881,7 +7439,7 @@
       "label": ".getSubjectResults()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L1113",
+      "source_location": "L1125",
       "id": "teachers_teachers_service_teachersservice_getsubjectresults",
       "community": 7,
       "norm_label": ".getsubjectresults()"
@@ -6890,7 +7448,7 @@
       "label": ".changePassword()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L1252",
+      "source_location": "L1264",
       "id": "teachers_teachers_service_teachersservice_changepassword",
       "community": 7,
       "norm_label": ".changepassword()"
@@ -6899,10 +7457,19 @@
       "label": ".migrateClass()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L1282",
+      "source_location": "L1294",
       "id": "teachers_teachers_service_teachersservice_migrateclass",
       "community": 7,
       "norm_label": ".migrateclass()"
+    },
+    {
+      "label": ".recalculateClassRanks()",
+      "file_type": "code",
+      "source_file": "backend/src/teachers/teachers.service.ts",
+      "source_location": "L1404",
+      "id": "teachers_teachers_service_teachersservice_recalculateclassranks",
+      "community": 7,
+      "norm_label": ".recalculateclassranks()"
     },
     {
       "label": "app.e2e-spec.ts",
@@ -6910,7 +7477,7 @@
       "source_file": "backend/test/app.e2e-spec.ts",
       "source_location": "L1",
       "id": "backend_test_app_e2e_spec_ts",
-      "community": 18,
+      "community": 106,
       "norm_label": "app.e2e-spec.ts"
     },
     {
@@ -10502,6 +11069,577 @@
       "target": "scripts_search_format_output"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_home",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_apply",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_examresults",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_explorecampus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_explorecampusdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_campusgallery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_login",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_publicstudentreport",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_publicstudenthistory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_teacherlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_dashboard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_classes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_classroster",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_classmigration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_intermresults",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_teacherviewtimetable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_grades",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_mainclass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_addclassstudent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_finalresults",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_subjectresults",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_studentreport",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_attendancetracker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_attendanceoverview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_studentdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_studenthistory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_profile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_adminlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_admindashboard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_students",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_addstudent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_editstudent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_teachers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_addteacher",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_teacherdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_editteacher",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_adminclasses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_createclass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_classdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_editclass",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_viewtimetable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_createtimetable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_subjects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_enrollment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_finance",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_boarding",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_settings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_admindetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_adminprofile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_passwordresets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_schoolfeeds",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_schoolfeedform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_schoolgallery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_schoolgalleryform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_token"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/App.tsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "alphabet_smis_src_app_tsx",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "alphabet-Smis/src/main.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "alphabet_smis_src_main_tsx",
+      "target": "alphabet_smis_src_app_tsx"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11094,37 +12232,6 @@
       "confidence_score": 1.0,
       "source": "alphabet_smis_src_app_tsx",
       "target": "alphabet_smis_src_pages_admin_schoolgalleryform_tsx"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "alphabet-Smis/src/App.tsx",
-      "source_location": "L59",
-      "weight": 1.0,
-      "source": "alphabet_smis_src_app_tsx",
-      "target": "src_app_token",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "alphabet-Smis/src/App.tsx",
-      "source_location": "L57",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "alphabet_smis_src_app_tsx",
-      "target": "src_app_app"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "alphabet-Smis/src/main.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "alphabet_smis_src_main_tsx",
-      "target": "alphabet_smis_src_app_tsx"
     },
     {
       "relation": "contains",
@@ -13845,6 +14952,50 @@
       "target": "admin_admin_service_adminservice"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/admin/admin.controller.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "backend_src_admin_admin_controller_ts",
+      "target": "backend_src_auth_roles_guard_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/admin/admin.controller.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "backend_src_admin_admin_controller_ts",
+      "target": "auth_roles_guard_rolesguard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/admin/admin.controller.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "backend_src_admin_admin_controller_ts",
+      "target": "backend_src_auth_roles_decorator_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/admin/admin.controller.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "backend_src_admin_admin_controller_ts",
+      "target": "auth_roles_decorator_roles",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/admin/admin.controller.ts",
@@ -14164,6 +15315,17 @@
       "target": "backend_src_admin_admin_service_ts"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/teachers/teachers.service.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "backend_src_teachers_teachers_service_ts",
+      "target": "backend_src_admin_admin_service_ts",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/admin/admin.service.ts",
@@ -14375,6 +15537,17 @@
       "target": "admin_admin_service_adminservice"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/teachers/teachers.service.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "backend_src_teachers_teachers_service_ts",
+      "target": "admin_admin_service_adminservice",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -14406,6 +15579,50 @@
       "confidence_score": 1.0,
       "source": "backend_src_attendance_attendance_controller_ts",
       "target": "attendance_attendance_service_attendanceservice"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/attendance/attendance.controller.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "backend_src_attendance_attendance_controller_ts",
+      "target": "backend_src_auth_roles_guard_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/attendance/attendance.controller.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "backend_src_attendance_attendance_controller_ts",
+      "target": "auth_roles_guard_rolesguard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/attendance/attendance.controller.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "backend_src_attendance_attendance_controller_ts",
+      "target": "backend_src_auth_roles_decorator_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/attendance/attendance.controller.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "backend_src_attendance_attendance_controller_ts",
+      "target": "auth_roles_decorator_roles",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -15068,6 +16285,365 @@
       "target": "auth_refresh_strategy_refreshtokenstrategy_validate"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/auth/roles.decorator.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "backend_src_auth_roles_decorator_ts",
+      "target": "auth_roles_decorator_roles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/auth/roles.guard.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "backend_src_auth_roles_guard_ts",
+      "target": "backend_src_auth_roles_decorator_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/classes/classes.controller.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "backend_src_classes_classes_controller_ts",
+      "target": "backend_src_auth_roles_decorator_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/enrollment/enrollment.controller.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "backend_src_enrollment_enrollment_controller_ts",
+      "target": "backend_src_auth_roles_decorator_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/finance/finance.controller.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "backend_src_finance_finance_controller_ts",
+      "target": "backend_src_auth_roles_decorator_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/hostels/hostels.controller.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "backend_src_hostels_hostels_controller_ts",
+      "target": "backend_src_auth_roles_decorator_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/students/students.controller.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "backend_src_students_students_controller_ts",
+      "target": "backend_src_auth_roles_decorator_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/subjects/subjects.controller.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "backend_src_subjects_subjects_controller_ts",
+      "target": "backend_src_auth_roles_decorator_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/teachers/teachers.controller.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "backend_src_teachers_teachers_controller_ts",
+      "target": "backend_src_auth_roles_decorator_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/classes/classes.controller.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "backend_src_classes_classes_controller_ts",
+      "target": "auth_roles_decorator_roles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/enrollment/enrollment.controller.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "backend_src_enrollment_enrollment_controller_ts",
+      "target": "auth_roles_decorator_roles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/finance/finance.controller.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "backend_src_finance_finance_controller_ts",
+      "target": "auth_roles_decorator_roles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/hostels/hostels.controller.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "backend_src_hostels_hostels_controller_ts",
+      "target": "auth_roles_decorator_roles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/students/students.controller.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "backend_src_students_students_controller_ts",
+      "target": "auth_roles_decorator_roles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/subjects/subjects.controller.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "backend_src_subjects_subjects_controller_ts",
+      "target": "auth_roles_decorator_roles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/teachers/teachers.controller.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "backend_src_teachers_teachers_controller_ts",
+      "target": "auth_roles_decorator_roles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/auth/roles.guard.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "backend_src_auth_roles_guard_ts",
+      "target": "auth_roles_guard_rolesguard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/classes/classes.controller.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "backend_src_classes_classes_controller_ts",
+      "target": "backend_src_auth_roles_guard_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/enrollment/enrollment.controller.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "backend_src_enrollment_enrollment_controller_ts",
+      "target": "backend_src_auth_roles_guard_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/finance/finance.controller.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "backend_src_finance_finance_controller_ts",
+      "target": "backend_src_auth_roles_guard_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/hostels/hostels.controller.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "backend_src_hostels_hostels_controller_ts",
+      "target": "backend_src_auth_roles_guard_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/students/students.controller.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "backend_src_students_students_controller_ts",
+      "target": "backend_src_auth_roles_guard_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/subjects/subjects.controller.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "backend_src_subjects_subjects_controller_ts",
+      "target": "backend_src_auth_roles_guard_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/teachers/teachers.controller.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "backend_src_teachers_teachers_controller_ts",
+      "target": "backend_src_auth_roles_guard_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/auth/roles.guard.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "auth_roles_guard_rolesguard",
+      "target": "auth_roles_guard_rolesguard_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/auth/roles.guard.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "auth_roles_guard_rolesguard",
+      "target": "auth_roles_guard_rolesguard_canactivate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/classes/classes.controller.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "backend_src_classes_classes_controller_ts",
+      "target": "auth_roles_guard_rolesguard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/enrollment/enrollment.controller.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "backend_src_enrollment_enrollment_controller_ts",
+      "target": "auth_roles_guard_rolesguard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/finance/finance.controller.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "backend_src_finance_finance_controller_ts",
+      "target": "auth_roles_guard_rolesguard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/hostels/hostels.controller.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "backend_src_hostels_hostels_controller_ts",
+      "target": "auth_roles_guard_rolesguard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/students/students.controller.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "backend_src_students_students_controller_ts",
+      "target": "auth_roles_guard_rolesguard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/subjects/subjects.controller.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "backend_src_subjects_subjects_controller_ts",
+      "target": "auth_roles_guard_rolesguard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/teachers/teachers.controller.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "backend_src_teachers_teachers_controller_ts",
+      "target": "auth_roles_guard_rolesguard",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -15500,6 +17076,72 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "backend/src/feeds/feeds.controller.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "backend_src_feeds_feeds_controller_ts",
+      "target": "backend_src_common_dto_pagination_dto_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/feeds/feeds.service.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "backend_src_feeds_feeds_service_ts",
+      "target": "backend_src_common_dto_pagination_dto_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/finance/finance.controller.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "backend_src_finance_finance_controller_ts",
+      "target": "backend_src_common_dto_pagination_dto_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/finance/finance.service.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "backend_src_finance_finance_service_ts",
+      "target": "backend_src_common_dto_pagination_dto_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/gallery/gallery.controller.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "backend_src_gallery_gallery_controller_ts",
+      "target": "backend_src_common_dto_pagination_dto_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/gallery/gallery.service.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "backend_src_gallery_gallery_service_ts",
+      "target": "backend_src_common_dto_pagination_dto_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "backend/src/hostels/hostels.controller.ts",
       "source_location": "L11",
       "weight": 1.0,
@@ -15583,6 +17225,72 @@
       "confidence_score": 1.0,
       "source": "backend_src_teachers_teachers_service_ts",
       "target": "backend_src_common_dto_pagination_dto_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/feeds/feeds.controller.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "backend_src_feeds_feeds_controller_ts",
+      "target": "dto_pagination_dto_paginationdto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/feeds/feeds.service.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "backend_src_feeds_feeds_service_ts",
+      "target": "dto_pagination_dto_paginationdto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/finance/finance.controller.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "backend_src_finance_finance_controller_ts",
+      "target": "dto_pagination_dto_paginationdto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/finance/finance.service.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "backend_src_finance_finance_service_ts",
+      "target": "dto_pagination_dto_paginationdto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/gallery/gallery.controller.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "backend_src_gallery_gallery_controller_ts",
+      "target": "dto_pagination_dto_paginationdto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/gallery/gallery.service.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "backend_src_gallery_gallery_service_ts",
+      "target": "dto_pagination_dto_paginationdto",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -17830,6 +19538,26 @@
       "source_file": "backend/src/students/students.service.ts",
       "source_location": "L470",
       "weight": 1.0,
+      "source": "students_students_service_studentsservice",
+      "target": "students_students_service_studentsservice_findbyuserid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/students/students.service.ts",
+      "source_location": "L480",
+      "weight": 1.0,
+      "source": "students_students_service_studentsservice",
+      "target": "students_students_service_studentsservice_authorizestudentaccess",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/students/students.service.ts",
+      "source_location": "L470",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "students_students_service_studentsservice",
       "target": "students_students_service_studentsservice_findbydetails"
@@ -18606,6 +20334,16 @@
       "confidence_score": 1.0,
       "source": "teachers_teachers_service_teachersservice",
       "target": "teachers_teachers_service_teachersservice_migrateclass"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/teachers/teachers.service.ts",
+      "source_location": "L1404",
+      "weight": 1.0,
+      "source": "teachers_teachers_service_teachersservice",
+      "target": "teachers_teachers_service_teachersservice_recalculateclassranks",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -20783,5 +22521,5 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/scripts/search.py"
     }
   ],
-  "built_at_commit": "76948a71f86bd51635902d8874fa4672176d913a"
+  "built_at_commit": "4c3c4f01279b71fd096a0d4e8b3049453a1ce2f9"
 }

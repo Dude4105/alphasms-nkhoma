@@ -535,9 +535,14 @@ let TeachersService = class TeachersService {
         })
             .filter((s) => s.total > 0 || mainClass.students.length < 50)
             .sort((a, b) => {
-            if (a.points !== b.points && a.points > 0 && b.points > 0) {
+            if (a.points === 0 && b.points === 0)
+                return b.avg - a.avg;
+            if (a.points === 0)
+                return 1;
+            if (b.points === 0)
+                return -1;
+            if (a.points !== b.points)
                 return a.points - b.points;
-            }
             return b.avg - a.avg;
         });
         return {
@@ -730,9 +735,14 @@ let TeachersService = class TeachersService {
             subjects,
             gradingConfig,
             results: results.sort((a, b) => {
-                if (a.points !== b.points && a.points > 0 && b.points > 0) {
+                if (a.points === 0 && b.points === 0)
+                    return b.total - a.total;
+                if (a.points === 0)
+                    return 1;
+                if (b.points === 0)
+                    return -1;
+                if (a.points !== b.points)
                     return a.points - b.points;
-                }
                 return b.total - a.total;
             }),
         };
@@ -1339,9 +1349,14 @@ let TeachersService = class TeachersService {
                 });
             }
             studentAverages.sort((a, b) => {
-                if (a.points !== b.points && a.points > 0 && b.points > 0) {
+                if (a.points === 0 && b.points === 0)
+                    return b.avg - a.avg;
+                if (a.points === 0)
+                    return 1;
+                if (b.points === 0)
+                    return -1;
+                if (a.points !== b.points)
                     return a.points - b.points;
-                }
                 return b.avg - a.avg;
             });
             const totalStudents = studentIds.length;

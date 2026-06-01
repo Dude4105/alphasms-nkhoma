@@ -551,9 +551,13 @@ export class ClassesService {
       })
       .filter((s) => s.total > 0 || mainClass.students.length < 50)
       .sort((a, b) => {
-        if (a.points !== b.points && a.points > 0 && b.points > 0) {
-          return a.points - b.points;
-        }
+        // Students with no results (0 points) always go to the bottom
+        if (a.points === 0 && b.points === 0) return b.avg - a.avg;
+        if (a.points === 0) return 1;
+        if (b.points === 0) return -1;
+        // Primary: lower overall points = better rank (MSCE-style)
+        if (a.points !== b.points) return a.points - b.points;
+        // Tiebreaker: higher average = better rank
         return b.avg - a.avg;
       });
 

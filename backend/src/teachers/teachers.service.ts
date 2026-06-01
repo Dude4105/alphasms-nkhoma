@@ -574,9 +574,10 @@ export class TeachersService {
       })
       .filter((s) => s.total > 0 || mainClass.students.length < 50)
       .sort((a, b) => {
-        if (a.points !== b.points && a.points > 0 && b.points > 0) {
-          return a.points - b.points;
-        }
+        if (a.points === 0 && b.points === 0) return b.avg - a.avg;
+        if (a.points === 0) return 1;
+        if (b.points === 0) return -1;
+        if (a.points !== b.points) return a.points - b.points;
         return b.avg - a.avg;
       });
 
@@ -813,9 +814,10 @@ export class TeachersService {
       subjects,
       gradingConfig,
       results: results.sort((a, b) => {
-        if (a.points !== b.points && a.points > 0 && b.points > 0) {
-          return a.points - b.points;
-        }
+        if (a.points === 0 && b.points === 0) return b.total - a.total;
+        if (a.points === 0) return 1;
+        if (b.points === 0) return -1;
+        if (a.points !== b.points) return a.points - b.points;
         return b.total - a.total;
       }),
     };
@@ -1536,9 +1538,10 @@ export class TeachersService {
       }
 
       studentAverages.sort((a, b) => {
-        if (a.points !== b.points && a.points > 0 && b.points > 0) {
-          return a.points - b.points;
-        }
+        if (a.points === 0 && b.points === 0) return b.avg - a.avg;
+        if (a.points === 0) return 1;
+        if (b.points === 0) return -1;
+        if (a.points !== b.points) return a.points - b.points;
         return b.avg - a.avg;
       });
 

@@ -1,16 +1,16 @@
-# Graph Report - alphabetsmis-II  (2026-05-30)
+# Graph Report - alphabetsmis-II  (2026-06-01)
 
 ## Corpus Check
-- 140 files · ~1,249,760 words
+- 142 files · ~1,251,396 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 976 nodes · 1151 edges · 96 communities (54 shown, 42 thin omitted)
+- 1039 nodes · 1263 edges · 121 communities (67 shown, 54 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 20 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `76948a71`
+- Built from commit: `4c3c4f01`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -92,18 +92,29 @@
 - [[_COMMUNITY_Community 89|Community 89]]
 - [[_COMMUNITY_Community 90|Community 90]]
 - [[_COMMUNITY_Community 94|Community 94]]
+- [[_COMMUNITY_Community 95|Community 95]]
+- [[_COMMUNITY_Community 96|Community 96]]
+- [[_COMMUNITY_Community 97|Community 97]]
+- [[_COMMUNITY_Community 98|Community 98]]
+- [[_COMMUNITY_Community 99|Community 99]]
+- [[_COMMUNITY_Community 100|Community 100]]
+- [[_COMMUNITY_Community 101|Community 101]]
+- [[_COMMUNITY_Community 103|Community 103]]
+- [[_COMMUNITY_Community 104|Community 104]]
+- [[_COMMUNITY_Community 105|Community 105]]
+- [[_COMMUNITY_Community 106|Community 106]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `TeachersService` - 27 edges
-2. `AdminService` - 24 edges
+1. `TeachersService` - 28 edges
+2. `AdminService` - 25 edges
 3. `TeachersController` - 23 edges
 4. `compilerOptions` - 22 edges
 5. `AdminController` - 21 edges
 6. `FinanceService` - 20 edges
 7. `PrismaService` - 19 edges
 8. `compilerOptions` - 17 edges
-9. `FinanceController` - 17 edges
-10. `compilerOptions` - 16 edges
+9. `PaginationDto` - 17 edges
+10. `FinanceController` - 17 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Resize Script` --semantically_similar_to--> `Generate Assets Script`  [INFERRED] [semantically similar]
@@ -122,11 +133,7 @@
 - **Public Portal Navigation Flow** — home_tsx, apply_tsx, explore_campus_tsx, campus_gallery_tsx [INFERRED 0.85]
 - **UI/UX Pro Max Tooling** — core_py, design_system_py, search_py [EXTRACTED 1.00]
 
-## Communities (96 total, 42 thin omitted)
-
-### Community 0 - "Community 0"
-Cohesion: 0.18
-Nodes (3): EnrollmentController, EnrollmentModule, EnrollmentService
+## Communities (121 total, 54 thin omitted)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.04
@@ -139,6 +146,10 @@ Nodes (40): BM25, detect_domain(), _load_csv(), Lowercase, split, remove punctua
 ### Community 4 - "Community 4"
 Cohesion: 0.06
 Nodes (32): dependencies, leaflet, lucide-react, react, react-dom, react-leaflet, react-router-dom, devDependencies (+24 more)
+
+### Community 5 - "Community 5"
+Cohesion: 0.04
+Nodes (55): AddClassStudent, AddStudent, AddTeacher, AdminClasses, AdminDashboard, AdminDetail, AdminLayout, AdminProfile (+47 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.11
@@ -164,25 +175,13 @@ Nodes (18): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, jsx
 Cohesion: 0.11
 Nodes (17): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, moduleResolution, noEmit (+9 more)
 
-### Community 15 - "Community 15"
-Cohesion: 0.06
-Nodes (7): FinanceController, randomName, FinanceModule, FinanceService, payments, res, structures
-
 ### Community 16 - "Community 16"
 Cohesion: 0.09
 Nodes (21): Additional Forbidden Patterns, Anti-Patterns (Do NOT Use), Buttons, Cards, code:css (@import url('https://fonts.googleapis.com/css2?family=Atkins), code:css (/* Primary Button */), code:css (.card {), code:css (.input {) (+13 more)
 
-### Community 17 - "Community 17"
-Cohesion: 0.12
-Nodes (4): ext, FeedsController, FeedsModule, FeedsService
-
 ### Community 18 - "Community 18"
-Cohesion: 0.21
-Nodes (6): ClassesModule, HostelsModule, AppModule, StudentsModule, SubjectsModule, TeachersModule
-
-### Community 19 - "Community 19"
-Cohesion: 0.14
-Nodes (4): ext, GalleryController, GalleryModule, GalleryService
+Cohesion: 0.23
+Nodes (9): AdminModule, AttendanceModule, EnrollmentModule, FeedsModule, FinanceModule, GalleryModule, HostelsModule, PrismaModule (+1 more)
 
 ### Community 20 - "Community 20"
 Cohesion: 0.30
@@ -192,13 +191,9 @@ Nodes (14): Admin Portal Layout, React App Router, Admissions Form, Campus Galle
 Cohesion: 0.17
 Nodes (4): SubjectEntry, Slot, SubjectEntry, SearchableSelectProps
 
-### Community 24 - "Community 24"
-Cohesion: 0.23
-Nodes (3): AttendanceController, AttendanceModule, AttendanceService
-
 ### Community 27 - "Community 27"
-Cohesion: 0.06
-Nodes (8): normalizeSubjectKey(), PaginationDto, HostelsService, PrismaService, PublicResultsController, StudentsController, StudentsService, SubjectsService
+Cohesion: 0.12
+Nodes (3): PublicResultsController, StudentsModule, StudentsService
 
 ### Community 29 - "Community 29"
 Cohesion: 0.29
@@ -219,6 +214,10 @@ Nodes (3): InTermData, ResultItem, SubjectItem
 ### Community 43 - "Community 43"
 Cohesion: 0.83
 Nodes (3): Home(), useCountUp(), useReveal()
+
+### Community 46 - "Community 46"
+Cohesion: 0.35
+Nodes (3): Roles(), RolesGuard, randomName
 
 ### Community 56 - "Community 56"
 Cohesion: 0.05
@@ -264,22 +263,30 @@ Nodes (3): apiUrlRegex, env, escapedApiUrl
 Cohesion: 0.33
 Nodes (5): code:js (export default defineConfig([), code:js (// eslint.config.js), Expanding the ESLint configuration, React Compiler, React + TypeScript + Vite
 
+### Community 95 - "Community 95"
+Cohesion: 0.24
+Nodes (5): normalizeSubjectKey(), PaginationDto, ext, ext, PrismaService
+
+### Community 105 - "Community 105"
+Cohesion: 0.50
+Nodes (3): payments, res, structures
+
 ## Knowledge Gaps
-- **329 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+324 more)
+- **383 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+378 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **42 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **54 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `TeachersService` connect `Community 7` to `Community 18`, `Community 27`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `TeachersController` connect `Community 10` to `Community 18`, `Community 27`?**
+- **Why does `TeachersController` connect `Community 10` to `Community 18`, `Community 46`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
-- **Why does `AdminService` connect `Community 2` to `Community 27`, `Community 46`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+- **Why does `FinanceService` connect `Community 15` to `Community 105`, `Community 18`, `Community 46`, `Community 95`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **Why does `FinanceController` connect `Community 96` to `Community 18`, `Community 46`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _355 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _409 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
