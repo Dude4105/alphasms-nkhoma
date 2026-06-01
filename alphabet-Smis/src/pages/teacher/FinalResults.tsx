@@ -277,6 +277,26 @@ export default function FinalResults() {
     s.id.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // Compute Best 6 Points from live subject scores (picks 6 lowest/best grade-point subjects)
+  const computeBest6Points = (s: any): number | null => {
+    const subjects = classInfo?.subjects || [];
+    if (subjects.length === 0 || s.total === 0) return null;
+    const worstPoint = Math.max(...gradingConfig.grades.map((g: any) => g.points));
+    const gradedPoints: number[] = (subjects as any[])
+      .map((subj: any) => {
+        const score = s[subj.key];
+        return (score !== undefined && score !== null && score > 0)
+          ? resolveGrade(score).points
+          : null;
+      })
+      .filter((p): p is number => p !== null);
+    if (gradedPoints.length === 0) return null;
+    const sorted = [...gradedPoints].sort((a, b) => a - b);
+    const padded = [...sorted];
+    while (padded.length < 6) padded.push(worstPoint);
+    return padded.slice(0, 6).reduce((acc, p) => acc + p, 0);
+  };
+
   return (
     <div className="animate-fade">
       <style>{`
@@ -528,7 +548,7 @@ export default function FinalResults() {
             </div>
             <div style={{ padding: '0.75rem', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid rgba(253,184,19,0.3)' }}>
               <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Best 6 Points</div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-gold)' }}>{topStudent.points ?? 'N/A'}</div>
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-gold)' }}>{computeBest6Points(topStudent) ?? 'N/A'}</div>
             </div>
           </div>
         </div>
@@ -624,7 +644,7 @@ export default function FinalResults() {
                     <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 700, color: 'var(--text-light)' }}>{s.total}</td>
                     <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 700, color: isFailed ? '#ef4444' : '#10b981' }}>{s.avg.toFixed(1)}</td>
                     <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 800, color: isFailed ? '#ef4444' : '#10b981' }}>{resolved.grade}</td>
-                    <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 700, color: 'var(--primary-gold)' }}>{s.points ?? resolved.points}</td>
+                    <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 700, color: 'var(--primary-gold)' }}>{computeBest6Points(s) ?? 'N/A'}</td>
                     <td style={{ padding: '1.2rem 1.5rem', textAlign: 'center' }}>
                       <span style={{ 
                         fontSize: '0.7rem', fontWeight: 700, padding: '0.3rem 0.6rem', borderRadius: '6px',
@@ -714,7 +734,7 @@ export default function FinalResults() {
                 )}
 
                 {/* Summary stats */}
-                <div className="fr-card-summary">
+                <div className="fr-card-summary" style={{ gridTemplateColumns: 'repeat(5, 1fr)' }}>
                   <div className="fr-card-stat">
                     <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>TOTAL</div>
                     <div style={{ fontSize: '0.95rem', fontWeight: 800, color: 'var(--text-light)' }}>{s.total}</div>
@@ -726,6 +746,10 @@ export default function FinalResults() {
                   <div className="fr-card-stat">
                     <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>GRADE</div>
                     <div style={{ fontSize: '0.95rem', fontWeight: 800, color: isFailed ? '#ef4444' : '#10b981' }}>{resolved.grade}</div>
+                  </div>
+                  <div className="fr-card-stat" style={{ borderColor: 'rgba(253,184,19,0.3)' }}>
+                    <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>BEST 6</div>
+                    <div style={{ fontSize: '0.95rem', fontWeight: 800, color: 'var(--primary-gold)' }}>{computeBest6Points(s) ?? 'N/A'}</div>
                   </div>
                   <div className="fr-card-stat">
                     <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>STATUS</div>
