@@ -24,8 +24,8 @@ export default function SchoolFeeds() {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!res.ok) throw new Error('Failed to fetch feeds');
-      const data = await res.json();
-      setFeeds(data);
+      const json = await res.json();
+      setFeeds(Array.isArray(json) ? json : json.data ?? []);
     } catch (err: any) {
       setError(err.message || 'Failed to load feeds');
     } finally {

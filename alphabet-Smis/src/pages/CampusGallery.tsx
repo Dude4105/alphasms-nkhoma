@@ -34,7 +34,7 @@ export default function CampusGallery() {
         if (!res.ok) throw new Error('Failed to load gallery');
         return res.json();
       })
-      .then(data => setItems(data))
+      .then(json => setItems(Array.isArray(json) ? json : json.data ?? []))
       .catch(err => setError(err.message))
       .finally(() => setIsLoading(false));
 

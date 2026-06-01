@@ -24,8 +24,8 @@ export default function SchoolGallery() {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!res.ok) throw new Error('Failed to fetch gallery items');
-      const data = await res.json();
-      setItems(data);
+      const json = await res.json();
+      setItems(Array.isArray(json) ? json : json.data ?? []);
     } catch (err: any) {
       setError(err.message || 'Failed to load gallery items');
     } finally {

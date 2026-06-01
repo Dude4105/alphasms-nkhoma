@@ -120,7 +120,7 @@ export default function ExploreCampus() {
         if (!res.ok) throw new Error('Failed to load campus feeds');
         return res.json();
       })
-      .then(data => setFeeds(data))
+      .then(json => setFeeds(Array.isArray(json) ? json : json.data ?? []))
       .catch(err => setError(err.message))
       .finally(() => setIsLoading(false));
 

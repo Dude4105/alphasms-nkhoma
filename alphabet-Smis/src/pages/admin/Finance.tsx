@@ -161,7 +161,7 @@ export default function Finance() {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/finance/expenses`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
-      if (res.ok) setExpenses(await res.json());
+      if (res.ok) { const json = await res.json(); setExpenses(Array.isArray(json) ? json : json.data ?? []); }
     } catch (err) { console.error(err); }
   };
 
