@@ -527,7 +527,7 @@ export default function FinalResults() {
               <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-gold)' }}>{topStudent.avg.toFixed(1)}%</div>
             </div>
             <div style={{ padding: '0.75rem', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid rgba(253,184,19,0.3)' }}>
-              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Total Points</div>
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Best 6 Points</div>
               <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-gold)' }}>{topStudent.points ?? 'N/A'}</div>
             </div>
           </div>
@@ -588,7 +588,7 @@ export default function FinalResults() {
                 <th style={{ padding: '1rem', fontWeight: 600, fontSize: '0.8rem', textAlign: 'center' }}>TOTAL</th>
                 <th style={{ padding: '1rem', fontWeight: 600, fontSize: '0.8rem', textAlign: 'center' }}>AVG (%)</th>
                 <th style={{ padding: '1rem', fontWeight: 600, fontSize: '0.8rem', textAlign: 'center' }}>GRADE</th>
-                <th style={{ padding: '1rem', fontWeight: 600, fontSize: '0.8rem', textAlign: 'center' }}>PTS</th>
+                <th style={{ padding: '1rem', fontWeight: 600, fontSize: '0.8rem', textAlign: 'center' }}>BEST 6 PTS</th>
                 <th style={{ padding: '1rem 0.5rem', fontWeight: 600, fontSize: '0.8rem', textAlign: 'center' }}>STATUS</th>
                 <th style={{ padding: '1rem 1.5rem', fontWeight: 600, fontSize: '0.8rem', textAlign: 'right' }}>REPORT</th>
               </tr>
