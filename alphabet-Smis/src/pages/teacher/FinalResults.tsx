@@ -515,7 +515,7 @@ export default function FinalResults() {
               <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-light)' }}>{topStudent.name}</h2>
             </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
             <div style={{ padding: '0.75rem', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid var(--glass-border)' }}>
               <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Total Marks</div>
               <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-gold)' }}>
@@ -525,6 +525,10 @@ export default function FinalResults() {
             <div style={{ padding: '0.75rem', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid var(--glass-border)' }}>
               <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Average Score</div>
               <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-gold)' }}>{topStudent.avg.toFixed(1)}%</div>
+            </div>
+            <div style={{ padding: '0.75rem', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid rgba(253,184,19,0.3)' }}>
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Total Points</div>
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-gold)' }}>{topStudent.points ?? 'N/A'}</div>
             </div>
           </div>
         </div>
@@ -620,7 +624,7 @@ export default function FinalResults() {
                     <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 700, color: 'var(--text-light)' }}>{s.total}</td>
                     <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 700, color: isFailed ? '#ef4444' : '#10b981' }}>{s.avg.toFixed(1)}</td>
                     <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 800, color: isFailed ? '#ef4444' : '#10b981' }}>{resolved.grade}</td>
-                    <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 700, color: 'var(--primary-gold)' }}>{s.points || resolved.points}</td>
+                    <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 700, color: 'var(--primary-gold)' }}>{s.points ?? resolved.points}</td>
                     <td style={{ padding: '1.2rem 1.5rem', textAlign: 'center' }}>
                       <span style={{ 
                         fontSize: '0.7rem', fontWeight: 700, padding: '0.3rem 0.6rem', borderRadius: '6px',
