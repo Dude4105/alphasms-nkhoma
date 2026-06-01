@@ -15,7 +15,7 @@ export default function StudentDetail() {
   const [data, setData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedTerm, setSelectedTerm] = useState<number>(1);
-  const [selectedYear, setSelectedYear] = useState<string>('2027');
+  const [selectedYear, setSelectedYear] = useState<string>('2025');
   const [availableYears, setAvailableYears] = useState<string[]>(['2025', '2026', '2027']);
   const [hasSetInitialTerm, setHasSetInitialTerm] = useState(false);
   const handleOpenHistory = () => {
@@ -30,7 +30,32 @@ export default function StudentDetail() {
     const fetchStudent = async () => {
       try {
         const token = localStorage.getItem('accessToken');
-        const termQuery = `?term=${selectedTerm}&academicYear=${selectedYear}`;
+        let activeTerm = selectedTerm;
+        let activeYear = selectedYear;
+
+        // Fetch active term/year from global settings on initial load
+        if (!hasSetInitialTerm) {
+          try {
+            const settingsRes = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings`, {
+              headers: { 'Authorization': `Bearer ${token}` }
+            });
+            if (settingsRes.ok) {
+              const settings = await settingsRes.json();
+              if (settings.currentTerm) {
+                activeTerm = settings.currentTerm;
+                setSelectedTerm(settings.currentTerm);
+              }
+              if (settings.academicYear) {
+                activeYear = settings.academicYear;
+                setSelectedYear(settings.academicYear);
+              }
+            }
+          } catch (e) {
+            console.error('Error fetching global settings:', e);
+          }
+        }
+
+        const termQuery = `?term=${activeTerm}&academicYear=${activeYear}`;
         const res = await fetch(`${import.meta.env.VITE_API_URL}/students/${studentId}${termQuery}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
@@ -66,7 +91,7 @@ export default function StudentDetail() {
           });
 
           // Dynamically populate available years from classHistory
-          let yearsList = ['2025', '2026'];
+          let yearsList = ['2025', '2026', '2027'];
           if (student.classHistory) {
             try {
               const hist = JSON.parse(student.classHistory);
@@ -75,12 +100,7 @@ export default function StudentDetail() {
             } catch {}
           }
           setAvailableYears(yearsList);
-
-          if (!hasSetInitialTerm && student.academic) {
-            setSelectedTerm(student.academic.term || 1);
-            setSelectedYear(student.academic.year || '2026');
-            setHasSetInitialTerm(true);
-          }
+          setHasSetInitialTerm(true);
         }
       } catch (err) {
         console.error('Error fetching student:', err);

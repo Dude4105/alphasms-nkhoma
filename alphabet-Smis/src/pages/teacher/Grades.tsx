@@ -10,7 +10,8 @@ import {
   AlertCircle,
   BarChart3,
   Loader,
-  Calendar
+  Calendar,
+  Search
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -43,7 +44,9 @@ export default function Grades() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingStudents, setIsLoadingStudents] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [fetchError, setFetchError] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedClass, setSelectedClass] = useState('');
   const [selectedSubject, setSelectedSubject] = useState('');
   const [activeTerm, setActiveTerm] = useState('1');
@@ -296,6 +299,7 @@ export default function Grades() {
 
   const handleSaveConfig = async () => {
     try {
+      setIsSaving(true);
       const token = localStorage.getItem('accessToken');
       const subjectKey = normalizeSubjectKey(selectedSubject);
       const res = await fetch(`${import.meta.env.VITE_API_URL}/teachers/grades/config`, {
@@ -327,11 +331,14 @@ export default function Grades() {
       } else {
         alert('An error occurred while saving. Please check your connection.');
       }
+    } finally {
+      setIsSaving(false);
     }
   };
 
   const handleSaveAll = async () => {
     try {
+      setIsSaving(true);
       const token = localStorage.getItem('accessToken');
       const subjectKey = normalizeSubjectKey(selectedSubject);
       
@@ -368,8 +375,15 @@ export default function Grades() {
       } else {
         alert('An error occurred while saving grades. Please check your connection.');
       }
+    } finally {
+      setIsSaving(false);
     }
   };
+
+  const filteredGrades = grades.filter(student => 
+    student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    student.id.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const configKey = `${selectedClass}-${normalizeSubjectKey(selectedSubject)}`;
   const currentConfig = getSafeConfig(configKey);
@@ -452,8 +466,16 @@ export default function Grades() {
           >
             <Settings size={18} /> Configure Assessments
           </button>
-          <button className="btn btn-primary" onClick={handleSaveAll}>
-            <Save size={16} /> Save All
+          <button className="btn btn-primary" onClick={handleSaveAll} disabled={isSaving}>
+            {isSaving ? (
+              <>
+                <Loader size={16} className="spin" /> Saving...
+              </>
+            ) : (
+              <>
+                <Save size={16} /> Save All
+              </>
+            )}
           </button>
         </div>
       </div>
@@ -509,6 +531,28 @@ export default function Grades() {
             <ChevronDown size={14} style={{ position: 'absolute', right: '0.6rem', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', color: 'var(--text-muted)' }} />
           </div>
         </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginLeft: 'auto', minWidth: '240px' }} className="grades-search-container">
+          <label style={{ fontSize: '0.9rem', color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>Search:</label>
+          <div style={{ position: 'relative', width: '100%' }}>
+            <input 
+              type="text"
+              placeholder="Search by name or ID..."
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              style={{
+                width: '100%',
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid var(--glass-border)',
+                color: 'var(--text-light)',
+                padding: '0.5rem 0.75rem 0.5rem 2.2rem',
+                borderRadius: '8px',
+                fontSize: '0.9rem',
+                outline: 'none'
+              }}
+            />
+            <Search size={14} style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
+          </div>
+        </div>
       </div>
 
       {/* Grades Table */}
@@ -518,7 +562,9 @@ export default function Grades() {
             <GraduationCap size={20} color="var(--primary-gold)" />
             {selectedClassName} — {finalResultsMode ? 'Final Grades' : 'Score Sheet'}
           </h2>
-          <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{grades.length} students enrolled</span>
+          <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+            {searchQuery ? `${filteredGrades.length} of ${grades.length} found` : `${grades.length} students enrolled`}
+          </span>
         </div>
 
         {finalResultsMode && (
@@ -577,60 +623,68 @@ export default function Grades() {
                     </tr>
                   </thead>
                   <tbody>
-                    {grades.map((student, idx) => {
-                      return (
-                        <tr key={idx} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                          <td style={{ padding: '0.75rem 1.5rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>{idx + 1}</td>
-                          <td style={{ padding: '0.75rem 1.5rem' }}>
-                            <div style={{ fontWeight: 500, color: 'var(--text-light)' }}>{student.name}</div>
-                            <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{student.id}</div>
-                          </td>
-                          {finalResultsMode ? (
-                            <td style={{ padding: '0.5rem 0.75rem', textAlign: 'center' }}>
-                              <input 
-                                type="number" 
-                                value={student.scores['finalScore'] ?? ''} 
-                                onChange={e => handleScoreChange(idx, 'finalScore', e.target.value)}
-                                max={100}
-                                min={0}
-                                placeholder="—"
-                                style={{
-                                  width: '80px',
-                                  padding: '0.5rem 0.6rem',
-                                  borderRadius: '6px',
-                                  background: 'rgba(239, 68, 68, 0.05)',
-                                  border: '1px solid rgba(239, 68, 68, 0.3)',
-                                  color: 'var(--text-light)',
-                                  textAlign: 'center',
-                                  fontSize: '1rem',
-                                  fontWeight: 700
-                                }}
-                              />
+                    {filteredGrades.length === 0 ? (
+                      <tr>
+                        <td colSpan={finalResultsMode ? 3 : currentConfig.assessments.length + 3} style={{ padding: '3rem', textAlign: 'center', color: 'var(--text-muted)' }}>
+                          No students found matching "{searchQuery}"
+                        </td>
+                      </tr>
+                    ) : (
+                      filteredGrades.map((student) => {
+                        const originalIdx = grades.indexOf(student);
+                        return (
+                          <tr key={originalIdx} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                            <td style={{ padding: '0.75rem 1.5rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>{originalIdx + 1}</td>
+                            <td style={{ padding: '0.75rem 1.5rem' }}>
+                              <div style={{ fontWeight: 500, color: 'var(--text-light)' }}>{student.name}</div>
+                              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{student.id}</div>
                             </td>
-                          ) : (
-                            currentConfig.assessments.map(ass => (
-                              <td key={ass.id} style={{ padding: '0.5rem 0.75rem', textAlign: 'center' }}>
+                            {finalResultsMode ? (
+                              <td style={{ padding: '0.5rem 0.75rem', textAlign: 'center' }}>
                                 <input 
                                   type="number" 
-                                  value={student.scores[ass.id] ?? ''} 
-                                  onChange={e => handleScoreChange(idx, ass.id, e.target.value)}
-                                  max={ass.maxScore}
+                                  value={student.scores['finalScore'] ?? ''} 
+                                  onChange={e => handleScoreChange(originalIdx, 'finalScore', e.target.value)}
+                                  max={100}
                                   min={0}
                                   placeholder="—"
                                   style={{
-                                    width: '65px',
-                                    padding: '0.4rem 0.5rem',
+                                    width: '80px',
+                                    padding: '0.5rem 0.6rem',
                                     borderRadius: '6px',
-                                    background: 'rgba(255,255,255,0.05)',
-                                    border: '1px solid var(--glass-border)',
+                                    background: 'rgba(239, 68, 68, 0.05)',
+                                    border: '1px solid rgba(239, 68, 68, 0.3)',
                                     color: 'var(--text-light)',
                                     textAlign: 'center',
-                                    fontSize: '0.9rem'
+                                    fontSize: '1rem',
+                                    fontWeight: 700
                                   }}
                                 />
                               </td>
-                            ))
-                          )}
+                            ) : (
+                              currentConfig.assessments.map(ass => (
+                                <td key={ass.id} style={{ padding: '0.5rem 0.75rem', textAlign: 'center' }}>
+                                  <input 
+                                    type="number" 
+                                    value={student.scores[ass.id] ?? ''} 
+                                    onChange={e => handleScoreChange(originalIdx, ass.id, e.target.value)}
+                                    max={ass.maxScore}
+                                    min={0}
+                                    placeholder="—"
+                                    style={{
+                                      width: '65px',
+                                      padding: '0.4rem 0.5rem',
+                                      borderRadius: '6px',
+                                      background: 'rgba(255,255,255,0.05)',
+                                      border: '1px solid var(--glass-border)',
+                                      color: 'var(--text-light)',
+                                      textAlign: 'center',
+                                      fontSize: '0.9rem'
+                                    }}
+                                  />
+                                </td>
+                              ))
+                            )}
                           
                           {!finalResultsMode && (
                             <td style={{ padding: '0.5rem 1rem', textAlign: 'center', background: 'rgba(212, 175, 55, 0.02)' }}>
@@ -678,7 +732,7 @@ export default function Grades() {
                           )}
                         </tr>
                       );
-                    })}
+                    }))}
                   </tbody>
                 </table>
               </div>
@@ -687,87 +741,102 @@ export default function Grades() {
             {/* Mobile Card Deck View */}
             <div className="grades-mobile-view">
               <div className="grades-mobile-list">
-                {grades.map((student, idx) => {
-                  let total = 0;
-                  let maxTotal = 0;
-                  currentConfig.assessments.forEach(ass => {
-                    const val = student.scores[ass.id];
-                    if (val !== undefined && val !== null && val !== '') {
-                      total += Number(val);
-                      maxTotal += Number(ass.maxScore);
-                    }
-                  });
-                  const avg = maxTotal > 0 ? Math.round((total / maxTotal) * 100) : 0;
-                  const isPassing = avg >= gradingPassMin;
-                  const initials = student.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
+                {filteredGrades.length === 0 ? (
+                  <div style={{ padding: '3rem', textAlign: 'center', color: 'var(--text-muted)' }}>
+                    No students found matching "{searchQuery}"
+                  </div>
+                ) : (
+                  filteredGrades.map((student) => {
+                    const originalIdx = grades.indexOf(student);
+                    let total = 0;
+                    let maxTotal = 0;
+                    currentConfig.assessments.forEach(ass => {
+                      const val = student.scores[ass.id];
+                      if (val !== undefined && val !== null && val !== '') {
+                        total += Number(val);
+                        maxTotal += Number(ass.maxScore);
+                      }
+                    });
+                    const avg = maxTotal > 0 ? Math.round((total / maxTotal) * 100) : 0;
+                    const isPassing = avg >= gradingPassMin;
+                    const initials = student.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
 
-                  return (
-                    <div key={idx} className="student-mobile-card">
-                      <div className="student-card-header">
-                        <div className="student-card-profile">
-                          <div className="student-card-avatar">{initials}</div>
-                          <div>
-                            <div className="student-card-name">{student.name}</div>
-                            <div className="student-card-id">{student.id}</div>
+                    return (
+                      <div key={originalIdx} className="student-mobile-card">
+                        <div className="student-card-header">
+                          <div className="student-card-profile">
+                            <div className="student-card-avatar">{initials}</div>
+                            <div>
+                              <div className="student-card-name">{student.name}</div>
+                              <div className="student-card-id">{student.id}</div>
+                            </div>
                           </div>
+                          {!finalResultsMode && (
+                            <div className="student-card-avg-badge">
+                              <span className="card-avg-label">Avg</span>
+                              <span className="card-avg-val" style={{ color: isPassing ? '#10b981' : '#ef4444' }}>
+                                {avg}%
+                              </span>
+                            </div>
+                          )}
                         </div>
-                        {!finalResultsMode && (
-                          <div className="student-card-avg-badge">
-                            <span className="card-avg-label">Avg</span>
-                            <span className="card-avg-val" style={{ color: isPassing ? '#10b981' : '#ef4444' }}>
-                              {avg}%
-                            </span>
-                          </div>
-                        )}
-                      </div>
 
-                      <div className="student-card-inputs">
-                        {finalResultsMode ? (
-                          <div className="card-input-box" style={{ gridColumn: 'span 2' }}>
-                            <label>Final Score (Max: 100)</label>
-                            <input 
-                              type="number" 
-                              value={student.scores['finalScore'] ?? ''} 
-                              onChange={e => handleScoreChange(idx, 'finalScore', e.target.value)}
-                              max={100}
-                              min={0}
-                              placeholder="—"
-                              className="card-input-field"
-                              style={{ 
-                                background: 'rgba(239, 68, 68, 0.05)',
-                                border: '1px solid rgba(239, 68, 68, 0.3)',
-                                color: 'var(--text-light)',
-                                fontWeight: 700
-                              }}
-                            />
-                          </div>
-                        ) : (
-                          currentConfig.assessments.map(ass => (
-                            <div key={ass.id} className="card-input-box">
-                              <label>{ass.name} (Max: {ass.maxScore})</label>
+                        <div className="student-card-inputs">
+                          {finalResultsMode ? (
+                            <div className="card-input-box" style={{ gridColumn: 'span 2' }}>
+                              <label>Final Score (Max: 100)</label>
                               <input 
                                 type="number" 
-                                value={student.scores[ass.id] ?? ''} 
-                                onChange={e => handleScoreChange(idx, ass.id, e.target.value)}
-                                max={ass.maxScore}
+                                value={student.scores['finalScore'] ?? ''} 
+                                onChange={e => handleScoreChange(originalIdx, 'finalScore', e.target.value)}
+                                max={100}
                                 min={0}
                                 placeholder="—"
                                 className="card-input-field"
+                                style={{ 
+                                  background: 'rgba(239, 68, 68, 0.05)',
+                                  border: '1px solid rgba(239, 68, 68, 0.3)',
+                                  color: 'var(--text-light)',
+                                  fontWeight: 700
+                                }}
                               />
                             </div>
-                          ))
-                        )}
+                          ) : (
+                            currentConfig.assessments.map(ass => (
+                              <div key={ass.id} className="card-input-box">
+                                <label>{ass.name} (Max: {ass.maxScore})</label>
+                                <input 
+                                  type="number" 
+                                  value={student.scores[ass.id] ?? ''} 
+                                  onChange={e => handleScoreChange(originalIdx, ass.id, e.target.value)}
+                                  max={ass.maxScore}
+                                  min={0}
+                                  placeholder="—"
+                                  className="card-input-field"
+                                />
+                              </div>
+                            ))
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })
+                )}
               </div>
             </div>
 
             {/* Sticky Mobile Save Button */}
             <div className="mobile-sticky-save">
-              <button className="btn btn-primary mobile-save-fab" onClick={handleSaveAll}>
-                <Save size={18} /> Save Gradebook Changes
+              <button className="btn btn-primary mobile-save-fab" onClick={handleSaveAll} disabled={isSaving}>
+                {isSaving ? (
+                  <>
+                    <Loader size={18} className="spin" /> Saving...
+                  </>
+                ) : (
+                  <>
+                    <Save size={18} /> Save Gradebook Changes
+                  </>
+                )}
               </button>
             </div>
           </>
@@ -857,8 +926,17 @@ export default function Grades() {
               <button 
                 className="btn btn-primary config-apply-btn" 
                 onClick={handleSaveConfig}
+                disabled={isSaving}
               >
-                Save & Apply
+                {isSaving ? (
+                  <>
+                    <Loader size={16} className="spin" /> Saving...
+                  </>
+                ) : (
+                  <>
+                    Save & Apply
+                  </>
+                )}
               </button>
             </div>
           </div>
@@ -866,6 +944,15 @@ export default function Grades() {
       )}
 
       <style>{`
+        .spin {
+          animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+
         .config-overlay {
           position: fixed;
           inset: 0;
@@ -1376,6 +1463,11 @@ export default function Grades() {
             display: flex;
             align-items: center;
             gap: 0.5rem;
+          }
+
+          .grades-search-container {
+            margin-left: 0 !important;
+            width: 100%;
           }
         }
       `}</style>
