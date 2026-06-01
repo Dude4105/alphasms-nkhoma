@@ -14,6 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FeedsController = void 0;
 const common_1 = require("@nestjs/common");
+const pagination_dto_1 = require("../common/dto/pagination.dto");
 const feeds_service_1 = require("./feeds.service");
 const passport_1 = require("@nestjs/passport");
 const platform_express_1 = require("@nestjs/platform-express");
@@ -24,11 +25,11 @@ let FeedsController = class FeedsController {
     constructor(feedsService) {
         this.feedsService = feedsService;
     }
-    findAllPublic() {
-        return this.feedsService.findAll();
+    findAllPublic(query) {
+        return this.feedsService.findAll(query);
     }
-    findAllAdmin() {
-        return this.feedsService.findAll();
+    findAllAdmin(query) {
+        return this.feedsService.findAll(query);
     }
     findOne(id) {
         return this.feedsService.findOne(+id);
@@ -58,15 +59,17 @@ let FeedsController = class FeedsController {
 exports.FeedsController = FeedsController;
 __decorate([
     (0, common_1.Get)('public'),
+    __param(0, (0, common_1.Query)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [pagination_dto_1.PaginationDto]),
     __metadata("design:returntype", void 0)
 ], FeedsController.prototype, "findAllPublic", null);
 __decorate([
     (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt')),
     (0, common_1.Get)(),
+    __param(0, (0, common_1.Query)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [pagination_dto_1.PaginationDto]),
     __metadata("design:returntype", void 0)
 ], FeedsController.prototype, "findAllAdmin", null);
 __decorate([

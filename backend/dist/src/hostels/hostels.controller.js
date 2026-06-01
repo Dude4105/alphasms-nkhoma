@@ -17,6 +17,9 @@ const common_1 = require("@nestjs/common");
 const hostels_service_1 = require("./hostels.service");
 const pagination_dto_1 = require("../common/dto/pagination.dto");
 const passport_1 = require("@nestjs/passport");
+const roles_guard_1 = require("../auth/roles.guard");
+const roles_decorator_1 = require("../auth/roles.decorator");
+const client_1 = require("@prisma/client");
 let HostelsController = class HostelsController {
     hostelsService;
     constructor(hostelsService) {
@@ -50,6 +53,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], HostelsController.prototype, "findAll", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN, client_1.Role.HOSTEL_OWNER),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -70,6 +74,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], HostelsController.prototype, "findOne", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN, client_1.Role.HOSTEL_OWNER),
     (0, common_1.Patch)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
@@ -78,6 +83,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], HostelsController.prototype, "update", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN, client_1.Role.HOSTEL_OWNER),
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -85,7 +91,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], HostelsController.prototype, "remove", null);
 exports.HostelsController = HostelsController = __decorate([
-    (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt')),
+    (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt'), roles_guard_1.RolesGuard),
     (0, common_1.Controller)('hostels'),
     __metadata("design:paramtypes", [hostels_service_1.HostelsService])
 ], HostelsController);

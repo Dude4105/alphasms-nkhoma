@@ -46,6 +46,7 @@ exports.TeachersService = void 0;
 const common_1 = require("@nestjs/common");
 const prisma_service_1 = require("../prisma/prisma.service");
 const utils_1 = require("../common/utils");
+const admin_service_1 = require("../admin/admin.service");
 const bcrypt = __importStar(require("bcrypt"));
 let TeachersService = class TeachersService {
     prisma;
@@ -867,9 +868,12 @@ let TeachersService = class TeachersService {
                 });
                 results.push(res);
             }
+            setImmediate(() => {
+                this.recalculateClassRanks(classEntity.name, academicYear, term);
+            });
             return results;
         }
-        return await this.prisma.$transaction(async (tx) => {
+        const txResults = await this.prisma.$transaction(async (tx) => {
             const config = await tx.gradeConfig.findUnique({
                 where: {
                     classId_subjectKey_term_academicYear: {
@@ -968,6 +972,10 @@ let TeachersService = class TeachersService {
             }
             return results;
         });
+        setImmediate(() => {
+            this.recalculateClassRanks(classEntity.name, academicYear, term);
+        });
+        return txResults;
     }
     async getSubjectResults(userId, classId, subjectKey, term, academicYear) {
         let resolvedTerm = term;
@@ -1135,6 +1143,20 @@ let TeachersService = class TeachersService {
                 catch { }
             }
             historyObj[currentYear] = classEntity.name;
+            await this.prisma.classHistory.upsert({
+                where: {
+                    studentId_academicYear: {
+                        studentId: student.id,
+                        academicYear: currentYear,
+                    },
+                },
+                update: { className: classEntity.name },
+                create: {
+                    studentId: student.id,
+                    academicYear: currentYear,
+                    className: classEntity.name,
+                },
+            });
             if (promo.action === 'migrate') {
                 historyObj[nextYear] = targetClass.name;
                 await this.prisma.student.update({
@@ -1142,6 +1164,20 @@ let TeachersService = class TeachersService {
                     data: {
                         classId: targetClass.id,
                         classHistory: JSON.stringify(historyObj),
+                    },
+                });
+                await this.prisma.classHistory.upsert({
+                    where: {
+                        studentId_academicYear: {
+                            studentId: student.id,
+                            academicYear: nextYear,
+                        },
+                    },
+                    update: { className: targetClass.name },
+                    create: {
+                        studentId: student.id,
+                        academicYear: nextYear,
+                        className: targetClass.name,
                     },
                 });
                 migratedCount++;
@@ -1154,6 +1190,20 @@ let TeachersService = class TeachersService {
                         classHistory: JSON.stringify(historyObj),
                     },
                 });
+                await this.prisma.classHistory.upsert({
+                    where: {
+                        studentId_academicYear: {
+                            studentId: student.id,
+                            academicYear: nextYear,
+                        },
+                    },
+                    update: { className: classEntity.name },
+                    create: {
+                        studentId: student.id,
+                        academicYear: nextYear,
+                        className: classEntity.name,
+                    },
+                });
                 repeatedCount++;
             }
         }
@@ -1162,6 +1212,171 @@ let TeachersService = class TeachersService {
             migratedCount,
             repeatedCount,
         };
+    }
+    async recalculateClassRanks(className, academicYear, term) {
+        try {
+            const students = await this.prisma.student.findMany({
+                where: {
+                    OR: [
+                        { class: { name: className } },
+                        { classHistoryRelations: { some: { className, academicYear } } }
+                    ]
+                },
+                select: { id: true, student_id: true }
+            });
+            const studentIds = students.map(s => s.id);
+            if (studentIds.length === 0)
+                return;
+            const finalModeSetting = await this.prisma.systemSetting.findUnique({
+                where: { key: 'finalResultsMode' },
+            });
+            const isFinalMode = finalModeSetting?.value === 'true';
+            const gradingSetting = await this.prisma.systemSetting.findUnique({
+                where: { key: 'gradingSystem' },
+            });
+            let gradingConfig = admin_service_1.AdminService.DEFAULT_GRADING_CONFIG || { grades: [], passMinScore: 40 };
+            if (gradingSetting) {
+                try {
+                    gradingConfig = JSON.parse(gradingSetting.value);
+                }
+                catch { }
+            }
+            const classEntity = await this.prisma.class.findFirst({
+                where: { name: className }
+            });
+            const subjectsCount = classEntity && Array.isArray(classEntity.subjects)
+                ? classEntity.subjects.length
+                : 0;
+            const studentAverages = [];
+            if (isFinalMode) {
+                const results = await this.prisma.result.findMany({
+                    where: {
+                        studentId: { in: studentIds },
+                        academicYear,
+                        term,
+                    },
+                });
+                const resultsByStudent = new Map();
+                results.forEach((res) => {
+                    if (!resultsByStudent.has(res.studentId)) {
+                        resultsByStudent.set(res.studentId, { total: 0, scores: [] });
+                    }
+                    const data = resultsByStudent.get(res.studentId);
+                    data.total += res.score;
+                    let pts = 9;
+                    if (gradingConfig && gradingConfig.grades) {
+                        const rounded = Math.round(res.score);
+                        for (const g of gradingConfig.grades) {
+                            if (rounded >= g.minScore && rounded <= g.maxScore) {
+                                pts = g.points;
+                                break;
+                            }
+                        }
+                    }
+                    data.scores.push(pts);
+                });
+                studentIds.forEach((sId) => {
+                    const data = resultsByStudent.get(sId) || { total: 0, scores: [] };
+                    const avg = subjectsCount > 0 ? Math.round(data.total / subjectsCount) : 0;
+                    const worstPoint = gradingConfig && gradingConfig.grades && gradingConfig.grades.length > 0
+                        ? gradingConfig.grades[gradingConfig.grades.length - 1].points
+                        : 9;
+                    const sortedPts = [...data.scores].sort((a, b) => a - b);
+                    while (sortedPts.length < 6)
+                        sortedPts.push(worstPoint);
+                    const points = sortedPts.slice(0, 6).reduce((acc, p) => acc + p, 0);
+                    studentAverages.push({ id: sId, avg, points });
+                });
+            }
+            else {
+                const scores = await this.prisma.termAssessmentScore.findMany({
+                    where: {
+                        studentId: { in: studentIds },
+                        academicYear,
+                        term,
+                    },
+                });
+                const resultsByStudent = new Map();
+                scores.forEach((s) => {
+                    if (!resultsByStudent.has(s.studentId)) {
+                        resultsByStudent.set(s.studentId, { total: 0, max: 0, subjects: {} });
+                    }
+                    const st = resultsByStudent.get(s.studentId);
+                    st.total += s.score;
+                    st.max += s.maxScore || 100;
+                    if (!st.subjects[s.subjectKey])
+                        st.subjects[s.subjectKey] = { total: 0, max: 0 };
+                    st.subjects[s.subjectKey].total += s.score;
+                    st.subjects[s.subjectKey].max += s.maxScore || 100;
+                });
+                studentIds.forEach((sId) => {
+                    const data = resultsByStudent.get(sId) || { total: 0, max: 0, subjects: {} };
+                    const avg = data.max > 0 ? (data.total / data.max) * 100 : 0;
+                    const subjectPoints = [];
+                    Object.keys(data.subjects).forEach(key => {
+                        const sub = data.subjects[key];
+                        const score = sub.max > 0 ? Math.round((sub.total / sub.max) * 100) : 0;
+                        let pts = 9;
+                        if (gradingConfig && gradingConfig.grades) {
+                            const rounded = Math.round(score);
+                            for (const g of gradingConfig.grades) {
+                                if (rounded >= g.minScore && rounded <= g.maxScore) {
+                                    pts = g.points;
+                                    break;
+                                }
+                            }
+                        }
+                        subjectPoints.push(pts);
+                    });
+                    const worstPoint = gradingConfig && gradingConfig.grades && gradingConfig.grades.length > 0
+                        ? gradingConfig.grades[gradingConfig.grades.length - 1].points
+                        : 9;
+                    const sortedPts = [...subjectPoints].sort((a, b) => a - b);
+                    while (sortedPts.length < 6)
+                        sortedPts.push(worstPoint);
+                    const points = sortedPts.slice(0, 6).reduce((acc, p) => acc + p, 0);
+                    studentAverages.push({ id: sId, avg: Math.round(avg), points });
+                });
+            }
+            studentAverages.sort((a, b) => {
+                if (a.points !== b.points && a.points > 0 && b.points > 0) {
+                    return a.points - b.points;
+                }
+                return b.avg - a.avg;
+            });
+            const totalStudents = studentIds.length;
+            for (let i = 0; i < studentAverages.length; i++) {
+                const item = studentAverages[i];
+                await this.prisma.studentRank.upsert({
+                    where: {
+                        studentId_term_academicYear: {
+                            studentId: item.id,
+                            term,
+                            academicYear,
+                        },
+                    },
+                    update: {
+                        average: item.avg,
+                        points: item.points,
+                        rank: i + 1,
+                        totalStudents,
+                    },
+                    create: {
+                        studentId: item.id,
+                        term,
+                        academicYear,
+                        average: item.avg,
+                        points: item.points,
+                        rank: i + 1,
+                        totalStudents,
+                    },
+                });
+            }
+            console.log(`[TeachersService] Recalculated ranks for class ${className}, year ${academicYear}, term ${term}`);
+        }
+        catch (err) {
+            console.error('[TeachersService] Error recalculating ranks:', err);
+        }
     }
 };
 exports.TeachersService = TeachersService;

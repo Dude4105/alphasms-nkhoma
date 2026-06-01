@@ -316,4 +316,5 @@ export declare class TeachersService {
         migratedCount: number;
         repeatedCount: number;
     }>;
+    recalculateClassRanks(className: string, academicYear: string, term: number): Promise<void>;
 }

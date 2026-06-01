@@ -1,4 +1,5 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, UseInterceptors, UploadedFile } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, UseInterceptors, UploadedFile, Query } from '@nestjs/common';
+import { PaginationDto } from '../common/dto/pagination.dto';
 import { GalleryService } from './gallery.service';
 import { AuthGuard } from '@nestjs/passport';
 import { FileInterceptor } from '@nestjs/platform-express';
@@ -10,8 +11,8 @@ export class GalleryController {
   constructor(private readonly galleryService: GalleryService) {}
 
   @Get()
-  findAll() {
-    return this.galleryService.findAll();
+  findAll(@Query() query: PaginationDto) {
+    return this.galleryService.findAll(query);
   }
 
   @Get(':id')

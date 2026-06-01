@@ -11,6 +11,7 @@ export declare class StudentsController {
         createdAt: Date;
         updatedAt: Date;
         email: string | null;
+        classHistory: string | null;
         gender: string | null;
         dob: string | null;
         guardianName: string | null;
@@ -23,7 +24,6 @@ export declare class StudentsController {
         guardianEmail: string | null;
         classId: number | null;
         hostelId: number | null;
-        classHistory: string | null;
     }>;
     findAll(query: PaginationDto): Promise<{
         data: ({
@@ -57,7 +57,7 @@ export declare class StudentsController {
                 warden: string | null;
                 wardenPhone: string | null;
                 wardenEmail: string | null;
-                ownerId: number;
+                ownerId: number | null;
             } | null;
         } & {
             id: number;
@@ -67,6 +67,7 @@ export declare class StudentsController {
             createdAt: Date;
             updatedAt: Date;
             email: string | null;
+            classHistory: string | null;
             gender: string | null;
             dob: string | null;
             guardianName: string | null;
@@ -79,7 +80,6 @@ export declare class StudentsController {
             guardianEmail: string | null;
             classId: number | null;
             hostelId: number | null;
-            classHistory: string | null;
         })[];
         meta: {
             total: number;
@@ -88,7 +88,7 @@ export declare class StudentsController {
             limit: number;
         };
     }>;
-    findOne(id: string, term?: string, academicYear?: string): Promise<{
+    findOne(req: any, id: string, term?: string, academicYear?: string): Promise<{
         schoolInfo: any;
         class: {
             name: string;
@@ -115,7 +115,7 @@ export declare class StudentsController {
             warden: string | null;
             wardenPhone: string | null;
             wardenEmail: string | null;
-            ownerId: number;
+            ownerId: number | null;
         } | null;
         id: number;
         firstName: string;
@@ -124,6 +124,7 @@ export declare class StudentsController {
         createdAt: Date;
         updatedAt: Date;
         email: string | null;
+        classHistory: string | null;
         gender: string | null;
         dob: string | null;
         guardianName: string | null;
@@ -136,7 +137,6 @@ export declare class StudentsController {
         guardianEmail: string | null;
         classId: number | null;
         hostelId: number | null;
-        classHistory: string | null;
     } | null>;
     update(id: string, body: any): Promise<{
         id: number;
@@ -146,6 +146,7 @@ export declare class StudentsController {
         createdAt: Date;
         updatedAt: Date;
         email: string | null;
+        classHistory: string | null;
         gender: string | null;
         dob: string | null;
         guardianName: string | null;
@@ -158,7 +159,6 @@ export declare class StudentsController {
         guardianEmail: string | null;
         classId: number | null;
         hostelId: number | null;
-        classHistory: string | null;
     }>;
     remove(id: string): Promise<{
         id: number;

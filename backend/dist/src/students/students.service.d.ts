@@ -11,6 +11,7 @@ export declare class StudentsService {
         createdAt: Date;
         updatedAt: Date;
         email: string | null;
+        classHistory: string | null;
         gender: string | null;
         dob: string | null;
         guardianName: string | null;
@@ -23,7 +24,6 @@ export declare class StudentsService {
         guardianEmail: string | null;
         classId: number | null;
         hostelId: number | null;
-        classHistory: string | null;
     }>;
     findAll(query: PaginationDto): Promise<{
         data: ({
@@ -57,7 +57,7 @@ export declare class StudentsService {
                 warden: string | null;
                 wardenPhone: string | null;
                 wardenEmail: string | null;
-                ownerId: number;
+                ownerId: number | null;
             } | null;
         } & {
             id: number;
@@ -67,6 +67,7 @@ export declare class StudentsService {
             createdAt: Date;
             updatedAt: Date;
             email: string | null;
+            classHistory: string | null;
             gender: string | null;
             dob: string | null;
             guardianName: string | null;
@@ -79,7 +80,6 @@ export declare class StudentsService {
             guardianEmail: string | null;
             classId: number | null;
             hostelId: number | null;
-            classHistory: string | null;
         })[];
         meta: {
             total: number;
@@ -115,7 +115,7 @@ export declare class StudentsService {
             warden: string | null;
             wardenPhone: string | null;
             wardenEmail: string | null;
-            ownerId: number;
+            ownerId: number | null;
         } | null;
         id: number;
         firstName: string;
@@ -124,6 +124,7 @@ export declare class StudentsService {
         createdAt: Date;
         updatedAt: Date;
         email: string | null;
+        classHistory: string | null;
         gender: string | null;
         dob: string | null;
         guardianName: string | null;
@@ -136,7 +137,6 @@ export declare class StudentsService {
         guardianEmail: string | null;
         classId: number | null;
         hostelId: number | null;
-        classHistory: string | null;
     } | null>;
     update(studentId: string, data: any): Promise<{
         id: number;
@@ -146,6 +146,7 @@ export declare class StudentsService {
         createdAt: Date;
         updatedAt: Date;
         email: string | null;
+        classHistory: string | null;
         gender: string | null;
         dob: string | null;
         guardianName: string | null;
@@ -158,7 +159,6 @@ export declare class StudentsService {
         guardianEmail: string | null;
         classId: number | null;
         hostelId: number | null;
-        classHistory: string | null;
     }>;
     remove(studentId: string): Promise<{
         id: number;
@@ -169,6 +169,58 @@ export declare class StudentsService {
         role: import(".prisma/client").$Enums.Role;
         hashedRefreshToken: string | null;
     }>;
+    findByUserId(userId: number): Promise<({
+        class: {
+            id: number;
+            createdAt: Date;
+            updatedAt: Date;
+            name: string;
+            class_id: string;
+            level: string | null;
+            track: string | null;
+            room: string | null;
+            classTeacher: string | null;
+            schedule: string | null;
+            capacity: number | null;
+            subjects: import("@prisma/client/runtime/library").JsonValue | null;
+            timetable: import("@prisma/client/runtime/library").JsonValue | null;
+        } | null;
+        hostel: {
+            id: number;
+            createdAt: Date;
+            updatedAt: Date;
+            name: string;
+            capacity: number;
+            hostel_id: string;
+            type: string | null;
+            warden: string | null;
+            wardenPhone: string | null;
+            wardenEmail: string | null;
+            ownerId: number | null;
+        } | null;
+    } & {
+        id: number;
+        firstName: string;
+        lastName: string;
+        userId: number;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string | null;
+        classHistory: string | null;
+        gender: string | null;
+        dob: string | null;
+        guardianName: string | null;
+        guardianRelation: string | null;
+        guardianAddress: string | null;
+        student_id: string;
+        enrollmentDate: string | null;
+        scholarType: string | null;
+        guardianPhone: string | null;
+        guardianEmail: string | null;
+        classId: number | null;
+        hostelId: number | null;
+    }) | null>;
+    authorizeStudentAccess(requester: any, requestedStudentId: string): Promise<boolean>;
     findByDetails(firstName: string, lastName: string, dob: string): Promise<{
         schoolInfo: any;
         class: {
@@ -196,7 +248,7 @@ export declare class StudentsService {
             warden: string | null;
             wardenPhone: string | null;
             wardenEmail: string | null;
-            ownerId: number;
+            ownerId: number | null;
         } | null;
         id: number;
         firstName: string;
@@ -205,6 +257,7 @@ export declare class StudentsService {
         createdAt: Date;
         updatedAt: Date;
         email: string | null;
+        classHistory: string | null;
         gender: string | null;
         dob: string | null;
         guardianName: string | null;
@@ -217,6 +270,5 @@ export declare class StudentsService {
         guardianEmail: string | null;
         classId: number | null;
         hostelId: number | null;
-        classHistory: string | null;
     } | null>;
 }

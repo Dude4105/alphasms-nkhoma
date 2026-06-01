@@ -17,10 +17,27 @@ let FeedsService = class FeedsService {
     constructor(prisma) {
         this.prisma = prisma;
     }
-    async findAll() {
-        return this.prisma.schoolFeed.findMany({
-            orderBy: { createdAt: 'desc' },
-        });
+    async findAll(query) {
+        const page = Number(query?.page) || 1;
+        const limit = Number(query?.limit) || 10;
+        const skip = (page - 1) * limit;
+        const [data, total] = await Promise.all([
+            this.prisma.schoolFeed.findMany({
+                skip,
+                take: limit,
+                orderBy: { createdAt: 'desc' },
+            }),
+            this.prisma.schoolFeed.count(),
+        ]);
+        return {
+            data,
+            meta: {
+                total,
+                page,
+                lastPage: Math.ceil(total / limit),
+                limit,
+            },
+        };
     }
     async findOne(id) {
         const feed = await this.prisma.schoolFeed.findUnique({ where: { id } });

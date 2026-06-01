@@ -13,7 +13,7 @@ export declare class HostelsService {
                     email: string;
                     role: import(".prisma/client").$Enums.Role;
                 };
-            };
+            } | null;
         } & {
             id: number;
             createdAt: Date;
@@ -25,7 +25,7 @@ export declare class HostelsService {
             warden: string | null;
             wardenPhone: string | null;
             wardenEmail: string | null;
-            ownerId: number;
+            ownerId: number | null;
         })[];
         meta: {
             total: number;
@@ -46,7 +46,7 @@ export declare class HostelsService {
                 email: string;
                 role: import(".prisma/client").$Enums.Role;
             };
-        };
+        } | null;
     } & {
         id: number;
         createdAt: Date;
@@ -58,7 +58,7 @@ export declare class HostelsService {
         warden: string | null;
         wardenPhone: string | null;
         wardenEmail: string | null;
-        ownerId: number;
+        ownerId: number | null;
     }) | null>;
     getStats(): Promise<{
         totalCapacity: number;
@@ -77,7 +77,7 @@ export declare class HostelsService {
         warden: string | null;
         wardenPhone: string | null;
         wardenEmail: string | null;
-        ownerId: number;
+        ownerId: number | null;
     }>;
     update(id: number, data: any): Promise<{
         id: number;
@@ -90,7 +90,7 @@ export declare class HostelsService {
         warden: string | null;
         wardenPhone: string | null;
         wardenEmail: string | null;
-        ownerId: number;
+        ownerId: number | null;
     }>;
     remove(id: number): Promise<{
         id: number;
@@ -103,6 +103,6 @@ export declare class HostelsService {
         warden: string | null;
         wardenPhone: string | null;
         wardenEmail: string | null;
-        ownerId: number;
+        ownerId: number | null;
     }>;
 }

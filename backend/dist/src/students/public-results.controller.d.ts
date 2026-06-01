@@ -31,7 +31,7 @@ export declare class PublicResultsController {
             warden: string | null;
             wardenPhone: string | null;
             wardenEmail: string | null;
-            ownerId: number;
+            ownerId: number | null;
         } | null;
         id: number;
         firstName: string;
@@ -40,6 +40,7 @@ export declare class PublicResultsController {
         createdAt: Date;
         updatedAt: Date;
         email: string | null;
+        classHistory: string | null;
         gender: string | null;
         dob: string | null;
         guardianName: string | null;
@@ -52,7 +53,6 @@ export declare class PublicResultsController {
         guardianEmail: string | null;
         classId: number | null;
         hostelId: number | null;
-        classHistory: string | null;
     } | null>;
     getPublicHistory(studentId: string, academicYear?: string): Promise<{
         student: {
@@ -147,7 +147,7 @@ export declare class PublicResultsController {
                 warden: string | null;
                 wardenPhone: string | null;
                 wardenEmail: string | null;
-                ownerId: number;
+                ownerId: number | null;
             } | null;
             id: number;
             firstName: string;
@@ -156,6 +156,7 @@ export declare class PublicResultsController {
             createdAt: Date;
             updatedAt: Date;
             email: string | null;
+            classHistory: string | null;
             gender: string | null;
             dob: string | null;
             guardianName: string | null;
@@ -168,7 +169,6 @@ export declare class PublicResultsController {
             guardianEmail: string | null;
             classId: number | null;
             hostelId: number | null;
-            classHistory: string | null;
         };
         message?: undefined;
     }>;

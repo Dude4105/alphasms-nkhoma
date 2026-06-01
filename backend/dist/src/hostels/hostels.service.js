@@ -118,7 +118,6 @@ let HostelsService = class HostelsService {
                 warden: data.warden,
                 wardenPhone: data.wardenPhone,
                 wardenEmail: data.wardenEmail,
-                ownerId: 1,
             },
         });
     }

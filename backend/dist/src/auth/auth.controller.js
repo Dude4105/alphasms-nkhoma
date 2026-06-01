@@ -49,6 +49,7 @@ exports.AuthController = void 0;
 const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const passport_1 = require("@nestjs/passport");
+const client_1 = require("@prisma/client");
 const express = __importStar(require("express"));
 let AuthController = class AuthController {
     authService;
@@ -56,7 +57,7 @@ let AuthController = class AuthController {
         this.authService = authService;
     }
     async signup(body, res) {
-        const tokens = await this.authService.register(body.email, body.password, body.role);
+        const tokens = await this.authService.register(body.email, body.password, client_1.Role.STUDENT);
         res.cookie('refreshToken', tokens.refreshToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',

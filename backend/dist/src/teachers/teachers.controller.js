@@ -17,6 +17,9 @@ const common_1 = require("@nestjs/common");
 const teachers_service_1 = require("./teachers.service");
 const pagination_dto_1 = require("../common/dto/pagination.dto");
 const passport_1 = require("@nestjs/passport");
+const roles_guard_1 = require("../auth/roles.guard");
+const roles_decorator_1 = require("../auth/roles.decorator");
+const client_1 = require("@prisma/client");
 let TeachersController = class TeachersController {
     teachersService;
     constructor(teachersService) {
@@ -93,6 +96,7 @@ let TeachersController = class TeachersController {
 };
 exports.TeachersController = TeachersController;
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
     (0, common_1.Patch)('me/change-password'),
     __param(0, (0, common_1.Req)()),
     __param(1, (0, common_1.Body)()),
@@ -101,6 +105,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "changePassword", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
     (0, common_1.Get)('grades/config'),
     __param(0, (0, common_1.Query)('classId')),
     __param(1, (0, common_1.Query)('subjectKey')),
@@ -111,6 +116,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "getGradeConfig", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
     (0, common_1.Post)('grades/config'),
     __param(0, (0, common_1.Req)()),
     __param(1, (0, common_1.Body)()),
@@ -119,6 +125,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "saveGradeConfig", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
     (0, common_1.Get)('grades/entries'),
     __param(0, (0, common_1.Query)('classId')),
     __param(1, (0, common_1.Query)('subjectKey')),
@@ -129,6 +136,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "getGradeEntries", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
     (0, common_1.Post)('grades/entries/bulk'),
     __param(0, (0, common_1.Req)()),
     __param(1, (0, common_1.Body)()),
@@ -137,6 +145,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "bulkSaveGrades", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
     (0, common_1.Get)('me/profile'),
     __param(0, (0, common_1.Req)()),
     __metadata("design:type", Function),
@@ -144,6 +153,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "getProfile", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
     (0, common_1.Get)('me/dashboard'),
     __param(0, (0, common_1.Req)()),
     __metadata("design:type", Function),
@@ -151,6 +161,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "getDashboard", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
     (0, common_1.Get)('me/classes'),
     __param(0, (0, common_1.Req)()),
     __metadata("design:type", Function),
@@ -158,6 +169,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "getMyClasses", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
     (0, common_1.Get)('me/main-class'),
     __param(0, (0, common_1.Req)()),
     __metadata("design:type", Function),
@@ -165,6 +177,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "getMyMainClass", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
     (0, common_1.Get)('me/main-class/results'),
     __param(0, (0, common_1.Req)()),
     __param(1, (0, common_1.Query)('term')),
@@ -174,6 +187,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "getMainClassResults", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
     (0, common_1.Get)('classes/:classId/in-term-results'),
     __param(0, (0, common_1.Req)()),
     __param(1, (0, common_1.Param)('classId')),
@@ -184,6 +198,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], TeachersController.prototype, "getInTermResults", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
     (0, common_1.Get)('classes/:classId/subjects/:subjectKey/results'),
     __param(0, (0, common_1.Req)()),
     __param(1, (0, common_1.Param)('classId')),
@@ -195,6 +210,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "getSubjectResults", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
     (0, common_1.Post)('classes/:classId/migrate'),
     __param(0, (0, common_1.Req)()),
     __param(1, (0, common_1.Param)('classId')),
@@ -204,6 +220,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "migrateClass", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
     (0, common_1.Delete)('students/:studentId'),
     __param(0, (0, common_1.Param)('studentId')),
     __metadata("design:type", Function),
@@ -211,6 +228,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "unenrollStudent", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
     (0, common_1.Delete)('staff/:teacherId'),
     __param(0, (0, common_1.Param)('teacherId')),
     __metadata("design:type", Function),
@@ -218,6 +236,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "unenrollStaff", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -225,6 +244,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "create", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
     (0, common_1.Get)(),
     __param(0, (0, common_1.Query)()),
     __metadata("design:type", Function),
@@ -232,6 +252,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "findAll", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -239,6 +260,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "findOne", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
     (0, common_1.Patch)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
@@ -247,6 +269,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "update", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -254,7 +277,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "remove", null);
 exports.TeachersController = TeachersController = __decorate([
-    (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt')),
+    (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt'), roles_guard_1.RolesGuard),
     (0, common_1.Controller)('teachers'),
     __metadata("design:paramtypes", [teachers_service_1.TeachersService])
 ], TeachersController);

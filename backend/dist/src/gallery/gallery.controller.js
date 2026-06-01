@@ -14,6 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GalleryController = void 0;
 const common_1 = require("@nestjs/common");
+const pagination_dto_1 = require("../common/dto/pagination.dto");
 const gallery_service_1 = require("./gallery.service");
 const passport_1 = require("@nestjs/passport");
 const platform_express_1 = require("@nestjs/platform-express");
@@ -24,8 +25,8 @@ let GalleryController = class GalleryController {
     constructor(galleryService) {
         this.galleryService = galleryService;
     }
-    findAll() {
-        return this.galleryService.findAll();
+    findAll(query) {
+        return this.galleryService.findAll(query);
     }
     findOne(id) {
         return this.galleryService.findOne(+id);
@@ -48,8 +49,9 @@ let GalleryController = class GalleryController {
 exports.GalleryController = GalleryController;
 __decorate([
     (0, common_1.Get)(),
+    __param(0, (0, common_1.Query)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [pagination_dto_1.PaginationDto]),
     __metadata("design:returntype", void 0)
 ], GalleryController.prototype, "findAll", null);
 __decorate([

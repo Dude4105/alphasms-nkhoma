@@ -1,4 +1,5 @@
 import { PrismaService } from '../prisma/prisma.service';
+import { PaginationDto } from '../common/dto/pagination.dto';
 export declare class FinanceService {
     private prisma;
     constructor(prisma: PrismaService);
@@ -37,45 +38,53 @@ export declare class FinanceService {
     updateFeeStructure(data: any): Promise<{
         message: string;
     }>;
-    getPayments(): Promise<({
-        student: {
-            class: {
-                name: string;
-            } | null;
+    getPayments(query?: PaginationDto): Promise<{
+        data: ({
+            student: {
+                class: {
+                    name: string;
+                } | null;
+            } & {
+                id: number;
+                firstName: string;
+                lastName: string;
+                userId: number;
+                createdAt: Date;
+                updatedAt: Date;
+                email: string | null;
+                classHistory: string | null;
+                gender: string | null;
+                dob: string | null;
+                guardianName: string | null;
+                guardianRelation: string | null;
+                guardianAddress: string | null;
+                student_id: string;
+                enrollmentDate: string | null;
+                scholarType: string | null;
+                guardianPhone: string | null;
+                guardianEmail: string | null;
+                classId: number | null;
+                hostelId: number | null;
+            };
         } & {
             id: number;
-            firstName: string;
-            lastName: string;
-            userId: number;
             createdAt: Date;
-            updatedAt: Date;
-            email: string | null;
-            gender: string | null;
-            dob: string | null;
-            guardianName: string | null;
-            guardianRelation: string | null;
-            guardianAddress: string | null;
-            student_id: string;
-            enrollmentDate: string | null;
-            scholarType: string | null;
-            guardianPhone: string | null;
-            guardianEmail: string | null;
-            classId: number | null;
-            hostelId: number | null;
-            classHistory: string | null;
+            status: string;
+            academicYear: string;
+            term: number;
+            studentId: number;
+            amount: number;
+            date: Date;
+            method: string;
+            reference: string | null;
+        })[];
+        meta: {
+            total: number;
+            page: number;
+            lastPage: number;
+            limit: number;
         };
-    } & {
-        id: number;
-        createdAt: Date;
-        status: string;
-        academicYear: string;
-        term: number;
-        studentId: number;
-        amount: number;
-        date: Date;
-        method: string;
-        reference: string | null;
-    })[]>;
+    }>;
     searchStudents(query: string): Promise<{
         id: number;
         firstName: string;
@@ -160,16 +169,24 @@ export declare class FinanceService {
             status: string;
         };
     }>;
-    getExpenses(): Promise<{
-        id: number;
-        createdAt: Date;
-        status: string;
-        description: string;
-        amount: number;
-        date: Date;
-        category: string;
-        attachmentUrl: string | null;
-    }[]>;
+    getExpenses(query?: PaginationDto): Promise<{
+        data: {
+            id: number;
+            createdAt: Date;
+            status: string;
+            description: string;
+            amount: number;
+            date: Date;
+            category: string;
+            attachmentUrl: string | null;
+        }[];
+        meta: {
+            total: number;
+            page: number;
+            lastPage: number;
+            limit: number;
+        };
+    }>;
     recordExpense(data: any, file?: Express.Multer.File): Promise<{
         id: number;
         createdAt: Date;

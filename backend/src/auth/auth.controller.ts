@@ -25,7 +25,7 @@ export class AuthController {
     const tokens = await this.authService.register(
       body.email,
       body.password,
-      body.role as Role,
+      Role.STUDENT,
     );
     res.cookie('refreshToken', tokens.refreshToken, {
       httpOnly: true,

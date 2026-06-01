@@ -17,6 +17,9 @@ const common_1 = require("@nestjs/common");
 const subjects_service_1 = require("./subjects.service");
 const pagination_dto_1 = require("../common/dto/pagination.dto");
 const passport_1 = require("@nestjs/passport");
+const roles_guard_1 = require("../auth/roles.guard");
+const roles_decorator_1 = require("../auth/roles.decorator");
+const client_1 = require("@prisma/client");
 let SubjectsController = class SubjectsController {
     subjectsService;
     constructor(subjectsService) {
@@ -40,6 +43,7 @@ let SubjectsController = class SubjectsController {
 };
 exports.SubjectsController = SubjectsController;
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -47,6 +51,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], SubjectsController.prototype, "create", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
     (0, common_1.Post)('bulk'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -68,6 +73,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], SubjectsController.prototype, "findOne", null);
 __decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -75,7 +81,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], SubjectsController.prototype, "remove", null);
 exports.SubjectsController = SubjectsController = __decorate([
-    (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt')),
+    (0, common_1.UseGuards)((0, passport_1.AuthGuard)('jwt'), roles_guard_1.RolesGuard),
     (0, common_1.Controller)('subjects'),
     __metadata("design:paramtypes", [subjects_service_1.SubjectsService])
 ], SubjectsController);

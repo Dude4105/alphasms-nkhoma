@@ -1,59 +1,66 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Apply from './pages/Apply';
-import ExamResults from './pages/ExamResults';
-import Login from './pages/Login';
-import ExploreCampus from './pages/ExploreCampus';
-import ExploreCampusDetail from './pages/ExploreCampusDetail';
-import CampusGallery from './pages/CampusGallery';
-import TeacherLayout from './layouts/TeacherLayout';
-import Dashboard from './pages/teacher/Dashboard';
-import Classes from './pages/teacher/Classes';
-import ClassRoster from './pages/teacher/ClassRoster';
-import Grades from './pages/teacher/Grades';
-import MainClass from './pages/teacher/MainClass';
-import FinalResults from './pages/teacher/FinalResults';
-import SubjectResults from './pages/teacher/SubjectResults';
-import StudentReport from './pages/teacher/StudentReport';
-import PublicStudentReport from './pages/PublicStudentReport';
-import PublicStudentHistory from './pages/PublicStudentHistory';
-import AttendanceTracker from './pages/teacher/AttendanceTracker';
-import AttendanceOverview from './pages/teacher/AttendanceOverview';
-import AddClassStudent from './pages/teacher/AddClassStudent';
-import InTermResults from './pages/teacher/InTermResults';
-import Profile from './pages/teacher/Profile';
-import TeacherViewTimetable from './pages/teacher/ViewTimetable';
-import ClassMigration from './pages/teacher/ClassMigration';
-import AdminLayout from './layouts/AdminLayout';
-import AdminDashboard from './pages/admin/Dashboard';
-import Students from './pages/admin/Students';
-import Teachers from './pages/admin/Teachers';
-import AdminClasses from './pages/admin/AdminClasses';
-import Enrollment from './pages/admin/Enrollment';
-import ClassDetail from './pages/admin/ClassDetail';
-import CreateClass from './pages/admin/CreateClass';
-import Subjects from './pages/admin/Subjects';
-import AddTeacher from './pages/admin/AddTeacher';
-import AddStudent from './pages/admin/AddStudent';
-import StudentDetail from './pages/admin/StudentDetail';
-import StudentHistory from './pages/admin/StudentHistory';
-import TeacherDetail from './pages/admin/TeacherDetail';
-import EditTeacher from './pages/admin/EditTeacher';
-import CreateTimetable from './pages/admin/CreateTimetable';
-import ViewTimetable from './pages/admin/ViewTimetable';
-import Finance from './pages/admin/Finance';
-import Boarding from './pages/admin/Boarding';
-import EditStudent from './pages/admin/EditStudent';
-import EditClass from './pages/admin/EditClass';
-import Settings from './pages/admin/Settings';
-import AdminDetail from './pages/admin/AdminDetail';
-import AdminProfile from './pages/admin/Profile';
-import PasswordResets from './pages/admin/PasswordResets';
-import SchoolFeeds from './pages/admin/SchoolFeeds';
-import SchoolFeedForm from './pages/admin/SchoolFeedForm';
-import SchoolGallery from './pages/admin/SchoolGallery';
-import SchoolGalleryForm from './pages/admin/SchoolGalleryForm';
 import './App.css';
+
+// Dynamic lazy imports for all pages to optimize bundle size and load performance
+const Home = lazy(() => import('./pages/Home'));
+const Apply = lazy(() => import('./pages/Apply'));
+const ExamResults = lazy(() => import('./pages/ExamResults'));
+const ExploreCampus = lazy(() => import('./pages/ExploreCampus'));
+const ExploreCampusDetail = lazy(() => import('./pages/ExploreCampusDetail'));
+const CampusGallery = lazy(() => import('./pages/CampusGallery'));
+const Login = lazy(() => import('./pages/Login'));
+const PublicStudentReport = lazy(() => import('./pages/PublicStudentReport'));
+const PublicStudentHistory = lazy(() => import('./pages/PublicStudentHistory'));
+
+// Teacher Layout & Pages
+const TeacherLayout = lazy(() => import('./layouts/TeacherLayout'));
+const Dashboard = lazy(() => import('./pages/teacher/Dashboard'));
+const Classes = lazy(() => import('./pages/teacher/Classes'));
+const ClassRoster = lazy(() => import('./pages/teacher/ClassRoster'));
+const ClassMigration = lazy(() => import('./pages/teacher/ClassMigration'));
+const InTermResults = lazy(() => import('./pages/teacher/InTermResults'));
+const TeacherViewTimetable = lazy(() => import('./pages/teacher/ViewTimetable'));
+const Grades = lazy(() => import('./pages/teacher/Grades'));
+const MainClass = lazy(() => import('./pages/teacher/MainClass'));
+const AddClassStudent = lazy(() => import('./pages/teacher/AddClassStudent'));
+const FinalResults = lazy(() => import('./pages/teacher/FinalResults'));
+const SubjectResults = lazy(() => import('./pages/teacher/SubjectResults'));
+const StudentReport = lazy(() => import('./pages/teacher/StudentReport'));
+const AttendanceTracker = lazy(() => import('./pages/teacher/AttendanceTracker'));
+const AttendanceOverview = lazy(() => import('./pages/teacher/AttendanceOverview'));
+const StudentDetail = lazy(() => import('./pages/admin/StudentDetail'));
+const StudentHistory = lazy(() => import('./pages/admin/StudentHistory'));
+const Profile = lazy(() => import('./pages/teacher/Profile'));
+
+// Admin Layout & Pages
+const AdminLayout = lazy(() => import('./layouts/AdminLayout'));
+const AdminDashboard = lazy(() => import('./pages/admin/Dashboard'));
+const Students = lazy(() => import('./pages/admin/Students'));
+const AddStudent = lazy(() => import('./pages/admin/AddStudent'));
+const EditStudent = lazy(() => import('./pages/admin/EditStudent'));
+const Teachers = lazy(() => import('./pages/admin/Teachers'));
+const AddTeacher = lazy(() => import('./pages/admin/AddTeacher'));
+const TeacherDetail = lazy(() => import('./pages/admin/TeacherDetail'));
+const EditTeacher = lazy(() => import('./pages/admin/EditTeacher'));
+const AdminClasses = lazy(() => import('./pages/admin/AdminClasses'));
+const CreateClass = lazy(() => import('./pages/admin/CreateClass'));
+const ClassDetail = lazy(() => import('./pages/admin/ClassDetail'));
+const EditClass = lazy(() => import('./pages/admin/EditClass'));
+const ViewTimetable = lazy(() => import('./pages/admin/ViewTimetable'));
+const CreateTimetable = lazy(() => import('./pages/admin/CreateTimetable'));
+const Subjects = lazy(() => import('./pages/admin/Subjects'));
+const Enrollment = lazy(() => import('./pages/admin/Enrollment'));
+const Finance = lazy(() => import('./pages/admin/Finance'));
+const Boarding = lazy(() => import('./pages/admin/Boarding'));
+const Settings = lazy(() => import('./pages/admin/Settings'));
+const AdminDetail = lazy(() => import('./pages/admin/AdminDetail'));
+const AdminProfile = lazy(() => import('./pages/admin/Profile'));
+const PasswordResets = lazy(() => import('./pages/admin/PasswordResets'));
+const SchoolFeeds = lazy(() => import('./pages/admin/SchoolFeeds'));
+const SchoolFeedForm = lazy(() => import('./pages/admin/SchoolFeedForm'));
+const SchoolGallery = lazy(() => import('./pages/admin/SchoolGallery'));
+const SchoolGalleryForm = lazy(() => import('./pages/admin/SchoolGalleryForm'));
 
 // Session management for "Remember Me"
 const token = localStorage.getItem('accessToken');
@@ -75,70 +82,79 @@ if (token) {
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/apply" element={<Apply />} />
-        <Route path="/exam-results" element={<ExamResults />} />
-        <Route path="/explore-campus" element={<ExploreCampus />} />
-        <Route path="/explore-campus/:id" element={<ExploreCampusDetail />} />
-        <Route path="/campus-gallery" element={<CampusGallery />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/reports/:studentId" element={<PublicStudentReport />} />
-        <Route path="/students/:studentId/history" element={<PublicStudentHistory />} />
-        <Route path="/teacher" element={<TeacherLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="classes" element={<Classes />} />
-          <Route path="classes/:classId" element={<ClassRoster />} />
-          <Route path="classes/:classId/migrate" element={<ClassMigration />} />
-          <Route path="classes/:classId/in-term-results" element={<InTermResults />} />
-          <Route path="classes/:classId/timetable" element={<TeacherViewTimetable />} />
-          <Route path="grades" element={<Grades />} />
-          <Route path="main-class" element={<MainClass />} />
-          <Route path="main-class/add-student" element={<AddClassStudent />} />
-          <Route path="main-class/results" element={<FinalResults />} />
-          <Route path="subjects/results/:classId/:subjectKey" element={<SubjectResults />} />
-          <Route path="students/:studentId/report" element={<StudentReport />} />
-          <Route path="classes/:classId/attendance" element={<AttendanceTracker />} />
-          <Route path="attendance" element={<AttendanceOverview />} />
-          <Route path="students/:studentId" element={<StudentDetail />} />
-          <Route path="students/:studentId/history" element={<StudentHistory />} />
-          <Route path="profile" element={<Profile />} />
-        </Route>
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<AdminDashboard />} />
-          <Route path="students" element={<Students />} />
-          <Route path="students/add" element={<AddStudent />} />
-          <Route path="students/:studentId" element={<StudentDetail />} />
-          <Route path="students/:studentId/history" element={<StudentHistory />} />
-          <Route path="students/:studentId/edit" element={<EditStudent />} />
-          <Route path="teachers" element={<Teachers />} />
-          <Route path="teachers/add" element={<AddTeacher />} />
-          <Route path="teachers/:teacherId" element={<TeacherDetail />} />
-          <Route path="teachers/:teacherId/edit" element={<EditTeacher />} />
-          <Route path="classes" element={<AdminClasses />} />
-          <Route path="classes/create" element={<CreateClass />} />
-          <Route path="classes/:classId" element={<ClassDetail />} />
-          <Route path="classes/:classId/results" element={<FinalResults />} />
-          <Route path="classes/:classId/edit" element={<EditClass />} />
-          <Route path="subjects/results/:classId/:subjectKey" element={<SubjectResults />} />
-          <Route path="classes/:classId/timetable" element={<ViewTimetable />} />
-          <Route path="classes/:classId/timetable/create" element={<CreateTimetable />} />
-          <Route path="subjects" element={<Subjects />} />
-          <Route path="enrollment" element={<Enrollment />} />
-          <Route path="finance" element={<Finance />} />
-          <Route path="boarding" element={<Boarding />} />
-          <Route path="settings" element={<Settings />} />
-          <Route path="settings/admins/:adminId" element={<AdminDetail />} />
-          <Route path="profile" element={<AdminProfile />} />
-          <Route path="password-resets" element={<PasswordResets />} />
-          <Route path="feeds" element={<SchoolFeeds />} />
-          <Route path="feeds/add" element={<SchoolFeedForm />} />
-          <Route path="feeds/:id/edit" element={<SchoolFeedForm />} />
-          <Route path="gallery" element={<SchoolGallery />} />
-          <Route path="gallery/add" element={<SchoolGalleryForm />} />
-          <Route path="gallery/:id/edit" element={<SchoolGalleryForm />} />
-        </Route>
-      </Routes>
+      <Suspense fallback={
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', background: '#0a0a0a', color: 'var(--text-muted)' }}>
+          <div className="loading-spinner"></div>
+          <span style={{ marginTop: '1rem', fontFamily: 'sans-serif', fontSize: '0.95rem' }}>Loading page...</span>
+        </div>
+      }>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/apply" element={<Apply />} />
+          <Route path="/exam-results" element={<ExamResults />} />
+          <Route path="/explore-campus" element={<ExploreCampus />} />
+          <Route path="/explore-campus/:id" element={<ExploreCampusDetail />} />
+          <Route path="/campus-gallery" element={<CampusGallery />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/reports/:studentId" element={<PublicStudentReport />} />
+          <Route path="/students/:studentId/history" element={<PublicStudentHistory />} />
+          
+          <Route path="/teacher" element={<TeacherLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="classes" element={<Classes />} />
+            <Route path="classes/:classId" element={<ClassRoster />} />
+            <Route path="classes/:classId/migrate" element={<ClassMigration />} />
+            <Route path="classes/:classId/in-term-results" element={<InTermResults />} />
+            <Route path="classes/:classId/timetable" element={<TeacherViewTimetable />} />
+            <Route path="grades" element={<Grades />} />
+            <Route path="main-class" element={<MainClass />} />
+            <Route path="main-class/add-student" element={<AddClassStudent />} />
+            <Route path="main-class/results" element={<FinalResults />} />
+            <Route path="subjects/results/:classId/:subjectKey" element={<SubjectResults />} />
+            <Route path="students/:studentId/report" element={<StudentReport />} />
+            <Route path="classes/:classId/attendance" element={<AttendanceTracker />} />
+            <Route path="attendance" element={<AttendanceOverview />} />
+            <Route path="students/:studentId" element={<StudentDetail />} />
+            <Route path="students/:studentId/history" element={<StudentHistory />} />
+            <Route path="profile" element={<Profile />} />
+          </Route>
+          
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="students" element={<Students />} />
+            <Route path="students/add" element={<AddStudent />} />
+            <Route path="students/:studentId" element={<StudentDetail />} />
+            <Route path="students/:studentId/history" element={<StudentHistory />} />
+            <Route path="students/:studentId/edit" element={<EditStudent />} />
+            <Route path="teachers" element={<Teachers />} />
+            <Route path="teachers/add" element={<AddTeacher />} />
+            <Route path="teachers/:teacherId" element={<TeacherDetail />} />
+            <Route path="teachers/:teacherId/edit" element={<EditTeacher />} />
+            <Route path="classes" element={<AdminClasses />} />
+            <Route path="classes/create" element={<CreateClass />} />
+            <Route path="classes/:classId" element={<ClassDetail />} />
+            <Route path="classes/:classId/results" element={<FinalResults />} />
+            <Route path="classes/:classId/edit" element={<EditClass />} />
+            <Route path="subjects/results/:classId/:subjectKey" element={<SubjectResults />} />
+            <Route path="classes/:classId/timetable" element={<ViewTimetable />} />
+            <Route path="classes/:classId/timetable/create" element={<CreateTimetable />} />
+            <Route path="subjects" element={<Subjects />} />
+            <Route path="enrollment" element={<Enrollment />} />
+            <Route path="finance" element={<Finance />} />
+            <Route path="boarding" element={<Boarding />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="settings/admins/:adminId" element={<AdminDetail />} />
+            <Route path="profile" element={<AdminProfile />} />
+            <Route path="password-resets" element={<PasswordResets />} />
+            <Route path="feeds" element={<SchoolFeeds />} />
+            <Route path="feeds/add" element={<SchoolFeedForm />} />
+            <Route path="feeds/:id/edit" element={<SchoolFeedForm />} />
+            <Route path="gallery" element={<SchoolGallery />} />
+            <Route path="gallery/add" element={<SchoolGalleryForm />} />
+            <Route path="gallery/:id/edit" element={<SchoolGalleryForm />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </Router>
   );
 }

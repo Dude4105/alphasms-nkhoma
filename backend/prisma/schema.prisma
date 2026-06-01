@@ -63,6 +63,8 @@ model Student {
   termAssessmentScores TermAssessmentScore[]
   attendances Attendance[]
   classHistory String?   @db.Text
+  classHistoryRelations ClassHistory[]
+  ranks StudentRank[]
   
   createdAt  DateTime  @default(now())
   updatedAt  DateTime  @updatedAt
@@ -182,6 +184,9 @@ model Application {
   status           String   @default("PENDING") // PENDING, APPROVED, REJECTED
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
+
+  @@index([status])
+  @@index([email])
 }
 
 model FeeStructure {
@@ -209,6 +214,9 @@ model Payment {
   term            Int
   
   createdAt       DateTime @default(now())
+
+  @@index([studentId])
+  @@index([studentId, academicYear, term])
 }
 
 model Expense {
@@ -221,6 +229,9 @@ model Expense {
   attachmentUrl   String?
   
   createdAt       DateTime @default(now())
+
+  @@index([category])
+  @@index([date])
 }
 
 model SystemSetting {
@@ -335,4 +346,34 @@ model Attendance {
   @@unique([studentId, date])
   @@index([studentId])
   @@index([date])
+}
+
+model ClassHistory {
+  id           Int      @id @default(autoincrement())
+  studentId    Int
+  student      Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  className    String
+  academicYear String
+
+  @@unique([studentId, academicYear])
+  @@index([studentId])
+  @@index([className, academicYear])
+}
+
+model StudentRank {
+  id            Int      @id @default(autoincrement())
+  studentId     Int
+  student       Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  term          Int
+  academicYear  String
+  average       Float
+  points        Int
+  rank          Int
+  totalStudents Int
+  
+  updatedAt     DateTime @updatedAt
+  createdAt     DateTime @default(now())
+
+  @@unique([studentId, term, academicYear])
+  @@index([studentId])
 }

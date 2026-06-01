@@ -1,23 +1,40 @@
+import { PaginationDto } from '../common/dto/pagination.dto';
 import { FeedsService } from './feeds.service';
 export declare class FeedsController {
     private readonly feedsService;
     constructor(feedsService: FeedsService);
-    findAllPublic(): Promise<{
-        id: number;
-        createdAt: Date;
-        updatedAt: Date;
-        title: string;
-        content: string;
-        images: import("@prisma/client/runtime/library").JsonValue | null;
-    }[]>;
-    findAllAdmin(): Promise<{
-        id: number;
-        createdAt: Date;
-        updatedAt: Date;
-        title: string;
-        content: string;
-        images: import("@prisma/client/runtime/library").JsonValue | null;
-    }[]>;
+    findAllPublic(query: PaginationDto): Promise<{
+        data: {
+            id: number;
+            createdAt: Date;
+            updatedAt: Date;
+            title: string;
+            content: string;
+            images: import("@prisma/client/runtime/library").JsonValue | null;
+        }[];
+        meta: {
+            total: number;
+            page: number;
+            lastPage: number;
+            limit: number;
+        };
+    }>;
+    findAllAdmin(query: PaginationDto): Promise<{
+        data: {
+            id: number;
+            createdAt: Date;
+            updatedAt: Date;
+            title: string;
+            content: string;
+            images: import("@prisma/client/runtime/library").JsonValue | null;
+        }[];
+        meta: {
+            total: number;
+            page: number;
+            lastPage: number;
+            limit: number;
+        };
+    }>;
     findOne(id: string): Promise<{
         id: number;
         createdAt: Date;

@@ -212,15 +212,32 @@ let FinanceService = class FinanceService {
         }
         return { message: 'Fee structure updated successfully' };
     }
-    async getPayments() {
-        return this.prisma.payment.findMany({
-            orderBy: { date: 'desc' },
-            include: {
-                student: {
-                    include: { class: { select: { name: true } } },
+    async getPayments(query) {
+        const page = Number(query?.page) || 1;
+        const limit = Number(query?.limit) || 10;
+        const skip = (page - 1) * limit;
+        const [data, total] = await Promise.all([
+            this.prisma.payment.findMany({
+                skip,
+                take: limit,
+                orderBy: { date: 'desc' },
+                include: {
+                    student: {
+                        include: { class: { select: { name: true } } },
+                    },
                 },
+            }),
+            this.prisma.payment.count(),
+        ]);
+        return {
+            data,
+            meta: {
+                total,
+                page,
+                lastPage: Math.ceil(total / limit),
+                limit,
             },
-        });
+        };
     }
     async searchStudents(query) {
         return this.prisma.student.findMany({
@@ -399,10 +416,27 @@ let FinanceService = class FinanceService {
             annualSummary: annual,
         };
     }
-    async getExpenses() {
-        return this.prisma.expense.findMany({
-            orderBy: { date: 'desc' },
-        });
+    async getExpenses(query) {
+        const page = Number(query?.page) || 1;
+        const limit = Number(query?.limit) || 10;
+        const skip = (page - 1) * limit;
+        const [data, total] = await Promise.all([
+            this.prisma.expense.findMany({
+                skip,
+                take: limit,
+                orderBy: { date: 'desc' },
+            }),
+            this.prisma.expense.count(),
+        ]);
+        return {
+            data,
+            meta: {
+                total,
+                page,
+                lastPage: Math.ceil(total / limit),
+                limit,
+            },
+        };
     }
     async recordExpense(data, file) {
         return this.prisma.expense.create({

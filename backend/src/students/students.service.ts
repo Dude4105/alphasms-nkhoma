@@ -1,4 +1,4 @@
-import { Injectable, BadRequestException } from '@nestjs/common';
+import { Injectable, BadRequestException, ForbiddenException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { PaginationDto } from '../common/dto/pagination.dto';
 import { AdminService } from '../admin/admin.service';
@@ -167,21 +167,26 @@ export class StudentsService {
 
     // Determine what class the student belonged to in this year
     let targetClassName = student.class?.name || 'Unassigned';
-    if (student.classHistory) {
-      try {
-        const hist = JSON.parse(student.classHistory);
-        if (hist[academicYear]) {
-          targetClassName = hist[academicYear];
-        }
-      } catch {}
+    
+    // Normalized ClassHistory search (extremely fast, indexed lookup)
+    const historicalClass = await this.prisma.classHistory.findUnique({
+      where: {
+        studentId_academicYear: {
+          studentId: student.id,
+          academicYear,
+        },
+      },
+    });
+    if (historicalClass) {
+      targetClassName = historicalClass.className;
     }
 
-    // Find all students who were in this class during that year
+    // Find all students who were in this class during that year using relation index
     const studentsInClass = await this.prisma.student.findMany({
       where: {
         OR: [
           { class: { name: targetClassName } },
-          { classHistory: { contains: `"${academicYear}":"${targetClassName}"` } }
+          { classHistoryRelations: { some: { className: targetClassName, academicYear } } }
         ]
       },
       select: { id: true, student_id: true }
@@ -191,8 +196,25 @@ export class StudentsService {
 
     let average = 0;
     let rank = 0;
+    let points = 0;
     let grades: any[] = [];
     let topSubjects: string[] = [];
+
+    // Load pre-calculated rank and stats (extremely fast O(1) database query)
+    const rankRecord = await this.prisma.studentRank.findUnique({
+      where: {
+        studentId_term_academicYear: {
+          studentId: student.id,
+          term: currentTerm,
+          academicYear,
+        },
+      },
+    });
+    if (rankRecord) {
+      average = rankRecord.average;
+      points = rankRecord.points;
+      rank = rankRecord.rank;
+    }
 
     // Find the class entity for subjects list
     const classEntity = await this.prisma.class.findFirst({
@@ -200,137 +222,125 @@ export class StudentsService {
     });
 
     if (classEntity && totalStudents > 0) {
-      const subjectsCount = Array.isArray(classEntity.subjects)
-        ? classEntity.subjects.length
-        : 0;
-
       if (isFinalMode) {
         const results = await this.prisma.result.findMany({
           where: {
-            studentId: { in: studentIdsInClass },
+            studentId: student.id,
             academicYear,
             term: currentTerm,
           },
         });
-
-        const studentAverages: { id: number; avg: number }[] = [];
-        const resultsByStudent = new Map<number, { total: number; results: any[] }>();
-        const resultsBySubject = new Map<string, { id: number; score: number }[]>();
-
-        results.forEach((res) => {
-          if (!resultsByStudent.has(res.studentId))
-            resultsByStudent.set(res.studentId, { total: 0, results: [] });
-          resultsByStudent.get(res.studentId)!.total += res.score;
-          resultsByStudent.get(res.studentId)!.results.push(res);
-
-          if (!resultsBySubject.has(res.subjectKey)) resultsBySubject.set(res.subjectKey, []);
-          resultsBySubject.get(res.subjectKey)!.push({ id: res.studentId, score: res.score });
-        });
-
-        resultsByStudent.forEach((data, sId) => {
-          studentAverages.push({
-            id: sId,
-            avg: subjectsCount > 0 ? Math.round(data.total / subjectsCount) : 0,
-          });
-        });
-
-        studentAverages.sort((a, b) => b.avg - a.avg);
-        const myRank = studentAverages.findIndex((s) => s.id === student.id) + 1;
-        const myData = studentAverages.find((s) => s.id === student.id);
-
-        if (myRank > 0 && myData) {
-          rank = myRank;
-          average = myData.avg;
-
-          const myResults = resultsByStudent.get(student.id)?.results || [];
-          grades = myResults.map((r) => {
-            const resolved = AdminService.resolveGrade(r.score, gradingConfig);
-            const subjectScores = resultsBySubject.get(r.subjectKey) || [];
-            subjectScores.sort((a, b) => b.score - a.score);
-            const subjectRank = subjectScores.findIndex(s => s.id === student.id) + 1;
-            const highestScore = subjectScores.length > 0 ? subjectScores[0].score : 0;
-            
-            return {
-              subject: r.subjectKey.toUpperCase(),
-              score: r.score,
-              grade: resolved.grade,
-              points: resolved.points,
-              rank: subjectRank,
-              totalInSubject: subjectScores.length,
-              highestScore: highestScore,
-              trend: r.score >= 75 ? 'up' : r.score < gradingConfig.passMinScore ? 'down' : 'stable',
-            };
-          });
-        }
-      } else {
-        const scores = await this.prisma.termAssessmentScore.findMany({
+        
+        const classResults = await this.prisma.result.findMany({
           where: {
             studentId: { in: studentIdsInClass },
             academicYear,
             term: currentTerm,
           },
         });
-
-        const studentAverages: { id: number; avg: number }[] = [];
-        const resultsByStudent = new Map<number, { total: number; max: number; subjects: Record<string, { total: number; max: number }> }>();
-        const subjectAverages = new Map<string, { id: number; score: number }[]>();
-
-        scores.forEach((s) => {
-          if (!resultsByStudent.has(s.studentId)) {
-            resultsByStudent.set(s.studentId, { total: 0, max: 0, subjects: {} });
+        
+        const highestBySubject = new Map<string, number>();
+        const countBySubject = new Map<string, number>();
+        const studentScoresBySubject = new Map<string, { id: number; score: number }[]>();
+        
+        classResults.forEach(r => {
+          if (!highestBySubject.has(r.subjectKey) || r.score > highestBySubject.get(r.subjectKey)!) {
+            highestBySubject.set(r.subjectKey, r.score);
           }
-          const st = resultsByStudent.get(s.studentId)!;
-          st.total += s.score;
-          st.max += s.maxScore || 100;
+          if (!countBySubject.has(r.subjectKey)) {
+            countBySubject.set(r.subjectKey, 0);
+          }
+          countBySubject.set(r.subjectKey, countBySubject.get(r.subjectKey)! + 1);
 
-          if (!st.subjects[s.subjectKey]) st.subjects[s.subjectKey] = { total: 0, max: 0 };
-          st.subjects[s.subjectKey].total += s.score;
-          st.subjects[s.subjectKey].max += s.maxScore || 100;
+          if (!studentScoresBySubject.has(r.subjectKey)) {
+            studentScoresBySubject.set(r.subjectKey, []);
+          }
+          studentScoresBySubject.get(r.subjectKey)!.push({ id: r.studentId, score: r.score });
         });
 
-        resultsByStudent.forEach((data, sId) => {
-          const avg = data.max > 0 ? (data.total / data.max) * 100 : 0;
-          studentAverages.push({ id: sId, avg: Math.round(avg) });
+        grades = results.map((r) => {
+          const resolved = AdminService.resolveGrade(r.score, gradingConfig);
+          const subjectScores = studentScoresBySubject.get(r.subjectKey) || [];
+          subjectScores.sort((a, b) => b.score - a.score);
+          const subjectRank = subjectScores.findIndex(s => s.id === student.id) + 1;
 
-          Object.keys(data.subjects).forEach(key => {
-            const sub = data.subjects[key];
-            const score = sub.max > 0 ? Math.round((sub.total / sub.max) * 100) : 0;
-            if (!subjectAverages.has(key)) subjectAverages.set(key, []);
-            subjectAverages.get(key)!.push({ id: sId, score });
-          });
+          return {
+            subject: r.subjectKey.toUpperCase(),
+            score: r.score,
+            grade: resolved.grade,
+            points: resolved.points,
+            rank: subjectRank,
+            totalInSubject: countBySubject.get(r.subjectKey) || 1,
+            highestScore: highestBySubject.get(r.subjectKey) || 0,
+            trend: r.score >= 75 ? 'up' : r.score < gradingConfig.passMinScore ? 'down' : 'stable',
+          };
+        });
+      } else {
+        const scores = await this.prisma.termAssessmentScore.findMany({
+          where: {
+            studentId: student.id,
+            academicYear,
+            term: currentTerm,
+          },
         });
 
-        studentAverages.sort((a, b) => b.avg - a.avg);
-        const myRank = studentAverages.findIndex((s) => s.id === student.id) + 1;
-        const myData = studentAverages.find((s) => s.id === student.id);
+        const studentSubjects: Record<string, { total: number; max: number }> = {};
+        scores.forEach(s => {
+          if (!studentSubjects[s.subjectKey]) {
+            studentSubjects[s.subjectKey] = { total: 0, max: 0 };
+          }
+          studentSubjects[s.subjectKey].total += s.score;
+          studentSubjects[s.subjectKey].max += s.maxScore || 100;
+        });
 
-        if (myRank > 0 && myData) {
-          rank = myRank;
-          average = myData.avg;
+        const classScores = await this.prisma.termAssessmentScore.findMany({
+          where: {
+            studentId: { in: studentIdsInClass },
+            academicYear,
+            term: currentTerm,
+          },
+        });
+        
+        const classSubjectsGrouped: Record<string, Record<number, { total: number; max: number }>> = {};
+        classScores.forEach(s => {
+          if (!classSubjectsGrouped[s.subjectKey]) {
+            classSubjectsGrouped[s.subjectKey] = {};
+          }
+          if (!classSubjectsGrouped[s.subjectKey][s.studentId]) {
+            classSubjectsGrouped[s.subjectKey][s.studentId] = { total: 0, max: 0 };
+          }
+          classSubjectsGrouped[s.subjectKey][s.studentId].total += s.score;
+          classSubjectsGrouped[s.subjectKey][s.studentId].max += s.maxScore || 100;
+        });
 
-          const mySubjects = resultsByStudent.get(student.id)?.subjects || {};
-          grades = Object.keys(mySubjects).map((key) => {
-            const sub = mySubjects[key];
-            const score = sub.max > 0 ? Math.round((sub.total / sub.max) * 100) : 0;
-            const resolved = AdminService.resolveGrade(score, gradingConfig);
-            
-            const subjectScores = subjectAverages.get(key) || [];
-            subjectScores.sort((a, b) => b.score - a.score);
-            const subjectRank = subjectScores.findIndex(s => s.id === student.id) + 1;
-            const highestScore = subjectScores.length > 0 ? subjectScores[0].score : 0;
+        grades = Object.keys(studentSubjects).map((key) => {
+          const sub = studentSubjects[key];
+          const score = sub.max > 0 ? Math.round((sub.total / sub.max) * 100) : 0;
+          const resolved = AdminService.resolveGrade(score, gradingConfig);
 
-            return {
-              subject: key.toUpperCase(),
-              score: score,
-              grade: resolved.grade,
-              points: resolved.points,
-              rank: subjectRank,
-              totalInSubject: subjectScores.length,
-              highestScore: highestScore,
-              trend: score >= 75 ? 'up' : score < gradingConfig.passMinScore ? 'down' : 'stable',
-            };
+          const classScoresForSubject: { id: number; score: number }[] = [];
+          let highestScore = 0;
+          Object.entries(classSubjectsGrouped[key] || {}).forEach(([sIdStr, data]) => {
+            const sId = Number(sIdStr);
+            const subjScore = data.max > 0 ? Math.round((data.total / data.max) * 100) : 0;
+            classScoresForSubject.push({ id: sId, score: subjScore });
+            if (subjScore > highestScore) highestScore = subjScore;
           });
-        }
+          
+          classScoresForSubject.sort((a, b) => b.score - a.score);
+          const subjectRank = classScoresForSubject.findIndex(s => s.id === student.id) + 1;
+
+          return {
+            subject: key.toUpperCase(),
+            score: score,
+            grade: resolved.grade,
+            points: resolved.points,
+            rank: subjectRank,
+            totalInSubject: classScoresForSubject.length,
+            highestScore: highestScore,
+            trend: score >= 75 ? 'up' : score < gradingConfig.passMinScore ? 'down' : 'stable',
+          };
+        });
       }
 
       topSubjects = grades
@@ -338,20 +348,6 @@ export class StudentsService {
         .sort((a, b) => b.score - a.score)
         .slice(0, 3)
         .map((g) => g.subject);
-
-      // --- Calculate Top 6 Points ---
-      const sortedPts = grades.map((g) => g.points).sort((a, b) => a - b);
-      let points = 0;
-      if (sortedPts.length > 0) {
-        const worstPoint = gradingConfig && gradingConfig.grades && gradingConfig.grades.length > 0
-          ? gradingConfig.grades[gradingConfig.grades.length - 1].points
-          : 9;
-        const paddedPts = [...sortedPts];
-        while (paddedPts.length < 6) {
-          paddedPts.push(worstPoint);
-        }
-        points = paddedPts.slice(0, 6).reduce((acc, p) => acc + p, 0);
-      }
 
       return {
         ...student,
@@ -469,6 +465,62 @@ export class StudentsService {
     return this.prisma.user.delete({
       where: { id: student.userId },
     });
+  }
+
+  async findByUserId(userId: number) {
+    return this.prisma.student.findUnique({
+      where: { userId },
+      include: {
+        class: true,
+        hostel: true,
+      },
+    });
+  }
+
+  async authorizeStudentAccess(requester: any, requestedStudentId: string) {
+    if (requester.role === 'ADMIN') return true;
+
+    if (requester.role === 'STUDENT') {
+      const student = await this.prisma.student.findUnique({
+        where: { userId: requester.userId },
+      });
+      if (!student || student.student_id !== requestedStudentId) {
+        throw new ForbiddenException('Access denied');
+      }
+      return true;
+    }
+
+    if (requester.role === 'TEACHER') {
+      const teacher = await this.prisma.teacher.findUnique({
+        where: { userId: requester.userId },
+      });
+      if (!teacher) throw new ForbiddenException('Access denied');
+
+      const student = await this.prisma.student.findUnique({
+        where: { student_id: requestedStudentId },
+        include: { class: true },
+      });
+      if (!student) throw new BadRequestException('Student not found');
+      if (!student.class) {
+        // Unassigned students can be viewed by all teachers
+        return true;
+      }
+
+      const fullName = `${teacher.firstName} ${teacher.lastName}`;
+      const isClassTeacher = student.class.classTeacher === fullName;
+
+      const teacherClasses = Array.isArray(teacher.classes)
+        ? (teacher.classes as string[])
+        : [];
+      const teachesClass = teacherClasses.includes(student.class.name);
+
+      if (!isClassTeacher && !teachesClass) {
+        throw new ForbiddenException('Access denied');
+      }
+      return true;
+    }
+
+    throw new ForbiddenException('Access denied');
   }
 
   async findByDetails(firstName: string, lastName: string, dob: string) {

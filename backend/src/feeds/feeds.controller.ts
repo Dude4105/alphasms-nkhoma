@@ -1,4 +1,5 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, UseInterceptors, UploadedFiles } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, UseInterceptors, UploadedFiles, Query } from '@nestjs/common';
+import { PaginationDto } from '../common/dto/pagination.dto';
 import { FeedsService } from './feeds.service';
 import { AuthGuard } from '@nestjs/passport';
 import { FilesInterceptor } from '@nestjs/platform-express';
@@ -10,14 +11,14 @@ export class FeedsController {
   constructor(private readonly feedsService: FeedsService) {}
 
   @Get('public')
-  findAllPublic() {
-    return this.feedsService.findAll();
+  findAllPublic(@Query() query: PaginationDto) {
+    return this.feedsService.findAll(query);
   }
 
   @UseGuards(AuthGuard('jwt'))
   @Get()
-  findAllAdmin() {
-    return this.feedsService.findAll();
+  findAllAdmin(@Query() query: PaginationDto) {
+    return this.feedsService.findAll(query);
   }
 
   @Get(':id')

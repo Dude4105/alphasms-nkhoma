@@ -17,10 +17,27 @@ let GalleryService = class GalleryService {
     constructor(prisma) {
         this.prisma = prisma;
     }
-    async findAll() {
-        return this.prisma.schoolGallery.findMany({
-            orderBy: { createdAt: 'desc' },
-        });
+    async findAll(query) {
+        const page = Number(query?.page) || 1;
+        const limit = Number(query?.limit) || 20;
+        const skip = (page - 1) * limit;
+        const [data, total] = await Promise.all([
+            this.prisma.schoolGallery.findMany({
+                skip,
+                take: limit,
+                orderBy: { createdAt: 'desc' },
+            }),
+            this.prisma.schoolGallery.count(),
+        ]);
+        return {
+            data,
+            meta: {
+                total,
+                page,
+                lastPage: Math.ceil(total / limit),
+                limit,
+            },
+        };
     }
     async findOne(id) {
         const item = await this.prisma.schoolGallery.findUnique({
