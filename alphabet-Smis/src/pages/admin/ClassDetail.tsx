@@ -16,7 +16,7 @@ export default function ClassDetail() {
   }, [classId]);
 
   const handleDeleteClass = async () => {
-    if (!window.confirm(`Are you sure you want to delete ${data.name}? This will unassign all students and remove class records.`)) {
+    if (!await window.confirm(`Are you sure you want to delete ${data.name}? This will unassign all students and remove class records.`)) {
       return;
     }
 

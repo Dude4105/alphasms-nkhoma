@@ -70,7 +70,7 @@ export default function AdminDetail() {
   };
 
   const handleDeleteAdmin = async () => {
-    if (!window.confirm('Are you sure you want to delete this administrator? This action cannot be undone.')) {
+    if (!await window.confirm('Are you sure you want to delete this administrator? This action cannot be undone.')) {
       return;
     }
     

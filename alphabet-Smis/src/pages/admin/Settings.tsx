@@ -97,7 +97,7 @@ export default function Settings() {
   const handleToggleFinalResults = async () => {
     const newState = !finalResultsMode;
     const action = newState ? 'ACTIVATE' : 'DEACTIVATE';
-    const confirmed = window.confirm(
+    const confirmed = await window.confirm(
       newState 
         ? '⚡ ACTIVATE FINAL RESULTS MODE?\n\nThis will:\n• Switch all teacher grade areas to FINAL GRADE recording only\n• Disable the "Configure Assessments" button for teachers\n• Teachers will only be able to input one final score per student per subject\n\nContinue?'
         : '🔄 DEACTIVATE Final Results Mode?\n\nThis will restore the normal continuous assessment mode for all teachers.\n\nContinue?'
@@ -129,7 +129,7 @@ export default function Settings() {
 
   const handleTogglePublishExams = async () => {
     const newState = !examResultsPublished;
-    const confirmed = window.confirm(
+    const confirmed = await window.confirm(
       newState 
         ? '📢 PUBLISH EXAM RESULTS?\n\nThis will make all final results visible to students and parents on the landing page.\n\nContinue?'
         : '🔇 UNPUBLISH EXAM RESULTS?\n\nThis will hide results from the landing page. Students will no longer be able to check their performance publicly.\n\nContinue?'
@@ -198,8 +198,8 @@ export default function Settings() {
     }
   };
 
-  const handleResetGrading = () => {
-    if (window.confirm('Reset grading system to default values?\n\nA: 80-100 (1 pt)\nB: 60-79 (3 pts)\nC: 50-59 (5 pts)\nD: 40-49 (7 pts)\nF: 0-39 (9 pts)\nPass threshold: 40%')) {
+  const handleResetGrading = async () => {
+    if (await window.confirm('Reset grading system to default values?\n\nA: 80-100 (1 pt)\nB: 60-79 (3 pts)\nC: 50-59 (5 pts)\nD: 40-49 (7 pts)\nF: 0-39 (9 pts)\nPass threshold: 40%')) {
       setGradingConfig(DEFAULT_GRADING);
     }
   };
@@ -255,7 +255,7 @@ export default function Settings() {
       const fromYear = originalSettings.academicYear;
       const toYear = settings.academicYear;
 
-      const confirmed = window.confirm(
+      const confirmed = await window.confirm(
         `⚠️ TERM TRANSITION DETECTED\n\n` +
         `You are changing from ${fromTerm} (${fromYear}) → ${toTerm} (${toYear}).\n\n` +
         `This will:\n` +

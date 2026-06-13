@@ -265,8 +265,11 @@ let StudentsService = class StudentsService {
                 const countBySubject = new Map();
                 const studentScoresBySubject = new Map();
                 classResults.forEach(r => {
-                    if (!highestBySubject.has(r.subjectKey) || r.score > highestBySubject.get(r.subjectKey)) {
-                        highestBySubject.set(r.subjectKey, r.score);
+                    const scores = r.assessmentScores;
+                    const hasFinalScore = scores && typeof scores === 'object' && 'finalScore' in scores;
+                    const actualScore = hasFinalScore ? (scores.finalScore ?? 0) : 0;
+                    if (!highestBySubject.has(r.subjectKey) || actualScore > highestBySubject.get(r.subjectKey)) {
+                        highestBySubject.set(r.subjectKey, actualScore);
                     }
                     if (!countBySubject.has(r.subjectKey)) {
                         countBySubject.set(r.subjectKey, 0);
@@ -275,22 +278,25 @@ let StudentsService = class StudentsService {
                     if (!studentScoresBySubject.has(r.subjectKey)) {
                         studentScoresBySubject.set(r.subjectKey, []);
                     }
-                    studentScoresBySubject.get(r.subjectKey).push({ id: r.studentId, score: r.score });
+                    studentScoresBySubject.get(r.subjectKey).push({ id: r.studentId, score: actualScore });
                 });
                 grades = results.map((r) => {
-                    const resolved = admin_service_1.AdminService.resolveGrade(r.score, gradingConfig);
+                    const scores = r.assessmentScores;
+                    const hasFinalScore = scores && typeof scores === 'object' && 'finalScore' in scores;
+                    const actualScore = hasFinalScore ? (scores.finalScore ?? 0) : 0;
+                    const resolved = admin_service_1.AdminService.resolveGrade(actualScore, gradingConfig);
                     const subjectScores = studentScoresBySubject.get(r.subjectKey) || [];
                     subjectScores.sort((a, b) => b.score - a.score);
                     const subjectRank = subjectScores.findIndex(s => s.id === student.id) + 1;
                     return {
                         subject: r.subjectKey.toUpperCase(),
-                        score: r.score,
+                        score: actualScore,
                         grade: resolved.grade,
                         points: resolved.points,
                         rank: subjectRank,
                         totalInSubject: countBySubject.get(r.subjectKey) || 1,
                         highestScore: highestBySubject.get(r.subjectKey) || 0,
-                        trend: r.score >= 75 ? 'up' : r.score < gradingConfig.passMinScore ? 'down' : 'stable',
+                        trend: actualScore >= 75 ? 'up' : actualScore < gradingConfig.passMinScore ? 'down' : 'stable',
                     };
                 });
             }

@@ -124,7 +124,7 @@ export default function Subjects() {
   };
 
   const handleDeleteSubject = async (id: number, name: string) => {
-    if (!window.confirm(`Are you sure you want to delete ${name}? This will remove it from the curriculum database.`)) {
+    if (!await window.confirm(`Are you sure you want to delete ${name}? This will remove it from the curriculum database.`)) {
       return;
     }
 

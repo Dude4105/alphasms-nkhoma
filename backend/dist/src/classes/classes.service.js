@@ -380,6 +380,10 @@ let ClassesService = class ClassesService {
             }
             catch { }
         }
+        const finalModeSetting = await this.prisma.systemSetting.findUnique({
+            where: { key: 'finalResultsMode' },
+        });
+        const isFinalMode = finalModeSetting?.value === 'true';
         const mainClass = await this.prisma.class.findUnique({
             where: { class_id: classId },
             include: {
@@ -428,8 +432,11 @@ let ClassesService = class ClassesService {
             let total = 0;
             student.results.forEach((res) => {
                 if (studentData.hasOwnProperty(res.subjectKey)) {
-                    studentData[res.subjectKey] = res.score;
-                    total += res.score;
+                    const scores = res.assessmentScores;
+                    const hasFinalScore = scores && typeof scores === 'object' && 'finalScore' in scores;
+                    const scoreVal = isFinalMode ? (hasFinalScore ? (scores.finalScore ?? 0) : 0) : res.score;
+                    studentData[res.subjectKey] = scoreVal;
+                    total += scoreVal;
                 }
             });
             studentData.total = total;
@@ -438,9 +445,12 @@ let ClassesService = class ClassesService {
             const subjectPoints = [];
             student.results.forEach((res) => {
                 if (subjectsWithKeys.some((s) => s.key === res.subjectKey)) {
+                    const scores = res.assessmentScores;
+                    const hasFinalScore = scores && typeof scores === 'object' && 'finalScore' in scores;
+                    const scoreVal = isFinalMode ? (hasFinalScore ? (scores.finalScore ?? 0) : 0) : res.score;
                     let pts = 9;
                     if (gradingConfig && gradingConfig.grades) {
-                        const rounded = Math.round(res.score);
+                        const rounded = Math.round(scoreVal);
                         for (const g of gradingConfig.grades) {
                             if (rounded >= g.minScore && rounded <= g.maxScore) {
                                 pts = g.points;

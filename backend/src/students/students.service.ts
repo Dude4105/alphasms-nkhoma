@@ -244,8 +244,12 @@ export class StudentsService {
         const studentScoresBySubject = new Map<string, { id: number; score: number }[]>();
         
         classResults.forEach(r => {
-          if (!highestBySubject.has(r.subjectKey) || r.score > highestBySubject.get(r.subjectKey)!) {
-            highestBySubject.set(r.subjectKey, r.score);
+          const scores = r.assessmentScores as any;
+          const hasFinalScore = scores && typeof scores === 'object' && 'finalScore' in scores;
+          const actualScore = hasFinalScore ? (scores.finalScore ?? 0) : 0;
+
+          if (!highestBySubject.has(r.subjectKey) || actualScore > highestBySubject.get(r.subjectKey)!) {
+            highestBySubject.set(r.subjectKey, actualScore);
           }
           if (!countBySubject.has(r.subjectKey)) {
             countBySubject.set(r.subjectKey, 0);
@@ -255,24 +259,28 @@ export class StudentsService {
           if (!studentScoresBySubject.has(r.subjectKey)) {
             studentScoresBySubject.set(r.subjectKey, []);
           }
-          studentScoresBySubject.get(r.subjectKey)!.push({ id: r.studentId, score: r.score });
+          studentScoresBySubject.get(r.subjectKey)!.push({ id: r.studentId, score: actualScore });
         });
 
         grades = results.map((r) => {
-          const resolved = AdminService.resolveGrade(r.score, gradingConfig);
+          const scores = r.assessmentScores as any;
+          const hasFinalScore = scores && typeof scores === 'object' && 'finalScore' in scores;
+          const actualScore = hasFinalScore ? (scores.finalScore ?? 0) : 0;
+
+          const resolved = AdminService.resolveGrade(actualScore, gradingConfig);
           const subjectScores = studentScoresBySubject.get(r.subjectKey) || [];
           subjectScores.sort((a, b) => b.score - a.score);
           const subjectRank = subjectScores.findIndex(s => s.id === student.id) + 1;
 
           return {
             subject: r.subjectKey.toUpperCase(),
-            score: r.score,
+            score: actualScore,
             grade: resolved.grade,
             points: resolved.points,
             rank: subjectRank,
             totalInSubject: countBySubject.get(r.subjectKey) || 1,
             highestScore: highestBySubject.get(r.subjectKey) || 0,
-            trend: r.score >= 75 ? 'up' : r.score < gradingConfig.passMinScore ? 'down' : 'stable',
+            trend: actualScore >= 75 ? 'up' : actualScore < gradingConfig.passMinScore ? 'down' : 'stable',
           };
         });
       } else {

@@ -69,7 +69,7 @@ export default function TeacherDetail() {
   }, [teacherId]);
 
   const handleUnenroll = async () => {
-    if (!window.confirm(`Are you sure you want to unenroll ${data.name}? This will permanently delete their teaching records and system access.`)) {
+    if (!await window.confirm(`Are you sure you want to unenroll ${data.name}? This will permanently delete their teaching records and system access.`)) {
       return;
     }
 

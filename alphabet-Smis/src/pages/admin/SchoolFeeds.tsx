@@ -38,7 +38,7 @@ export default function SchoolFeeds() {
   }, []);
 
   const handleDelete = async (id: number) => {
-    if (!window.confirm('Are you sure you want to delete this post?')) return;
+    if (!await window.confirm('Are you sure you want to delete this post?')) return;
     
     try {
       const token = localStorage.getItem('accessToken');

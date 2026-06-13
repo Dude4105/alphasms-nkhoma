@@ -1,7 +1,7 @@
-# Graph Report - alphabetsmis-II  (2026-06-01)
+# Graph Report - alphabetsmis-II  (2026-06-13)
 
 ## Corpus Check
-- 142 files · ~1,251,660 words
+- 142 files · ~1,252,212 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `62bdf918`
+- Built from commit: `04d9f393`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

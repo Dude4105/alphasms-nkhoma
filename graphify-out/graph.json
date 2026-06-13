@@ -5450,7 +5450,7 @@
       "label": ".syncTeacherClasses()",
       "file_type": "code",
       "source_file": "backend/src/classes/classes.service.ts",
-      "source_location": "L583",
+      "source_location": "L594",
       "id": "classes_classes_service_classesservice_syncteacherclasses",
       "community": 23,
       "norm_label": ".syncteacherclasses()"
@@ -6800,7 +6800,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "backend/src/students/students.service.ts",
-      "source_location": "L392",
+      "source_location": "L400",
       "id": "students_students_service_studentsservice_update",
       "community": 27,
       "norm_label": ".update()"
@@ -6809,7 +6809,7 @@
       "label": ".remove()",
       "file_type": "code",
       "source_file": "backend/src/students/students.service.ts",
-      "source_location": "L455",
+      "source_location": "L463",
       "id": "students_students_service_studentsservice_remove",
       "community": 27,
       "norm_label": ".remove()"
@@ -6818,7 +6818,7 @@
       "label": ".findByUserId()",
       "file_type": "code",
       "source_file": "backend/src/students/students.service.ts",
-      "source_location": "L470",
+      "source_location": "L478",
       "id": "students_students_service_studentsservice_findbyuserid",
       "community": 27,
       "norm_label": ".findbyuserid()"
@@ -6827,7 +6827,7 @@
       "label": ".authorizeStudentAccess()",
       "file_type": "code",
       "source_file": "backend/src/students/students.service.ts",
-      "source_location": "L480",
+      "source_location": "L488",
       "id": "students_students_service_studentsservice_authorizestudentaccess",
       "community": 27,
       "norm_label": ".authorizestudentaccess()"
@@ -6836,7 +6836,7 @@
       "label": ".findByDetails()",
       "file_type": "code",
       "source_file": "backend/src/students/students.service.ts",
-      "source_location": "L526",
+      "source_location": "L534",
       "id": "students_students_service_studentsservice_findbydetails",
       "community": 27,
       "norm_label": ".findbydetails()"
@@ -7358,7 +7358,7 @@
       "label": ".getProfile()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L598",
+      "source_location": "L609",
       "id": "teachers_teachers_service_teachersservice_getprofile",
       "community": 7,
       "norm_label": ".getprofile()"
@@ -7367,7 +7367,7 @@
       "label": ".getGradeConfig()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L619",
+      "source_location": "L630",
       "id": "teachers_teachers_service_teachersservice_getgradeconfig",
       "community": 7,
       "norm_label": ".getgradeconfig()"
@@ -7376,7 +7376,7 @@
       "label": ".saveGradeConfig()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L643",
+      "source_location": "L654",
       "id": "teachers_teachers_service_teachersservice_savegradeconfig",
       "community": 7,
       "norm_label": ".savegradeconfig()"
@@ -7385,7 +7385,7 @@
       "label": ".getInTermResults()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L685",
+      "source_location": "L696",
       "id": "teachers_teachers_service_teachersservice_getintermresults",
       "community": 7,
       "norm_label": ".getintermresults()"
@@ -7394,7 +7394,7 @@
       "label": ".getInTermResultsWithActiveContext()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L826",
+      "source_location": "L837",
       "id": "teachers_teachers_service_teachersservice_getintermresultswithactivecontext",
       "community": 7,
       "norm_label": ".getintermresultswithactivecontext()"
@@ -7403,7 +7403,7 @@
       "label": ".unenrollStudent()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L852",
+      "source_location": "L863",
       "id": "teachers_teachers_service_teachersservice_unenrollstudent",
       "community": 7,
       "norm_label": ".unenrollstudent()"
@@ -7412,7 +7412,7 @@
       "label": ".unenrollStaff()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L872",
+      "source_location": "L883",
       "id": "teachers_teachers_service_teachersservice_unenrollstaff",
       "community": 7,
       "norm_label": ".unenrollstaff()"
@@ -7421,7 +7421,7 @@
       "label": ".getGradeEntries()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L891",
+      "source_location": "L902",
       "id": "teachers_teachers_service_teachersservice_getgradeentries",
       "community": 7,
       "norm_label": ".getgradeentries()"
@@ -7430,7 +7430,7 @@
       "label": ".bulkSaveGrades()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L950",
+      "source_location": "L965",
       "id": "teachers_teachers_service_teachersservice_bulksavegrades",
       "community": 7,
       "norm_label": ".bulksavegrades()"
@@ -7439,7 +7439,7 @@
       "label": ".getSubjectResults()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L1125",
+      "source_location": "L1140",
       "id": "teachers_teachers_service_teachersservice_getsubjectresults",
       "community": 7,
       "norm_label": ".getsubjectresults()"
@@ -7448,7 +7448,7 @@
       "label": ".changePassword()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L1264",
+      "source_location": "L1283",
       "id": "teachers_teachers_service_teachersservice_changepassword",
       "community": 7,
       "norm_label": ".changepassword()"
@@ -7457,7 +7457,7 @@
       "label": ".migrateClass()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L1294",
+      "source_location": "L1313",
       "id": "teachers_teachers_service_teachersservice_migrateclass",
       "community": 7,
       "norm_label": ".migrateclass()"
@@ -7466,7 +7466,7 @@
       "label": ".recalculateClassRanks()",
       "file_type": "code",
       "source_file": "backend/src/teachers/teachers.service.ts",
-      "source_location": "L1404",
+      "source_location": "L1423",
       "id": "teachers_teachers_service_teachersservice_recalculateclassranks",
       "community": 7,
       "norm_label": ".recalculateclassranks()"
@@ -22521,5 +22521,5 @@
       "source_file": "alphabet-Smis/.agent/skills/ui-ux-pro-max/scripts/search.py"
     }
   ],
-  "built_at_commit": "62bdf918652629d0cba8c4d69d496f69918f2c3a"
+  "built_at_commit": "04d9f39312292b15f389515ec4682953680c4a4f"
 }

@@ -113,7 +113,7 @@ export default function StudentDetail() {
   }, [studentId, selectedTerm, selectedYear, hasSetInitialTerm]);
 
   const handleUnenroll = async () => {
-    if (!window.confirm(`Are you sure you want to unenroll ${data.name}? This will permanently delete all their information and login access from the system.`)) {
+    if (!await window.confirm(`Are you sure you want to unenroll ${data.name}? This will permanently delete all their information and login access from the system.`)) {
       return;
     }
 

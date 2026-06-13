@@ -469,6 +469,11 @@ export class TeachersService {
       try { gradingConfig = JSON.parse(gradingSetting.value); } catch {}
     }
 
+    const finalModeSetting = await this.prisma.systemSetting.findUnique({
+      where: { key: 'finalResultsMode' },
+    });
+    const isFinalMode = finalModeSetting?.value === 'true';
+
     const fullName = `${teacher.firstName} ${teacher.lastName}`;
 
     // Find the class where this teacher is assigned as the Class Teacher
@@ -526,8 +531,11 @@ export class TeachersService {
         let total = 0;
         student.results.forEach((res) => {
           if (studentData.hasOwnProperty(res.subjectKey)) {
-            studentData[res.subjectKey] = res.score;
-            total += res.score;
+            const scores = res.assessmentScores as any;
+            const hasFinalScore = scores && typeof scores === 'object' && 'finalScore' in scores;
+            const scoreVal = isFinalMode ? (hasFinalScore ? (scores.finalScore ?? 0) : 0) : res.score;
+            studentData[res.subjectKey] = scoreVal;
+            total += scoreVal;
           }
         });
 
@@ -540,9 +548,12 @@ export class TeachersService {
         const subjectPoints: number[] = [];
         student.results.forEach((res) => {
           if (subjectsWithKeys.some((s) => s.key === res.subjectKey)) {
+            const scores = res.assessmentScores as any;
+            const hasFinalScore = scores && typeof scores === 'object' && 'finalScore' in scores;
+            const scoreVal = isFinalMode ? (hasFinalScore ? (scores.finalScore ?? 0) : 0) : res.score;
             let pts = 9; // default fail points if no match
             if (gradingConfig && gradingConfig.grades) {
-              const rounded = Math.round(res.score);
+              const rounded = Math.round(scoreVal);
               for (const g of gradingConfig.grades) {
                 if (rounded >= g.minScore && rounded <= g.maxScore) {
                   pts = g.points;
@@ -915,10 +926,14 @@ export class TeachersService {
           student: { classId: classEntity.id },
         },
       });
-      return results.map((r) => ({
-        studentId: r.studentId,
-        assessmentScores: { finalScore: r.score },
-      }));
+      return results.map((r) => {
+        const scores = r.assessmentScores as any;
+        const hasFinalScore = scores && typeof scores === 'object' && 'finalScore' in scores;
+        return {
+          studentId: r.studentId,
+          assessmentScores: hasFinalScore ? { finalScore: scores.finalScore } : {},
+        };
+      });
     }
 
     // Normal mode: fetch from TermAssessmentScore
@@ -1142,6 +1157,12 @@ export class TeachersService {
       if (!resolvedYear) resolvedYear = yearSetting ? yearSetting.value : '2025';
     }
 
+    // Check if final results mode is active
+    const finalModeSetting = await this.prisma.systemSetting.findUnique({
+      where: { key: 'finalResultsMode' },
+    });
+    const isFinalMode = finalModeSetting?.value === 'true';
+
     const classEntity = await this.prisma.class.findUnique({
       where: { class_id: classId },
       include: { students: true },
@@ -1183,10 +1204,12 @@ export class TeachersService {
 
       // 1. Final exam score
       let finalScore = 0;
+      let hasFinal = false;
       if (r) {
         if (r.assessmentScores && typeof r.assessmentScores === 'object' && 'finalScore' in (r.assessmentScores as any)) {
           finalScore = (r.assessmentScores as any).finalScore;
-        } else {
+          hasFinal = true;
+        } else if (!isFinalMode) {
           finalScore = r.score;
         }
       }
@@ -1200,12 +1223,14 @@ export class TeachersService {
         inTermScore = r.score;
       }
 
+      const calculatedTotal = isFinalMode ? (hasFinal ? finalScore : 0) : (r ? r.score : inTermScore);
+
       return {
         id: student.student_id,
         name: `${student.firstName} ${student.lastName}`,
         inTermScore: Math.round(inTermScore * 10) / 10,
         finalScore: Math.round(finalScore * 10) / 10,
-        total: Math.round((r ? r.score : inTermScore) * 10) / 10,
+        total: Math.round(calculatedTotal * 10) / 10,
       };
     });
 
@@ -1244,12 +1269,6 @@ export class TeachersService {
         resultTeacher = subjectConfig.teacher;
       }
     }
-
-    // Check if final results mode is active
-    const finalModeSetting = await this.prisma.systemSetting.findUnique({
-      where: { key: 'finalResultsMode' },
-    });
-    const isFinalMode = finalModeSetting?.value === 'true';
 
     return {
       name: displayName,
@@ -1453,11 +1472,16 @@ export class TeachersService {
             resultsByStudent.set(res.studentId, { total: 0, scores: [] });
           }
           const data = resultsByStudent.get(res.studentId)!;
-          data.total += res.score;
+          
+          const scores = res.assessmentScores as any;
+          const hasFinalScore = scores && typeof scores === 'object' && 'finalScore' in scores;
+          const actualScore = hasFinalScore ? (scores.finalScore ?? 0) : 0;
+          
+          data.total += actualScore;
           
           let pts = 9;
           if (gradingConfig && gradingConfig.grades) {
-            const rounded = Math.round(res.score);
+            const rounded = Math.round(actualScore);
             for (const g of gradingConfig.grades) {
               if (rounded >= g.minScore && rounded <= g.maxScore) {
                 pts = g.points;

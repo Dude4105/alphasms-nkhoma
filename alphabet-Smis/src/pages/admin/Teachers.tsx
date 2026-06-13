@@ -43,7 +43,7 @@ export default function Teachers() {
 
   const handleUnenroll = async (e: React.MouseEvent, teacherId: string, teacherName: string) => {
     e.stopPropagation(); // Prevent card navigation
-    if (!window.confirm(`CRITICAL: Are you sure you want to UNENROLL ${teacherName}?\n\nThis will permanently delete their profile and system access. This action cannot be undone.`)) {
+    if (!await window.confirm(`CRITICAL: Are you sure you want to UNENROLL ${teacherName}?\n\nThis will permanently delete their profile and system access. This action cannot be undone.`)) {
       return;
     }
 

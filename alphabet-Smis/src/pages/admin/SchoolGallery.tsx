@@ -38,7 +38,7 @@ export default function SchoolGallery() {
   }, []);
 
   const handleDelete = async (id: number) => {
-    if (!window.confirm('Are you sure you want to delete this gallery item?')) return;
+    if (!await window.confirm('Are you sure you want to delete this gallery item?')) return;
     
     try {
       const token = localStorage.getItem('accessToken');
