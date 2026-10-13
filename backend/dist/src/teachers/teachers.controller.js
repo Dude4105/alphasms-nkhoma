@@ -25,6 +25,9 @@ let TeachersController = class TeachersController {
     constructor(teachersService) {
         this.teachersService = teachersService;
     }
+    getSystemSettings() {
+        return this.teachersService.getSystemSettings();
+    }
     changePassword(req, body) {
         console.log('[TeachersController] Password change request received for userId:', req.user.userId);
         return this.teachersService.changePassword(req.user.userId, body);
@@ -69,6 +72,12 @@ let TeachersController = class TeachersController {
         const termNum = term ? parseInt(term) : 1;
         return this.teachersService.getSubjectResults(req.user.userId, classId, subjectKey, termNum, year);
     }
+    getMigrationStatus(req, classId) {
+        return this.teachersService.getMigrationStatus(req.user.userId, req.user.role, classId);
+    }
+    decidePromotion(req, classId, body) {
+        return this.teachersService.decidePromotion(req.user.userId, req.user.role, classId, body.studentId, body.action);
+    }
     migrateClass(req, classId, body) {
         return this.teachersService.migrateClass(req.user.userId, classId, body.targetClassId, body.promotions);
     }
@@ -95,6 +104,13 @@ let TeachersController = class TeachersController {
     }
 };
 exports.TeachersController = TeachersController;
+__decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
+    (0, common_1.Get)('me/settings'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], TeachersController.prototype, "getSystemSettings", null);
 __decorate([
     (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
     (0, common_1.Patch)('me/change-password'),
@@ -209,6 +225,25 @@ __decorate([
     __metadata("design:paramtypes", [Object, String, String, String, String]),
     __metadata("design:returntype", void 0)
 ], TeachersController.prototype, "getSubjectResults", null);
+__decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
+    (0, common_1.Get)('classes/:classId/migration-status'),
+    __param(0, (0, common_1.Req)()),
+    __param(1, (0, common_1.Param)('classId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, String]),
+    __metadata("design:returntype", void 0)
+], TeachersController.prototype, "getMigrationStatus", null);
+__decorate([
+    (0, roles_decorator_1.Roles)(client_1.Role.TEACHER, client_1.Role.ADMIN),
+    (0, common_1.Post)('classes/:classId/promotion-decision'),
+    __param(0, (0, common_1.Req)()),
+    __param(1, (0, common_1.Param)('classId')),
+    __param(2, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, String, Object]),
+    __metadata("design:returntype", void 0)
+], TeachersController.prototype, "decidePromotion", null);
 __decorate([
     (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
     (0, common_1.Post)('classes/:classId/migrate'),

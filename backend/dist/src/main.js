@@ -5,7 +5,7 @@ const app_module_1 = require("./app.module");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.enableCors({
-        origin: 'https://alphabetsmis-ii.vercel.app',
+        origin: ['https://alphabetsmis-ii.vercel.app', 'http://localhost:5173', 'http://localhost:5174'],
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH', 'HEAD'],
         allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Origin', 'User-Agent'],
         credentials: true,

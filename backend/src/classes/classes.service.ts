@@ -498,6 +498,9 @@ export class ClassesService {
         const studentData: any = {
           id: student.student_id,
           name: `${student.firstName} ${student.lastName}`,
+          // Distinguishes "no grades recorded yet" from an actual score of 0,
+          // so fresh (new-term) rosters can display N/A instead of zeros.
+          hasGrades: student.results.length > 0,
         };
 
         // Initialize all class subjects with 0

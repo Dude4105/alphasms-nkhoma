@@ -24,6 +24,12 @@ export class TeachersController {
 
   // Teacher Profile & Security (Prioritized at the top)
   @Roles(Role.TEACHER, Role.ADMIN)
+  @Get('me/settings')
+  getSystemSettings() {
+    return this.teachersService.getSystemSettings();
+  }
+
+  @Roles(Role.TEACHER, Role.ADMIN)
   @Patch('me/change-password')
   changePassword(@Req() req: any, @Body() body: any) {
     console.log(
@@ -159,6 +165,33 @@ export class TeachersController {
       subjectKey,
       termNum,
       year,
+    );
+  }
+
+  // Promotion status & teacher decisions (admin runs the year advance).
+  @Roles(Role.TEACHER, Role.ADMIN)
+  @Get('classes/:classId/migration-status')
+  getMigrationStatus(@Req() req: any, @Param('classId') classId: string) {
+    return this.teachersService.getMigrationStatus(
+      req.user.userId,
+      req.user.role,
+      classId,
+    );
+  }
+
+  @Roles(Role.TEACHER, Role.ADMIN)
+  @Post('classes/:classId/promotion-decision')
+  decidePromotion(
+    @Req() req: any,
+    @Param('classId') classId: string,
+    @Body() body: { studentId: string; action: 'promote' | 'repeat' },
+  ) {
+    return this.teachersService.decidePromotion(
+      req.user.userId,
+      req.user.role,
+      classId,
+      body.studentId,
+      body.action,
     );
   }
 

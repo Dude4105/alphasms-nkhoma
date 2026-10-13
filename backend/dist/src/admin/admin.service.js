@@ -221,6 +221,234 @@ let AdminService = class AdminService {
             termTransition: !!(termChanged || yearChanged),
         };
     }
+    async advanceAcademicYear(userId) {
+        const FINAL_TERM = 3;
+        const MIN_SUBJECTS = 6;
+        const yearSetting = await this.prisma.systemSetting.findUnique({
+            where: { key: 'academicYear' },
+        });
+        const fromYear = yearSetting?.value;
+        if (!fromYear)
+            throw new common_1.ConflictException('No academic year is configured.');
+        const toYear = (parseInt(fromYear, 10) + 1).toString();
+        const existing = await this.prisma.migrationRun.findUnique({
+            where: { fromYear_toYear: { fromYear, toYear } },
+        });
+        if (existing) {
+            throw new common_1.ConflictException(`Academic year transition ${fromYear} -> ${toYear} has already been run.`);
+        }
+        const termSetting = await this.prisma.systemSetting.findUnique({
+            where: { key: 'currentTerm' },
+        });
+        const currentTerm = termSetting ? parseInt(termSetting.value, 10) : 1;
+        if (currentTerm !== FINAL_TERM) {
+            throw new common_1.BadRequestException(`The academic year can only be advanced at the end of the final term (Term ${FINAL_TERM}), when final-exam results are complete. Current term: ${currentTerm}.`);
+        }
+        let passMark = 40;
+        const gradingSetting = await this.prisma.systemSetting.findUnique({
+            where: { key: 'gradingSystem' },
+        });
+        if (gradingSetting) {
+            try {
+                const cfg = JSON.parse(gradingSetting.value);
+                if (typeof cfg?.passMinScore === 'number')
+                    passMark = cfg.passMinScore;
+            }
+            catch {
+            }
+        }
+        const classes = await this.prisma.class.findMany({
+            include: { students: true },
+        });
+        const classesById = new Map(classes.map((c) => [c.id, c]));
+        const finalTermResults = await this.prisma.result.findMany({
+            where: { term: FINAL_TERM, academicYear: fromYear },
+        });
+        const resultsByStudent = new Map();
+        for (const r of finalTermResults) {
+            const arr = resultsByStudent.get(r.studentId) ?? [];
+            arr.push(r);
+            resultsByStudent.set(r.studentId, arr);
+        }
+        const resolveTarget = (source) => {
+            const m = source.name.match(/^(.*?)(\d+)(\D*)$/);
+            if (!m)
+                return null;
+            const [, prefix, num, suffix] = m;
+            const targetName = `${prefix}${parseInt(num, 10) + 1}${suffix}`;
+            return classes.find((c) => c.name === targetName) ?? null;
+        };
+        const run = await this.prisma.$transaction(async (tx) => {
+            const created = await tx.migrationRun.create({
+                data: { fromYear, toYear, startedById: userId },
+            });
+            const staleResults = await tx.result.count({ where: { academicYear: toYear } });
+            const staleAssessments = await tx.termAssessmentScore.count({ where: { academicYear: toYear } });
+            const staleRanks = await tx.studentRank.count({ where: { academicYear: toYear } });
+            if (staleResults || staleAssessments || staleRanks) {
+                await tx.result.deleteMany({ where: { academicYear: toYear } });
+                await tx.termAssessmentScore.deleteMany({ where: { academicYear: toYear } });
+                await tx.studentRank.deleteMany({ where: { academicYear: toYear } });
+                await tx.migrationRun.update({
+                    where: { id: created.id },
+                    data: {
+                        archivedGrades: {
+                            results: staleResults,
+                            assessments: staleAssessments,
+                            ranks: staleRanks,
+                        },
+                    },
+                });
+                console.log(`[AdminService] Cleared ${staleResults} stale results, ${staleAssessments} assessment scores and ${staleRanks} ranks stored under the incoming year ${toYear}.`);
+            }
+            let promoted = 0;
+            let pending = 0;
+            let completed = 0;
+            for (const cls of classes) {
+                const target = resolveTarget(cls);
+                const subjectCount = Array.isArray(cls.subjects)
+                    ? cls.subjects.length
+                    : 0;
+                const required = Math.max(1, Math.min(MIN_SUBJECTS, subjectCount || MIN_SUBJECTS));
+                for (const student of cls.students) {
+                    const rows = resultsByStudent.get(student.id) ?? [];
+                    const subjects = rows.map((r) => {
+                        const as = r.assessmentScores;
+                        const hasFinal = as && typeof as === 'object' && 'finalScore' in as;
+                        const score = hasFinal ? Number(as.finalScore ?? 0) : null;
+                        return {
+                            key: r.subjectKey,
+                            score,
+                            passed: score !== null && score >= passMark,
+                        };
+                    });
+                    const passCount = subjects.filter((s) => s.passed).length;
+                    const passed = passCount >= required;
+                    let status;
+                    if (passed && target) {
+                        status = 'promoted';
+                    }
+                    else if (passed && !target) {
+                        status = 'completed';
+                    }
+                    else {
+                        status = 'pending_review';
+                    }
+                    const historyObj = (() => {
+                        if (student.classHistory) {
+                            try {
+                                return JSON.parse(student.classHistory);
+                            }
+                            catch {
+                                return {};
+                            }
+                        }
+                        return {};
+                    })();
+                    historyObj[fromYear] = cls.name;
+                    const nextYearClass = status === 'promoted' && target ? target.name : cls.name;
+                    if (status !== 'completed')
+                        historyObj[toYear] = nextYearClass;
+                    await tx.student.update({
+                        where: { id: student.id },
+                        data: {
+                            ...(status === 'promoted' && target ? { classId: target.id } : {}),
+                            classHistory: JSON.stringify(historyObj),
+                        },
+                    });
+                    await tx.classHistory.upsert({
+                        where: {
+                            studentId_academicYear: {
+                                studentId: student.id,
+                                academicYear: fromYear,
+                            },
+                        },
+                        update: { className: cls.name },
+                        create: {
+                            studentId: student.id,
+                            academicYear: fromYear,
+                            className: cls.name,
+                        },
+                    });
+                    if (status !== 'completed') {
+                        await tx.classHistory.upsert({
+                            where: {
+                                studentId_academicYear: {
+                                    studentId: student.id,
+                                    academicYear: toYear,
+                                },
+                            },
+                            update: { className: nextYearClass },
+                            create: {
+                                studentId: student.id,
+                                academicYear: toYear,
+                                className: nextYearClass,
+                            },
+                        });
+                    }
+                    await tx.studentPromotion.create({
+                        data: {
+                            runId: created.id,
+                            studentId: student.id,
+                            sourceClassId: cls.id,
+                            sourceClassName: cls.name,
+                            targetClassId: target ? target.id : null,
+                            targetClassName: target ? target.name : null,
+                            status,
+                            reasons: { passCount, required, passMark, subjects },
+                        },
+                    });
+                    if (status === 'promoted')
+                        promoted++;
+                    else if (status === 'completed')
+                        completed++;
+                    else
+                        pending++;
+                }
+            }
+            const upsert = (key, value) => tx.systemSetting.upsert({
+                where: { key },
+                update: { value },
+                create: { key, value },
+            });
+            await upsert('academicYear', toYear);
+            await upsert('currentTerm', '1');
+            await upsert('finalResultsMode', 'false');
+            await upsert('examResultsPublished', 'false');
+            return tx.migrationRun.update({
+                where: { id: created.id },
+                data: { promotedCount: promoted, pendingCount: pending, completedCount: completed },
+            });
+        });
+        console.log(`[AdminService] Year advance ${fromYear} -> ${toYear}: ${run.promotedCount} promoted, ${run.pendingCount} pending review, ${run.completedCount} completed.`);
+        const archived = (run.archivedGrades?.results ?? 0) +
+            (run.archivedGrades?.assessments ?? 0);
+        return {
+            message: `Academic year advanced to ${toYear} — students promoted automatically, others await teacher review.`,
+            fromYear,
+            toYear,
+            promoted: run.promotedCount,
+            pending: run.pendingCount,
+            completed: run.completedCount,
+            passMark,
+            archived,
+        };
+    }
+    async getPromotionRun() {
+        const run = await this.prisma.migrationRun.findFirst({
+            orderBy: { createdAt: 'desc' },
+        });
+        if (!run)
+            return null;
+        return {
+            fromYear: run.fromYear,
+            toYear: run.toYear,
+            promoted: run.promotedCount,
+            pending: run.pendingCount,
+            completed: run.completedCount,
+            createdAt: run.createdAt,
+        };
+    }
     async getFinalResultsMode() {
         const setting = await this.prisma.systemSetting.findUnique({
             where: { key: 'finalResultsMode' },

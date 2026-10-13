@@ -425,6 +425,7 @@ let ClassesService = class ClassesService {
             const studentData = {
                 id: student.student_id,
                 name: `${student.firstName} ${student.lastName}`,
+                hasGrades: student.results.length > 0,
             };
             subjectsWithKeys.forEach((s) => {
                 studentData[s.key] = 0;

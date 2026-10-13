@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { 
   BarChart3, Award, ArrowLeft, 
   TrendingUp, Clock, Search,
@@ -10,6 +10,11 @@ import {
 export default function FinalResults() {
   const navigate = useNavigate();
   const { classId } = useParams();
+  const location = useLocation();
+  // This component is shared by /teacher/... and /admin/... routes. Reports must stay
+  // inside the current portal — sending an admin to /teacher/... mounts TeacherLayout,
+  // which fetches a teacher-only profile, gets a 401 and force-logs the user out.
+  const isTeacher = location.pathname.startsWith('/teacher');
   const [searchTerm, setSearchTerm] = useState('');
   const [resultsData, setResultsData] = useState<any[]>([]);
   const [classInfo, setClassInfo] = useState<any>(null);
@@ -19,6 +24,9 @@ export default function FinalResults() {
   // Period state
   const [term, setTerm] = useState('');
   const [year, setYear] = useState('');
+
+  // School identity (from settings) — printed on the merit list PDF header
+  const [schoolInfo, setSchoolInfo] = useState<any>(null);
 
   const [generatingReportId, setGeneratingReportId] = useState<string | null>(null);
   const [reportStudentData, setReportStudentData] = useState<any>(null);
@@ -109,20 +117,29 @@ export default function FinalResults() {
     const fetchActiveContext = async () => {
       try {
         const token = localStorage.getItem('accessToken');
-        const settingsRes = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings`, {
+        // Use the teacher-accessible settings endpoint. /admin/settings returns 403 for
+        // teachers, which used to force a hardcoded year that didn't match the saved grades.
+        const settingsRes = await fetch(`${import.meta.env.VITE_API_URL}/teachers/me/settings`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (settingsRes.ok) {
           const settings = await settingsRes.json();
           if (settings.currentTerm) setTerm(settings.currentTerm.toString());
           if (settings.academicYear) setYear(settings.academicYear.toString());
+          setSchoolInfo({
+            schoolName: settings.schoolName || '',
+            schoolCampus: settings.schoolCampus || '',
+            schoolAddress: settings.schoolAddress || '',
+            schoolPOBox: settings.schoolPOBox || '',
+            schoolPhone: settings.schoolPhone || '',
+          });
         } else {
           setTerm('1');
-          setYear('2025');
+          setYear('2024');
         }
       } catch (e) {
         setTerm('1');
-        setYear('2025');
+        setYear('2024');
       }
     };
     fetchActiveContext();
@@ -265,12 +282,18 @@ export default function FinalResults() {
   }
 
   // Performance Statistics
+  // Only students who actually have grades recorded for this term/year count
+  // toward the stats — a fresh (new-term) roster has no rows yet and must
+  // display N/A instead of zeros/FAILED everywhere.
+  const studentsWithGrades = resultsData.filter(s => s.hasGrades);
+  const gradedStudents = studentsWithGrades.length;
+  const hasAnyGrades = gradedStudents > 0;
   const totalStudents = resultsData.length;
-  const passedCount = resultsData.filter(s => s.avg >= gradingConfig.passMinScore).length;
-  const failedCount = totalStudents - passedCount;
-  const passRate = totalStudents > 0 ? (passedCount / totalStudents) * 100 : 0;
-  const classMean = totalStudents > 0 ? resultsData.reduce((acc, curr) => acc + curr.avg, 0) / totalStudents : 0;
-  const topStudent = resultsData.length > 0 ? resultsData[0] : { name: 'N/A', total: 0, avg: 0 };
+  const passedCount = studentsWithGrades.filter(s => s.avg >= gradingConfig.passMinScore).length;
+  const failedCount = gradedStudents - passedCount;
+  const passRate = gradedStudents > 0 ? (passedCount / gradedStudents) * 100 : 0;
+  const classMean = gradedStudents > 0 ? studentsWithGrades.reduce((acc, curr) => acc + curr.avg, 0) / gradedStudents : 0;
+  const topStudent = hasAnyGrades ? studentsWithGrades[0] : { name: 'No grades yet', total: 0, avg: 0 };
 
   const filteredResults = resultsData.filter(s => 
     s.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -507,10 +530,10 @@ export default function FinalResults() {
       {/* Summary Analytics Cards */}
       <div className="fr-stats-grid">
         {[
-          { label: 'Pass Rate', value: `${passRate.toFixed(1)}%`, icon: <TrendingUp size={20} />, color: '#10b981', desc: `Met ${gradingConfig.passMinScore}% threshold` },
-          { label: 'Students Passed', value: passedCount, icon: <CheckCircle2 size={20} />, color: '#10b981', desc: `Out of ${totalStudents}` },
-          { label: 'Students Failed', value: failedCount, icon: <XCircle size={20} />, color: failedCount > 0 ? '#ef4444' : '#10b981', desc: `Below ${gradingConfig.passMinScore}% average` },
-          { label: 'Class Mean Score', value: `${classMean.toFixed(1)}%`, icon: <BarChart3 size={20} />, color: '#3b82f6', desc: 'Overall academic avg' },
+          { label: 'Pass Rate', value: hasAnyGrades ? `${passRate.toFixed(1)}%` : '—', icon: <TrendingUp size={20} />, color: '#10b981', desc: hasAnyGrades ? `Met ${gradingConfig.passMinScore}% threshold` : 'No grades recorded yet' },
+          { label: 'Students Passed', value: hasAnyGrades ? passedCount : '—', icon: <CheckCircle2 size={20} />, color: '#10b981', desc: `Out of ${totalStudents}` },
+          { label: 'Students Failed', value: hasAnyGrades ? failedCount : '—', icon: <XCircle size={20} />, color: hasAnyGrades && failedCount > 0 ? '#ef4444' : '#10b981', desc: `Below ${gradingConfig.passMinScore}% average` },
+          { label: 'Class Mean Score', value: hasAnyGrades ? `${classMean.toFixed(1)}%` : '—', icon: <BarChart3 size={20} />, color: '#3b82f6', desc: 'Overall academic avg' },
         ].map((stat, i) => (
           <div key={i} className="glass-panel" style={{ padding: '1.25rem', borderRadius: '12px', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', right: '-10px', top: '-10px', opacity: 0.05, transform: 'scale(1.5)', color: stat.color }}>{stat.icon}</div>
@@ -539,16 +562,16 @@ export default function FinalResults() {
             <div style={{ padding: '0.75rem', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid var(--glass-border)' }}>
               <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Total Marks</div>
               <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-gold)' }}>
-                {topStudent.total}/{(classInfo?.subjects?.length || 0) * 100}
+                {hasAnyGrades ? `${topStudent.total}/${(classInfo?.subjects?.length || 0) * 100}` : '—'}
               </div>
             </div>
             <div style={{ padding: '0.75rem', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid var(--glass-border)' }}>
               <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Average Score</div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-gold)' }}>{topStudent.avg.toFixed(1)}%</div>
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-gold)' }}>{hasAnyGrades ? `${topStudent.avg.toFixed(1)}%` : '—'}</div>
             </div>
             <div style={{ padding: '0.75rem', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid rgba(253,184,19,0.3)' }}>
               <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Best 6 Points</div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-gold)' }}>{computeBest6Points(topStudent) ?? 'N/A'}</div>
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--primary-gold)' }}>{hasAnyGrades ? (computeBest6Points(topStudent) ?? '—') : '—'}</div>
             </div>
           </div>
         </div>
@@ -616,7 +639,8 @@ export default function FinalResults() {
             <tbody>
               {filteredResults.map((s, i) => {
                 const rank = i + 1;
-                const isFailed = s.avg < gradingConfig.passMinScore;
+                const noGrades = !s.hasGrades;
+                const isFailed = !noGrades && s.avg < gradingConfig.passMinScore;
                 const resolved = resolveGrade(s.avg);
                 return (
                   <tr key={s.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', transition: 'background 0.2s ease' }} className="table-row-hover">
@@ -636,29 +660,29 @@ export default function FinalResults() {
                     {(classInfo?.subjects || []).map((subj: any) => {
                       const score = s[subj.key] || 0;
                       return (
-                        <td key={subj.key} style={{ padding: '1rem', textAlign: 'center', color: score < gradingConfig.passMinScore ? '#ef4444' : 'var(--text-light)', fontSize: '0.9rem' }}>
-                          {score}
+                        <td key={subj.key} style={{ padding: '1rem', textAlign: 'center', color: noGrades ? 'var(--text-muted)' : score < gradingConfig.passMinScore ? '#ef4444' : 'var(--text-light)', fontSize: '0.9rem' }}>
+                          {noGrades ? '—' : score}
                         </td>
                       );
                     })}
-                    <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 700, color: 'var(--text-light)' }}>{s.total}</td>
-                    <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 700, color: isFailed ? '#ef4444' : '#10b981' }}>{s.avg.toFixed(1)}</td>
-                    <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 800, color: isFailed ? '#ef4444' : '#10b981' }}>{resolved.grade}</td>
-                    <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 700, color: 'var(--primary-gold)' }}>{computeBest6Points(s) ?? 'N/A'}</td>
+                    <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 700, color: noGrades ? 'var(--text-muted)' : 'var(--text-light)' }}>{noGrades ? '—' : s.total}</td>
+                    <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 700, color: noGrades ? 'var(--text-muted)' : isFailed ? '#ef4444' : '#10b981' }}>{noGrades ? '—' : s.avg.toFixed(1)}</td>
+                    <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 800, color: noGrades ? 'var(--text-muted)' : isFailed ? '#ef4444' : '#10b981' }}>{noGrades ? '—' : resolved.grade}</td>
+                    <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 700, color: noGrades ? 'var(--text-muted)' : 'var(--primary-gold)' }}>{noGrades ? '—' : (computeBest6Points(s) ?? '—')}</td>
                     <td style={{ padding: '1.2rem 1.5rem', textAlign: 'center' }}>
                       <span style={{ 
                         fontSize: '0.7rem', fontWeight: 700, padding: '0.3rem 0.6rem', borderRadius: '6px',
-                        background: isFailed ? 'rgba(239, 68, 68, 0.1)' : 'rgba(16, 185, 129, 0.1)',
-                        color: isFailed ? '#ef4444' : '#10b981',
+                        background: noGrades ? 'rgba(255,255,255,0.05)' : isFailed ? 'rgba(239, 68, 68, 0.1)' : 'rgba(16, 185, 129, 0.1)',
+                        color: noGrades ? 'var(--text-muted)' : isFailed ? '#ef4444' : '#10b981',
                         letterSpacing: '0.05em'
                       }}>
-                        {isFailed ? 'FAILED' : 'PASSED'}
+                        {noGrades ? 'NO GRADES' : isFailed ? 'FAILED' : 'PASSED'}
                       </span>
                     </td>
                     <td style={{ padding: '1.2rem 1.5rem', textAlign: 'right', display: 'flex', gap: '0.5rem', justifyContent: 'flex-end', alignItems: 'center' }}>
                       <button 
                         className="btn no-print"
-                        onClick={() => navigate(`/teacher/students/${s.id}/report`)}
+                        onClick={() => navigate(isTeacher ? `/teacher/students/${s.id}/report` : `/admin/students/${s.id}/report`)}
                         style={{ padding: '0.4rem 0.8rem', fontSize: '0.75rem', background: 'rgba(255, 215, 0, 0.1)', color: 'var(--primary-gold)', border: '1px solid rgba(255, 215, 0, 0.2)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
                       >
                         <FileText size={14} /> View Report
@@ -698,12 +722,13 @@ export default function FinalResults() {
           )}
           {filteredResults.map((s, i) => {
             const rank = i + 1;
-            const isFailed = s.avg < gradingConfig.passMinScore;
+            const noGrades = !s.hasGrades;
+            const isFailed = !noGrades && s.avg < gradingConfig.passMinScore;
             const resolved = resolveGrade(s.avg);
             const rankBg = rank === 1 ? 'var(--primary-gold)' : rank === 2 ? '#c0c0c0' : rank === 3 ? '#cd7f32' : 'rgba(255,255,255,0.08)';
             const rankColor = rank <= 3 ? '#000' : 'var(--text-muted)';
             return (
-              <div key={s.id} className="fr-student-card" style={{ borderLeft: `4px solid ${isFailed ? '#ef4444' : '#10b981'}` }}>
+              <div key={s.id} className="fr-student-card" style={{ borderLeft: `4px solid ${noGrades ? 'rgba(255,255,255,0.15)' : isFailed ? '#ef4444' : '#10b981'}` }}>
                 {/* Rank badge */}
                 <span className="fr-card-rank-badge" style={{ background: rankBg, color: rankColor }}>
                   {rank}
@@ -720,13 +745,13 @@ export default function FinalResults() {
                   <div className="fr-card-subjects">
                     {(classInfo?.subjects || []).map((subj: any) => {
                       const score = s[subj.key] || 0;
-                      const fail = score < gradingConfig.passMinScore;
+                      const fail = !noGrades && score < gradingConfig.passMinScore;
                       return (
                         <span key={subj.key} className="fr-card-subject-pill" style={{
-                          color: fail ? '#ef4444' : 'var(--text-light)',
+                          color: noGrades ? 'var(--text-muted)' : fail ? '#ef4444' : 'var(--text-light)',
                           borderColor: fail ? 'rgba(239,68,68,0.3)' : 'var(--glass-border)'
                         }}>
-                          {subj.name.substring(0, 3).toUpperCase()}: <strong>{score}</strong>
+                          {subj.name.substring(0, 3).toUpperCase()}: <strong>{noGrades ? '—' : score}</strong>
                         </span>
                       );
                     })}
@@ -737,27 +762,27 @@ export default function FinalResults() {
                 <div className="fr-card-summary" style={{ gridTemplateColumns: 'repeat(5, 1fr)' }}>
                   <div className="fr-card-stat">
                     <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>TOTAL</div>
-                    <div style={{ fontSize: '0.95rem', fontWeight: 800, color: 'var(--text-light)' }}>{s.total}</div>
+                    <div style={{ fontSize: '0.95rem', fontWeight: 800, color: noGrades ? 'var(--text-muted)' : 'var(--text-light)' }}>{noGrades ? '—' : s.total}</div>
                   </div>
                   <div className="fr-card-stat">
                     <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>AVG</div>
-                    <div style={{ fontSize: '0.95rem', fontWeight: 800, color: isFailed ? '#ef4444' : '#10b981' }}>{s.avg.toFixed(1)}%</div>
+                    <div style={{ fontSize: '0.95rem', fontWeight: 800, color: noGrades ? 'var(--text-muted)' : isFailed ? '#ef4444' : '#10b981' }}>{noGrades ? '—' : `${s.avg.toFixed(1)}%`}</div>
                   </div>
                   <div className="fr-card-stat">
                     <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>GRADE</div>
-                    <div style={{ fontSize: '0.95rem', fontWeight: 800, color: isFailed ? '#ef4444' : '#10b981' }}>{resolved.grade}</div>
+                    <div style={{ fontSize: '0.95rem', fontWeight: 800, color: noGrades ? 'var(--text-muted)' : isFailed ? '#ef4444' : '#10b981' }}>{noGrades ? '—' : resolved.grade}</div>
                   </div>
                   <div className="fr-card-stat" style={{ borderColor: 'rgba(253,184,19,0.3)' }}>
                     <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>BEST 6</div>
-                    <div style={{ fontSize: '0.95rem', fontWeight: 800, color: 'var(--primary-gold)' }}>{computeBest6Points(s) ?? 'N/A'}</div>
+                    <div style={{ fontSize: '0.95rem', fontWeight: 800, color: noGrades ? 'var(--text-muted)' : 'var(--primary-gold)' }}>{noGrades ? '—' : (computeBest6Points(s) ?? '—')}</div>
                   </div>
                   <div className="fr-card-stat">
                     <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>STATUS</div>
                     <div style={{ 
                       fontSize: '0.65rem', fontWeight: 800, padding: '0.15rem 0.4rem', borderRadius: '5px', display: 'inline-block', marginTop: '0.1rem',
-                      background: isFailed ? 'rgba(239,68,68,0.15)' : 'rgba(16,185,129,0.15)',
-                      color: isFailed ? '#ef4444' : '#10b981'
-                    }}>{isFailed ? 'FAIL' : 'PASS'}</div>
+                      background: noGrades ? 'rgba(255,255,255,0.08)' : isFailed ? 'rgba(239,68,68,0.15)' : 'rgba(16,185,129,0.15)',
+                      color: noGrades ? 'var(--text-muted)' : isFailed ? '#ef4444' : '#10b981'
+                    }}>{noGrades ? 'NO GRADES' : isFailed ? 'FAIL' : 'PASS'}</div>
                   </div>
                 </div>
 
@@ -806,9 +831,9 @@ export default function FinalResults() {
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>
           {(classInfo?.subjects || []).map((subj: any) => {
-            const subjectScores = resultsData.map(s => (s as any)[subj.key] || 0);
+            const subjectScores = studentsWithGrades.map(s => (s as any)[subj.key] || 0);
             const subjPassed = subjectScores.filter(score => score >= gradingConfig.passMinScore).length;
-            const subjPassRate = totalStudents > 0 ? (subjPassed / totalStudents) * 100 : 0;
+            const subjPassRate = subjectScores.length > 0 ? (subjPassed / subjectScores.length) * 100 : 0;
             
             return (
               <div 
@@ -878,8 +903,13 @@ export default function FinalResults() {
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#c8a951" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <div style={{ flex: 1, textAlign: 'center' }}>
-              <div style={{ fontSize: '1.2rem', fontWeight: 900, color: '#0f2b5b', textTransform: 'uppercase', letterSpacing: '2px', lineHeight: 1.2 }}>Heroes Academy</div>
-              <div style={{ fontSize: '0.65rem', color: '#4b5563', fontWeight: 600, letterSpacing: '1px' }}>Blantyre Campus · Striving for Excellence</div>
+              <div style={{ fontSize: '1.2rem', fontWeight: 900, color: '#0f2b5b', textTransform: 'uppercase', letterSpacing: '2px', lineHeight: 1.2 }}>{schoolInfo?.schoolCampus || schoolInfo?.schoolName || 'Heroes Academy'}</div>
+              <div style={{ fontSize: '0.65rem', color: '#4b5563', fontWeight: 600, letterSpacing: '1px' }}>
+                {schoolInfo?.schoolName && schoolInfo?.schoolCampus && schoolInfo.schoolCampus !== schoolInfo.schoolName
+                  ? `${schoolInfo.schoolName} · `
+                  : ''}
+                {[schoolInfo?.schoolAddress].filter(Boolean).join(' · ') || 'Striving for Excellence'}
+              </div>
             </div>
             <div style={{ width: '40px', height: '40px', background: '#0f2b5b', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '2px solid #c8a951' }}>
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#c8a951" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
@@ -904,19 +934,19 @@ export default function FinalResults() {
             </div>
             <div style={{ padding: '4px 12px', border: '1px solid #bfc9d9', borderRadius: '4px', textAlign: 'center' }}>
               <div style={{ fontSize: '0.5rem', color: '#6b7280', fontWeight: 700, textTransform: 'uppercase' }}>Passed</div>
-              <div style={{ fontSize: '0.85rem', fontWeight: 900, color: '#166534' }}>{passedCount}</div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 900, color: '#166534' }}>{hasAnyGrades ? passedCount : '—'}</div>
             </div>
             <div style={{ padding: '4px 12px', border: '1px solid #bfc9d9', borderRadius: '4px', textAlign: 'center' }}>
               <div style={{ fontSize: '0.5rem', color: '#6b7280', fontWeight: 700, textTransform: 'uppercase' }}>Failed</div>
-              <div style={{ fontSize: '0.85rem', fontWeight: 900, color: '#991b1b' }}>{failedCount}</div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 900, color: '#991b1b' }}>{hasAnyGrades ? failedCount : '—'}</div>
             </div>
             <div style={{ padding: '4px 12px', border: '1px solid #bfc9d9', borderRadius: '4px', textAlign: 'center' }}>
               <div style={{ fontSize: '0.5rem', color: '#6b7280', fontWeight: 700, textTransform: 'uppercase' }}>Pass Rate</div>
-              <div style={{ fontSize: '0.85rem', fontWeight: 900, color: '#0f2b5b' }}>{passRate.toFixed(1)}%</div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 900, color: '#0f2b5b' }}>{hasAnyGrades ? `${passRate.toFixed(1)}%` : '—'}</div>
             </div>
             <div style={{ padding: '4px 12px', border: '1px solid #bfc9d9', borderRadius: '4px', textAlign: 'center' }}>
               <div style={{ fontSize: '0.5rem', color: '#6b7280', fontWeight: 700, textTransform: 'uppercase' }}>Class Mean</div>
-              <div style={{ fontSize: '0.85rem', fontWeight: 900, color: '#0f2b5b' }}>{classMean.toFixed(1)}%</div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 900, color: '#0f2b5b' }}>{hasAnyGrades ? `${classMean.toFixed(1)}%` : '—'}</div>
             </div>
           </div>
 
@@ -943,7 +973,8 @@ export default function FinalResults() {
               <tbody>
                 {resultsData.map((s: any, i: number) => {
                   const rank = i + 1;
-                  const isFailed = s.avg < gradingConfig.passMinScore;
+                  const noGrades = !s.hasGrades;
+                  const isFailed = !noGrades && s.avg < gradingConfig.passMinScore;
                   const resolved = resolveGrade(s.avg);
                   const bgColor = i % 2 === 0 ? '#fff' : '#f8fafc';
                   const rankBg = rank === 1 ? '#c8a951' : rank === 2 ? '#c0c0c0' : rank === 3 ? '#cd7f32' : 'transparent';
@@ -959,17 +990,17 @@ export default function FinalResults() {
                       {(classInfo?.subjects || []).map((subj: any) => {
                         const score = s[subj.key] || 0;
                         return (
-                          <td key={subj.key} style={{ padding: '3px 2px', textAlign: 'center', fontSize: '0.62rem', fontWeight: 600, color: score < gradingConfig.passMinScore ? '#dc2626' : '#111827', borderRight: '1px solid #e5e7eb' }}>
-                            {score}
+                          <td key={subj.key} style={{ padding: '3px 2px', textAlign: 'center', fontSize: '0.62rem', fontWeight: 600, color: noGrades ? '#9ca3af' : score < gradingConfig.passMinScore ? '#dc2626' : '#111827', borderRight: '1px solid #e5e7eb' }}>
+                            {noGrades ? '—' : score}
                           </td>
                         );
                       })}
-                      <td style={{ padding: '3px 4px', textAlign: 'center', fontSize: '0.65rem', fontWeight: 900, color: '#0f2b5b', borderLeft: '2px solid #0f2b5b' }}>{s.total}</td>
-                      <td style={{ padding: '3px 4px', textAlign: 'center', fontSize: '0.65rem', fontWeight: 900, color: isFailed ? '#dc2626' : '#166534' }}>{s.avg.toFixed(1)}%</td>
-                      <td style={{ padding: '3px 4px', textAlign: 'center', fontSize: '0.65rem', fontWeight: 900, color: isFailed ? '#dc2626' : '#166534' }}>{resolved.grade}</td>
-                      <td style={{ padding: '3px 4px', textAlign: 'center', fontSize: '0.65rem', fontWeight: 800, color: '#c8a951' }}>{s.points || resolved.points}</td>
+                      <td style={{ padding: '3px 4px', textAlign: 'center', fontSize: '0.65rem', fontWeight: 900, color: '#0f2b5b', borderLeft: '2px solid #0f2b5b' }}>{noGrades ? '—' : s.total}</td>
+                      <td style={{ padding: '3px 4px', textAlign: 'center', fontSize: '0.65rem', fontWeight: 900, color: noGrades ? '#9ca3af' : isFailed ? '#dc2626' : '#166534' }}>{noGrades ? '—' : `${s.avg.toFixed(1)}%`}</td>
+                      <td style={{ padding: '3px 4px', textAlign: 'center', fontSize: '0.65rem', fontWeight: 900, color: noGrades ? '#9ca3af' : isFailed ? '#dc2626' : '#166534' }}>{noGrades ? '—' : resolved.grade}</td>
+                      <td style={{ padding: '3px 4px', textAlign: 'center', fontSize: '0.65rem', fontWeight: 800, color: noGrades ? '#9ca3af' : '#c8a951' }}>{noGrades ? '—' : (computeBest6Points(s) ?? '—')}</td>
                       <td style={{ padding: '3px 6px', textAlign: 'center' }}>
-                        <span style={{ fontSize: '0.55rem', fontWeight: 800, padding: '2px 6px', borderRadius: '3px', background: isFailed ? '#fee2e2' : '#dcfce7', color: isFailed ? '#991b1b' : '#166534' }}>{isFailed ? 'FAIL' : 'PASS'}</span>
+                        <span style={{ fontSize: '0.55rem', fontWeight: 800, padding: '2px 6px', borderRadius: '3px', background: noGrades ? '#f3f4f6' : isFailed ? '#fee2e2' : '#dcfce7', color: noGrades ? '#6b7280' : isFailed ? '#991b1b' : '#166534' }}>{noGrades ? 'NO GRADES' : isFailed ? 'FAIL' : 'PASS'}</span>
                       </td>
                     </tr>
                   );

@@ -1,17 +1,9 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 
 // Dynamic lazy imports for all pages to optimize bundle size and load performance
-const Home = lazy(() => import('./pages/Home'));
-const Apply = lazy(() => import('./pages/Apply'));
-const ExamResults = lazy(() => import('./pages/ExamResults'));
-const ExploreCampus = lazy(() => import('./pages/ExploreCampus'));
-const ExploreCampusDetail = lazy(() => import('./pages/ExploreCampusDetail'));
-const CampusGallery = lazy(() => import('./pages/CampusGallery'));
 const Login = lazy(() => import('./pages/Login'));
-const PublicStudentReport = lazy(() => import('./pages/PublicStudentReport'));
-const PublicStudentHistory = lazy(() => import('./pages/PublicStudentHistory'));
 
 // Teacher Layout & Pages
 const TeacherLayout = lazy(() => import('./layouts/TeacherLayout'));
@@ -31,6 +23,7 @@ const AttendanceTracker = lazy(() => import('./pages/teacher/AttendanceTracker')
 const AttendanceOverview = lazy(() => import('./pages/teacher/AttendanceOverview'));
 const StudentDetail = lazy(() => import('./pages/admin/StudentDetail'));
 const StudentHistory = lazy(() => import('./pages/admin/StudentHistory'));
+const StudentFees = lazy(() => import('./pages/admin/StudentFees'));
 const Profile = lazy(() => import('./pages/teacher/Profile'));
 
 // Admin Layout & Pages
@@ -89,15 +82,8 @@ function App() {
         </div>
       }>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/apply" element={<Apply />} />
-          <Route path="/exam-results" element={<ExamResults />} />
-          <Route path="/explore-campus" element={<ExploreCampus />} />
-          <Route path="/explore-campus/:id" element={<ExploreCampusDetail />} />
-          <Route path="/campus-gallery" element={<CampusGallery />} />
+          <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/reports/:studentId" element={<PublicStudentReport />} />
-          <Route path="/students/:studentId/history" element={<PublicStudentHistory />} />
           
           <Route path="/teacher" element={<TeacherLayout />}>
             <Route index element={<Dashboard />} />
@@ -126,6 +112,8 @@ function App() {
             <Route path="students/:studentId" element={<StudentDetail />} />
             <Route path="students/:studentId/history" element={<StudentHistory />} />
             <Route path="students/:studentId/edit" element={<EditStudent />} />
+            <Route path="students/:studentId/fees" element={<StudentFees />} />
+            <Route path="students/:studentId/report" element={<StudentReport />} />
             <Route path="teachers" element={<Teachers />} />
             <Route path="teachers/add" element={<AddTeacher />} />
             <Route path="teachers/:teacherId" element={<TeacherDetail />} />

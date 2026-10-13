@@ -33,6 +33,12 @@ let AdminController = class AdminController {
     updateSettings(data) {
         return this.adminService.updateSettings(data);
     }
+    advanceAcademicYear(req) {
+        return this.adminService.advanceAcademicYear(req.user.userId);
+    }
+    getPromotionRun() {
+        return this.adminService.getPromotionRun();
+    }
     getFinalResultsMode() {
         return this.adminService.getFinalResultsMode();
     }
@@ -105,6 +111,19 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], AdminController.prototype, "updateSettings", null);
+__decorate([
+    (0, common_1.Post)('academic-year/advance'),
+    __param(0, (0, common_1.Req)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], AdminController.prototype, "advanceAcademicYear", null);
+__decorate([
+    (0, common_1.Get)('promotion-run'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], AdminController.prototype, "getPromotionRun", null);
 __decorate([
     (0, common_1.Get)('settings/final-results-mode'),
     __metadata("design:type", Function),

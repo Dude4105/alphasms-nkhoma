@@ -14,6 +14,7 @@ export declare class FinanceService {
             color: string;
         }[];
         recentCollections: {
+            dbId: number;
             id: string;
             name: string;
             class: string;
@@ -77,6 +78,8 @@ export declare class FinanceService {
             date: Date;
             method: string;
             reference: string | null;
+            recordedBy: string | null;
+            recordedById: number | null;
         })[];
         meta: {
             total: number;
@@ -95,7 +98,10 @@ export declare class FinanceService {
         student_id: string;
         scholarType: string | null;
     }[]>;
-    recordPayment(data: any): Promise<{
+    recordPayment(data: any, user?: {
+        userId?: number;
+        email?: string;
+    }): Promise<{
         id: number;
         createdAt: Date;
         status: string;
@@ -106,7 +112,10 @@ export declare class FinanceService {
         date: Date;
         method: string;
         reference: string | null;
+        recordedBy: string | null;
+        recordedById: number | null;
     }>;
+    private resolveRecorder;
     private computeTermBreakdown;
     getStudentFees(): Promise<{
         id: string;
@@ -152,6 +161,7 @@ export declare class FinanceService {
                 date: Date;
                 method: string;
                 reference: string | null;
+                recordedBy: string | null;
             }[];
             term: number;
             expectedFee: number;
@@ -168,6 +178,37 @@ export declare class FinanceService {
             totalOverpaid: number;
             status: string;
         };
+    }>;
+    getStudentPaymentHistory(studentId: number): Promise<{
+        student: {
+            id: number;
+            studentId: string;
+            name: string;
+            class: string;
+            scholarType: string | null;
+        };
+        currentYear: string;
+        currentTerm: number;
+        years: {
+            academicYear: string;
+            isCurrent: boolean;
+            totalPaid: number;
+            terms: {
+                term: number;
+                totalPaid: number;
+                payments: {
+                    id: number;
+                    amount: number;
+                    date: Date;
+                    method: string;
+                    reference: string | null;
+                    status: string;
+                    recordedBy: string | null;
+                }[];
+            }[];
+        }[];
+        grandTotal: number;
+        paymentCount: number;
     }>;
     getExpenses(query?: PaginationDto): Promise<{
         data: {

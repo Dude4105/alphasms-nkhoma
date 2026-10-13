@@ -143,6 +143,7 @@ let FinanceService = class FinanceService {
                 },
             ],
             recentCollections: recentPayments.map((p) => ({
+                dbId: p.studentId,
                 id: p.student.student_id,
                 name: `${p.student.firstName} ${p.student.lastName}`,
                 class: p.student.class?.name || 'N/A',
@@ -259,9 +260,10 @@ let FinanceService = class FinanceService {
             take: 10,
         });
     }
-    async recordPayment(data) {
+    async recordPayment(data, user) {
         const { term: activeTerm, academicYear } = await this.getActiveTermContext();
         const paymentTerm = data.term ? parseInt(data.term) : activeTerm;
+        const recorder = await this.resolveRecorder(user);
         return this.prisma.payment.create({
             data: {
                 studentId: parseInt(data.studentId),
@@ -272,8 +274,49 @@ let FinanceService = class FinanceService {
                 academicYear,
                 term: paymentTerm,
                 status: 'VERIFIED',
+                recordedBy: recorder.name,
+                recordedById: recorder.userId,
             },
         });
+    }
+    async resolveRecorder(user) {
+        const userId = user?.userId;
+        if (!userId) {
+            return { userId: undefined, name: user?.email || 'Unknown' };
+        }
+        try {
+            const admin = await this.prisma.adminProfile.findUnique({
+                where: { userId },
+            });
+            if (admin) {
+                return {
+                    userId,
+                    name: `${admin.firstName || ''} ${admin.lastName || ''}`.trim(),
+                };
+            }
+            const teacher = await this.prisma.teacher.findUnique({
+                where: { userId },
+            });
+            if (teacher) {
+                return {
+                    userId,
+                    name: `${teacher.firstName || ''} ${teacher.lastName || ''}`.trim(),
+                };
+            }
+            const student = await this.prisma.student.findUnique({
+                where: { userId },
+            });
+            if (student) {
+                return {
+                    userId,
+                    name: `${student.firstName || ''} ${student.lastName || ''}`.trim(),
+                };
+            }
+        }
+        catch (err) {
+            console.error('Unable to resolve payment recorder:', err);
+        }
+        return { userId, name: user?.email || 'Unknown' };
     }
     computeTermBreakdown(scholarType, payments, structures) {
         const terms = [1, 2, 3];
@@ -400,6 +443,7 @@ let FinanceService = class FinanceService {
                 date: p.date,
                 method: p.method,
                 reference: p.reference,
+                recordedBy: p.recordedBy,
             })),
         }));
         return {
@@ -414,6 +458,69 @@ let FinanceService = class FinanceService {
             activeTerm,
             terms: termsWithPayments,
             annualSummary: annual,
+        };
+    }
+    async getStudentPaymentHistory(studentId) {
+        const student = await this.prisma.student.findUnique({
+            where: { id: studentId },
+            include: {
+                payments: {
+                    orderBy: [{ academicYear: 'desc' }, { term: 'asc' }, { date: 'desc' }],
+                },
+                class: true,
+            },
+        });
+        if (!student) {
+            throw new common_1.NotFoundException('Student not found');
+        }
+        const { term: currentTerm, academicYear: currentYear } = await this.getActiveTermContext();
+        const byYear = new Map();
+        for (const p of student.payments) {
+            if (!byYear.has(p.academicYear))
+                byYear.set(p.academicYear, new Map());
+            const byTerm = byYear.get(p.academicYear);
+            if (!byTerm.has(p.term))
+                byTerm.set(p.term, []);
+            byTerm.get(p.term).push(p);
+        }
+        const years = Array.from(byYear.entries())
+            .sort((a, b) => b[0].localeCompare(a[0]))
+            .map(([year, byTerm]) => {
+            const terms = Array.from(byTerm.entries())
+                .sort((a, b) => a[0] - b[0])
+                .map(([term, payments]) => ({
+                term,
+                totalPaid: payments.reduce((sum, p) => sum + p.amount, 0),
+                payments: payments.map((p) => ({
+                    id: p.id,
+                    amount: p.amount,
+                    date: p.date,
+                    method: p.method,
+                    reference: p.reference,
+                    status: p.status,
+                    recordedBy: p.recordedBy,
+                })),
+            }));
+            return {
+                academicYear: year,
+                isCurrent: year === currentYear,
+                totalPaid: terms.reduce((sum, t) => sum + t.totalPaid, 0),
+                terms,
+            };
+        });
+        return {
+            student: {
+                id: student.id,
+                studentId: student.student_id,
+                name: `${student.firstName} ${student.lastName}`,
+                class: student.class?.name || 'N/A',
+                scholarType: student.scholarType,
+            },
+            currentYear,
+            currentTerm,
+            years,
+            grandTotal: years.reduce((sum, y) => sum + y.totalPaid, 0),
+            paymentCount: student.payments.length,
         };
     }
     async getExpenses(query) {

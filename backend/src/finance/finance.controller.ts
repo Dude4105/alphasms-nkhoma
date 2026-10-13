@@ -10,6 +10,7 @@ import {
   Param,
   Patch,
   ParseIntPipe,
+  Req,
 } from '@nestjs/common';
 import { FinanceService } from './finance.service';
 import { AuthGuard } from '@nestjs/passport';
@@ -69,8 +70,8 @@ export class FinanceController {
   }
 
   @Post('payments')
-  recordPayment(@Body() data: any) {
-    return this.financeService.recordPayment(data);
+  recordPayment(@Body() data: any, @Req() req: any) {
+    return this.financeService.recordPayment(data, req.user);
   }
 
   @Get('students')
@@ -86,6 +87,12 @@ export class FinanceController {
   @Get('student-account/:studentId')
   getStudentAccount(@Param('studentId', ParseIntPipe) studentId: number) {
     return this.financeService.getStudentAccount(studentId);
+  }
+
+  // Full payment history (all academic years, grouped by term) for one student
+  @Get('student-payments/:studentId')
+  getStudentPayments(@Param('studentId', ParseIntPipe) studentId: number) {
+    return this.financeService.getStudentPaymentHistory(studentId);
   }
 
   // --- Expenses Management ---

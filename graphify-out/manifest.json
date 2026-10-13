@@ -993,5 +993,1970 @@
     "mtime": 1780304948.7530887,
     "ast_hash": "5c09f50801bcfad614f53b998d2d9a54",
     "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\.agent\\skills\\ui-ux-pro-max\\scripts\\core.py": {
+    "mtime": 1779146706.140539,
+    "ast_hash": "3df4734a785963a8242a56c1b926adfd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\.agent\\skills\\ui-ux-pro-max\\scripts\\design_system.py": {
+    "mtime": 1779146706.1501384,
+    "ast_hash": "08f84d04608a19049c90fc2b1ef314f9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\.agent\\skills\\ui-ux-pro-max\\scripts\\search.py": {
+    "mtime": 1779146706.1575553,
+    "ast_hash": "8c7e35426fe8f6f3ed91e9dce0ed7af1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\.opencode\\skills\\ui-ux-pro-max\\scripts\\core.py": {
+    "mtime": 1779146706.140539,
+    "ast_hash": "3df4734a785963a8242a56c1b926adfd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\.opencode\\skills\\ui-ux-pro-max\\scripts\\design_system.py": {
+    "mtime": 1779146706.1501384,
+    "ast_hash": "08f84d04608a19049c90fc2b1ef314f9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\.opencode\\skills\\ui-ux-pro-max\\scripts\\search.py": {
+    "mtime": 1779146706.1575553,
+    "ast_hash": "8c7e35426fe8f6f3ed91e9dce0ed7af1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\eslint.config.js": {
+    "mtime": 1775469848.4226513,
+    "ast_hash": "b8893da386a89dfd3672dad848f4ec7e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\generate_assets.ps1": {
+    "mtime": 1779236127.2168803,
+    "ast_hash": "2f0b49cbfdc6d1d94a2986f4f89f4a01",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\package.json": {
+    "mtime": 1779236935.5795984,
+    "ast_hash": "71b390ee1374b07c881a0ee98d6894cd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\resize.js": {
+    "mtime": 1779236059.059868,
+    "ast_hash": "b67706935da016b59e07ed79377d59fc",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\tsconfig.app.json": {
+    "mtime": 1775469848.6807277,
+    "ast_hash": "b885d5f97cf6fc2c1e7997d4b8abfb88",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\tsconfig.json": {
+    "mtime": 1775469848.6833408,
+    "ast_hash": "a3d39fa780ebff65444de257f291ce6c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\tsconfig.node.json": {
+    "mtime": 1775469848.7026253,
+    "ast_hash": "70bdd0a673bcfc0e828080b306e7c680",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\vite.config.ts": {
+    "mtime": 1780138736.030539,
+    "ast_hash": "cfe9492ab03a70b67b6e6c8dbf2a0886",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\.agent\\skills\\ui-ux-pro-max\\scripts\\core.py": {
+    "mtime": 1779146706.140539,
+    "ast_hash": "3df4734a785963a8242a56c1b926adfd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\.agent\\skills\\ui-ux-pro-max\\scripts\\design_system.py": {
+    "mtime": 1779146706.1501384,
+    "ast_hash": "08f84d04608a19049c90fc2b1ef314f9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\.agent\\skills\\ui-ux-pro-max\\scripts\\search.py": {
+    "mtime": 1779146706.1575553,
+    "ast_hash": "8c7e35426fe8f6f3ed91e9dce0ed7af1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\App.tsx": {
+    "mtime": 1791837006.800071,
+    "ast_hash": "638425f32b79577d65f6144a95e2103e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\auth-interceptor.ts": {
+    "mtime": 1791790723.6597748,
+    "ast_hash": "3c08108741fd69ac03dd95d8350c051d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\custom-alert.ts": {
+    "mtime": 1791728433.3489633,
+    "ast_hash": "0dd0eca3a0ab809b559366e5cd2fdb60",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\main.tsx": {
+    "mtime": 1781353357.4516978,
+    "ast_hash": "24b65f64b1bb858567a91a1322b2766d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\components\\common\\SearchableSelect.tsx": {
+    "mtime": 1791728433.268648,
+    "ast_hash": "acf69d29e675864047c59b91f8a37c71",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\layouts\\AdminLayout.tsx": {
+    "mtime": 1791790688.3237784,
+    "ast_hash": "223ff1347ae8f22ad1c66263779f473d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\layouts\\TeacherLayout.tsx": {
+    "mtime": 1791806751.5219345,
+    "ast_hash": "88003b764b26c7a508b092f657888991",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\Login.tsx": {
+    "mtime": 1791845711.5494397,
+    "ast_hash": "5c13d039c58d2819955749386438d700",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\AddStudent.tsx": {
+    "mtime": 1779959030.2279055,
+    "ast_hash": "f5788a30c3725c99d64df9dbdc9b1940",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\AddTeacher.tsx": {
+    "mtime": 1779959225.382404,
+    "ast_hash": "573769941915d8d1bbd18fe3340ff7e1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\AdminClasses.tsx": {
+    "mtime": 1779959225.378231,
+    "ast_hash": "218d5405d19ed6b650be774262b92ce2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\AdminDetail.tsx": {
+    "mtime": 1781353563.539065,
+    "ast_hash": "f2f7a2bbd0cc561abc1f3d67a232ad46",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\Boarding.tsx": {
+    "mtime": 1780010086.9482963,
+    "ast_hash": "30a74fa7ea51762e1e9521e35898d03b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\ClassDetail.tsx": {
+    "mtime": 1781353570.2718534,
+    "ast_hash": "0f524723ed0d8b9420250be5bd8fd414",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\CreateClass.tsx": {
+    "mtime": 1779959030.2279055,
+    "ast_hash": "16fcee0bd6a4b050860a709ba872f604",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\CreateTimetable.tsx": {
+    "mtime": 1779959225.4229863,
+    "ast_hash": "0e0b4d2974050a1e2f6284eda149ffe1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\Dashboard.tsx": {
+    "mtime": 1779959225.433831,
+    "ast_hash": "2f0194f297e95d8148dc46088bd764ed",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\EditClass.tsx": {
+    "mtime": 1779959225.433831,
+    "ast_hash": "0924ce6785094b370828517011e642b8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\EditStudent.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "a99b040c89abb9421e24d9ccd1325db9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\EditTeacher.tsx": {
+    "mtime": 1779959317.6976588,
+    "ast_hash": "b35e889bb52e8da6c9ab293262dbb3e9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\Enrollment.tsx": {
+    "mtime": 1779992356.5543976,
+    "ast_hash": "4216a766f8a2cb0f8780a8b7e93e0336",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\Finance.tsx": {
+    "mtime": 1791833773.2458394,
+    "ast_hash": "b4871e6da89c7b255589edfaecb16b21",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\PasswordResets.tsx": {
+    "mtime": 1779959317.7314403,
+    "ast_hash": "5af91fa4f4ea570b3896849127d3b324",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\Profile.tsx": {
+    "mtime": 1779959225.4375956,
+    "ast_hash": "fd35dd0ccdaac5d7176e942a51c18163",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\SchoolFeedForm.tsx": {
+    "mtime": 1779959317.7314403,
+    "ast_hash": "db8cd3b5df8fed6b1bba6ddfe78653de",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\SchoolFeeds.tsx": {
+    "mtime": 1781353576.3737857,
+    "ast_hash": "e7e195f3a97f698729319f79ffb9632d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\SchoolGallery.tsx": {
+    "mtime": 1781353593.5509813,
+    "ast_hash": "afb4cf65c7d4dddc58e6849e652995dc",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\SchoolGalleryForm.tsx": {
+    "mtime": 1779959317.7314403,
+    "ast_hash": "6743470dcf5b7063646d50a5aac66748",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\Settings.tsx": {
+    "mtime": 1791805127.2577877,
+    "ast_hash": "dee7b6563c5c118e647ae407c020a128",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\StudentDetail.tsx": {
+    "mtime": 1791814396.650534,
+    "ast_hash": "3580190b59d2e687bc93211ca22e5a46",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\StudentFees.tsx": {
+    "mtime": 1791831056.6155539,
+    "ast_hash": "2b77b1b6b17f0eb43713af01fb5ab73b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\StudentHistory.tsx": {
+    "mtime": 1791728433.4294152,
+    "ast_hash": "57567c8f24254e9f4ad74e08904a90d0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\Students.tsx": {
+    "mtime": 1791728433.432914,
+    "ast_hash": "bffca5ae2e6488199d7bd6676a9587bb",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\Subjects.tsx": {
+    "mtime": 1791728433.4359128,
+    "ast_hash": "8c2f3dabc6206b1a19f40a63b3046f79",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\TeacherDetail.tsx": {
+    "mtime": 1781353627.4426072,
+    "ast_hash": "7b5cab33b9a2f3b07ad043cbc49b431c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\Teachers.tsx": {
+    "mtime": 1781353656.2613587,
+    "ast_hash": "b3504cc27f3b14ce3c158b7df93de5c6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\admin\\ViewTimetable.tsx": {
+    "mtime": 1791728433.4372547,
+    "ast_hash": "4e3dc2226865d30543c27dd2f32cf79b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\AddClassStudent.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "eaebc1bfabd93a4caf1ad1c3d043cf24",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\AttendanceOverview.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "7311c910965548c654e762f6a7712360",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\AttendanceTracker.tsx": {
+    "mtime": 1779959317.7314403,
+    "ast_hash": "5d1b91f4f652f1343933e6b65309f20e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\Classes.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "c9d21f75e9b40d3179437075fb4fd6a1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\ClassMigration.tsx": {
+    "mtime": 1791801317.085528,
+    "ast_hash": "6414640d5918a60f0adeffceaffa356d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\ClassRoster.tsx": {
+    "mtime": 1779959317.7314403,
+    "ast_hash": "d9897fadf565cb41eed11037e6a216c2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\Dashboard.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "21c6769507d41da7d6dee79e30e908a9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\FinalResults.tsx": {
+    "mtime": 1791836993.0568347,
+    "ast_hash": "206e45561259f18996c72fe2348fa391",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\Grades.tsx": {
+    "mtime": 1791735104.5510063,
+    "ast_hash": "b52f192f4c72ca360f70b6b872055fb2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\InTermResults.tsx": {
+    "mtime": 1779959317.7314403,
+    "ast_hash": "537f88823884c077a2f7ab08edf9d8e9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\MainClass.tsx": {
+    "mtime": 1780010595.527394,
+    "ast_hash": "e9d03f3d8d473b2717c6fbe2d1fc11f9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\Profile.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "6842c927bb379af3dd744cebb360bd65",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\StudentReport.tsx": {
+    "mtime": 1779959317.7314403,
+    "ast_hash": "3563a90f872ea29017530dbd6de3638a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\SubjectResults.tsx": {
+    "mtime": 1791793054.0762126,
+    "ast_hash": "5cb282e8a27a040d36a61a9c7245233b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\pages\\teacher\\ViewTimetable.tsx": {
+    "mtime": 1791728433.450486,
+    "ast_hash": "c291e505d8cb02cbd6c5a011090d3e9e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\eslint.config.js": {
+    "mtime": 1775469848.4226513,
+    "ast_hash": "b8893da386a89dfd3672dad848f4ec7e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\generate_assets.ps1": {
+    "mtime": 1779236127.2168803,
+    "ast_hash": "2f0b49cbfdc6d1d94a2986f4f89f4a01",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\package.json": {
+    "mtime": 1791641114.7738202,
+    "ast_hash": "6bec5c5d13ea5a22c653062474389fa0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\resize.js": {
+    "mtime": 1779236059.059868,
+    "ast_hash": "b67706935da016b59e07ed79377d59fc",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\tsconfig.app.json": {
+    "mtime": 1775469848.6807277,
+    "ast_hash": "b885d5f97cf6fc2c1e7997d4b8abfb88",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\tsconfig.json": {
+    "mtime": 1775469848.6833408,
+    "ast_hash": "a3d39fa780ebff65444de257f291ce6c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\tsconfig.node.json": {
+    "mtime": 1775469848.7026253,
+    "ast_hash": "70bdd0a673bcfc0e828080b306e7c680",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\vite.config.ts": {
+    "mtime": 1780138736.030539,
+    "ast_hash": "cfe9492ab03a70b67b6e6c8dbf2a0886",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\.agent\\skills\\ui-ux-pro-max\\scripts\\core.py": {
+    "mtime": 1779146706.140539,
+    "ast_hash": "3df4734a785963a8242a56c1b926adfd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\.agent\\skills\\ui-ux-pro-max\\scripts\\design_system.py": {
+    "mtime": 1779146706.1501384,
+    "ast_hash": "08f84d04608a19049c90fc2b1ef314f9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\.agent\\skills\\ui-ux-pro-max\\scripts\\search.py": {
+    "mtime": 1779146706.1575553,
+    "ast_hash": "8c7e35426fe8f6f3ed91e9dce0ed7af1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\App.tsx": {
+    "mtime": 1791641968.7941613,
+    "ast_hash": "0e17e0c824cd5569efaeb702eac22901",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\auth-interceptor.ts": {
+    "mtime": 1791790894.2248282,
+    "ast_hash": "3c08108741fd69ac03dd95d8350c051d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\custom-alert.ts": {
+    "mtime": 1781353537.1104445,
+    "ast_hash": "0dd0eca3a0ab809b559366e5cd2fdb60",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\main.tsx": {
+    "mtime": 1781353357.4516978,
+    "ast_hash": "24b65f64b1bb858567a91a1322b2766d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\components\\common\\SearchableSelect.tsx": {
+    "mtime": 1776612345.0801826,
+    "ast_hash": "acf69d29e675864047c59b91f8a37c71",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\layouts\\AdminLayout.tsx": {
+    "mtime": 1791790882.3338263,
+    "ast_hash": "223ff1347ae8f22ad1c66263779f473d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\layouts\\TeacherLayout.tsx": {
+    "mtime": 1791849098.9332788,
+    "ast_hash": "7a19f73104f0ac57636be3f6a081b90b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\Apply.tsx": {
+    "mtime": 1779959030.1993673,
+    "ast_hash": "d215ca9d6eaf0acb7db7606ce610f28a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\CampusGallery.tsx": {
+    "mtime": 1791848892.1246362,
+    "ast_hash": "8058ec2fb5250cb62a644b8f43f77e31",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\ExamResults.tsx": {
+    "mtime": 1791849055.7603116,
+    "ast_hash": "2d89fd1b486c6cc94a27c481f40d2458",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\ExploreCampus.tsx": {
+    "mtime": 1791848987.8821669,
+    "ast_hash": "545ca92ee40ba64fb82752907f9ad495",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\ExploreCampusDetail.tsx": {
+    "mtime": 1791849021.842678,
+    "ast_hash": "63f20d587ef0c9a51ac9cacf2cca4c22",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\Home.tsx": {
+    "mtime": 1791848847.4007628,
+    "ast_hash": "cfebba356cdf551d61a1e30a36e56088",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\Login.tsx": {
+    "mtime": 1791849132.3838103,
+    "ast_hash": "8616c476dd7118cf895217ccaf4f348e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\PublicStudentHistory.tsx": {
+    "mtime": 1791849069.7645483,
+    "ast_hash": "2ae87e8405b3dfb8113516c638c9cf8d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\PublicStudentReport.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "12c8603bfb58c65457bb1a10d5066b2d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\AddStudent.tsx": {
+    "mtime": 1779959030.2279055,
+    "ast_hash": "f5788a30c3725c99d64df9dbdc9b1940",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\AddTeacher.tsx": {
+    "mtime": 1779959225.382404,
+    "ast_hash": "573769941915d8d1bbd18fe3340ff7e1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\AdminClasses.tsx": {
+    "mtime": 1779959225.378231,
+    "ast_hash": "218d5405d19ed6b650be774262b92ce2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\AdminDetail.tsx": {
+    "mtime": 1781353563.539065,
+    "ast_hash": "f2f7a2bbd0cc561abc1f3d67a232ad46",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\Boarding.tsx": {
+    "mtime": 1780010086.9482963,
+    "ast_hash": "30a74fa7ea51762e1e9521e35898d03b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\ClassDetail.tsx": {
+    "mtime": 1781353570.2718534,
+    "ast_hash": "0f524723ed0d8b9420250be5bd8fd414",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\CreateClass.tsx": {
+    "mtime": 1779959030.2279055,
+    "ast_hash": "16fcee0bd6a4b050860a709ba872f604",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\CreateTimetable.tsx": {
+    "mtime": 1779959225.4229863,
+    "ast_hash": "0e0b4d2974050a1e2f6284eda149ffe1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\Dashboard.tsx": {
+    "mtime": 1779959225.433831,
+    "ast_hash": "2f0194f297e95d8148dc46088bd764ed",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\EditClass.tsx": {
+    "mtime": 1779959225.433831,
+    "ast_hash": "0924ce6785094b370828517011e642b8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\EditStudent.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "a99b040c89abb9421e24d9ccd1325db9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\EditTeacher.tsx": {
+    "mtime": 1779959317.6976588,
+    "ast_hash": "b35e889bb52e8da6c9ab293262dbb3e9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\Enrollment.tsx": {
+    "mtime": 1779992356.5543976,
+    "ast_hash": "4216a766f8a2cb0f8780a8b7e93e0336",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\Finance.tsx": {
+    "mtime": 1780306915.6609087,
+    "ast_hash": "65155ddd9c18e2e87f26042854abcddc",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\PasswordResets.tsx": {
+    "mtime": 1779959317.7314403,
+    "ast_hash": "5af91fa4f4ea570b3896849127d3b324",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\Profile.tsx": {
+    "mtime": 1779959225.4375956,
+    "ast_hash": "fd35dd0ccdaac5d7176e942a51c18163",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\SchoolFeedForm.tsx": {
+    "mtime": 1779959317.7314403,
+    "ast_hash": "db8cd3b5df8fed6b1bba6ddfe78653de",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\SchoolFeeds.tsx": {
+    "mtime": 1781353576.3737857,
+    "ast_hash": "e7e195f3a97f698729319f79ffb9632d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\SchoolGallery.tsx": {
+    "mtime": 1781353593.5509813,
+    "ast_hash": "afb4cf65c7d4dddc58e6849e652995dc",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\SchoolGalleryForm.tsx": {
+    "mtime": 1779959317.7314403,
+    "ast_hash": "6743470dcf5b7063646d50a5aac66748",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\Settings.tsx": {
+    "mtime": 1781353671.706744,
+    "ast_hash": "7a8d68a90a4df9f6517bc17ea5b30b73",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\StudentDetail.tsx": {
+    "mtime": 1781353604.17425,
+    "ast_hash": "95b508aa7fee64624e91a32ca07ec016",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\StudentHistory.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "57567c8f24254e9f4ad74e08904a90d0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\Students.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "da77e2676106803377378a2521221406",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\Subjects.tsx": {
+    "mtime": 1781353620.9752252,
+    "ast_hash": "94633bf1acfab4afe2058f78401790ca",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\TeacherDetail.tsx": {
+    "mtime": 1781353627.4426072,
+    "ast_hash": "7b5cab33b9a2f3b07ad043cbc49b431c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\Teachers.tsx": {
+    "mtime": 1781353656.2613587,
+    "ast_hash": "b3504cc27f3b14ce3c158b7df93de5c6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\admin\\ViewTimetable.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "4e3dc2226865d30543c27dd2f32cf79b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\AddClassStudent.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "eaebc1bfabd93a4caf1ad1c3d043cf24",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\AttendanceOverview.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "7311c910965548c654e762f6a7712360",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\AttendanceTracker.tsx": {
+    "mtime": 1779959317.7314403,
+    "ast_hash": "5d1b91f4f652f1343933e6b65309f20e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\Classes.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "c9d21f75e9b40d3179437075fb4fd6a1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\ClassMigration.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "c66bb1e5022937d4967d977e9c1386e8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\ClassRoster.tsx": {
+    "mtime": 1779959317.7314403,
+    "ast_hash": "d9897fadf565cb41eed11037e6a216c2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\Dashboard.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "21c6769507d41da7d6dee79e30e908a9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\FinalResults.tsx": {
+    "mtime": 1791791829.003446,
+    "ast_hash": "ece8790f558ef9a0723e09693824e59f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\Grades.tsx": {
+    "mtime": 1780309570.3262908,
+    "ast_hash": "7afa940c27500b3eb3e2e07e7b876f3e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\InTermResults.tsx": {
+    "mtime": 1779959317.7314403,
+    "ast_hash": "537f88823884c077a2f7ab08edf9d8e9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\MainClass.tsx": {
+    "mtime": 1780010595.527394,
+    "ast_hash": "e9d03f3d8d473b2717c6fbe2d1fc11f9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\Profile.tsx": {
+    "mtime": 1779959225.4358356,
+    "ast_hash": "6842c927bb379af3dd744cebb360bd65",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\StudentReport.tsx": {
+    "mtime": 1779959317.7314403,
+    "ast_hash": "3563a90f872ea29017530dbd6de3638a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\SubjectResults.tsx": {
+    "mtime": 1791793376.3688369,
+    "ast_hash": "5cb282e8a27a040d36a61a9c7245233b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\pages\\teacher\\ViewTimetable.tsx": {
+    "mtime": 1779959317.701429,
+    "ast_hash": "c291e505d8cb02cbd6c5a011090d3e9e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\check_classes.js": {
+    "mtime": 1776682319.1774046,
+    "ast_hash": "4dc8e6c3091ed940b95e28e3d2f9d309",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\eslint.config.mjs": {
+    "mtime": 1775985972.7109919,
+    "ast_hash": "069d66f3fd2af0b03d917cf51a1f4c42",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\nest-cli.json": {
+    "mtime": 1775985972.7109919,
+    "ast_hash": "fa439650fa28a1a7aa8c2b6d81c8cc20",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\package.json": {
+    "mtime": 1776581456.5126836,
+    "ast_hash": "d2f35607252abb9ce22bf2ad41037ba0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\tsconfig.build.json": {
+    "mtime": 1775985972.7147534,
+    "ast_hash": "d23fc4aff02c91ce9c424c15aea9b49b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\tsconfig.json": {
+    "mtime": 1775985972.7147534,
+    "ast_hash": "e99b998156dc99eda85378413a794718",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\update-admins.ts": {
+    "mtime": 1777213270.554734,
+    "ast_hash": "706177156d0133aca65e06c42250fbd3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\verify_headers.js": {
+    "mtime": 1776682590.1799662,
+    "ast_hash": "cdc3df74fe63c73978f55adcd9b861f8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\prisma\\seed.ts": {
+    "mtime": 1779986629.6065836,
+    "ast_hash": "1b85d17471ebe71049613892408ac9ec",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\app.controller.spec.ts": {
+    "mtime": 1775985972.7187676,
+    "ast_hash": "e91fed2ee35431d60d1adbf1d5739b83",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\app.controller.ts": {
+    "mtime": 1775985972.7167575,
+    "ast_hash": "ae15d1c5a85e6ebfad68b7193766dfb5",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\app.module.ts": {
+    "mtime": 1779109010.4972847,
+    "ast_hash": "73051085747f32a42976991f9f0b58d3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\app.service.ts": {
+    "mtime": 1775985972.7187676,
+    "ast_hash": "08e985e831bca61f6be89c5c2ecef2fa",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\main.ts": {
+    "mtime": 1791643597.8365488,
+    "ast_hash": "7387d494a6dee38f538dfe7133a3965d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\admin\\admin.controller.ts": {
+    "mtime": 1791800767.3774023,
+    "ast_hash": "c6c67e94612c74d3c863408bc079461d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\admin\\admin.module.ts": {
+    "mtime": 1776576443.1939573,
+    "ast_hash": "20c5bbde4b1a12996f46492a4640032c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\admin\\admin.service.ts": {
+    "mtime": 1791804656.6575103,
+    "ast_hash": "983f7b1fd4c2d77c6c6a196231cde017",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\attendance\\attendance.controller.ts": {
+    "mtime": 1780305060.1525528,
+    "ast_hash": "027ede7a063ab9aff0cd2bb1df47ef3d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\attendance\\attendance.module.ts": {
+    "mtime": 1779014535.840977,
+    "ast_hash": "66f057c798967ccd5b254d4ea759bf6e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\attendance\\attendance.service.ts": {
+    "mtime": 1779109010.0801084,
+    "ast_hash": "77d78a9f0f1c1ba6253587ff0fceb872",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\auth\\auth.controller.ts": {
+    "mtime": 1780304964.7855833,
+    "ast_hash": "ae9f7a8e7204f012a6e80b37eab4a712",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\auth\\auth.module.ts": {
+    "mtime": 1776680820.3331883,
+    "ast_hash": "cc70e8fe98dce2daa4ae08a8195647a5",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\auth\\auth.service.ts": {
+    "mtime": 1776680820.3336983,
+    "ast_hash": "a38982e68d16b1bad12bbd590ebb8645",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\auth\\jwt.strategy.ts": {
+    "mtime": 1776680820.3336983,
+    "ast_hash": "a1b998d60171f35e8f7dc4d6b3c53fa1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\auth\\refresh.strategy.ts": {
+    "mtime": 1779889388.0148525,
+    "ast_hash": "847109ffb5572bdef8ae17d46ec9624d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\auth\\roles.decorator.ts": {
+    "mtime": 1780304943.3373337,
+    "ast_hash": "bc102f340bb57c5184eff2da66ae8f06",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\auth\\roles.guard.ts": {
+    "mtime": 1780304948.7530887,
+    "ast_hash": "5c09f50801bcfad614f53b998d2d9a54",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\classes\\classes.controller.ts": {
+    "mtime": 1780305077.4004958,
+    "ast_hash": "f04af2ff721321a43cbb3e74605d2a28",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\classes\\classes.module.ts": {
+    "mtime": 1775986623.7318356,
+    "ast_hash": "cc0c6dbdc92c7921fb0256a8480bf2b2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\classes\\classes.service.ts": {
+    "mtime": 1791804682.3176343,
+    "ast_hash": "40587776a843a0d0c54b8902b7e048c8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\common\\utils.ts": {
+    "mtime": 1777203141.4864657,
+    "ast_hash": "81b724eb16abb1d2ccf50e5ef0e52b2a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\common\\dto\\pagination.dto.ts": {
+    "mtime": 1775986519.4804335,
+    "ast_hash": "c813366c525d8008ae0f6ea8d9119c8e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\enrollment\\enrollment.controller.ts": {
+    "mtime": 1780305065.540328,
+    "ast_hash": "076116013cef6ff5632c22cc7915b7b0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\enrollment\\enrollment.module.ts": {
+    "mtime": 1776515728.1592014,
+    "ast_hash": "9d91483eb342d8096ec3de4c4d7761a7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\enrollment\\enrollment.service.ts": {
+    "mtime": 1776680820.3336983,
+    "ast_hash": "956b302282bb98e81d64c415e85f5960",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\feeds\\feeds.controller.ts": {
+    "mtime": 1780305637.2267513,
+    "ast_hash": "0ebc876f30847bf0207011dc04aac734",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\feeds\\feeds.module.ts": {
+    "mtime": 1778946020.7953508,
+    "ast_hash": "2524c753770120503e3464fb25de5bac",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\feeds\\feeds.service.ts": {
+    "mtime": 1780305593.9100008,
+    "ast_hash": "25c3cec47c6ac649bd32757889fc355e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\finance\\finance.controller.ts": {
+    "mtime": 1791815081.5279267,
+    "ast_hash": "b653df7b019dfe9b5402f1b868a36dc0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\finance\\finance.module.ts": {
+    "mtime": 1776579464.2690248,
+    "ast_hash": "251f06f1b33f6dbe392d73dfc4a791ee",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\finance\\finance.service.spec.ts": {
+    "mtime": 1779445490.2558098,
+    "ast_hash": "7c854bcb29f8abbc0a38449ec80545cd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\finance\\finance.service.ts": {
+    "mtime": 1791815138.3457155,
+    "ast_hash": "741db01823eb7820e2885dc90a2e2485",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\gallery\\gallery.controller.ts": {
+    "mtime": 1780305650.7063723,
+    "ast_hash": "491bbf262d29506d020a2059b56398a9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\gallery\\gallery.module.ts": {
+    "mtime": 1778954600.021008,
+    "ast_hash": "c26923e7c423ae87777d42fb4e7d1bdd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\gallery\\gallery.service.ts": {
+    "mtime": 1780305637.362874,
+    "ast_hash": "4a1b0fc7a58c73e08b9cf0b2966f80de",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\hostels\\hostels.controller.ts": {
+    "mtime": 1780305071.4122357,
+    "ast_hash": "77bae0ba8b98991312fcad66d0bc872f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\hostels\\hostels.module.ts": {
+    "mtime": 1775986655.8443108,
+    "ast_hash": "99531231af33a21a723cb1bde6608c0c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\hostels\\hostels.service.ts": {
+    "mtime": 1780135820.5930607,
+    "ast_hash": "3f3f43525fbc6ad63b8f5f20305c9c3f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\prisma\\prisma.module.ts": {
+    "mtime": 1775986517.4624963,
+    "ast_hash": "3505a1831c78f0a9475e4ce0f0092410",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\prisma\\prisma.service.ts": {
+    "mtime": 1779093152.1369326,
+    "ast_hash": "f3eee7e045708ad54099bf275985a1a3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\students\\public-results.controller.ts": {
+    "mtime": 1779905964.0966043,
+    "ast_hash": "586131e2c06500e7b238a1ca80dc4741",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\students\\students.controller.ts": {
+    "mtime": 1780305054.968649,
+    "ast_hash": "eec436d5e16e2acfffe0918db2adcd77",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\students\\students.module.ts": {
+    "mtime": 1777124276.272632,
+    "ast_hash": "ac5eb0797bbd62a88b2668fdd10b0ba4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\students\\students.service.ts": {
+    "mtime": 1781353082.5444958,
+    "ast_hash": "ce0195b1ee9f309eb2c60af75d820a9f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\subjects\\subjects.controller.ts": {
+    "mtime": 1780305082.4282331,
+    "ast_hash": "8bfa62c076fef01c9c6d7436f8900ef6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\subjects\\subjects.module.ts": {
+    "mtime": 1776680820.3336983,
+    "ast_hash": "29f2f5f502d5f8c8d3aff948febef59c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\subjects\\subjects.service.ts": {
+    "mtime": 1777028816.4630659,
+    "ast_hash": "91fc748d5eaeb50208cde9bf29973c5a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\teachers\\teachers.controller.ts": {
+    "mtime": 1791800820.8938756,
+    "ast_hash": "d0cec510b7b30eaeffa323e3765c0f94",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\teachers\\teachers.module.ts": {
+    "mtime": 1776680820.3336983,
+    "ast_hash": "b337491f8973db33f2c8b96afe16b918",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\src\\teachers\\teachers.service.ts": {
+    "mtime": 1791834542.9807913,
+    "ast_hash": "be74da79a4be50f97af72d1421c727d3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\test\\app.e2e-spec.ts": {
+    "mtime": 1775985972.7208412,
+    "ast_hash": "668094bf268e0395763312620e5638e8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\test\\jest-e2e.json": {
+    "mtime": 1775985972.7208412,
+    "ast_hash": "707a50895cb1c565825637916e9cf290",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\.agent\\skills\\ui-ux-pro-max\\SKILL.md": {
+    "mtime": 1791847782.7518065,
+    "ast_hash": "b33a6a2bede0b68b6919ec33248476f8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\.agents\\rules\\graphify.md": {
+    "mtime": 1779441131.2901978,
+    "ast_hash": "a0e4d192b9e2e17256124dbfc8e24e6a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\.agents\\workflows\\graphify.md": {
+    "mtime": 1779441131.2901978,
+    "ast_hash": "84de69efd46ab0b8430393bd4188f8f2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\.opencode\\skills\\ui-ux-pro-max\\SKILL.md": {
+    "mtime": 1791847677.541692,
+    "ast_hash": "e745b5a6c71379800b232a1ba32d16ec",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\index.html": {
+    "mtime": 1779234115.4953344,
+    "ast_hash": "cdc51dd977e654bfe5197644f1e51267",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\README.md": {
+    "mtime": 1775469848.7307067,
+    "ast_hash": "f6e3faf55d738cf2affe1b44195f27cf",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\.agent\\skills\\ui-ux-pro-max\\SKILL.md": {
+    "mtime": 1779146823.9579563,
+    "ast_hash": "b33a6a2bede0b68b6919ec33248476f8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\design-system\\heroes-academy-exam-results\\MASTER.md": {
+    "mtime": 1779230308.077978,
+    "ast_hash": "a748831fc8220328c9eb5b83427ac6d8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\location.txt": {
+    "mtime": 1775631984.1031883,
+    "ast_hash": "3df8ad5201eb9f7e095988788dab5977",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\index.html": {
+    "mtime": 1791848715.8097785,
+    "ast_hash": "f531b71c09725d72fa2c63cf52842357",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\README.md": {
+    "mtime": 1775469848.7307067,
+    "ast_hash": "f6e3faf55d738cf2affe1b44195f27cf",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\.agent\\skills\\ui-ux-pro-max\\SKILL.md": {
+    "mtime": 1779146823.9579563,
+    "ast_hash": "b33a6a2bede0b68b6919ec33248476f8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\design-system\\heroes-academy-exam-results\\MASTER.md": {
+    "mtime": 1779230308.077978,
+    "ast_hash": "a748831fc8220328c9eb5b83427ac6d8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\location.txt": {
+    "mtime": 1775631984.1031883,
+    "ast_hash": "3df8ad5201eb9f7e095988788dab5977",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\README.md": {
+    "mtime": 1775985972.7147534,
+    "ast_hash": "ad12c0560e2e514d356da443998e8208",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\docs\\01_project_overview.md": {
+    "mtime": 1779157169.8803828,
+    "ast_hash": "ac7f5671dcc66e88c7d8e657aef08298",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\docs\\02_architecture.md": {
+    "mtime": 1779157198.7685096,
+    "ast_hash": "969e3ce538e7416c9602e72746d531e6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\docs\\03_security.md": {
+    "mtime": 1779157227.7233443,
+    "ast_hash": "2843de47833bbab4f58ee3b9877ca108",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\docs\\04_database.md": {
+    "mtime": 1779157250.7399895,
+    "ast_hash": "c3338ff9b31bd16b521ef0b6f81bd389",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\docs\\05_api_spec.md": {
+    "mtime": 1779157297.1932611,
+    "ast_hash": "35c1c4e3cf8c7b8c2ed900c3b4802f65",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\Jane Banda resuilt.pdf": {
+    "mtime": 1776625916.6439679,
+    "ast_hash": "182c9911128ef971f93a556b70f77941",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\timetable.pdf": {
+    "mtime": 1776623731.1439114,
+    "ast_hash": "ff99bb61194ebfa55cd9667b458c1d1b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\social\\terials\\jane 4444.pdf": {
+    "mtime": 1779038582.4713714,
+    "ast_hash": "a6c325a17a0ce13c32727705fee34281",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\Jane Banda resuilt.pdf": {
+    "mtime": 1776625916.6439679,
+    "ast_hash": "182c9911128ef971f93a556b70f77941",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\timetable.pdf": {
+    "mtime": 1776623731.1439114,
+    "ast_hash": "ff99bb61194ebfa55cd9667b458c1d1b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\social\\terials\\jane 4444.pdf": {
+    "mtime": 1779038582.4713714,
+    "ast_hash": "a6c325a17a0ce13c32727705fee34281",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\logo\\NkhomaLogo.svg": {
+    "mtime": 1791845182.1710198,
+    "ast_hash": "22877195c060535d9a5fcb8cfe709b0a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\campus.jpg": {
+    "mtime": 1775632737.1695163,
+    "ast_hash": "c595cac2b17780d18fe92aaf8fddffc6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\computerLab.png": {
+    "mtime": 1775638798.9875515,
+    "ast_hash": "497fa2d586369505b1d1992806084473",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\favicon.svg": {
+    "mtime": 1775469863.460485,
+    "ast_hash": "7e840862161341271697daa99a40d76b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\heroesLogo.png": {
+    "mtime": 1775636542.098752,
+    "ast_hash": "0fb033bd9e7ad7b32c1187487382147f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\hero_bg.png": {
+    "mtime": 1775634537.6921234,
+    "ast_hash": "bbaf243645af695d72a9988a160eef8c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\hero_light.jpg": {
+    "mtime": 1777033607.247689,
+    "ast_hash": "a6216b5050c583883dbb34b2353c03d4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\icons.svg": {
+    "mtime": 1775469863.543897,
+    "ast_hash": "3b4fcfcf393eca4d264dca4a4663bc37",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\Logo.jpg": {
+    "mtime": 1775631342.6276333,
+    "ast_hash": "b73a7773da9bb3f76882c77221b52726",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\msce-highest.jpg": {
+    "mtime": 1775631422.5155787,
+    "ast_hash": "a7132de99062326fbc214f05c0c1ca4d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\NkhomaLogo.svg": {
+    "mtime": 1791846510.0521772,
+    "ast_hash": "d1436542395a78b6099ccf86924a3c4a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\pwa-192x192.png": {
+    "mtime": 1779236322.479392,
+    "ast_hash": "43db2dbedee68b1460413bf3e2c05e8b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\pwa-512x512.png": {
+    "mtime": 1779236322.497959,
+    "ast_hash": "2b659b3bc8e0a1336b807c3a0b88c98c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\scientificlab.png": {
+    "mtime": 1775637541.6383605,
+    "ast_hash": "14b96033d5be106d62d8328ac5262c67",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\screenshot-desktop.png": {
+    "mtime": 1779236322.671219,
+    "ast_hash": "8da2a6503cab59b3212a024384becf0d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\screenshot-mobile.png": {
+    "mtime": 1779236322.8387845,
+    "ast_hash": "4bfa96ec5ac16a0d574dda05b04537d7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\student and teachers.jpg": {
+    "mtime": 1775631888.3290772,
+    "ast_hash": "a89c2b8c573a183cb4ddeac214a6d7a7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\students.jpg": {
+    "mtime": 1775631553.9740548,
+    "ast_hash": "acf54b01ecb7c741c8e752348dc12ced",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\home\\2025 MSCE Reuilts.jpg": {
+    "mtime": 1779148446.033397,
+    "ast_hash": "fe130e4064042a6b2410144d4ad500bf",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\home\\acadymic life.jpg": {
+    "mtime": 1779148660.9119387,
+    "ast_hash": "ef86d661e5002d85121a319e680c1686",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\home\\acadymic life2.jpg": {
+    "mtime": 1779148688.5424502,
+    "ast_hash": "9614d21bbcdfa8c9ebba96f54ac95055",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\home\\acadymic life22.jpg": {
+    "mtime": 1779148847.299496,
+    "ast_hash": "ef9795d15af9d21597aaa2bbd2e7ddf2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\home\\enroll with us.jpg": {
+    "mtime": 1779148631.370252,
+    "ast_hash": "0a06cbfcfec7f13b0b7e8c754296824d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\home\\enrollwithus.jpg": {
+    "mtime": 1779148606.6843274,
+    "ast_hash": "210963e93197fd2fc25f8c6d894b2706",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\home\\student social.jpg": {
+    "mtime": 1779148492.3786242,
+    "ast_hash": "fdb483e0d5af1cab4f7fc37e6a5972ff",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\home\\student social2.jpg": {
+    "mtime": 1779148518.3466012,
+    "ast_hash": "6d6bcf3901923dd24739538695262b09",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\home\\student social3.jpg": {
+    "mtime": 1779148543.7062159,
+    "ast_hash": "c239986b090cda530dfc15f42bee30f2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\home\\student social4.jpg": {
+    "mtime": 1779148733.470355,
+    "ast_hash": "6fc13ad97b732242570d2c3c5ef57107",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\home\\visiting day.jpg": {
+    "mtime": 1779148761.623219,
+    "ast_hash": "a2989b9f1f87f6746b7902923cf8b698",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\home\\visiting day2.jpg": {
+    "mtime": 1779148793.846135,
+    "ast_hash": "589b2552425c7cc947d14fc74b0ae5e4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\social\\social1.jpg": {
+    "mtime": 1775639587.1024923,
+    "ast_hash": "6fc13ad97b732242570d2c3c5ef57107",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\social\\social2.jpg": {
+    "mtime": 1775639606.98338,
+    "ast_hash": "c239986b090cda530dfc15f42bee30f2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\social\\social3.jpg": {
+    "mtime": 1775639708.4648623,
+    "ast_hash": "42297b8d829bbeca8aebbeaef636b152",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\social\\social4.jpg": {
+    "mtime": 1775640001.6249702,
+    "ast_hash": "fdb483e0d5af1cab4f7fc37e6a5972ff",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\social\\terials\\481277002_601329686057245_2528447771070386403_n.jpg": {
+    "mtime": 1777028644.297325,
+    "ast_hash": "8c8a0e44b482746be81e7f6ba4fe285d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\social\\terials\\hero_light.jpg": {
+    "mtime": 1777033607.247689,
+    "ast_hash": "a6216b5050c583883dbb34b2353c03d4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\social\\terials\\landing page.webp": {
+    "mtime": 1777109616.555776,
+    "ast_hash": "0e737cc0faacab80708c092d3e2e9b3f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\social\\terials\\stu.jpg": {
+    "mtime": 1777029199.157738,
+    "ast_hash": "12fadfeedd0243c2998d971ed6d11e7e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\social\\terials\\studentsreading.jpg": {
+    "mtime": 1777028820.2957299,
+    "ast_hash": "318ecc6486857124f422afce2728c2b4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\public\\social\\terials\\stuuuu.jpg": {
+    "mtime": 1777029380.5703049,
+    "ast_hash": "a6216b5050c583883dbb34b2353c03d4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\assets\\hero.png": {
+    "mtime": 1775469862.275041,
+    "ast_hash": "5cf2b0762834cdddc0dd3ec1397b5011",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\assets\\react.svg": {
+    "mtime": 1775469863.6275222,
+    "ast_hash": "f0402b67b6ce880f65666bb49e841696",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-Smis\\src\\assets\\vite.svg": {
+    "mtime": 1775469863.6844149,
+    "ast_hash": "9960a24288958394ac50e57ff638b036",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\campus.jpg": {
+    "mtime": 1775632737.1695163,
+    "ast_hash": "c595cac2b17780d18fe92aaf8fddffc6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\computerLab.png": {
+    "mtime": 1775638798.9875515,
+    "ast_hash": "497fa2d586369505b1d1992806084473",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\favicon.svg": {
+    "mtime": 1775469863.460485,
+    "ast_hash": "7e840862161341271697daa99a40d76b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\heroesLogo.png": {
+    "mtime": 1775636542.098752,
+    "ast_hash": "0fb033bd9e7ad7b32c1187487382147f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\hero_bg.png": {
+    "mtime": 1775634537.6921234,
+    "ast_hash": "bbaf243645af695d72a9988a160eef8c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\hero_light.jpg": {
+    "mtime": 1777033607.247689,
+    "ast_hash": "a6216b5050c583883dbb34b2353c03d4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\icons.svg": {
+    "mtime": 1775469863.543897,
+    "ast_hash": "3b4fcfcf393eca4d264dca4a4663bc37",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\Logo.jpg": {
+    "mtime": 1775631342.6276333,
+    "ast_hash": "b73a7773da9bb3f76882c77221b52726",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\msce-highest.jpg": {
+    "mtime": 1775631422.5155787,
+    "ast_hash": "a7132de99062326fbc214f05c0c1ca4d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\NkhomaLogo.svg": {
+    "mtime": 1791845182.1710198,
+    "ast_hash": "22877195c060535d9a5fcb8cfe709b0a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\pwa-192x192.png": {
+    "mtime": 1779236322.479392,
+    "ast_hash": "43db2dbedee68b1460413bf3e2c05e8b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\pwa-512x512.png": {
+    "mtime": 1779236322.497959,
+    "ast_hash": "2b659b3bc8e0a1336b807c3a0b88c98c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\scientificlab.png": {
+    "mtime": 1775637541.6383605,
+    "ast_hash": "14b96033d5be106d62d8328ac5262c67",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\screenshot-desktop.png": {
+    "mtime": 1779236322.671219,
+    "ast_hash": "8da2a6503cab59b3212a024384becf0d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\screenshot-mobile.png": {
+    "mtime": 1779236322.8387845,
+    "ast_hash": "4bfa96ec5ac16a0d574dda05b04537d7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\student and teachers.jpg": {
+    "mtime": 1775631888.3290772,
+    "ast_hash": "a89c2b8c573a183cb4ddeac214a6d7a7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\students.jpg": {
+    "mtime": 1775631553.9740548,
+    "ast_hash": "acf54b01ecb7c741c8e752348dc12ced",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\home\\2025 MSCE Reuilts.jpg": {
+    "mtime": 1779148446.033397,
+    "ast_hash": "fe130e4064042a6b2410144d4ad500bf",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\home\\acadymic life.jpg": {
+    "mtime": 1779148660.9119387,
+    "ast_hash": "ef86d661e5002d85121a319e680c1686",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\home\\acadymic life2.jpg": {
+    "mtime": 1779148688.5424502,
+    "ast_hash": "9614d21bbcdfa8c9ebba96f54ac95055",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\home\\acadymic life22.jpg": {
+    "mtime": 1779148847.299496,
+    "ast_hash": "ef9795d15af9d21597aaa2bbd2e7ddf2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\home\\enroll with us.jpg": {
+    "mtime": 1779148631.370252,
+    "ast_hash": "0a06cbfcfec7f13b0b7e8c754296824d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\home\\enrollwithus.jpg": {
+    "mtime": 1779148606.6843274,
+    "ast_hash": "210963e93197fd2fc25f8c6d894b2706",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\home\\student social.jpg": {
+    "mtime": 1779148492.3786242,
+    "ast_hash": "fdb483e0d5af1cab4f7fc37e6a5972ff",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\home\\student social2.jpg": {
+    "mtime": 1779148518.3466012,
+    "ast_hash": "6d6bcf3901923dd24739538695262b09",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\home\\student social3.jpg": {
+    "mtime": 1779148543.7062159,
+    "ast_hash": "c239986b090cda530dfc15f42bee30f2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\home\\student social4.jpg": {
+    "mtime": 1779148733.470355,
+    "ast_hash": "6fc13ad97b732242570d2c3c5ef57107",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\home\\visiting day.jpg": {
+    "mtime": 1779148761.623219,
+    "ast_hash": "a2989b9f1f87f6746b7902923cf8b698",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\home\\visiting day2.jpg": {
+    "mtime": 1779148793.846135,
+    "ast_hash": "589b2552425c7cc947d14fc74b0ae5e4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\boys.jpg": {
+    "mtime": 1791843972.1618538,
+    "ast_hash": "c1a60939c165b3de434a7c5119412d68",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\bpys.jpg": {
+    "mtime": 1791843929.2454598,
+    "ast_hash": "1d0782c1fdbc531fb002cfbe8e389f44",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\campus 2.jpg": {
+    "mtime": 1791844062.2997074,
+    "ast_hash": "0c63dc58c6c1ec8f0ca90cf492425bea",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\campus 3.jpg": {
+    "mtime": 1791844076.4611604,
+    "ast_hash": "4a352f57a860e0ff68f9b37633a9badc",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\campus.jpg": {
+    "mtime": 1791844040.8355799,
+    "ast_hash": "f2c1402310ae6ec116c385f1a0c9a823",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\girls.jpg": {
+    "mtime": 1791843981.4787676,
+    "ast_hash": "218b7321354f53b2473b728438201c21",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\in class.jpg": {
+    "mtime": 1791843948.7361407,
+    "ast_hash": "0d3192dd8337425294aa0319173ee5b8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\in class2.jpg": {
+    "mtime": 1791844010.9802284,
+    "ast_hash": "822f97913916bdd2f844c538bc6534d2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\in lab 2.jpg": {
+    "mtime": 1791844088.094429,
+    "ast_hash": "772c15eaef7f30f4cd3c020622f1248f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\in lab.jpg": {
+    "mtime": 1791843960.6721346,
+    "ast_hash": "75ab31c12d308a4279404492a722b307",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\nature.jpg": {
+    "mtime": 1791844579.545858,
+    "ast_hash": "6e6b505d8319fd8969afc572ad630b47",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\parents 2.jpg": {
+    "mtime": 1791844607.4656985,
+    "ast_hash": "1c851578a41ce3800f6d09ad6ae4d415",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\parents 4.jpg": {
+    "mtime": 1791844633.9393795,
+    "ast_hash": "d391759138c8093a665b325c2b800000",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\parents.jpg": {
+    "mtime": 1791844597.336578,
+    "ast_hash": "6832033696196613a08c7f511da414b8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\student social life 2.jpg": {
+    "mtime": 1791844424.6920643,
+    "ast_hash": "c5899b4e8a53665973f35a3b20fa12e2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\student social life 3.jpg": {
+    "mtime": 1791844439.624089,
+    "ast_hash": "3b4ded211f9efc200951e797602af022",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\student social life 4.jpg": {
+    "mtime": 1791844478.6822467,
+    "ast_hash": "d8004b0621789bbda5e0b31e73b7476c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\student social life 5.jpg": {
+    "mtime": 1791844491.7077284,
+    "ast_hash": "44f0793667360b781dc2462f765243dc",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\student social life 6.jpg": {
+    "mtime": 1791844504.8727503,
+    "ast_hash": "62ee05acb578d3bab7e340603ca604cd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\student social life 7.jpg": {
+    "mtime": 1791844527.2567892,
+    "ast_hash": "68b9be245d583b0b6ad93382f464d2e1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\student social life 8.jpg": {
+    "mtime": 1791844544.5991316,
+    "ast_hash": "b919633e06ea4b79608538d24f75c9d4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\student social life 9.jpg": {
+    "mtime": 1791844558.0995407,
+    "ast_hash": "7be334dffb23cdbba248dce7373122d3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\student social life.jpg": {
+    "mtime": 1791844407.5225148,
+    "ast_hash": "da905c80e66ff188f8090008fda9041a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\students 3.jpg": {
+    "mtime": 1791844308.3669038,
+    "ast_hash": "114dda68bb9e7bab909250d103989574",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\students 4.jpg": {
+    "mtime": 1791844320.9749835,
+    "ast_hash": "f346ce1131e9ef6b49073efc73c59f0a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\students 5.jpg": {
+    "mtime": 1791844333.4834416,
+    "ast_hash": "fbf263901fcf710a47fd1ecfb0281157",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\students 6.jpg": {
+    "mtime": 1791844345.4590738,
+    "ast_hash": "a7e7132bd6dc3ae41d79091bc061f5c5",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\students boys.jpg": {
+    "mtime": 1791843915.0776827,
+    "ast_hash": "ffe227bb85a9165f4bda50f6dbbd78c2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\students girls.jpg": {
+    "mtime": 1791843901.7220695,
+    "ast_hash": "218b7321354f53b2473b728438201c21",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\students1.jpg": {
+    "mtime": 1791844289.8146186,
+    "ast_hash": "0b37c4f926157c966cfa886cdee9bd27",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\visitors 3.jpg": {
+    "mtime": 1791844708.090019,
+    "ast_hash": "756998864a6c7fbfe11e48727e1b84bd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\visitors 4.jpg": {
+    "mtime": 1791844719.988424,
+    "ast_hash": "7c1f75dd19d2b7f9735661c5d1df3df0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\visitors 5.jpg": {
+    "mtime": 1791844734.305401,
+    "ast_hash": "c920ac4ddc85d83ff1c6511dae3f942d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\visitors.jpg": {
+    "mtime": 1791844671.4862251,
+    "ast_hash": "d89634789755c51de9bf77f512490403",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\nkhoma\\vistors.jpg": {
+    "mtime": 1791844681.9561896,
+    "ast_hash": "68afd2724d2a0f6c25c78ac5787f0d86",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\social\\social1.jpg": {
+    "mtime": 1775639587.1024923,
+    "ast_hash": "6fc13ad97b732242570d2c3c5ef57107",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\social\\social2.jpg": {
+    "mtime": 1775639606.98338,
+    "ast_hash": "c239986b090cda530dfc15f42bee30f2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\social\\social3.jpg": {
+    "mtime": 1775639708.4648623,
+    "ast_hash": "42297b8d829bbeca8aebbeaef636b152",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\social\\social4.jpg": {
+    "mtime": 1775640001.6249702,
+    "ast_hash": "fdb483e0d5af1cab4f7fc37e6a5972ff",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\social\\terials\\481277002_601329686057245_2528447771070386403_n.jpg": {
+    "mtime": 1777028644.297325,
+    "ast_hash": "8c8a0e44b482746be81e7f6ba4fe285d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\social\\terials\\hero_light.jpg": {
+    "mtime": 1777033607.247689,
+    "ast_hash": "a6216b5050c583883dbb34b2353c03d4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\social\\terials\\landing page.webp": {
+    "mtime": 1777109616.555776,
+    "ast_hash": "0e737cc0faacab80708c092d3e2e9b3f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\social\\terials\\stu.jpg": {
+    "mtime": 1777029199.157738,
+    "ast_hash": "12fadfeedd0243c2998d971ed6d11e7e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\social\\terials\\studentsreading.jpg": {
+    "mtime": 1777028820.2957299,
+    "ast_hash": "318ecc6486857124f422afce2728c2b4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\public\\social\\terials\\stuuuu.jpg": {
+    "mtime": 1777029380.5703049,
+    "ast_hash": "a6216b5050c583883dbb34b2353c03d4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\assets\\hero.png": {
+    "mtime": 1775469862.275041,
+    "ast_hash": "5cf2b0762834cdddc0dd3ec1397b5011",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\assets\\react.svg": {
+    "mtime": 1775469863.6275222,
+    "ast_hash": "f0402b67b6ce880f65666bb49e841696",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\alphabet-website\\src\\assets\\vite.svg": {
+    "mtime": 1775469863.6844149,
+    "ast_hash": "9960a24288958394ac50e57ff638b036",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\uploads\\feed-1778947069532-756694835.png": {
+    "mtime": 1778947069.5486066,
+    "ast_hash": "cfda5fb7da3ea4e71afa0c24b14c8b45",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\uploads\\feed-1778947885894-21164554.png": {
+    "mtime": 1778947885.9097862,
+    "ast_hash": "b821fcfe620596b00abe08c7e84045ef",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\uploads\\feed-1778947885908-42275451.png": {
+    "mtime": 1778947885.9197147,
+    "ast_hash": "cfda5fb7da3ea4e71afa0c24b14c8b45",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\uploads\\feed-1778947974825-626911364.png": {
+    "mtime": 1778947974.8474312,
+    "ast_hash": "cfda5fb7da3ea4e71afa0c24b14c8b45",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\uploads\\feed-1778948010892-208548143.png": {
+    "mtime": 1778948010.8986611,
+    "ast_hash": "b821fcfe620596b00abe08c7e84045ef",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\uploads\\feed-1778948037515-820331845.png": {
+    "mtime": 1778948037.551693,
+    "ast_hash": "6dbd49f62a803af4967f278d147b7a45",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\uploads\\gallery-1778954822388-752425737.png": {
+    "mtime": 1778954822.428552,
+    "ast_hash": "497fa2d586369505b1d1992806084473",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\uploads\\gallery-1778954970932-63666337.png": {
+    "mtime": 1778954970.9545133,
+    "ast_hash": "c7d72a336a1ec260530997eea321ecb7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\uploads\\finance\\38bc1e86d105c72d34c1e4fc66053063a.png": {
+    "mtime": 1776583338.3881094,
+    "ast_hash": "fc9df092b6f494a541d82a566a85558e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\uploads\\finance\\481a4175bd31e655596f57d10f1e515ea.png": {
+    "mtime": 1776587168.275643,
+    "ast_hash": "fc9df092b6f494a541d82a566a85558e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\backend\\uploads\\finance\\7f59768ca904e39e0683b17444b4a954.png": {
+    "mtime": 1776587168.2863991,
+    "ast_hash": "fc9df092b6f494a541d82a566a85558e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\boys.jpg": {
+    "mtime": 1791843972.1618538,
+    "ast_hash": "c1a60939c165b3de434a7c5119412d68",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\bpys.jpg": {
+    "mtime": 1791843929.2454598,
+    "ast_hash": "1d0782c1fdbc531fb002cfbe8e389f44",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\campus 2.jpg": {
+    "mtime": 1791844062.2997074,
+    "ast_hash": "0c63dc58c6c1ec8f0ca90cf492425bea",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\campus 3.jpg": {
+    "mtime": 1791844076.4611604,
+    "ast_hash": "4a352f57a860e0ff68f9b37633a9badc",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\campus.jpg": {
+    "mtime": 1791844040.8355799,
+    "ast_hash": "f2c1402310ae6ec116c385f1a0c9a823",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\girls.jpg": {
+    "mtime": 1791843981.4787676,
+    "ast_hash": "218b7321354f53b2473b728438201c21",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\in class.jpg": {
+    "mtime": 1791843948.7361407,
+    "ast_hash": "0d3192dd8337425294aa0319173ee5b8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\in class2.jpg": {
+    "mtime": 1791844010.9802284,
+    "ast_hash": "822f97913916bdd2f844c538bc6534d2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\in lab 2.jpg": {
+    "mtime": 1791844088.094429,
+    "ast_hash": "772c15eaef7f30f4cd3c020622f1248f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\in lab.jpg": {
+    "mtime": 1791843960.6721346,
+    "ast_hash": "75ab31c12d308a4279404492a722b307",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\nature.jpg": {
+    "mtime": 1791844579.545858,
+    "ast_hash": "6e6b505d8319fd8969afc572ad630b47",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\parents 2.jpg": {
+    "mtime": 1791844607.4656985,
+    "ast_hash": "1c851578a41ce3800f6d09ad6ae4d415",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\parents 4.jpg": {
+    "mtime": 1791844633.9393795,
+    "ast_hash": "d391759138c8093a665b325c2b800000",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\parents.jpg": {
+    "mtime": 1791844597.336578,
+    "ast_hash": "6832033696196613a08c7f511da414b8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\student social life 2.jpg": {
+    "mtime": 1791844424.6920643,
+    "ast_hash": "c5899b4e8a53665973f35a3b20fa12e2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\student social life 3.jpg": {
+    "mtime": 1791844439.624089,
+    "ast_hash": "3b4ded211f9efc200951e797602af022",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\student social life 4.jpg": {
+    "mtime": 1791844478.6822467,
+    "ast_hash": "d8004b0621789bbda5e0b31e73b7476c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\student social life 5.jpg": {
+    "mtime": 1791844491.7077284,
+    "ast_hash": "44f0793667360b781dc2462f765243dc",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\student social life 6.jpg": {
+    "mtime": 1791844504.8727503,
+    "ast_hash": "62ee05acb578d3bab7e340603ca604cd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\student social life 7.jpg": {
+    "mtime": 1791844527.2567892,
+    "ast_hash": "68b9be245d583b0b6ad93382f464d2e1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\student social life 8.jpg": {
+    "mtime": 1791844544.5991316,
+    "ast_hash": "b919633e06ea4b79608538d24f75c9d4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\student social life 9.jpg": {
+    "mtime": 1791844558.0995407,
+    "ast_hash": "7be334dffb23cdbba248dce7373122d3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\student social life.jpg": {
+    "mtime": 1791844407.5225148,
+    "ast_hash": "da905c80e66ff188f8090008fda9041a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\students 3.jpg": {
+    "mtime": 1791844308.3669038,
+    "ast_hash": "114dda68bb9e7bab909250d103989574",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\students 4.jpg": {
+    "mtime": 1791844320.9749835,
+    "ast_hash": "f346ce1131e9ef6b49073efc73c59f0a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\students 5.jpg": {
+    "mtime": 1791844333.4834416,
+    "ast_hash": "fbf263901fcf710a47fd1ecfb0281157",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\students 6.jpg": {
+    "mtime": 1791844345.4590738,
+    "ast_hash": "a7e7132bd6dc3ae41d79091bc061f5c5",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\students boys.jpg": {
+    "mtime": 1791843915.0776827,
+    "ast_hash": "ffe227bb85a9165f4bda50f6dbbd78c2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\students girls.jpg": {
+    "mtime": 1791843901.7220695,
+    "ast_hash": "218b7321354f53b2473b728438201c21",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\students1.jpg": {
+    "mtime": 1791844289.8146186,
+    "ast_hash": "0b37c4f926157c966cfa886cdee9bd27",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\visitors 3.jpg": {
+    "mtime": 1791844708.090019,
+    "ast_hash": "756998864a6c7fbfe11e48727e1b84bd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\visitors 4.jpg": {
+    "mtime": 1791844719.988424,
+    "ast_hash": "7c1f75dd19d2b7f9735661c5d1df3df0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\visitors 5.jpg": {
+    "mtime": 1791844734.305401,
+    "ast_hash": "c920ac4ddc85d83ff1c6511dae3f942d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\visitors.jpg": {
+    "mtime": 1791844671.4862251,
+    "ast_hash": "d89634789755c51de9bf77f512490403",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\dude\\Desktop\\41\\Project\\alphasmis only\\nkhoma\\vistors.jpg": {
+    "mtime": 1791844681.9561896,
+    "ast_hash": "68afd2724d2a0f6c25c78ac5787f0d86",
+    "semantic_hash": ""
   }
 }

@@ -49,8 +49,8 @@ let FinanceController = class FinanceController {
     getPayments(query) {
         return this.financeService.getPayments(query);
     }
-    recordPayment(data) {
-        return this.financeService.recordPayment(data);
+    recordPayment(data, req) {
+        return this.financeService.recordPayment(data, req.user);
     }
     searchStudents(query) {
         return this.financeService.searchStudents(query || '');
@@ -60,6 +60,9 @@ let FinanceController = class FinanceController {
     }
     getStudentAccount(studentId) {
         return this.financeService.getStudentAccount(studentId);
+    }
+    getStudentPayments(studentId) {
+        return this.financeService.getStudentPaymentHistory(studentId);
     }
     getExpenses(query) {
         return this.financeService.getExpenses(query);
@@ -121,8 +124,9 @@ __decorate([
 __decorate([
     (0, common_1.Post)('payments'),
     __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Req)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", void 0)
 ], FinanceController.prototype, "recordPayment", null);
 __decorate([
@@ -145,6 +149,13 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], FinanceController.prototype, "getStudentAccount", null);
+__decorate([
+    (0, common_1.Get)('student-payments/:studentId'),
+    __param(0, (0, common_1.Param)('studentId', common_1.ParseIntPipe)),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], FinanceController.prototype, "getStudentPayments", null);
 __decorate([
     (0, common_1.Get)('expenses'),
     __param(0, (0, common_1.Query)()),

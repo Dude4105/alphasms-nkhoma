@@ -20,6 +20,10 @@ import '../App.css';
 export default function TeacherLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isLightMode, setIsLightMode] = useState(() => {
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      return saved === 'light';
+    }
     return document.documentElement.getAttribute('data-theme') === 'light';
   });
   const [teacherProfile, setTeacherProfile] = useState<any>(null);
@@ -109,28 +113,36 @@ export default function TeacherLayout() {
     } else {
       document.documentElement.removeAttribute('data-theme');
     }
+    localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
   }, [isLightMode]);
 
-  const handleLogout = async () => {
-    try {
-      const token = localStorage.getItem('accessToken');
-      await fetch(`${import.meta.env.VITE_API_URL}/auth/logout`, {
+  const handleLogout = () => {
+    const token = localStorage.getItem('accessToken');
+
+    // Best-effort backend logout. Fire-and-forget with a short timeout so a slow
+    // or unreachable server can never freeze the Logout button. Errors are ignored.
+    if (token) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 4000);
+      fetch(`${import.meta.env.VITE_API_URL}/auth/logout`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
         credentials: 'include',
-      });
-    } catch (err) {
-      console.error('Failed to logout on backend', err);
-    } finally {
-      localStorage.removeItem('accessToken');
-      localStorage.removeItem('user');
-      localStorage.removeItem('rememberMe');
-      sessionStorage.removeItem('sessionActive');
-      navigate('/login');
+        signal: controller.signal,
+      })
+        .catch(() => {})
+        .finally(() => clearTimeout(timer));
     }
+
+    // Clear the session and leave immediately — never wait on the network.
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('user');
+    localStorage.removeItem('rememberMe');
+    sessionStorage.removeItem('sessionActive');
+    navigate('/login');
   };
 
   const navItems = [
@@ -153,7 +165,7 @@ export default function TeacherLayout() {
       <aside className={`sidebar glass-panel ${isSidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-brand">
           <img src="/heroesLogo.png" alt="Heroes Academy" />
-          <span>Heroes Portal</span>
+          <span>Teachers Portal</span>
         </div>
 
         <nav className="sidebar-nav">

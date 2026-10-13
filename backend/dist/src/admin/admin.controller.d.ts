@@ -32,6 +32,24 @@ export declare class AdminController {
         message: string;
         termTransition: boolean;
     }>;
+    advanceAcademicYear(req: any): Promise<{
+        message: string;
+        fromYear: string;
+        toYear: string;
+        promoted: number;
+        pending: number;
+        completed: number;
+        passMark: number;
+        archived: any;
+    }>;
+    getPromotionRun(): Promise<{
+        fromYear: string;
+        toYear: string;
+        promoted: number;
+        pending: number;
+        completed: number;
+        createdAt: Date;
+    } | null>;
     getFinalResultsMode(): Promise<{
         enabled: boolean;
     }>;

@@ -56,20 +56,24 @@ export default function SubjectResults() {
     const fetchActiveContext = async () => {
       try {
         const token = localStorage.getItem('accessToken');
-        const settingsRes = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings`, {
+        // Use the teacher-accessible settings endpoint. /admin/settings and
+        // /admin/settings/grading-system both return 403 for teachers, which used to
+        // force a hardcoded year (and no pass threshold) that broke the results.
+        const settingsRes = await fetch(`${import.meta.env.VITE_API_URL}/teachers/me/settings`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (settingsRes.ok) {
           const settings = await settingsRes.json();
           if (settings.currentTerm) setTerm(settings.currentTerm.toString());
           if (settings.academicYear) setYear(settings.academicYear.toString());
+          if (typeof settings.gradingPassMin === 'number') setPassMinScore(settings.gradingPassMin);
         } else {
           setTerm('1');
-          setYear('2025');
+          setYear('2024');
         }
       } catch (e) {
         setTerm('1');
-        setYear('2025');
+        setYear('2024');
       }
     };
     fetchActiveContext();
@@ -108,21 +112,8 @@ export default function SubjectResults() {
     }
   }, [classId, subjectKey, term, year]);
 
-  useEffect(() => {
-    const fetchGrading = async () => {
-      try {
-        const token = localStorage.getItem('accessToken');
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings/grading-system`, {
-          headers: { 'Authorization': `Bearer ${token}` }
-        });
-        if (res.ok) {
-          const gc = await res.json();
-          if (typeof gc.passMinScore === 'number') setPassMinScore(gc.passMinScore);
-        }
-      } catch {}
-    };
-    fetchGrading();
-  }, []);
+  // NOTE: passMinScore now comes from /teachers/me/settings in fetchActiveContext above,
+  // so we no longer call the admin-only /admin/settings/grading-system (403 for teachers).
 
   const results = data ? data.results.map((s) => ({
     ...s,

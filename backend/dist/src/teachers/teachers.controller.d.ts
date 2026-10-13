@@ -3,32 +3,44 @@ import { PaginationDto } from '../common/dto/pagination.dto';
 export declare class TeachersController {
     private readonly teachersService;
     constructor(teachersService: TeachersService);
+    getSystemSettings(): Promise<{
+        academicYear: string;
+        currentTerm: string;
+        finalResultsMode: boolean;
+        gradingPassMin: number;
+        schoolName: string;
+        schoolCampus: string;
+        schoolAddress: string;
+        schoolPOBox: string;
+        schoolPhone: string;
+        schoolEmail: string;
+    }>;
     changePassword(req: any, body: any): Promise<{
         id: number;
-        createdAt: Date;
         updatedAt: Date;
         email: string;
+        createdAt: Date;
         passwordHash: string;
         role: import(".prisma/client").$Enums.Role;
         hashedRefreshToken: string | null;
     }>;
     getGradeConfig(classId: string, subjectKey: string, term: string, academicYear: string): Promise<{
         id: number;
-        createdAt: Date;
         updatedAt: Date;
         academicYear: string;
-        term: number;
+        createdAt: Date;
         classId: number;
+        term: number;
         subjectKey: string;
         config: import("@prisma/client/runtime/library").JsonValue;
     } | null>;
     saveGradeConfig(req: any, body: any): Promise<{
         id: number;
-        createdAt: Date;
         updatedAt: Date;
         academicYear: string;
-        term: number;
+        createdAt: Date;
         classId: number;
+        term: number;
         subjectKey: string;
         config: import("@prisma/client/runtime/library").JsonValue;
     }>;
@@ -93,17 +105,17 @@ export declare class TeachersController {
     } | {
         teacher: {
             id: number;
+            updatedAt: Date;
+            teacher_id: string;
             firstName: string;
             lastName: string;
-            phone: string | null;
-            userId: number;
-            createdAt: Date;
-            updatedAt: Date;
             email: string | null;
-            subjects: import("@prisma/client/runtime/library").JsonValue | null;
-            teacher_id: string;
+            phone: string | null;
             qualification: string | null;
+            subjects: import("@prisma/client/runtime/library").JsonValue | null;
             classes: import("@prisma/client/runtime/library").JsonValue | null;
+            createdAt: Date;
+            userId: number;
         };
         class: null;
         students: never[];
@@ -190,6 +202,46 @@ export declare class TeachersController {
             total: number;
         }[];
     }>;
+    getMigrationStatus(req: any, classId: string): Promise<{
+        run: null;
+        currentYear: string | null;
+        class: {
+            id: string;
+            name: string;
+        };
+        students: never[];
+    } | {
+        run: {
+            fromYear: string;
+            toYear: string;
+            promoted: number;
+            pending: number;
+            completed: number;
+            createdAt: Date;
+        };
+        currentYear: string | null;
+        class: {
+            id: string;
+            name: string;
+        };
+        students: {
+            id: string;
+            name: string;
+            gender: string | null;
+            status: string;
+            sourceClassName: string;
+            targetClassName: string | null;
+            reasons: import("@prisma/client/runtime/library").JsonValue;
+            decidedAt: Date | null;
+        }[];
+    }>;
+    decidePromotion(req: any, classId: string, body: {
+        studentId: string;
+        action: 'promote' | 'repeat';
+    }): Promise<{
+        message: string;
+        status: string;
+    }>;
     migrateClass(req: any, classId: string, body: {
         targetClassId: string;
         promotions: {
@@ -203,50 +255,50 @@ export declare class TeachersController {
     }>;
     unenrollStudent(studentId: string): Promise<{
         id: number;
-        createdAt: Date;
         updatedAt: Date;
         email: string;
+        createdAt: Date;
         passwordHash: string;
         role: import(".prisma/client").$Enums.Role;
         hashedRefreshToken: string | null;
     }>;
     unenrollStaff(teacherId: string): Promise<{
         id: number;
-        createdAt: Date;
         updatedAt: Date;
         email: string;
+        createdAt: Date;
         passwordHash: string;
         role: import(".prisma/client").$Enums.Role;
         hashedRefreshToken: string | null;
     }>;
     create(body: any): Promise<{
         id: number;
+        updatedAt: Date;
+        teacher_id: string;
         firstName: string;
         lastName: string;
-        phone: string | null;
-        userId: number;
-        createdAt: Date;
-        updatedAt: Date;
         email: string | null;
-        subjects: import("@prisma/client/runtime/library").JsonValue | null;
-        teacher_id: string;
+        phone: string | null;
         qualification: string | null;
+        subjects: import("@prisma/client/runtime/library").JsonValue | null;
         classes: import("@prisma/client/runtime/library").JsonValue | null;
+        createdAt: Date;
+        userId: number;
     }>;
     findAll(query: PaginationDto): Promise<{
         data: {
             id: number;
+            updatedAt: Date;
+            teacher_id: string;
             firstName: string;
             lastName: string;
-            phone: string | null;
-            userId: number;
-            createdAt: Date;
-            updatedAt: Date;
             email: string | null;
-            subjects: import("@prisma/client/runtime/library").JsonValue | null;
-            teacher_id: string;
+            phone: string | null;
             qualification: string | null;
+            subjects: import("@prisma/client/runtime/library").JsonValue | null;
             classes: import("@prisma/client/runtime/library").JsonValue | null;
+            createdAt: Date;
+            userId: number;
         }[];
         meta: {
             total: number;
@@ -257,37 +309,37 @@ export declare class TeachersController {
     }>;
     findOne(id: string): Promise<{
         id: number;
+        updatedAt: Date;
+        teacher_id: string;
         firstName: string;
         lastName: string;
-        phone: string | null;
-        userId: number;
-        createdAt: Date;
-        updatedAt: Date;
         email: string | null;
-        subjects: import("@prisma/client/runtime/library").JsonValue | null;
-        teacher_id: string;
+        phone: string | null;
         qualification: string | null;
+        subjects: import("@prisma/client/runtime/library").JsonValue | null;
         classes: import("@prisma/client/runtime/library").JsonValue | null;
+        createdAt: Date;
+        userId: number;
     } | null>;
     update(id: string, body: any): Promise<{
         id: number;
+        updatedAt: Date;
+        teacher_id: string;
         firstName: string;
         lastName: string;
-        phone: string | null;
-        userId: number;
-        createdAt: Date;
-        updatedAt: Date;
         email: string | null;
-        subjects: import("@prisma/client/runtime/library").JsonValue | null;
-        teacher_id: string;
+        phone: string | null;
         qualification: string | null;
+        subjects: import("@prisma/client/runtime/library").JsonValue | null;
         classes: import("@prisma/client/runtime/library").JsonValue | null;
+        createdAt: Date;
+        userId: number;
     }>;
     remove(id: string): Promise<{
         id: number;
-        createdAt: Date;
         updatedAt: Date;
         email: string;
+        createdAt: Date;
         passwordHash: string;
         role: import(".prisma/client").$Enums.Role;
         hashedRefreshToken: string | null;

@@ -56,6 +56,43 @@ let TeachersService = class TeachersService {
     normalizeSubjectKey(name) {
         return (0, utils_1.normalizeSubjectKey)(name);
     }
+    async getSystemSettings() {
+        const [year, term, finalMode, grading, schoolName, schoolCampus, schoolAddress, schoolPOBox, schoolPhone, schoolEmail] = await Promise.all([
+            this.prisma.systemSetting.findUnique({ where: { key: 'academicYear' } }),
+            this.prisma.systemSetting.findUnique({ where: { key: 'currentTerm' } }),
+            this.prisma.systemSetting.findUnique({ where: { key: 'finalResultsMode' } }),
+            this.prisma.systemSetting.findUnique({ where: { key: 'gradingSystem' } }),
+            this.prisma.systemSetting.findUnique({ where: { key: 'schoolName' } }),
+            this.prisma.systemSetting.findUnique({ where: { key: 'schoolCampus' } }),
+            this.prisma.systemSetting.findUnique({ where: { key: 'schoolAddress' } }),
+            this.prisma.systemSetting.findUnique({ where: { key: 'schoolPOBox' } }),
+            this.prisma.systemSetting.findUnique({ where: { key: 'schoolPhone' } }),
+            this.prisma.systemSetting.findUnique({ where: { key: 'schoolEmail' } }),
+        ]);
+        let gradingPassMin = 40;
+        if (grading?.value) {
+            try {
+                const parsed = JSON.parse(grading.value);
+                if (typeof parsed.passMinScore === 'number') {
+                    gradingPassMin = parsed.passMinScore;
+                }
+            }
+            catch {
+            }
+        }
+        return {
+            academicYear: year?.value || '2024',
+            currentTerm: term?.value || '1',
+            finalResultsMode: finalMode?.value === 'true',
+            gradingPassMin,
+            schoolName: schoolName?.value || 'ALPHABET SMIS',
+            schoolCampus: schoolCampus?.value || '',
+            schoolAddress: schoolAddress?.value || '',
+            schoolPOBox: schoolPOBox?.value || '',
+            schoolPhone: schoolPhone?.value || '',
+            schoolEmail: schoolEmail?.value || '',
+        };
+    }
     async create(data) {
         const defaultPassword = 'pass1234';
         const hashedPassword = await bcrypt.hash(defaultPassword, 10);
@@ -492,6 +529,7 @@ let TeachersService = class TeachersService {
             const studentData = {
                 id: student.student_id,
                 name: `${student.firstName} ${student.lastName}`,
+                hasGrades: student.results.length > 0,
             };
             subjectsWithKeys.forEach((s) => {
                 studentData[s.key] = 0;
@@ -1238,6 +1276,143 @@ let TeachersService = class TeachersService {
             message: 'Class migration completed successfully',
             migratedCount,
             repeatedCount,
+        };
+    }
+    async assertOwnsClass(userId, role, classId) {
+        const cls = await this.prisma.class.findUnique({
+            where: { class_id: classId },
+        });
+        if (!cls)
+            throw new common_1.NotFoundException('Class not found');
+        if (role === 'ADMIN')
+            return cls;
+        const teacher = await this.prisma.teacher.findUnique({ where: { userId } });
+        if (!teacher)
+            throw new common_1.ForbiddenException('Teacher profile not found.');
+        const fullName = `${teacher.firstName} ${teacher.lastName}`;
+        if (cls.classTeacher !== fullName) {
+            throw new common_1.ForbiddenException('You are not the class teacher of this class.');
+        }
+        return cls;
+    }
+    async getMigrationStatus(userId, role, classId) {
+        const cls = await this.assertOwnsClass(userId, role, classId);
+        const [run, yearSetting] = await Promise.all([
+            this.prisma.migrationRun.findFirst({ orderBy: { createdAt: 'desc' } }),
+            this.prisma.systemSetting.findUnique({ where: { key: 'academicYear' } }),
+        ]);
+        if (!run) {
+            return {
+                run: null,
+                currentYear: yearSetting?.value ?? null,
+                class: { id: cls.class_id, name: cls.name },
+                students: [],
+            };
+        }
+        const promotions = await this.prisma.studentPromotion.findMany({
+            where: { runId: run.id, sourceClassId: cls.id },
+            include: { student: { select: { id: true, student_id: true, firstName: true, lastName: true, gender: true } } },
+            orderBy: { id: 'asc' },
+        });
+        return {
+            run: {
+                fromYear: run.fromYear,
+                toYear: run.toYear,
+                promoted: run.promotedCount,
+                pending: run.pendingCount,
+                completed: run.completedCount,
+                createdAt: run.createdAt,
+            },
+            currentYear: yearSetting?.value ?? null,
+            class: { id: cls.class_id, name: cls.name },
+            students: promotions.map((p) => ({
+                id: p.student.student_id,
+                name: `${p.student.firstName} ${p.student.lastName}`,
+                gender: p.student.gender,
+                status: p.status,
+                sourceClassName: p.sourceClassName,
+                targetClassName: p.targetClassName,
+                reasons: p.reasons,
+                decidedAt: p.decidedAt,
+            })),
+        };
+    }
+    async decidePromotion(userId, role, classId, studentIdStr, action) {
+        const cls = await this.assertOwnsClass(userId, role, classId);
+        if (action !== 'promote' && action !== 'repeat') {
+            throw new common_1.BadRequestException("action must be 'promote' or 'repeat'");
+        }
+        const run = await this.prisma.migrationRun.findFirst({
+            orderBy: { createdAt: 'desc' },
+        });
+        if (!run) {
+            throw new common_1.ConflictException('No promotion run exists yet.');
+        }
+        const student = await this.prisma.student.findFirst({
+            where: { student_id: studentIdStr },
+        });
+        if (!student)
+            throw new common_1.NotFoundException('Student not found');
+        const promotion = await this.prisma.studentPromotion.findUnique({
+            where: { runId_studentId: { runId: run.id, studentId: student.id } },
+        });
+        if (!promotion || promotion.sourceClassId !== cls.id) {
+            throw new common_1.NotFoundException('No pending promotion record for this student.');
+        }
+        if (promotion.status !== 'pending_review') {
+            throw new common_1.ConflictException(`This student has already been resolved (${promotion.status}).`);
+        }
+        if (action === 'promote') {
+            if (!promotion.targetClassId || !promotion.targetClassName) {
+                throw new common_1.BadRequestException('No target class exists for this student (top form).');
+            }
+            const historyObj = (() => {
+                if (student.classHistory) {
+                    try {
+                        return JSON.parse(student.classHistory);
+                    }
+                    catch {
+                        return {};
+                    }
+                }
+                return {};
+            })();
+            historyObj[run.toYear] = promotion.targetClassName;
+            await this.prisma.student.update({
+                where: { id: student.id },
+                data: {
+                    classId: promotion.targetClassId,
+                    classHistory: JSON.stringify(historyObj),
+                },
+            });
+            await this.prisma.classHistory.upsert({
+                where: {
+                    studentId_academicYear: {
+                        studentId: student.id,
+                        academicYear: run.toYear,
+                    },
+                },
+                update: { className: promotion.targetClassName },
+                create: {
+                    studentId: student.id,
+                    academicYear: run.toYear,
+                    className: promotion.targetClassName,
+                },
+            });
+        }
+        const updated = await this.prisma.studentPromotion.update({
+            where: { id: promotion.id },
+            data: {
+                status: action === 'promote' ? 'promoted_override' : 'repeated',
+                decidedById: userId,
+                decidedAt: new Date(),
+            },
+        });
+        return {
+            message: action === 'promote'
+                ? `${student.firstName} ${student.lastName} promoted to ${promotion.targetClassName}.`
+                : `${student.firstName} ${student.lastName} will repeat ${promotion.sourceClassName}.`,
+            status: updated.status,
         };
     }
     async recalculateClassRanks(className, academicYear, term) {

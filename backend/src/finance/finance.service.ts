@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { PaginationDto } from '../common/dto/pagination.dto';
 
@@ -161,6 +161,7 @@ export class FinanceService {
         },
       ],
       recentCollections: recentPayments.map((p) => ({
+        dbId: p.studentId,
         id: p.student.student_id,
         name: `${p.student.firstName} ${p.student.lastName}`,
         class: p.student.class?.name || 'N/A',
@@ -293,10 +294,11 @@ export class FinanceService {
     });
   }
 
-  async recordPayment(data: any) {
+  async recordPayment(data: any, user?: { userId?: number; email?: string }) {
     const { term: activeTerm, academicYear } =
       await this.getActiveTermContext();
     const paymentTerm = data.term ? parseInt(data.term) : activeTerm;
+    const recorder = await this.resolveRecorder(user);
 
     return this.prisma.payment.create({
       data: {
@@ -308,8 +310,57 @@ export class FinanceService {
         academicYear,
         term: paymentTerm,
         status: 'VERIFIED',
+        recordedBy: recorder.name,
+        recordedById: recorder.userId,
       },
     });
+  }
+
+  /**
+   * Resolves a human-readable name for the user recording a payment so every
+   * payment carries an audit trail of who captured it.
+   */
+  private async resolveRecorder(user?: { userId?: number; email?: string }) {
+    const userId = user?.userId;
+    if (!userId) {
+      return { userId: undefined, name: user?.email || 'Unknown' };
+    }
+
+    try {
+      const admin = await this.prisma.adminProfile.findUnique({
+        where: { userId },
+      });
+      if (admin) {
+        return {
+          userId,
+          name: `${admin.firstName || ''} ${admin.lastName || ''}`.trim(),
+        };
+      }
+
+      const teacher = await this.prisma.teacher.findUnique({
+        where: { userId },
+      });
+      if (teacher) {
+        return {
+          userId,
+          name: `${teacher.firstName || ''} ${teacher.lastName || ''}`.trim(),
+        };
+      }
+
+      const student = await this.prisma.student.findUnique({
+        where: { userId },
+      });
+      if (student) {
+        return {
+          userId,
+          name: `${student.firstName || ''} ${student.lastName || ''}`.trim(),
+        };
+      }
+    } catch (err) {
+      console.error('Unable to resolve payment recorder:', err);
+    }
+
+    return { userId, name: user?.email || 'Unknown' };
   }
 
   /**
@@ -481,6 +532,7 @@ export class FinanceService {
           date: p.date,
           method: p.method,
           reference: p.reference,
+          recordedBy: p.recordedBy,
         })),
     }));
 
@@ -496,6 +548,76 @@ export class FinanceService {
       activeTerm,
       terms: termsWithPayments,
       annualSummary: annual,
+    };
+  }
+
+  /** Full fee-payment history for one student, grouped by academic year → term. */
+  async getStudentPaymentHistory(studentId: number) {
+    const student = await this.prisma.student.findUnique({
+      where: { id: studentId },
+      include: {
+        payments: {
+          orderBy: [{ academicYear: 'desc' }, { term: 'asc' }, { date: 'desc' }],
+        },
+        class: true,
+      },
+    });
+
+    if (!student) {
+      throw new NotFoundException('Student not found');
+    }
+
+    const { term: currentTerm, academicYear: currentYear } =
+      await this.getActiveTermContext();
+
+    // Group payments: academicYear → term → payments
+    const byYear = new Map<string, Map<number, typeof student.payments>>();
+    for (const p of student.payments) {
+      if (!byYear.has(p.academicYear)) byYear.set(p.academicYear, new Map());
+      const byTerm = byYear.get(p.academicYear)!;
+      if (!byTerm.has(p.term)) byTerm.set(p.term, []);
+      byTerm.get(p.term)!.push(p);
+    }
+
+    const years = Array.from(byYear.entries())
+      .sort((a, b) => b[0].localeCompare(a[0])) // newest academic year first
+      .map(([year, byTerm]) => {
+        const terms = Array.from(byTerm.entries())
+          .sort((a, b) => a[0] - b[0])
+          .map(([term, payments]) => ({
+            term,
+            totalPaid: payments.reduce((sum, p) => sum + p.amount, 0),
+            payments: payments.map((p) => ({
+              id: p.id,
+              amount: p.amount,
+              date: p.date,
+              method: p.method,
+              reference: p.reference,
+              status: p.status,
+              recordedBy: p.recordedBy,
+            })),
+          }));
+        return {
+          academicYear: year,
+          isCurrent: year === currentYear,
+          totalPaid: terms.reduce((sum, t) => sum + t.totalPaid, 0),
+          terms,
+        };
+      });
+
+    return {
+      student: {
+        id: student.id,
+        studentId: student.student_id,
+        name: `${student.firstName} ${student.lastName}`,
+        class: student.class?.name || 'N/A',
+        scholarType: student.scholarType,
+      },
+      currentYear,
+      currentTerm,
+      years,
+      grandTotal: years.reduce((sum, y) => sum + y.totalPaid, 0),
+      paymentCount: student.payments.length,
     };
   }
 

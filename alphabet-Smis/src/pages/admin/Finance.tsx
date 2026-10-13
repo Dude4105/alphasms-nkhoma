@@ -44,6 +44,11 @@ export default function Finance() {
   const [studentAccountData, setStudentAccountData] = useState<any>(null);
   const [isLoadingAccount, setIsLoadingAccount] = useState(false);
 
+  // Student Payment History State (fee payment details, all years)
+  const [isHistoryModalOpen, setIsHistoryModalOpen] = useState(false);
+  const [studentHistoryData, setStudentHistoryData] = useState<any>(null);
+  const [isLoadingHistory, setIsLoadingHistory] = useState(false);
+
   // Overview Filters State
   const [overviewTerm, setOverviewTerm] = useState<number>(0); // 0 = All Terms
   const [overviewYear, setOverviewYear] = useState<string>(''); // Populated dynamically
@@ -66,6 +71,9 @@ export default function Finance() {
   const [isRefreshingReport, setIsRefreshingReport] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
 
+  // School Identity (from Settings) — used on the printable fee receipt
+  const [schoolInfo, setSchoolInfo] = useState<any>(null);
+
   const fetchOverview = async (termVal?: number, yearVal?: string) => {
     const termQuery = termVal !== undefined ? termVal : overviewTerm;
     const yearQuery = yearVal !== undefined ? yearVal : overviewYear;
@@ -84,6 +92,7 @@ export default function Finance() {
 
   useEffect(() => {
     fetchFinanceData();
+    fetchSchoolInfo();
   }, []);
 
   useEffect(() => {
@@ -153,6 +162,17 @@ export default function Finance() {
       });
       if (res.ok) setStudentFees(await res.json());
     } catch (err) { console.error(err); }
+  };
+
+  // Load school identity configured under Settings → School Identity
+  const fetchSchoolInfo = async () => {
+    try {
+      const token = localStorage.getItem('accessToken');
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings`, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      if (res.ok) setSchoolInfo(await res.json());
+    } catch (err) { console.error('Failed to fetch school settings:', err); }
   };
 
   const fetchExpenses = async () => {
@@ -349,6 +369,12 @@ export default function Finance() {
   const iconMap: any = { 'TrendingUp': <TrendingUp size={20} />, 'TrendingDown': <TrendingDown size={20} />, 'Clock': <Clock size={20} />, 'Wallet': <Wallet size={20} /> };
   const statusColor = (status: string) => status === 'Paid' ? '#10b981' : status === 'Partial' ? '#f59e0b' : status === 'Overpaid' ? '#3b82f6' : status === 'N/A' ? 'var(--text-muted)' : '#ef4444';
   const statusBg = (status: string) => status === 'Paid' ? 'rgba(16,185,129,0.1)' : status === 'Partial' ? 'rgba(245,158,11,0.1)' : status === 'Overpaid' ? 'rgba(59,130,246,0.1)' : status === 'N/A' ? 'rgba(128,128,128,0.1)' : 'rgba(239,68,68,0.1)';
+  // Clickable student name → opens the fee payment details (full history)
+  const studentNameBtnStyle: React.CSSProperties = {
+    background: 'none', border: 'none', padding: 0, font: 'inherit',
+    fontWeight: 600, color: 'var(--text-light)', cursor: 'pointer', textAlign: 'left',
+    textDecoration: 'underline', textDecorationColor: 'rgba(59,130,246,0.45)', textUnderlineOffset: '3px',
+  };
 
   const fetchStudentAccount = async (dbId: number) => {
     setIsLoadingAccount(true);
@@ -361,6 +387,23 @@ export default function Finance() {
       if (res.ok) setStudentAccountData(await res.json());
     } catch (err) { console.error(err); } finally { setIsLoadingAccount(false); }
   };
+
+  // Opens the "Fee Payment Details" modal: every payment the student has made,
+  // grouped by academic year and term, with the date each payment was made.
+  const fetchStudentPayments = async (dbId: number) => {
+    setIsLoadingHistory(true);
+    setIsHistoryModalOpen(true);
+    setStudentHistoryData(null);
+    try {
+      const token = localStorage.getItem('accessToken');
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/finance/student-payments/${dbId}`, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      if (res.ok) setStudentHistoryData(await res.json());
+    } catch (err) { console.error(err); } finally { setIsLoadingHistory(false); }
+  };
+
+  const formatPayDate = (d: string) => new Date(d).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
 
   if (isLoading) return <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '4rem', gap: '1rem' }}><Loader size={32} className="spin" style={{ color: '#3b82f6' }} /><p style={{ color: 'var(--text-muted)' }}>Syncing financial records...</p></div>;
   if (error || !overviewData) return <div className="glass-panel" style={{ textAlign: 'center', padding: '3rem', margin: '2rem', borderRadius: '16px' }}><AlertCircle size={48} style={{ color: '#ef4444', marginBottom: '1rem' }} /><h2 style={{ color: 'var(--text-light)', marginBottom: '0.5rem' }}>Finance Sync Error</h2><p style={{ color: 'var(--text-muted)' }}>{error || 'An unexpected error occurred.'}</p><button className="btn btn-primary" style={{ marginTop: '1.5rem' }} onClick={() => window.location.reload()}>Retry Sync</button></div>;
@@ -483,7 +526,7 @@ export default function Finance() {
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.75rem', borderRadius: '12px', background: 'rgba(255,255,255,0.03)' }}>
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                   <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(59,130,246,0.1)', color: '#3b82f6', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 600 }}>{stu.name.charAt(0)}</div>
-                  <div><div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{stu.name}</div><div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{stu.class} • {stu.id}</div></div>
+                  <div><button onClick={() => stu.dbId && fetchStudentPayments(stu.dbId)} title="View fee payment details" style={{ ...studentNameBtnStyle, fontSize: '0.9rem' }}>{stu.name}</button><div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{stu.class} • {stu.id}</div></div>
                 </div>
                 <div style={{ textAlign: 'right' }}><div style={{ fontWeight: 600, color: '#10b981' }}>{stu.amountPaid}</div><div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{stu.date}</div></div>
               </div>
@@ -561,7 +604,7 @@ export default function Finance() {
                 const td = getTermData(stu);
                 return (
                 <tr key={i} className="table-row-hover" style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '10px' }}>
-                  <td style={{ padding: '1rem', borderRadius: '10px 0 0 10px' }}><div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(215,185,0,0.1)', color: '#d7b900', display: 'flex', alignItems: 'center', justifySelf: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 600 }}>{stu.name.charAt(0)}</div><div><div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{stu.name}</div><div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{stu.id} • {stu.scholarType}</div></div></div></td>
+                  <td style={{ padding: '1rem', borderRadius: '10px 0 0 10px' }}><div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}><div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(215,185,0,0.1)', color: '#d7b900', display: 'flex', alignItems: 'center', justifySelf: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 600 }}>{stu.name.charAt(0)}</div><div><button onClick={() => fetchStudentPayments(stu.dbId)} title="View fee payment details" style={{ ...studentNameBtnStyle, fontSize: '0.9rem' }}>{stu.name}</button><div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{stu.id} • {stu.scholarType}</div></div></div></td>
                   <td style={{ padding: '1rem', fontSize: '0.9rem' }}>{stu.class}</td>
                   <td style={{ padding: '1rem' }}><span style={{ padding: '0.25rem 0.6rem', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 600, background: statusBg(td.status), color: statusColor(td.status) }}>{td.status}</span></td>
                   <td style={{ padding: '1rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>MK {td.expected.toLocaleString()}</td>
@@ -590,7 +633,7 @@ export default function Finance() {
                       {stu.name.charAt(0)}
                     </div>
                     <div className="mobile-card-student-info">
-                      <div className="student-mobile-name">{stu.name}</div>
+                      <button className="student-mobile-name" onClick={() => fetchStudentPayments(stu.dbId)} title="View fee payment details" style={{ ...studentNameBtnStyle, fontSize: '0.95rem' }}>{stu.name}</button>
                       <div className="student-mobile-meta">{stu.id} &bull; <span className="scholar-type-label">{stu.scholarType}</span></div>
                     </div>
                     <div className="mobile-card-class-badge">
@@ -650,9 +693,17 @@ export default function Finance() {
           </div>
           
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <div style={{ fontSize: '0.9rem', color: '#d7b900', fontWeight: 700, letterSpacing: '2px', marginBottom: '0.25rem' }}>ALPHABET SMIS</div>
-            <h1 style={{ fontSize: '2.2rem', fontWeight: 800, margin: 0, background: 'linear-gradient(to bottom, #ffffff, #d1d5db)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>HEROES ACADEMY</h1>
-            <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', letterSpacing: '1px' }}>OFFICIAL FEE STATEMENT</div>
+            {schoolInfo?.schoolName && (
+              <div style={{ fontSize: '0.9rem', color: '#d7b900', fontWeight: 700, letterSpacing: '2px', marginBottom: '0.25rem' }}>{schoolInfo.schoolName}</div>
+            )}
+            <h1 style={{ fontSize: '2.2rem', fontWeight: 800, margin: 0, background: 'linear-gradient(to bottom, #ffffff, #d1d5db)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{schoolInfo?.schoolCampus || schoolInfo?.schoolName || 'ALPHABET SMIS'}</h1>
+            {(schoolInfo?.schoolAddress || schoolInfo?.schoolPhone) && (
+              <div style={{ color: 'var(--text-muted)', fontSize: '0.8rem', letterSpacing: '0.5px', marginTop: '0.35rem' }}>
+                {[schoolInfo?.schoolPOBox, schoolInfo?.schoolAddress].filter(Boolean).join(' • ')}
+                {schoolInfo?.schoolPhone ? ` • Tel: ${schoolInfo.schoolPhone}` : ''}
+              </div>
+            )}
+            <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', letterSpacing: '1px', marginTop: '0.35rem' }}>OFFICIAL FEE STATEMENT</div>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2.5rem', padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '20px', border: '1px solid var(--glass-border)' }}>
@@ -1251,6 +1302,84 @@ export default function Finance() {
                     <div><div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Balance</div><div style={{ fontWeight: 700, fontSize: '1.1rem', color: '#ef4444' }}>MK {studentAccountData.annualSummary.totalBalance.toLocaleString()}</div></div>
                     <div><div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Status</div><div><span style={{ padding: '0.2rem 0.6rem', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 600, background: statusBg(studentAccountData.annualSummary.status), color: statusColor(studentAccountData.annualSummary.status) }}>{studentAccountData.annualSummary.status}</span></div></div>
                   </div>
+                </div>
+              </>
+            ) : <p style={{ color: 'var(--text-muted)', textAlign: 'center', padding: '2rem' }}>No data available</p>}
+          </div>
+        </div>
+      )}
+
+      {/* Student Fee Payment Details Modal — all payments grouped by academic year & term */}
+      {isHistoryModalOpen && (
+        <div className="modal-overlay" onClick={() => setIsHistoryModalOpen(false)}>
+          <div className="modal-content glass-panel" style={{ width: '95%', maxWidth: '720px', padding: '2rem', borderRadius: '24px', maxHeight: '90vh', overflowY: 'auto' }} onClick={e => e.stopPropagation()}>
+            {isLoadingHistory ? (
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '3rem', gap: '1rem' }}><Loader size={28} className="spin" style={{ color: '#3b82f6' }} /><p style={{ color: 'var(--text-muted)' }}>Loading payment history...</p></div>
+            ) : studentHistoryData ? (
+              <>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.25rem' }}>
+                  <div>
+                    <h2 style={{ fontSize: '1.3rem', marginBottom: '0.25rem' }}>Fee Payment Details</h2>
+                    <div style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '0.15rem' }}>{studentHistoryData.student.name}</div>
+                    <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{studentHistoryData.student.studentId} • {studentHistoryData.student.class} • {studentHistoryData.student.scholarType}</div>
+                  </div>
+                  <button onClick={() => setIsHistoryModalOpen(false)} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer' }}><X size={22} /></button>
+                </div>
+
+                {/* Lifetime summary strip */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                  <div style={{ padding: '0.9rem 1rem', borderRadius: '12px', background: 'rgba(16,185,129,0.07)', border: '1px solid rgba(16,185,129,0.15)' }}>
+                    <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>Total Paid (All Years)</div>
+                    <div style={{ fontWeight: 700, fontSize: '1.2rem', color: '#10b981' }}>MK {studentHistoryData.grandTotal.toLocaleString()}</div>
+                  </div>
+                  <div style={{ padding: '0.9rem 1rem', borderRadius: '12px', background: 'rgba(59,130,246,0.07)', border: '1px solid rgba(59,130,246,0.15)' }}>
+                    <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginBottom: '0.15rem' }}>Payments Recorded</div>
+                    <div style={{ fontWeight: 700, fontSize: '1.2rem', color: '#3b82f6' }}>{studentHistoryData.paymentCount}</div>
+                  </div>
+                </div>
+
+                {studentHistoryData.years.length === 0 && (
+                  <p style={{ color: 'var(--text-muted)', textAlign: 'center', padding: '2rem' }}>No payments recorded yet.</p>
+                )}
+
+                {/* Grouped by academic year → term */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                  {studentHistoryData.years.map((y: any) => (
+                    <div key={y.academicYear} style={{ borderRadius: '14px', border: `1px solid ${y.isCurrent ? 'rgba(59,130,246,0.3)' : 'var(--glass-border)'}`, background: 'rgba(255,255,255,0.02)', overflow: 'hidden' }}>
+                      {/* Year header */}
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.8rem 1.25rem', background: y.isCurrent ? 'rgba(59,130,246,0.08)' : 'rgba(255,255,255,0.03)' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                          <span style={{ fontWeight: 700, fontSize: '1.05rem' }}>AY {y.academicYear}</span>
+                          {y.isCurrent && <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.5rem', borderRadius: '4px', background: 'rgba(59,130,246,0.15)', color: '#3b82f6', fontWeight: 600 }}>Current</span>}
+                        </div>
+                        <span style={{ fontWeight: 700, fontSize: '0.95rem', color: '#10b981' }}>MK {y.totalPaid.toLocaleString()}</span>
+                      </div>
+
+                      {/* Terms within the year */}
+                      {y.terms.map((t: any) => (
+                        <div key={t.term} style={{ borderTop: '1px solid var(--glass-border)', padding: '0.9rem 1.25rem' }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                            <span style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--text-light)' }}>Term {t.term}{y.isCurrent && t.term === studentHistoryData.currentTerm ? ' (Current)' : ''}</span>
+                            <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>Paid: <span style={{ color: '#10b981' }}>MK {t.totalPaid.toLocaleString()}</span></span>
+                          </div>
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                            {t.payments.map((p: any) => (
+                              <div key={p.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 0.75rem', borderRadius: '10px', background: 'rgba(255,255,255,0.03)', fontSize: '0.85rem' }}>
+                                <div>
+                                  <span style={{ fontWeight: 600, color: 'var(--text-light)' }}>{formatPayDate(p.date)}</span>
+                                  <span style={{ color: 'var(--text-muted)' }}> • {p.method}{p.reference ? ` • Ref: ${p.reference}` : ''}</span>
+                                </div>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                                  <span style={{ padding: '0.15rem 0.5rem', borderRadius: '20px', fontSize: '0.68rem', fontWeight: 700, background: p.status === 'VERIFIED' ? 'rgba(16,185,129,0.12)' : 'rgba(245,158,11,0.12)', color: p.status === 'VERIFIED' ? '#10b981' : '#f59e0b' }}>{p.status}</span>
+                                  <span style={{ fontWeight: 700, color: '#10b981', minWidth: '90px', textAlign: 'right' }}>MK {p.amount.toLocaleString()}</span>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
                 </div>
               </>
             ) : <p style={{ color: 'var(--text-muted)', textAlign: 'center', padding: '2rem' }}>No data available</p>}

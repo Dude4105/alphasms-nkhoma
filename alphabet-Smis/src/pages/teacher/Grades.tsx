@@ -46,6 +46,7 @@ export default function Grades() {
   const [isLoadingStudents, setIsLoadingStudents] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [fetchError, setFetchError] = useState<string | null>(null);
+  const [configMissing, setConfigMissing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedClass, setSelectedClass] = useState('');
   const [selectedSubject, setSelectedSubject] = useState('');
@@ -107,33 +108,18 @@ export default function Grades() {
       try {
         const token = localStorage.getItem('accessToken');
         
-        // Check if admin enabled Final Results Mode and fetch active period
+        // Fetch teacher-accessible system settings in one call:
+        // academic year, current term, final results mode, grading pass threshold.
         try {
-          const modeRes = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings/final-results-mode`, {
+          const settingsRes = await fetch(`${import.meta.env.VITE_API_URL}/teachers/me/settings`, {
             headers: { 'Authorization': `Bearer ${token}` }
           });
-          if (modeRes.ok) {
-            const modeData = await modeRes.json();
-            setFinalResultsMode(modeData.enabled);
-          }
-
-          // Fetch Global Settings
-          const settingsRes = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings`, {
-              headers: { 'Authorization': `Bearer ${token}` }
-          });
           if (settingsRes.ok) {
-              const settings = await settingsRes.json();
-              if (settings.academicYear) setAcademicYear(settings.academicYear);
-              if (settings.currentTerm) setActiveTerm(settings.currentTerm);
-          }
-
-          // Fetch grading config for pass threshold
-          const gradingRes = await fetch(`${import.meta.env.VITE_API_URL}/admin/settings/grading-system`, {
-              headers: { 'Authorization': `Bearer ${token}` }
-          });
-          if (gradingRes.ok) {
-              const gc = await gradingRes.json();
-              if (typeof gc.passMinScore === 'number') setGradingPassMin(gc.passMinScore);
+            const settings = await settingsRes.json();
+            if (settings.academicYear) setAcademicYear(settings.academicYear);
+            if (settings.currentTerm) setActiveTerm(settings.currentTerm);
+            if (typeof settings.finalResultsMode === 'boolean') setFinalResultsMode(settings.finalResultsMode);
+            if (typeof settings.gradingPassMin === 'number') setGradingPassMin(settings.gradingPassMin);
           }
         } catch (e) { /* ignore, defaults stay */ }
 
@@ -213,6 +199,7 @@ export default function Grades() {
     const fetchData = async () => {
       setIsLoadingStudents(true);
       setFetchError(null);
+      setConfigMissing(false);
       try {
         const token = localStorage.getItem('accessToken');
         const subjectKey = normalizeSubjectKey(selectedSubject);
@@ -257,15 +244,29 @@ export default function Grades() {
         }
         
         // 2. Fetch Config
+        // The backend returns an EMPTY BODY (HTTP 200, 0 bytes) when no GradeConfig
+        // exists for this class/subject/term/year, so we must not call .json() blindly
+        // (it throws "Unexpected end of JSON input"). Parse the text safely instead.
         const configRes = await fetch(`${import.meta.env.VITE_API_URL}/teachers/grades/config?classId=${selectedClass}&subjectKey=${subjectKey}&term=${activeTerm}&academicYear=${academicYear}`, {
             headers: { 'Authorization': `Bearer ${token}` }
         });
         if (configRes.ok) {
-            const configData = await configRes.json();
-            if (configData) {
+            const rawConfig = await configRes.text();
+            let configData: any = null;
+            if (rawConfig && rawConfig.trim()) {
+                try { configData = JSON.parse(rawConfig); } catch { configData = null; }
+            }
+            if (configData && configData.config) {
                 const configKey = `${selectedClass}-${subjectKey}`;
                 setClassConfigs(prev => ({ ...prev, [configKey]: configData.config }));
+                setConfigMissing(false);
+            } else {
+                // No saved assessment structure for this subject yet.
+                setConfigMissing(true);
             }
+        } else {
+            // Config lookup itself failed (e.g. class not found).
+            setConfigMissing(true);
         }
 
         // 3. Fetch Entries
@@ -318,6 +319,7 @@ export default function Grades() {
       });
       if (res.ok) {
         alert('Assessment configuration saved successfully!');
+        setConfigMissing(false);
         setIsConfigModalOpen(false);
       } else {
         const errData = await res.json().catch(() => ({}));
@@ -446,6 +448,26 @@ export default function Grades() {
               <Calendar size={12} />
               Term {activeTerm} · {academicYear}
             </span>
+            <span
+              title={finalResultsMode
+                ? 'Admin has enabled Final Results Mode — you are entering the single definitive grade.'
+                : 'You are entering in-term (continuous assessment) grades.'}
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+                padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.75rem', fontWeight: 700,
+                letterSpacing: '0.03em', textTransform: 'uppercase',
+                background: finalResultsMode ? 'rgba(239, 68, 68, 0.12)' : 'rgba(16, 185, 129, 0.12)',
+                color: finalResultsMode ? '#ef4444' : '#10b981',
+                border: `1px solid ${finalResultsMode ? 'rgba(239, 68, 68, 0.3)' : 'rgba(16, 185, 129, 0.3)'}`
+              }}
+            >
+              <span style={{
+                width: 7, height: 7, borderRadius: '50%',
+                background: finalResultsMode ? '#ef4444' : '#10b981',
+                animation: 'pulse 2s infinite'
+              }} />
+              {finalResultsMode ? 'Final Grade' : 'In-Term Grades'}
+            </span>
           </p>
         </div>
         <div className="grades-header-actions">
@@ -560,22 +582,39 @@ export default function Grades() {
         <div style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h2 style={{ fontSize: '1.1rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <GraduationCap size={20} color="var(--primary-gold)" />
-            {selectedClassName} — {finalResultsMode ? 'Final Grades' : 'Score Sheet'}
+            {selectedClassName} — {finalResultsMode ? 'Final Grade' : 'In-Term Grade Sheet'}
           </h2>
           <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
             {searchQuery ? `${filteredGrades.length} of ${grades.length} found` : `${grades.length} students enrolled`}
           </span>
         </div>
 
-        {finalResultsMode && (
+        {finalResultsMode ? (
           <div style={{
-            padding: '0.75rem 1.5rem', background: 'rgba(239, 68, 68, 0.08)',
+            padding: '0.85rem 1.5rem', background: 'rgba(239, 68, 68, 0.08)',
             borderBottom: '1px solid rgba(239, 68, 68, 0.2)',
             display: 'flex', alignItems: 'center', gap: '0.75rem',
-            color: '#ef4444', fontSize: '0.85rem', fontWeight: 600
+            color: '#ef4444', fontSize: '0.9rem', fontWeight: 700,
+            letterSpacing: '0.02em'
           }}>
-            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ef4444', animation: 'pulse 2s infinite' }} />
-            FINAL RESULTS MODE — Enter one definitive score per student
+            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ef4444', animation: 'pulse 2s infinite', flexShrink: 0 }} />
+            <span>
+              FINAL GRADE — Enter the single definitive end‑of‑term score (Max 100) for each student.
+              This is <strong>not</strong> the in‑term assessment breakdown.
+            </span>
+          </div>
+        ) : (
+          <div style={{
+            padding: '0.85rem 1.5rem', background: 'rgba(16, 185, 129, 0.07)',
+            borderBottom: '1px solid rgba(16, 185, 129, 0.2)',
+            display: 'flex', alignItems: 'center', gap: '0.75rem',
+            color: '#10b981', fontSize: '0.9rem', fontWeight: 600
+          }}>
+            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981', animation: 'pulse 2s infinite', flexShrink: 0 }} />
+            <span>
+              IN‑TERM GRADES — Enter continuous assessment scores (tests, assignments, projects).
+              These are <strong>not</strong> the final grade; the final grade is set separately in Final Results Mode.
+            </span>
           </div>
         )}
         
@@ -590,6 +629,33 @@ export default function Grades() {
             <p>{fetchError}</p>
             <button className="btn btn-outline" onClick={() => window.location.reload()} style={{ fontSize: '0.8rem' }}>Retry</button>
           </div>
+        ) : configMissing && !finalResultsMode ? (
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '3rem 1.5rem', gap: '0.75rem', textAlign: 'center' }}>
+            <div style={{
+              width: '64px', height: '64px', borderRadius: '50%',
+              background: 'rgba(59, 130, 246, 0.1)', display: 'flex',
+              alignItems: 'center', justifyContent: 'center', color: '#3b82f6', marginBottom: '0.25rem'
+            }}>
+              <Settings size={30} />
+            </div>
+            <h3 style={{ margin: 0, fontSize: '1.1rem', color: 'var(--text-primary, #e5e7eb)' }}>
+              Configure assessments for {selectedSubject || 'this subject'}
+            </h3>
+            <p style={{ margin: 0, maxWidth: '460px', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6 }}>
+              The assessment structure for <strong>{selectedSubject}</strong> in{' '}
+              <strong>{classes.find(c => c.id === selectedClass)?.name || selectedClass}</strong> hasn't been set up
+              yet. Define the components (e.g. Test 1, Test 2, Project, Exam) and their max scores to start
+              entering grades.
+            </p>
+            <button
+              className="btn btn-primary"
+              onClick={() => setIsConfigModalOpen(true)}
+              style={{ marginTop: '0.75rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+            >
+              <Settings size={16} />
+              Configure Assessments
+            </button>
+          </div>
         ) : (
           <>
             {/* Desktop Table View */}
@@ -601,23 +667,24 @@ export default function Grades() {
                       <th style={{ padding: '0.85rem 1.5rem', fontWeight: 500, fontSize: '0.85rem' }}>#</th>
                       <th style={{ padding: '0.85rem 1.5rem', fontWeight: 500, fontSize: '0.85rem' }}>Student Name</th>
                       {finalResultsMode ? (
-                        <th style={{ padding: '0.85rem 1rem', fontWeight: 500, fontSize: '0.85rem', textAlign: 'center' }}>
-                          Final Score
-                          <div style={{ fontSize: '0.65rem', opacity: 0.6, marginTop: '2px' }}>Max: 100</div>
+                        <th style={{ padding: '0.85rem 1rem', fontWeight: 700, fontSize: '0.85rem', textAlign: 'center', color: '#ef4444', background: 'rgba(239, 68, 68, 0.05)' }}>
+                          FINAL GRADE
+                          <div style={{ fontSize: '0.65rem', opacity: 0.7, marginTop: '2px', fontWeight: 500 }}>Max: 100 · Definitive Score</div>
                         </th>
                       ) : (
                         currentConfig.assessments.map(ass => (
                           <th key={ass.id} style={{ padding: '0.85rem 1rem', fontWeight: 500, fontSize: '0.85rem', textAlign: 'center' }}>
                             {ass.name}
                             <div style={{ fontSize: '0.65rem', opacity: 0.6, marginTop: '2px' }}>
-                              Max: {ass.maxScore}
+                              Max: {ass.maxScore} · In-Term
                             </div>
                           </th>
                         ))
                       )}
                       {!finalResultsMode && (
                         <th style={{ padding: '0.85rem 1.5rem', fontWeight: 700, fontSize: '0.85rem', textAlign: 'center', color: 'var(--primary-gold)', background: 'rgba(212, 175, 55, 0.05)' }}>
-                          AVERAGE (%)
+                          IN-TERM AVERAGE (%)
+                          <div style={{ fontSize: '0.65rem', opacity: 0.7, marginTop: '2px', fontWeight: 500 }}>Not the final grade</div>
                         </th>
                       )}
                     </tr>
@@ -773,7 +840,7 @@ export default function Grades() {
                           </div>
                           {!finalResultsMode && (
                             <div className="student-card-avg-badge">
-                              <span className="card-avg-label">Avg</span>
+                              <span className="card-avg-label">In-Term Avg</span>
                               <span className="card-avg-val" style={{ color: isPassing ? '#10b981' : '#ef4444' }}>
                                 {avg}%
                               </span>
@@ -783,8 +850,10 @@ export default function Grades() {
 
                         <div className="student-card-inputs">
                           {finalResultsMode ? (
-                            <div className="card-input-box" style={{ gridColumn: 'span 2' }}>
-                              <label>Final Score (Max: 100)</label>
+                            <div className="card-input-box" style={{ gridColumn: 'span 2', background: 'rgba(239, 68, 68, 0.04)', border: '1px solid rgba(239, 68, 68, 0.2)' }}>
+                              <label style={{ color: '#ef4444', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                                Final Grade (Max: 100)
+                              </label>
                               <input 
                                 type="number" 
                                 value={student.scores['finalScore'] ?? ''} 

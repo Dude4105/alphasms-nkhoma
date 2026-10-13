@@ -86,7 +86,8 @@ window.fetch = async function (input: RequestInfo | URL, init?: RequestInit): Pr
   const isBackendRequest = urlString.startsWith(apiUrl);
 
   // Skip interception for non-backend requests or auth endpoints
-  if (!isBackendRequest || urlString.includes('/auth/login') || urlString.includes('/auth/refresh') || urlString.includes('/auth/forgot-password')) {
+  // (logout is fire-and-forget: it must not trigger a silent refresh/redirect)
+  if (!isBackendRequest || urlString.includes('/auth/login') || urlString.includes('/auth/refresh') || urlString.includes('/auth/forgot-password') || urlString.includes('/auth/logout')) {
     // Make sure we still allow credentials for auth endpoints (e.g. to receive the cookie on login)
     const modifiedInit = { ...init };
     if (isBackendRequest) {

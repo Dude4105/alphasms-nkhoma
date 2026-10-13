@@ -4,7 +4,7 @@ import {
   ArrowLeft, User, Mail, Phone, MapPin, 
   Calendar, Award, BookOpen, Clock, 
   Shield, GraduationCap, BarChart3, TrendingUp, Users, Trash2,
-  MessageCircle
+  MessageCircle, Wallet
 } from 'lucide-react';
 
 export default function StudentDetail() {
@@ -24,6 +24,11 @@ export default function StudentDetail() {
     } else {
       navigate(`/admin/students/${studentId}/history`);
     }
+  };
+
+  // Opens the standalone Fee Payment Details page (admin finance records)
+  const handleOpenFees = () => {
+    navigate(`/admin/students/${studentId}/fees`);
   };
 
   useEffect(() => {
@@ -233,6 +238,22 @@ export default function StudentDetail() {
                 </button>
               ))}
             </div>
+
+            {!isTeacher && (
+              <button
+                onClick={handleOpenFees}
+                style={{
+                  padding: '0.4rem 1.25rem', fontSize: '0.9rem', borderRadius: '8px',
+                  border: '1px solid rgba(16, 185, 129, 0.3)', background: 'rgba(16, 185, 129, 0.05)',
+                  color: '#10b981', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.4rem',
+                  transition: 'all 0.2s ease', height: '36px'
+                }}
+                onMouseEnter={e => e.currentTarget.style.background = 'rgba(16, 185, 129, 0.1)'}
+                onMouseLeave={e => e.currentTarget.style.background = 'rgba(16, 185, 129, 0.05)'}
+              >
+                <Wallet size={16} /> Fees Details
+              </button>
+            )}
 
             <button
               onClick={handleOpenHistory}

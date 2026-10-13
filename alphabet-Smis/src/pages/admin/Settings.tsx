@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { 
   Settings as SettingsIcon, Shield, Globe, Lock, Save, RefreshCw, 
   MapPin, School, Calendar, Info, Loader, CheckCircle2, AlertCircle, Plus, Users,
-  Zap, ZapOff, Award, BarChart3, Trash2, RotateCcw, Mail, Phone, X
+  Zap, ZapOff, Award, BarChart3, Trash2, RotateCcw, Mail, Phone, X, GraduationCap
 } from 'lucide-react';
 
   const AVAILABLE_TABS = [
@@ -42,6 +42,10 @@ export default function Settings() {
   const [message, setMessage] = useState({ type: '', text: '' });
   const [originalSettings, setOriginalSettings] = useState<any>({});
 
+  // Year transition (advance + promote) state
+  const [isAdvancing, setIsAdvancing] = useState(false);
+  const [promotionRun, setPromotionRun] = useState<any>(null);
+
   // Grading system state
   const DEFAULT_GRADING = {
     grades: [
@@ -62,7 +66,73 @@ export default function Settings() {
     fetchFinalResultsMode();
     fetchExamResultsPublishedStatus();
     fetchGradingConfig();
+    fetchPromotionRun();
   }, []);
+
+  const fetchPromotionRun = async () => {
+    try {
+      const token = localStorage.getItem('accessToken');
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/promotion-run`, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setPromotionRun(data);
+      }
+    } catch (err) {
+      console.error('Error fetching promotion run:', err);
+    }
+  };
+
+  // One atomic action: promote every student who passed Term 3 final exams
+  // (>= 6 subjects >= pass mark) and advance the academic year together.
+  const handleAdvanceYear = async () => {
+    const fromYear = settings.academicYear;
+    const toYear = fromYear ? String(parseInt(fromYear, 10) + 1) : '?';
+    const confirmed = await window.confirm(
+      `🎓 ADVANCE ACADEMIC YEAR ${fromYear} → ${toYear}?\n\n` +
+      `This will, in one step:\n` +
+      `• Evaluate every student against Term 3 final-exam results (pass = at least 6 subjects scoring >= 40)\n` +
+      `• Automatically promote all students who passed to their next class\n` +
+      `• Keep non-passers in place for class teachers to review and decide\n` +
+      `• Start the new term's gradebook fresh (any stray scores stored under ${toYear} are cleared)\n` +
+      `• Set Term 1 of ${toYear} active, switch off Final Results Mode & published results\n\n` +
+      `Previous years' grades remain fully preserved.\n` +
+      `This transition can only be run once. Continue?`
+    );
+    if (!confirmed) return;
+
+    setIsAdvancing(true);
+    setMessage({ type: '', text: '' });
+    try {
+      const token = localStorage.getItem('accessToken');
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/academic-year/advance`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data?.message || 'Failed to advance the academic year.');
+      }
+      setMessage({
+        type: 'success',
+        text: `✅ ${data.fromYear} → ${data.toYear} complete — ${data.promoted} promoted, ${data.pending} awaiting teacher review, ${data.completed} completed.${data.archived ? ` ${data.archived} stale grade entries from before the transition were cleared — the new term starts fresh.` : ''}`,
+      });
+      // Sync all local state with the new year
+      setSettings((s: any) => ({ ...s, academicYear: data.toYear, currentTerm: '1' }));
+      setOriginalSettings((s: any) => ({ ...s, academicYear: data.toYear, currentTerm: '1' }));
+      setFinalResultsMode(false);
+      setExamResultsPublished(false);
+      fetchPromotionRun();
+    } catch (err: any) {
+      console.error(err);
+      setMessage({ type: 'error', text: err.message || 'Failed to advance the academic year.' });
+    } finally {
+      setIsAdvancing(false);
+      // Keep the promotion summary up long enough to read comfortably.
+      setTimeout(() => setMessage({ type: '', text: '' }), 20000);
+    }
+  };
 
   const fetchExamResultsPublishedStatus = async () => {
     try {
@@ -465,6 +535,49 @@ export default function Settings() {
                   <option value="2">Term 2 (Second Term)</option>
                   <option value="3">Term 3 (Third Term)</option>
                 </select>
+              </div>
+            </div>
+
+            {/* Year transition: one atomic promote + advance action */}
+            <div className="input-group" style={{ gridColumn: '1 / -1' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <GraduationCap size={16} color="#f59e0b" /> End of Year — Advance &amp; Promote Students
+              </label>
+              <div style={{
+                marginTop: '0.5rem', padding: '1.25rem', borderRadius: '16px',
+                border: '1px solid rgba(245, 158, 11, 0.35)',
+                background: 'rgba(245, 158, 11, 0.06)'
+              }}>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: 1.7, marginBottom: '1rem', maxWidth: '720px' }}>
+                  Promotes every student who passed <strong>Term 3 final-exam results</strong> (at least 6 subjects scoring ≥ the pass mark) to their next class, holds the rest for class-teacher review, and moves the school into{' '}
+                  <strong style={{ color: 'var(--text-light)' }}>
+                    {settings.academicYear ? `${parseInt(settings.academicYear, 10) + 1}` : 'next year'}
+                  </strong>{' '}
+                  — all in one atomic step. This transition can only be run once per year.
+                </p>
+                <button
+                  type="button"
+                  onClick={handleAdvanceYear}
+                  disabled={isAdvancing || isSaving || settings.currentTerm !== '3'}
+                  className="btn-primary responsive-btn"
+                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', minWidth: '280px', opacity: settings.currentTerm !== '3' ? 0.55 : 1 }}
+                >
+                  {isAdvancing
+                    ? <><Loader size={18} className="spin" /> Promoting students…</>
+                    : <><GraduationCap size={18} /> Advance to {settings.academicYear ? parseInt(settings.academicYear, 10) + 1 : '—'} &amp; Promote</>}
+                </button>
+                {settings.currentTerm !== '3' && (
+                  <p style={{ marginTop: '0.7rem', fontSize: '0.78rem', color: '#f59e0b', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                    <Info size={13} /> Available at the end of the final term (Term 3), once final-exam results are entered. Current term: {settings.currentTerm || '—'}.
+                  </p>
+                )}
+                {promotionRun && (
+                  <p style={{ marginTop: '0.9rem', fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+                    <CheckCircle2 size={13} style={{ display: 'inline', verticalAlign: '-2px', marginRight: '0.35rem' }} color="#10b981" />
+                    Last promotion run: <strong style={{ color: 'var(--text-light)' }}>{promotionRun.fromYear} → {promotionRun.toYear}</strong>{' '}
+                    — {promotionRun.promoted} promoted · {promotionRun.pending} awaiting review · {promotionRun.completed} completed
+                  </p>
+                )}
               </div>
             </div>
           </div>

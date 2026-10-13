@@ -36,6 +36,17 @@ export class AdminController {
     return this.adminService.updateSettings(data);
   }
 
+  // Year transition: promote passers + advance the year, atomically.
+  @Post('academic-year/advance')
+  advanceAcademicYear(@Req() req: any) {
+    return this.adminService.advanceAcademicYear(req.user.userId);
+  }
+
+  @Get('promotion-run')
+  getPromotionRun() {
+    return this.adminService.getPromotionRun();
+  }
+
   @Get('settings/final-results-mode')
   getFinalResultsMode() {
     return this.adminService.getFinalResultsMode();

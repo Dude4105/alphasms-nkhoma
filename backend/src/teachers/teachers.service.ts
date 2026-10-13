@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException, BadRequestException } from '@nestjs/common';
+import { Injectable, UnauthorizedException, BadRequestException, ForbiddenException, NotFoundException, ConflictException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { PaginationDto } from '../common/dto/pagination.dto';
 import { normalizeSubjectKey } from '../common/utils';
@@ -12,6 +12,54 @@ export class TeachersService {
 
   private normalizeSubjectKey(name: string) {
     return normalizeSubjectKey(name);
+  }
+
+  /**
+   * Read-only system settings a teacher needs for the grade book.
+   * Teachers are blocked from /admin/* by RolesGuard, so expose the
+   * subset they legitimately require (academic year, term, final results
+   * mode, and the grading pass threshold) here instead.
+   */
+  async getSystemSettings() {
+    const [year, term, finalMode, grading, schoolName, schoolCampus, schoolAddress, schoolPOBox, schoolPhone, schoolEmail] = await Promise.all([
+      this.prisma.systemSetting.findUnique({ where: { key: 'academicYear' } }),
+      this.prisma.systemSetting.findUnique({ where: { key: 'currentTerm' } }),
+      this.prisma.systemSetting.findUnique({ where: { key: 'finalResultsMode' } }),
+      this.prisma.systemSetting.findUnique({ where: { key: 'gradingSystem' } }),
+      this.prisma.systemSetting.findUnique({ where: { key: 'schoolName' } }),
+      this.prisma.systemSetting.findUnique({ where: { key: 'schoolCampus' } }),
+      this.prisma.systemSetting.findUnique({ where: { key: 'schoolAddress' } }),
+      this.prisma.systemSetting.findUnique({ where: { key: 'schoolPOBox' } }),
+      this.prisma.systemSetting.findUnique({ where: { key: 'schoolPhone' } }),
+      this.prisma.systemSetting.findUnique({ where: { key: 'schoolEmail' } }),
+    ]);
+
+    // Mirror AdminService defaults so behavior matches the admin view.
+    let gradingPassMin = 40;
+    if (grading?.value) {
+      try {
+        const parsed = JSON.parse(grading.value);
+        if (typeof parsed.passMinScore === 'number') {
+          gradingPassMin = parsed.passMinScore;
+        }
+      } catch {
+        /* keep default */
+      }
+    }
+
+    return {
+      academicYear: year?.value || '2024',
+      currentTerm: term?.value || '1',
+      finalResultsMode: finalMode?.value === 'true',
+      gradingPassMin,
+      // School identity (used on printable documents e.g. merit lists)
+      schoolName: schoolName?.value || 'ALPHABET SMIS',
+      schoolCampus: schoolCampus?.value || '',
+      schoolAddress: schoolAddress?.value || '',
+      schoolPOBox: schoolPOBox?.value || '',
+      schoolPhone: schoolPhone?.value || '',
+      schoolEmail: schoolEmail?.value || '',
+    };
   }
 
   async create(data: any) {
@@ -521,6 +569,9 @@ export class TeachersService {
         const studentData: any = {
           id: student.student_id,
           name: `${student.firstName} ${student.lastName}`,
+          // Distinguishes "no grades recorded yet" from an actual score of 0,
+          // so fresh (new-term) rosters can display N/A instead of zeros.
+          hasGrades: student.results.length > 0,
         };
 
         // Initialize all class subjects with 0
@@ -1417,6 +1468,189 @@ export class TeachersService {
       message: 'Class migration completed successfully',
       migratedCount,
       repeatedCount,
+    };
+  }
+
+  /**
+   * A teacher may only act on their own class ("classTeacher" name match).
+   * Admins bypass the check entirely.
+   */
+  private async assertOwnsClass(userId: number, role: string, classId: string) {
+    const cls = await this.prisma.class.findUnique({
+      where: { class_id: classId },
+    });
+    if (!cls) throw new NotFoundException('Class not found');
+
+    if (role === 'ADMIN') return cls;
+
+    const teacher = await this.prisma.teacher.findUnique({ where: { userId } });
+    if (!teacher) throw new ForbiddenException('Teacher profile not found.');
+    const fullName = `${teacher.firstName} ${teacher.lastName}`;
+    if (cls.classTeacher !== fullName) {
+      throw new ForbiddenException(
+        'You are not the class teacher of this class.',
+      );
+    }
+    return cls;
+  }
+
+  /**
+   * GET /teachers/classes/:classId/migration-status
+   * Promotion outcome for this class from the latest admin-driven run:
+   * who was promoted automatically, who completed (top form), and who is
+   * still pending the class teacher's decision (with failure reasons).
+   */
+  async getMigrationStatus(userId: number, role: string, classId: string) {
+    const cls = await this.assertOwnsClass(userId, role, classId);
+
+    const [run, yearSetting] = await Promise.all([
+      this.prisma.migrationRun.findFirst({ orderBy: { createdAt: 'desc' } }),
+      this.prisma.systemSetting.findUnique({ where: { key: 'academicYear' } }),
+    ]);
+
+    if (!run) {
+      return {
+        run: null,
+        currentYear: yearSetting?.value ?? null,
+        class: { id: cls.class_id, name: cls.name },
+        students: [],
+      };
+    }
+
+    const promotions = await this.prisma.studentPromotion.findMany({
+      where: { runId: run.id, sourceClassId: cls.id },
+      include: { student: { select: { id: true, student_id: true, firstName: true, lastName: true, gender: true } } },
+      orderBy: { id: 'asc' },
+    });
+
+    return {
+      run: {
+        fromYear: run.fromYear,
+        toYear: run.toYear,
+        promoted: run.promotedCount,
+        pending: run.pendingCount,
+        completed: run.completedCount,
+        createdAt: run.createdAt,
+      },
+      currentYear: yearSetting?.value ?? null,
+      class: { id: cls.class_id, name: cls.name },
+      students: promotions.map((p) => ({
+        id: p.student.student_id,
+        name: `${p.student.firstName} ${p.student.lastName}`,
+        gender: p.student.gender,
+        status: p.status,
+        sourceClassName: p.sourceClassName,
+        targetClassName: p.targetClassName,
+        reasons: p.reasons,
+        decidedAt: p.decidedAt,
+      })),
+    };
+  }
+
+  /**
+   * POST /teachers/classes/:classId/promotion-decision
+   * The class teacher resolves a pending student:
+   *   - "promote": move them into the (already known) target class now
+   *   - "repeat":  keep them in place for the new year
+   * Runs after the year has already advanced, so it explicitly rewrites the
+   * NEW year's ClassHistory to stay consistent.
+   */
+  async decidePromotion(
+    userId: number,
+    role: string,
+    classId: string,
+    studentIdStr: string,
+    action: 'promote' | 'repeat',
+  ) {
+    const cls = await this.assertOwnsClass(userId, role, classId);
+
+    if (action !== 'promote' && action !== 'repeat') {
+      throw new BadRequestException("action must be 'promote' or 'repeat'");
+    }
+
+    const run = await this.prisma.migrationRun.findFirst({
+      orderBy: { createdAt: 'desc' },
+    });
+    if (!run) {
+      throw new ConflictException('No promotion run exists yet.');
+    }
+
+    const student = await this.prisma.student.findFirst({
+      where: { student_id: studentIdStr },
+    });
+    if (!student) throw new NotFoundException('Student not found');
+
+    const promotion = await this.prisma.studentPromotion.findUnique({
+      where: { runId_studentId: { runId: run.id, studentId: student.id } },
+    });
+    if (!promotion || promotion.sourceClassId !== cls.id) {
+      throw new NotFoundException('No pending promotion record for this student.');
+    }
+    if (promotion.status !== 'pending_review') {
+      throw new ConflictException(
+        `This student has already been resolved (${promotion.status}).`,
+      );
+    }
+
+    if (action === 'promote') {
+      if (!promotion.targetClassId || !promotion.targetClassName) {
+        throw new BadRequestException(
+          'No target class exists for this student (top form).',
+        );
+      }
+      // Move them now — the year has already advanced, so also rewrite the
+      // new year's history from "source" to the target class.
+      const historyObj: Record<string, string> = (() => {
+        if (student.classHistory) {
+          try {
+            return JSON.parse(student.classHistory);
+          } catch {
+            return {};
+          }
+        }
+        return {};
+      })();
+      historyObj[run.toYear] = promotion.targetClassName;
+
+      await this.prisma.student.update({
+        where: { id: student.id },
+        data: {
+          classId: promotion.targetClassId,
+          classHistory: JSON.stringify(historyObj),
+        },
+      });
+      await this.prisma.classHistory.upsert({
+        where: {
+          studentId_academicYear: {
+            studentId: student.id,
+            academicYear: run.toYear,
+          },
+        },
+        update: { className: promotion.targetClassName },
+        create: {
+          studentId: student.id,
+          academicYear: run.toYear,
+          className: promotion.targetClassName,
+        },
+      });
+    }
+    // action === 'repeat': classId and next-year history already say "source".
+
+    const updated = await this.prisma.studentPromotion.update({
+      where: { id: promotion.id },
+      data: {
+        status: action === 'promote' ? 'promoted_override' : 'repeated',
+        decidedById: userId,
+        decidedAt: new Date(),
+      },
+    });
+
+    return {
+      message:
+        action === 'promote'
+          ? `${student.firstName} ${student.lastName} promoted to ${promotion.targetClassName}.`
+          : `${student.firstName} ${student.lastName} will repeat ${promotion.sourceClassName}.`,
+      status: updated.status,
     };
   }
 

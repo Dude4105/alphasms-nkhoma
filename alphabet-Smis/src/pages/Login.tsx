@@ -118,9 +118,9 @@ export default function Login() {
         </button>
         
         <div style={{ textAlign: 'center', marginBottom: '2rem', marginTop: '1rem' }}>
-          <img src="/heroesLogo.png" alt="Heroes Academy" style={{ height: '60px', marginBottom: '1rem' }} />
+          <img src="/NkhomaLogo.svg" alt="NKHOMA" style={{ height: '60px', marginBottom: '1rem' }} />
           <h2 className="step-title" style={{ marginBottom: '0.5rem' }}>
-            {isForgotPassword ? 'Reset Password' : 'Portal Login'}
+            {isForgotPassword ? 'Reset Password' : 'NKHOMA'}
           </h2>
           <p style={{ color: 'var(--text-muted)' }}>
             {isForgotPassword 

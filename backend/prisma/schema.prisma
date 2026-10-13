@@ -65,6 +65,7 @@ model Student {
   classHistory String?   @db.Text
   classHistoryRelations ClassHistory[]
   ranks StudentRank[]
+  promotions StudentPromotion[]
   
   createdAt  DateTime  @default(now())
   updatedAt  DateTime  @updatedAt
@@ -212,7 +213,11 @@ model Payment {
   status          String   @default("VERIFIED") // PENDING, VERIFIED
   academicYear    String
   term            Int
-  
+
+  // Audit: who captured this payment
+  recordedBy      String?  // Display name of the user who recorded the payment
+  recordedById    Int?     // User id of the recorder
+
   createdAt       DateTime @default(now())
 
   @@index([studentId])
@@ -376,4 +381,50 @@ model StudentRank {
 
   @@unique([studentId, term, academicYear])
   @@index([studentId])
+}
+
+// One row per admin-triggered "advance year & promote" run (e.g. 2024 -> 2025).
+// Unique on (fromYear, toYear) so a transition can never run twice.
+model MigrationRun {
+  id             Int      @id @default(autoincrement())
+  fromYear       String
+  toYear         String
+  startedById    Int?
+  promotedCount  Int      @default(0)
+  pendingCount   Int      @default(0)
+  completedCount Int      @default(0)
+  // Counts of stale grade rows cleared from the incoming year so it starts fresh
+  // (e.g. in-term scores that had been saved under the wrong academic year).
+  archivedGrades Json?
+  promotions     StudentPromotion[]
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@unique([fromYear, toYear])
+}
+
+// Per-student outcome of a MigrationRun.
+// status: promoted | pending_review | repeated | promoted_override | completed
+model StudentPromotion {
+  id              Int          @id @default(autoincrement())
+  runId           Int
+  run             MigrationRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+  studentId       Int
+  student         Student      @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  sourceClassId   Int
+  sourceClassName String
+  targetClassId   Int?
+  targetClassName String?
+  status          String
+  reasons         Json?        // { passCount, required, passMark, subjects: [{ key, score, passed }] }
+  decidedById     Int?
+  decidedAt       DateTime?
+
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  @@unique([runId, studentId])
+  @@index([status])
+  @@index([sourceClassId])
 }
