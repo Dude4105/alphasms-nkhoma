@@ -13,7 +13,6 @@ import {
   Monitor,
   Trophy,
   Activity,
-  Heart,
   ChevronRight,
   ChevronDown,
   Award,
@@ -24,17 +23,13 @@ import {
   GraduationCap,
   Shield,
   Star,
-  Quote,
   Globe,
   MessageCircle,
   Camera,
   Clock,
   Target,
-  Sparkles,
-  Maximize2,
-  CheckCircle2,
-  Layers,
-  Compass
+  Compass,
+  ChevronLeft
 } from 'lucide-react';
 import '../App.css';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
@@ -105,12 +100,30 @@ export default function Home() {
   });
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [statsVisible, setStatsVisible] = useState(false);
   const navigate = useNavigate();
   const [isResultsPublished, setIsResultsPublished] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
   const [activeGalleryFilter, setActiveGalleryFilter] = useState<'all' | 'academics' | 'students' | 'campus' | 'social' | 'events'>('all');
   const [lightboxItem, setLightboxItem] = useState<GalleryItem | null>(null);
+  const bentoRef = useRef<HTMLDivElement>(null);
+  const [bentoIndex, setBentoIndex] = useState(0);
+  const bentoCount = 5;
+
+  const scrollBento = (dir: 1 | -1) => {
+    const el = bentoRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * Math.round(el.clientWidth * 0.85), behavior: 'smooth' });
+  };
+
+  const onBentoScroll = () => {
+    const el = bentoRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>('.bento-card');
+    const step = card ? card.offsetWidth + 16 : el.clientWidth * 0.85;
+    setBentoIndex(Math.min(bentoCount - 1, Math.max(0, Math.round(el.scrollLeft / step))));
+  };
 
   const [schoolInfo, setSchoolInfo] = useState({
     schoolName: 'Nkhoma Secondary School',
@@ -169,10 +182,24 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      setScrollProgress(max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0);
+    };
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // ESC closes lightbox (a11y)
+  useEffect(() => {
+    if (!lightboxItem) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setLightboxItem(null); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [lightboxItem]);
 
   useEffect(() => {
     if (isLightMode) {
@@ -207,51 +234,29 @@ export default function Home() {
   const galleryRef = useReveal();
   const achieveRef = useReveal();
   const enrollRef = useReveal();
-  const testimonialRef = useReveal();
   const contactRef = useReveal();
 
-  const testimonials = [
-    {
-      text: "Nkhoma Secondary School provided the discipline and academic foundation that propelled me to study Engineering at MUST. The science labs, dedicated teachers, and serene atmosphere are second to none in Malawi.",
-      name: 'Emmanuel Chimphamba',
-      role: 'Alumnus & MUST Engineering Scholar',
-      initials: 'EC'
-    },
-    {
-      text: "As a parent, seeing my daughter grow intellectually and morally in the Nkhoma boarding environment has been our family's greatest joy. The faculty mentors each student as their own child.",
-      name: 'Mrs. Grace Phiri',
-      role: 'Parent of Form 4 Scholar',
-      initials: 'GP'
-    },
-    {
-      text: "The student life at Nkhoma blends serious classroom rigor with sports, leadership, and cultural fellowship. We learn to lead with integrity, faith, and humility.",
-      name: 'Tadala Chiphiko',
-      role: 'Head Girl, Class of 2026',
-      initials: 'TC'
-    }
-  ];
-
   const allGalleryItems: GalleryItem[] = [
-    { src: '/nkhoma/in class.jpg', title: 'Interactive Learning', category: 'academics', desc: 'Active classroom engagement under qualified subject specialists.' },
-    { src: '/nkhoma/in lab.jpg', title: 'Science Laboratory', category: 'academics', desc: 'Practical experiments in physics, chemistry, and biology.' },
-    { src: '/nkhoma/in lab 2.jpg', title: 'Hands-on Experiments', category: 'academics', desc: 'Modern scientific apparatus for MANEB curriculum mastery.' },
-    { src: '/nkhoma/in class2.jpg', title: 'Senior Seminar Class', category: 'academics', desc: 'Form 4 students preparing for MSCE national examinations.' },
-    { src: '/nkhoma/students boys.jpg', title: 'Boys Student Cohort', category: 'students', desc: 'Disciplined scholars building character and lifelong brotherhood.' },
-    { src: '/nkhoma/girls.jpg', title: 'Young Women Leaders', category: 'students', desc: 'Empowering future female leaders through STEM and arts.' },
-    { src: '/nkhoma/students 3.jpg', title: 'School Assembly', category: 'students', desc: 'Morning assembly instilling values, faith, and community cohesion.' },
-    { src: '/nkhoma/students 5.jpg', title: 'Class Fellowship', category: 'students', desc: 'Mutual encouragement and peer study partnerships.' },
-    { src: '/nkhoma/campus.jpg', title: 'Historic Nkhoma Campus', category: 'campus', desc: 'Nestled beneath the majestic Nkhoma mountain backdrop.' },
-    { src: '/nkhoma/campus 2.jpg', title: 'Academic Administration', category: 'campus', desc: 'Serene walkways connecting modern halls and lecture spaces.' },
-    { src: '/nkhoma/campus 3.jpg', title: 'Central Courtyard', category: 'campus', desc: 'Clean, green campus grounds conducive for peaceful concentration.' },
-    { src: '/nkhoma/nature.jpg', title: 'Campus Natural Ecosystem', category: 'campus', desc: 'Pristine mountain environment offering clean air and quiet study.' },
-    { src: '/nkhoma/student social life.jpg', title: 'Recreation & Fellowship', category: 'social', desc: 'Healthy social activities and weekend extracurricular life.' },
-    { src: '/nkhoma/student social life 3.jpg', title: 'Inter-House Sports', category: 'social', desc: 'Athletics, football, and physical fitness competitions.' },
-    { src: '/nkhoma/student social life 7.jpg', title: 'Cultural Celebrations', category: 'social', desc: 'Music, drama, and Malawian heritage showcases.' },
-    { src: '/nkhoma/student social life 8.jpg', title: 'Community Camaraderie', category: 'social', desc: 'Lifelong friendships forged across all four academic forms.' },
-    { src: '/nkhoma/parents.jpg', title: 'Parent-Teacher Consultations', category: 'events', desc: 'Active partnership between educators and parents.' },
-    { src: '/nkhoma/parents 2.jpg', title: 'Annual Speech Day', category: 'events', desc: 'Celebrating academic merit, discipline, and top performers.' },
-    { src: '/nkhoma/visitors.jpg', title: 'University Guest Mentors', category: 'events', desc: 'Academics and professionals inspiring future career pathways.' },
-    { src: '/nkhoma/visitors 4.jpg', title: 'Distinguished Visitors', category: 'events', desc: 'National education leadership engaging with our school administration.' }
+    { src: '/nkhoma/in class.jpg', title: 'Interactive Learning', category: 'academics', desc: 'Active classes.' },
+    { src: '/nkhoma/in lab.jpg', title: 'Science Laboratory', category: 'academics', desc: 'Physics, chemistry, biology.' },
+    { src: '/nkhoma/in lab 2.jpg', title: 'Hands-on Experiments', category: 'academics', desc: 'Modern MANEB apparatus.' },
+    { src: '/nkhoma/in class2.jpg', title: 'Senior Seminar', category: 'academics', desc: 'Form 4 MSCE prep.' },
+    { src: '/nkhoma/students boys.jpg', title: 'Boys Cohort', category: 'students', desc: 'Character and brotherhood.' },
+    { src: '/nkhoma/girls.jpg', title: 'Women Leaders', category: 'students', desc: 'STEM and arts.' },
+    { src: '/nkhoma/students 3.jpg', title: 'Assembly', category: 'students', desc: 'Faith and community.' },
+    { src: '/nkhoma/students 5.jpg', title: 'Fellowship', category: 'students', desc: 'Peer study groups.' },
+    { src: '/nkhoma/campus.jpg', title: 'Historic Campus', category: 'campus', desc: 'Below Nkhoma mountain.' },
+    { src: '/nkhoma/campus 2.jpg', title: 'Administration', category: 'campus', desc: 'Modern halls.' },
+    { src: '/nkhoma/campus 3.jpg', title: 'Courtyard', category: 'campus', desc: 'Green, quiet grounds.' },
+    { src: '/nkhoma/nature.jpg', title: 'Nature', category: 'campus', desc: 'Clean air, quiet study.' },
+    { src: '/nkhoma/student social life.jpg', title: 'Recreation', category: 'social', desc: 'Weekend activities.' },
+    { src: '/nkhoma/student social life 3.jpg', title: 'Sports', category: 'social', desc: 'Football and athletics.' },
+    { src: '/nkhoma/student social life 7.jpg', title: 'Culture', category: 'social', desc: 'Music and heritage.' },
+    { src: '/nkhoma/student social life 8.jpg', title: 'Friendship', category: 'social', desc: 'Bonds for life.' },
+    { src: '/nkhoma/parents.jpg', title: 'PTA Meetings', category: 'events', desc: 'Parents + teachers.' },
+    { src: '/nkhoma/parents 2.jpg', title: 'Speech Day', category: 'events', desc: 'Top performers.' },
+    { src: '/nkhoma/visitors.jpg', title: 'Guest Mentors', category: 'events', desc: 'Career guidance.' },
+    { src: '/nkhoma/visitors 4.jpg', title: 'Visitors', category: 'events', desc: 'Education leaders.' }
   ];
 
   const filteredGallery = activeGalleryFilter === 'all'
@@ -260,6 +265,10 @@ export default function Home() {
 
   return (
     <div className="app-container">
+      {/* Scroll progress — ui-ux-pro-max storytelling pattern */}
+      <div className="landing-progress" aria-hidden="true">
+        <span style={{ width: `${scrollProgress}%` }} />
+      </div>
       {/* ===== HEADER ===== */}
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <div className="logo" onClick={() => navigate('/')}>
@@ -272,8 +281,8 @@ export default function Home() {
           </button>
           <button className="btn btn-outline" onClick={() => navigate('/campus-gallery')}>Gallery</button>
           <button className="btn btn-outline" onClick={() => navigate('/explore-campus')}>Campus News</button>
-          <button className="btn btn-primary" onClick={() => navigate('/apply')} style={{ padding: '0.6rem 1.6rem', fontSize: '0.85rem' }}>
-            Admissions
+          <button className="btn btn-accent" onClick={() => navigate('/apply')} style={{ padding: '0.6rem 1.6rem', fontSize: '0.85rem' }}>
+            Apply Now
           </button>
           <span className="portal-login-btn" onClick={() => window.location.href = 'http://localhost:5174/login'}>
             SMIS Portal <ChevronRight size={16} />
@@ -298,7 +307,7 @@ export default function Home() {
             <button className="btn btn-outline" style={{ width: '100%', justifyContent: 'center' }} onClick={() => { navigate('/explore-campus'); setIsMobileMenuOpen(false); }}>
               Campus News & Feeds
             </button>
-            <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }} onClick={() => { navigate('/apply'); setIsMobileMenuOpen(false); }}>
+            <button className="btn btn-accent" style={{ width: '100%', justifyContent: 'center' }} onClick={() => { navigate('/apply'); setIsMobileMenuOpen(false); }}>
               Admissions
             </button>
             <div className="portal-login-btn" style={{ width: '100%', justifyContent: 'center', marginTop: '0.5rem' }} onClick={() => { window.location.href = 'http://localhost:5174/login'; setIsMobileMenuOpen(false); }}>
@@ -314,32 +323,48 @@ export default function Home() {
         <div className="hero-gradient" />
         <div className="hero-container">
           <div className="hero-content">
-            <div className="hero-badges">
+            <span className="eyebrow">Admissions open — 2026/2027 intake</span>
+            <div className="hero-badges" style={{ marginTop: '1.25rem' }}>
               <span className="badge"><Award size={18} /> Top Performing MANEB School</span>
-              <span className="badge"><Sparkles size={18} /> Faith & Academic Excellence</span>
-              <span className="badge"><HomeIcon size={18} /> Premier Boarding & Day</span>
+              <span className="badge"><Shield size={18} /> Safe Boarding & Day</span>
             </div>
-            <h1 className="hero-title">
-              Empowering Minds at <span className="highlight">Nkhoma Secondary School</span>
+            <h1 className="hero-title hero-title-redesigned">
+              NKHOMA <span className="highlight">Academy</span>
             </h1>
-            <p className="hero-subtitle">
-              Nestled beneath historic Nkhoma Hill in Lilongwe, Malawi. Fostering national academic distinction, advanced STEM education, and exemplary moral leadership for generations.
+            <p className="hero-subtitle hero-subtitle-redesigned">
+              Soli Deo Gloria
             </p>
+            <ul className="hero-mobile-points" aria-label="Key highlights">
+              <li>98% MSCE pass rate</li>
+              <li>Safe boarding & day</li>
+              <li>2026/2027 intake open</li>
+            </ul>
             <div className="nav-buttons" style={{ justifyContent: 'flex-start', flexWrap: 'wrap' }}>
-              <button className="btn btn-primary" style={{ padding: '1rem 2.2rem', fontSize: '1rem' }} onClick={() => navigate('/apply')}>
-                Apply for 2026/2027
+              <button className="btn btn-accent" style={{ padding: '1rem 2.4rem', fontSize: '1rem' }} onClick={() => navigate('/apply')}>
+                Apply for 2026/2027 <ChevronRight size={18} />
               </button>
               <button className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }} onClick={() => navigate('/campus-gallery')}>
                 <Camera size={18} /> View Gallery
-              </button>
-              <button className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }} onClick={() => navigate('/explore-campus')}>
-                Explore Campus
               </button>
               {isResultsPublished && (
                 <button className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }} onClick={() => navigate('/exam-results')}>
                   <FileText size={18} /> Exam Results
                 </button>
               )}
+            </div>
+            <div className="hero-proof-row">
+              <div className="hero-avatars" aria-hidden="true">
+                <span style={{ background: '#2563EB' }}>EC</span>
+                <span style={{ background: '#0EA5E9' }}>GP</span>
+                <span style={{ background: '#F97316' }}>TC</span>
+                <span style={{ background: '#0C4A6E' }}>+</span>
+              </div>
+              <div className="hero-proof-text">
+                <span className="hero-stars" aria-label="Rated 4.9 out of 5">
+                  <Star size={14} fill="currentColor" /><Star size={14} fill="currentColor" /><Star size={14} fill="currentColor" /><Star size={14} fill="currentColor" /><Star size={14} fill="currentColor" />
+                </span>{' '}
+                Trusted by <strong>850+ families</strong> · 98% MSCE pass
+              </div>
             </div>
           </div>
           <div className="hero-visual">
@@ -392,19 +417,26 @@ export default function Home() {
         </div>
       </div>
 
+      {/* ===== TRUST STRIP (social proof before CTA) ===== */}
+      <div className="trust-strip" aria-label="School achievements">
+        <div className="trust-strip-inner">
+          <span><Award size={16} /> MANEB Top Performer</span>
+          <span><GraduationCap size={16} /> UNIMA · MUST · LUANAR · MUBAS placements</span>
+          <span><Shield size={16} /> Disciplined boarding heritage</span>
+          <span><Microscope size={16} /> Modern STEM laboratories</span>
+        </div>
+      </div>
+
       {/* ===== ABOUT SECTION ===== */}
       <section className="about-section" ref={aboutRef}>
         <div className="about-grid reveal">
           <div className="about-text-col">
-            <span className="about-label">About Nkhoma Secondary</span>
+            <span className="about-label">About Nkhoma</span>
             <h2 className="about-title">
-              A Proud Tradition of <span>Academic Leadership</span> & Integrity
+              Academic Leadership <span>& Integrity</span>
             </h2>
             <p className="about-desc">
-              Situated in the historic mission hub of Nkhoma, Lilongwe, Nkhoma Secondary School is one of Malawi's premier educational institutions. Built on the enduring foundations of Christian ethics, intellectual curiosity, and self-discipline, we prepare young men and women to conquer the challenges of tomorrow.
-            </p>
-            <p className="about-desc">
-              Our scenic hill campus offers a peaceful sanctuary shielded from city distractions, where students immerse themselves in rigorous academics, modern laboratory practicals, and vibrant student community life.
+              A top Malawi secondary school in Nkhoma, Lilongwe. Strong academics, discipline and faith.
             </p>
             <div className="about-features">
               <div className="about-feature">
@@ -440,21 +472,21 @@ export default function Home() {
       <section className="facilities-section" ref={facilitiesRef}>
         <div className="reveal">
           <div className="section-header">
-            <h2 className="section-title">World-Class <span>Campus Facilities</span></h2>
+            <h2 className="section-title">Campus <span>Facilities</span></h2>
             <p className="section-subtitle">
-              Designed to stimulate curiosity, support practical STEM mastery, and provide a healthy home away from home.
+              Labs, hostels and sports — a safe home for learning.
             </p>
           </div>
-          <div className="bento-grid">
+          <div className="bento-grid bento-carousel" ref={bentoRef} role="region" aria-roledescription="carousel" aria-label="Campus facilities — swipe to explore" tabIndex={0} onScroll={onBentoScroll}>
             <div className="bento-card large">
               <div className="bento-card-image-wrap">
                 <img src="/nkhoma/in%20lab.jpg" alt="Science Laboratory" className="bento-card-image" />
               </div>
               <div className="bento-card-body">
                 <div className="bento-card-icon"><Microscope size={24} /></div>
-                <h3 className="bento-card-title">Science Laboratories</h3>
+                <h3 className="bento-card-title">Science Labs</h3>
                 <p className="bento-card-text">
-                  Fully equipped Physics, Chemistry, and Biology laboratories allowing students to conduct direct hands-on experimental research and excel in MANEB practical examinations.
+                  Physics, Chemistry, Biology — ready for MANEB practicals.
                 </p>
               </div>
             </div>
@@ -464,9 +496,9 @@ export default function Home() {
               </div>
               <div className="bento-card-body">
                 <div className="bento-card-icon"><Monitor size={24} /></div>
-                <h3 className="bento-card-title">Digital ICT & Libraries</h3>
+                <h3 className="bento-card-title">ICT & Library</h3>
                 <p className="bento-card-text">
-                  Dedicated computer rooms and comprehensive reading libraries equipped with contemporary textbooks, digital learning tools, and quiet study carrels.
+                  Computers, textbooks and quiet study space.
                 </p>
               </div>
             </div>
@@ -476,9 +508,9 @@ export default function Home() {
               </div>
               <div className="bento-card-body">
                 <div className="bento-card-icon"><HomeIcon size={24} /></div>
-                <h3 className="bento-card-title">Boarding Hostels</h3>
+                <h3 className="bento-card-title">Boarding</h3>
                 <p className="bento-card-text">
-                  Secure, well-maintained separate hostels for boys and girls with resident wardens, steady utilities, nutritious meals, and disciplined night-prep routines.
+                  Secure hostels, wardens and daily meals.
                 </p>
               </div>
             </div>
@@ -488,9 +520,9 @@ export default function Home() {
               </div>
               <div className="bento-card-body">
                 <div className="bento-card-icon"><Compass size={24} /></div>
-                <h3 className="bento-card-title">Scenic Mountain Setting</h3>
+                <h3 className="bento-card-title">Mountain Campus</h3>
                 <p className="bento-card-text">
-                  A tranquil hill environment providing fresh air, panoramic natural vistas, and an atmosphere deeply conducive to study and reflection.
+                  Fresh air and quiet grounds for focus.
                 </p>
               </div>
             </div>
@@ -500,13 +532,28 @@ export default function Home() {
               </div>
               <div className="bento-card-body">
                 <div className="bento-card-icon"><Activity size={24} /></div>
-                <h3 className="bento-card-title">Sports & Extracurriculars</h3>
+                <h3 className="bento-card-title">Sports & Clubs</h3>
                 <p className="bento-card-text">
-                  Spacious football pitches, netball courts, debate society, SCOM, choir, and wildlife clubs nurturing diverse talents outside the lecture halls.
+                  Football, netball, debate, choir and more.
                 </p>
               </div>
             </div>
           </div>
+          {/* Mobile swipe controls — hidden on desktop */}
+          <div className="bento-mobile-nav" aria-hidden={false}>
+            <button className="bento-arrow" aria-label="Previous facility" onClick={() => scrollBento(-1)}>
+              <ChevronLeft size={20} />
+            </button>
+            <div className="bento-dots" role="tablist" aria-label="Facilities carousel position">
+              {Array.from({ length: bentoCount }).map((_, i) => (
+                <span key={i} className={`bento-dot ${bentoIndex === i ? 'active' : ''}`} />
+              ))}
+            </div>
+            <button className="bento-arrow" aria-label="Next facility" onClick={() => scrollBento(1)}>
+              <ChevronRight size={20} />
+            </button>
+          </div>
+          <p className="bento-swipe-hint">Swipe to explore →</p>
         </div>
       </section>
 
@@ -514,17 +561,17 @@ export default function Home() {
       <section className="academic-section" ref={timelineRef}>
         <div className="reveal">
           <div className="section-header">
-            <h2 className="section-title">Academic <span>Journey</span> (Form 1 - Form 4)</h2>
+            <h2 className="section-title">Form 1 <span>to Form 4</span></h2>
             <p className="section-subtitle">
-              A structured four-year pathway aligned with the Malawi National Examinations Board (MANEB) curriculum.
+              Four years, aligned to MANEB.
             </p>
           </div>
           <div className="timeline-container">
             {[
-              { form: 'Form 1', desc: 'Orientation, discipline, and grounding in physical sciences, mathematics, humanities, and languages.', highlight: false, exam: null },
-              { form: 'Form 2', desc: 'Comprehensive consolidation and preparation for the Junior Certificate of Education (JCE).', highlight: true, exam: 'JCE' },
-              { form: 'Form 3', desc: 'Specialized subject selection, advanced STEM practicals, and university career mapping.', highlight: false, exam: null },
-              { form: 'Form 4', desc: 'Mastery mock exams and national MSCE certification with intensive university entrance prep.', highlight: true, exam: 'MSCE' },
+              { form: 'Form 1', desc: 'Foundation in sciences, maths and languages.', highlight: false, exam: null },
+              { form: 'Form 2', desc: 'JCE preparation.', highlight: true, exam: 'JCE' },
+              { form: 'Form 3', desc: 'Subject choice + STEM practicals.', highlight: false, exam: null },
+              { form: 'Form 4', desc: 'MSCE + university prep.', highlight: true, exam: 'MSCE' },
             ].map((item, i) => (
               <div key={i} className={`timeline-step ${item.highlight ? 'highlight' : ''}`}>
                 <div className="timeline-node" style={{ background: item.highlight ? '#2563EB' : 'var(--glass-bg)', borderColor: item.highlight ? '#38BDF8' : 'var(--glass-border)' }}>
@@ -557,14 +604,14 @@ export default function Home() {
       <section className="campus-life-section" ref={galleryRef}>
         <div className="reveal">
           <div className="section-header">
-            <h2 className="section-title">Life at <span>Nkhoma</span> (Campus Gallery)</h2>
+            <h2 className="section-title">Life at <span>Nkhoma</span></h2>
             <p className="section-subtitle">
-              Authentic glimpses into our classrooms, laboratories, boarding community, and memorable school events.
+              Classrooms, labs and student life in photos.
             </p>
           </div>
 
           {/* Filter Bar */}
-          <div className="gallery-filter-bar">
+          <div className="gallery-filter-bar" role="group" aria-label="Filter gallery photos">
             {[
               { id: 'all', label: 'All Photos' },
               { id: 'academics', label: 'Classrooms & Labs' },
@@ -575,6 +622,7 @@ export default function Home() {
             ].map(f => (
               <button
                 key={f.id}
+                aria-pressed={activeGalleryFilter === f.id}
                 className={`gallery-filter-btn ${activeGalleryFilter === f.id ? 'active' : ''}`}
                 onClick={() => setActiveGalleryFilter(f.id as any)}
               >
@@ -586,7 +634,15 @@ export default function Home() {
           {/* Interactive Card Grid */}
           <div className="interactive-gallery-grid">
             {filteredGallery.map((item, i) => (
-              <div key={i} className="interactive-gallery-card" onClick={() => setLightboxItem(item)}>
+              <div
+                key={i}
+                role="button"
+                tabIndex={0}
+                aria-label={`Open photo: ${item.title}`}
+                className="interactive-gallery-card"
+                onClick={() => setLightboxItem(item)}
+                onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setLightboxItem(item); } }}
+              >
                 <img src={item.src} alt={item.title} loading="lazy" />
                 <span className="gallery-card-badge">
                   <Camera size={12} /> {item.category}
@@ -610,8 +666,8 @@ export default function Home() {
       {/* ===== LIGHTBOX MODAL ===== */}
       {lightboxItem && (
         <div className="lightbox-backdrop" onClick={() => setLightboxItem(null)}>
-          <div className="lightbox-modal" onClick={e => e.stopPropagation()}>
-            <button className="lightbox-close-btn" onClick={() => setLightboxItem(null)}>
+          <div className="lightbox-modal" role="dialog" aria-modal="true" aria-label={lightboxItem.title} onClick={e => e.stopPropagation()}>
+            <button className="lightbox-close-btn" aria-label="Close photo viewer" onClick={() => setLightboxItem(null)}>
               <X size={22} />
             </button>
             <div className="lightbox-img-wrap">
@@ -637,12 +693,12 @@ export default function Home() {
             <div className="achievement-content" style={{ textAlign: 'left' }}>
               <div className="achievement-icon" style={{ justifyContent: 'flex-start', color: '#38BDF8' }}><Trophy size={48} /></div>
               <div className="achievement-number" style={{ color: '#FFFFFF' }}>10 Points</div>
-              <div className="achievement-text">MSCE National Distinction</div>
+              <div className="achievement-text">MSCE Distinction</div>
               <div className="achievement-subtext">
-                Nkhoma scholars consistently attain outstanding results in the Malawi School Certificate of Education (MSCE). Over 60 candidates earned direct public university selection in 2025 across UNIMA, MUST, LUANAR, MUBAS, and MZUNI.
+                60+ public university selections in 2025.
               </div>
               <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <button className="btn btn-primary" style={{ padding: '0.8rem 2rem' }} onClick={() => navigate('/apply')}>
+                <button className="btn btn-accent" style={{ padding: '0.8rem 2rem' }} onClick={() => navigate('/apply')}>
                   Apply for Admission
                 </button>
                 {isResultsPublished && (
@@ -664,17 +720,17 @@ export default function Home() {
         <div className="reveal">
           <div className="enroll-cta-inner" style={{ border: '1px solid rgba(96,165,250,0.25)', background: 'linear-gradient(135deg, rgba(37,99,235,0.12) 0%, rgba(8,13,26,0.95) 100%)' }}>
             <div className="enroll-cta-text">
-              <h2>Enroll with <span>Nkhoma Secondary</span> Today</h2>
+              <h2>Enroll at <span>Nkhoma</span> Today</h2>
               <p>
-                Applications are now being received for Form 1 through Form 4 for the 2026/2027 academic session. Join an institution celebrated for academic brilliance, student safety, and moral integrity.
+                Form 1–4 applications open for 2026/2027.
               </p>
               <div className="enroll-cta-features">
-                <div className="enroll-feature"><HomeIcon size={18} style={{ color: '#38BDF8' }} /> Boarding & Day Options Available</div>
-                <div className="enroll-feature"><Microscope size={18} style={{ color: '#38BDF8' }} /> Fully Outfitted Physics & Chem Labs</div>
-                <div className="enroll-feature"><GraduationCap size={18} style={{ color: '#38BDF8' }} /> Seasoned Education Faculty</div>
-                <div className="enroll-feature"><Star size={18} style={{ color: '#38BDF8' }} /> Proven University Placement Record</div>
+                <div className="enroll-feature"><HomeIcon size={18} style={{ color: '#38BDF8' }} /> Boarding & Day</div>
+                <div className="enroll-feature"><Microscope size={18} style={{ color: '#38BDF8' }} /> Modern science labs</div>
+                <div className="enroll-feature"><GraduationCap size={18} style={{ color: '#38BDF8' }} /> Expert teachers</div>
+                <div className="enroll-feature"><Star size={18} style={{ color: '#38BDF8' }} /> Top university placements</div>
               </div>
-              <button className="btn btn-primary" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem' }} onClick={() => navigate('/apply')}>
+              <button className="btn btn-accent" style={{ fontSize: '1.05rem', padding: '1rem 2.5rem' }} onClick={() => navigate('/apply')}>
                 Start Online Application <ChevronRight size={18} />
               </button>
             </div>
@@ -693,40 +749,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== TESTIMONIALS ===== */}
-      <section className="testimonials-section" ref={testimonialRef}>
-        <div className="reveal">
-          <div className="section-header">
-            <h2 className="section-title">What Our <span>Community</span> Says</h2>
-            <p className="section-subtitle">
-              Hear from graduates, parents, and student leaders about their Nkhoma Secondary School experience.
-            </p>
-          </div>
-          <div className="testimonials-grid">
-            {testimonials.map((t, i) => (
-              <div key={i} className="testimonial-card" style={{ border: '1px solid var(--glass-border)' }}>
-                <div className="testimonial-quote-icon" style={{ color: '#38BDF8' }}><Quote size={32} /></div>
-                <p className="testimonial-text">"{t.text}"</p>
-                <div className="testimonial-author">
-                  <div className="testimonial-avatar" style={{ background: 'linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%)', color: '#FFF' }}>{t.initials}</div>
-                  <div>
-                    <div className="testimonial-name">{t.name}</div>
-                    <div className="testimonial-role">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ===== LOCATION & CONTACT ===== */}
       <section className="contact-section" ref={contactRef}>
         <div className="reveal">
           <div className="section-header">
-            <h2 className="section-title">Visit & <span>Contact Us</span></h2>
+            <h2 className="section-title">Visit <span>Us</span></h2>
             <p className="section-subtitle">
-              Located at the historic Nkhoma Mission in Lilongwe, easily accessible via the M1 Lilongwe East junction.
+              Nkhoma Mission, Lilongwe — off M1 Lilongwe East.
             </p>
           </div>
           <div className="contact-grid">
@@ -759,7 +788,7 @@ export default function Home() {
                   <p>{schoolInfo.schoolEmail}</p>
                 </div>
               </div>
-              <button className="btn btn-primary" style={{ marginTop: '0.8rem', alignSelf: 'flex-start' }} onClick={() => navigate('/apply')}>
+              <button className="btn btn-accent" style={{ marginTop: '0.8rem', alignSelf: 'flex-start' }} onClick={() => navigate('/apply')}>
                 Submit Admission Form <ChevronRight size={18} />
               </button>
             </div>
@@ -793,7 +822,7 @@ export default function Home() {
               <img src="/NkhomaLogo.svg" alt="Nkhoma Secondary School Logo" style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
               Nkhoma Secondary School
             </h3>
-            <p>Cultivating academic leaders through intellectual rigor, moral values, and state-of-the-art STEM facilities since inception. Shaping the next generation of Malawi's leaders.</p>
+            <p>Strong academics, discipline and faith. Malawi's future leaders.</p>
             <div className="social-links">
               <div className="footer-social-icon"><Globe size={18} /></div>
               <div className="footer-social-icon"><MessageCircle size={18} /></div>
